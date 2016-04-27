@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="186" id="KGk-i7-Jjw" customClass="DisplayImageCell" customModule="SimBlog" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="186"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="185.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cic-PW-D91">
+                        <rect key="frame" x="16" y="8" width="288" height="169.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="169.5" id="hGu-aX-mcy"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cic-PW-D91" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="08M-Mp-Cec"/>
+                    <constraint firstItem="cic-PW-D91" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Ivp-V8-Bjq"/>
+                    <constraint firstItem="cic-PW-D91" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Or0-eU-lXi"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="cic-PW-D91" secondAttribute="trailing" constant="8" id="cXE-34-PvG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="blogImageView" destination="cic-PW-D91" id="4n5-np-zfD"/>
+            </connections>
+            <point key="canvasLocation" x="309" y="399"/>
+        </tableViewCell>
+    </objects>
+</document>

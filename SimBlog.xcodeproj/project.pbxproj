@@ -33,6 +33,14 @@
 		3284AF0B1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF0A1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift */; };
 		3284AF121CD09AD5005AB294 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF101CD09AD5005AB294 /* TitleCell.swift */; };
 		3284AF131CD09AD5005AB294 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF111CD09AD5005AB294 /* TitleCell.xib */; };
+		3284AF161CD0B73F005AB294 /* ShowBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF151CD0B73F005AB294 /* ShowBlogViewController.swift */; };
+		3284AF181CD0B85D005AB294 /* ShowBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF171CD0B85D005AB294 /* ShowBlogViewModel.swift */; };
+		3284AF1B1CD0E745005AB294 /* DisplayTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF191CD0E745005AB294 /* DisplayTitleCell.swift */; };
+		3284AF1C1CD0E745005AB294 /* DisplayTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF1A1CD0E745005AB294 /* DisplayTitleCell.xib */; };
+		3284AF201CD0EE3B005AB294 /* DisplayTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF1E1CD0EE3B005AB294 /* DisplayTextCell.swift */; };
+		3284AF211CD0EE3B005AB294 /* DisplayTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF1F1CD0EE3B005AB294 /* DisplayTextCell.xib */; };
+		3284AF251CD0EF18005AB294 /* DisplayImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */; };
+		3284AF261CD0EF18005AB294 /* DisplayImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */; };
 		B65C2A8BB64795B17A6A5132 /* libPods-SimBlog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA00816D32E7765B94ACD328 /* libPods-SimBlog.a */; };
 		BDA4AB6842A91DB45AD95F7C /* libPods-SimBlogTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDF7C8DF7F890E8A0AFED32 /* libPods-SimBlogTests.a */; };
 		CAE4C2A9BEB18220178AE6D8 /* libPods-SimBlogUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE94D79A1D7A85C8EBB836E /* libPods-SimBlogUITests.a */; };
@@ -89,6 +97,14 @@
 		3284AF0A1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Ectenstion.swift"; sourceTree = "<group>"; };
 		3284AF101CD09AD5005AB294 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		3284AF111CD09AD5005AB294 /* TitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
+		3284AF151CD0B73F005AB294 /* ShowBlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowBlogViewController.swift; sourceTree = "<group>"; };
+		3284AF171CD0B85D005AB294 /* ShowBlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowBlogViewModel.swift; sourceTree = "<group>"; };
+		3284AF191CD0E745005AB294 /* DisplayTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTitleCell.swift; sourceTree = "<group>"; };
+		3284AF1A1CD0E745005AB294 /* DisplayTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayTitleCell.xib; sourceTree = "<group>"; };
+		3284AF1E1CD0EE3B005AB294 /* DisplayTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTextCell.swift; sourceTree = "<group>"; };
+		3284AF1F1CD0EE3B005AB294 /* DisplayTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayTextCell.xib; sourceTree = "<group>"; };
+		3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayImageCell.swift; sourceTree = "<group>"; };
+		3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayImageCell.xib; sourceTree = "<group>"; };
 		641294EDC7C819DEAF0255C6 /* Pods-SimBlogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D99681E132D6A3423EAD820 /* Pods-SimBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog.debug.xcconfig"; sourceTree = "<group>"; };
 		6EE94D79A1D7A85C8EBB836E /* libPods-SimBlogUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimBlogUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,10 +212,13 @@
 		326A740A1CCFC7580015DE7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				326A74331CD0682F0015DE7D /* BlogCell */,
 				326A740B1CCFC7610015DE7D /* TextCell */,
 				326A741E1CCFD0C00015DE7D /* ImageCell */,
-				326A74331CD0682F0015DE7D /* BlogCell */,
 				3284AF141CD09AD8005AB294 /* TitleCell */,
+				3284AF1D1CD0E74C005AB294 /* DisplayTitleCell */,
+				3284AF221CD0EE3F005AB294 /* DisplayTextCell */,
+				3284AF271CD0EF1C005AB294 /* DisplayImageCell */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -261,6 +280,7 @@
 			children = (
 				326A74241CD0613F0015DE7D /* IndexBlogViewController.swift */,
 				326A73D91CCFC4830015DE7D /* NewBlogViewController.swift */,
+				3284AF151CD0B73F005AB294 /* ShowBlogViewController.swift */,
 			);
 			name = Blogs;
 			sourceTree = "<group>";
@@ -270,6 +290,7 @@
 			children = (
 				326A742C1CD066F30015DE7D /* IndexBlogViewModel.swift */,
 				326A740F1CCFC8690015DE7D /* NewBlogViewModel.swift */,
+				3284AF171CD0B85D005AB294 /* ShowBlogViewModel.swift */,
 			);
 			name = Blogs;
 			sourceTree = "<group>";
@@ -301,6 +322,33 @@
 				3284AF111CD09AD5005AB294 /* TitleCell.xib */,
 			);
 			name = TitleCell;
+			sourceTree = "<group>";
+		};
+		3284AF1D1CD0E74C005AB294 /* DisplayTitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				3284AF191CD0E745005AB294 /* DisplayTitleCell.swift */,
+				3284AF1A1CD0E745005AB294 /* DisplayTitleCell.xib */,
+			);
+			name = DisplayTitleCell;
+			sourceTree = "<group>";
+		};
+		3284AF221CD0EE3F005AB294 /* DisplayTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				3284AF1E1CD0EE3B005AB294 /* DisplayTextCell.swift */,
+				3284AF1F1CD0EE3B005AB294 /* DisplayTextCell.xib */,
+			);
+			name = DisplayTextCell;
+			sourceTree = "<group>";
+		};
+		3284AF271CD0EF1C005AB294 /* DisplayImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */,
+				3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */,
+			);
+			name = DisplayImageCell;
 			sourceTree = "<group>";
 		};
 		532CE7F561207CA72A82A29A /* Pods */ = {
@@ -438,8 +486,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3284AF1C1CD0E745005AB294 /* DisplayTitleCell.xib in Resources */,
+				3284AF211CD0EE3B005AB294 /* DisplayTextCell.xib in Resources */,
 				3284AF131CD09AD5005AB294 /* TitleCell.xib in Resources */,
 				326A73E21CCFC4830015DE7D /* LaunchScreen.storyboard in Resources */,
+				3284AF261CD0EF18005AB294 /* DisplayImageCell.xib in Resources */,
 				326A74321CD068270015DE7D /* BlogCell.xib in Resources */,
 				326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */,
 				326A74091CCFC7540015DE7D /* TextCell.xib in Resources */,
@@ -595,10 +646,13 @@
 			files = (
 				326A73DA1CCFC4830015DE7D /* NewBlogViewController.swift in Sources */,
 				326A74231CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift in Sources */,
+				3284AF1B1CD0E745005AB294 /* DisplayTitleCell.swift in Sources */,
+				3284AF251CD0EF18005AB294 /* DisplayImageCell.swift in Sources */,
 				326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */,
 				326A741C1CCFD0BD0015DE7D /* ImageCell.swift in Sources */,
 				326A74101CCFC8690015DE7D /* NewBlogViewModel.swift in Sources */,
 				326A74081CCFC7540015DE7D /* TextCell.swift in Sources */,
+				3284AF161CD0B73F005AB294 /* ShowBlogViewController.swift in Sources */,
 				326A74131CCFC8D20015DE7D /* Blog.swift in Sources */,
 				3284AF081CD06E24005AB294 /* BlogManager.swift in Sources */,
 				326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */,
@@ -609,6 +663,8 @@
 				326A74161CCFC92D0015DE7D /* BlogText.swift in Sources */,
 				326A742D1CD066F30015DE7D /* IndexBlogViewModel.swift in Sources */,
 				326A74311CD068270015DE7D /* BlogCell.swift in Sources */,
+				3284AF181CD0B85D005AB294 /* ShowBlogViewModel.swift in Sources */,
+				3284AF201CD0EE3B005AB294 /* DisplayTextCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

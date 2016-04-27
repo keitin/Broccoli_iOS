@@ -12,6 +12,7 @@ class IndexBlogViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     let indexBlogViewModel = IndexBlogViewModel()
     let blogManager = BlogManager.sharedInstance
+    var selectedBlog: Blog!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +31,27 @@ class IndexBlogViewController: UIViewController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
+    //MARK - TableView Delagate
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 165
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedBlog = blogManager.blogAtPosition(indexPath.row)
+        performSegueWithIdentifier("showBlog", sender: nil)
+    }
     
     func modalNewBlog(sender: UIBarButtonItem) {
         performSegueWithIdentifier("ModalNewBlog", sender: nil)
     }
     
-    //MARK - TableView Delagate
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 165
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showBlog" {
+            let showBlogVC = segue.destinationViewController as! ShowBlogViewController
+            showBlogVC.blog = selectedBlog
+        }
     }
     
     

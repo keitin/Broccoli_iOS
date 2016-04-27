@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="214" id="KGk-i7-Jjw" customClass="DisplayTitleCell" customModule="SimBlog" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="213.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Mdj-nQ-XYb">
+                        <rect key="frame" x="0.0" y="0.5" width="320" height="213"/>
+                        <color key="backgroundColor" red="0.35438579070123061" green="0.73311769280275207" blue="0.98857849836349487" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="213" id="Xq5-dh-bVo"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1YC-g2-Mmo">
+                        <rect key="frame" x="0.0" y="0.5" width="320" height="213"/>
+                        <color key="backgroundColor" red="0.058186060952501478" green="0.1075179341293496" blue="0.60713098404255317" alpha="0.34149731595092025" colorSpace="calibratedRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-l7-cqM">
+                        <rect key="frame" x="16" y="102" width="288" height="103.5"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1YC-g2-Mmo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BwC-dU-LnO"/>
+                    <constraint firstAttribute="trailing" secondItem="Mdj-nQ-XYb" secondAttribute="trailing" id="E9Z-at-6X5"/>
+                    <constraint firstItem="1YC-g2-Mmo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IN1-Or-oxh"/>
+                    <constraint firstItem="mqn-l7-cqM" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="O8T-X5-MeE"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mqn-l7-cqM" secondAttribute="trailing" constant="8" id="Ofe-FR-fLd"/>
+                    <constraint firstItem="mqn-l7-cqM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="XAQ-XG-gQR"/>
+                    <constraint firstAttribute="bottom" secondItem="Mdj-nQ-XYb" secondAttribute="bottom" id="a9K-Iw-7EE"/>
+                    <constraint firstItem="mqn-l7-cqM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="94" id="bw1-VP-FxP"/>
+                    <constraint firstItem="Mdj-nQ-XYb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lVa-6R-ibT"/>
+                    <constraint firstAttribute="bottom" secondItem="1YC-g2-Mmo" secondAttribute="bottom" id="oio-48-DGu"/>
+                    <constraint firstAttribute="trailing" secondItem="1YC-g2-Mmo" secondAttribute="trailing" id="vCh-e4-7eN"/>
+                    <constraint firstItem="Mdj-nQ-XYb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wY1-fe-xWv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="mqn-l7-cqM" id="KZd-EB-lLK"/>
+                <outlet property="topImageView" destination="Mdj-nQ-XYb" id="0Zs-Qw-8mY"/>
+            </connections>
+            <point key="canvasLocation" x="147" y="405"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="image.jpg" width="1600" height="740"/>
+    </resources>
+</document>
