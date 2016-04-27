@@ -9,6 +9,7 @@
 import UIKit
 
 class ImageCell: UITableViewCell {
+    @IBOutlet weak var blogImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

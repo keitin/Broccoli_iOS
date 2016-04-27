@@ -29,6 +29,9 @@
                     <constraint firstItem="jOn-RR-dxH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="own-l4-kpw"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="blogImageView" destination="jOn-RR-dxH" id="6dU-AL-roc"/>
+            </connections>
             <point key="canvasLocation" x="279" y="261.5"/>
         </tableViewCell>
     </objects>

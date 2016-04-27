@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewBlogViewController: UIViewController {
+class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
     @IBOutlet weak var toolViewBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     let newBlogViewModel = NewBlogViewModel()
@@ -40,7 +40,14 @@ class NewBlogViewController: UIViewController {
 
     // MARK - Action    
     @IBAction func tapAddImageButton(sender: UIButton) {
-        newBlogViewModel.addImage()
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let album = UIImagePickerController()
+            album.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            album.allowsEditing = true
+            album.delegate = self
+            self.presentViewController(album, animated: true, completion: nil)
+        }
     }
 
     @IBAction func tapAddTextButton(sender: UIButton) {
@@ -49,6 +56,14 @@ class NewBlogViewController: UIViewController {
     
     @IBAction func tapDoneButton(sender: UIButton) {
         newBlogViewModel.didFinishedEdit()
+    }
+    
+    //MARK - Camera Roll
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let selectImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            newBlogViewModel.addImage(selectImage)
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK Keyboard Notification

@@ -53,6 +53,8 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         } else {
             if let _ = blog.materialAtPosition(indexPath.row) as? BlogImage {
                 let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) as! ImageCell
+                let blogImage = blog.materialAtPosition(indexPath.row) as! BlogImage
+                cell.blogImageView.image = blogImage.image
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("TextCell", forIndexPath: indexPath) as! TextCell
@@ -83,7 +85,6 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
     
     func titleTextViewDidChange(textView: UITextView) {
         blog.title = textView.text
-        print("hoge")
         tableView.beginUpdates()
         tableView.endUpdates()
     }
@@ -91,9 +92,6 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
     func titleTextViewDidBeginEditing(textView: UITextView) {
         
     }
-    
-    
-    
     
     //MARK - Tool Button Action
     func addText() {
@@ -103,11 +101,13 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
     }
     
-    func addImage() {
-        blog.addImageAtPostion(UIImage(named: "image.jpg")!, index: blog.numberOfMaterials)
+    func addImage(image: UIImage) {
+        blog.addImageAtPostion(image, index: blog.numberOfMaterials)
         insertBottomRow(tableView)
         let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
         tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        if let _ = blog.topImage { return }
+        blog.topImage = image
     }
     
     func didFinishedEdit() {

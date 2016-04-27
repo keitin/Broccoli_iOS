@@ -12,14 +12,13 @@ class Blog: NSObject {
     var materials: [AnyObject] = []
     var title: String! = ""
     var sentence: String! = ""
-    var topImage: UIImage!
+    var topImage: UIImage?
     var numberOfMaterials: Int {
         return materials.count
     }
     
     override init() {
         super.init()
-        topImage = UIImage(named: "image.jpg")
         addTextAtPosition("", index: 0)
     }
     
