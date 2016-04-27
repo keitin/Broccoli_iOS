@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A73D71CCFC4830015DE7D /* AppDelegate.swift */; };
+		326A73DA1CCFC4830015DE7D /* NewBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A73D91CCFC4830015DE7D /* NewBlogViewController.swift */; };
+		326A73DD1CCFC4830015DE7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326A73DB1CCFC4830015DE7D /* Main.storyboard */; };
+		326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326A73DE1CCFC4830015DE7D /* Assets.xcassets */; };
+		326A73E21CCFC4830015DE7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326A73E01CCFC4830015DE7D /* LaunchScreen.storyboard */; };
+		326A73ED1CCFC4830015DE7D /* SimBlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A73EC1CCFC4830015DE7D /* SimBlogTests.swift */; };
+		326A73F81CCFC4830015DE7D /* SimBlogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A73F71CCFC4830015DE7D /* SimBlogUITests.swift */; };
+		326A74081CCFC7540015DE7D /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74061CCFC7540015DE7D /* TextCell.swift */; };
+		326A74091CCFC7540015DE7D /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 326A74071CCFC7540015DE7D /* TextCell.xib */; };
+		326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A740C1CCFC7BA0015DE7D /* UITableView+Extension.swift */; };
+		326A74101CCFC8690015DE7D /* NewBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A740F1CCFC8690015DE7D /* NewBlogViewModel.swift */; };
+		326A74131CCFC8D20015DE7D /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74121CCFC8D20015DE7D /* Blog.swift */; };
+		326A74161CCFC92D0015DE7D /* BlogText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74151CCFC92D0015DE7D /* BlogText.swift */; };
+		326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74181CCFC95B0015DE7D /* BlogImage.swift */; };
+		326A741C1CCFD0BD0015DE7D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A741A1CCFD0BD0015DE7D /* ImageCell.swift */; };
+		326A741D1CCFD0BD0015DE7D /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 326A741B1CCFD0BD0015DE7D /* ImageCell.xib */; };
+		326A74201CCFD3400015DE7D /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 326A741F1CCFD3400015DE7D /* image.jpg */; };
+		326A74231CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74221CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift */; };
+		326A74251CD0613F0015DE7D /* IndexBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74241CD0613F0015DE7D /* IndexBlogViewController.swift */; };
+		B65C2A8BB64795B17A6A5132 /* libPods-SimBlog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA00816D32E7765B94ACD328 /* libPods-SimBlog.a */; };
+		BDA4AB6842A91DB45AD95F7C /* libPods-SimBlogTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDF7C8DF7F890E8A0AFED32 /* libPods-SimBlogTests.a */; };
+		CAE4C2A9BEB18220178AE6D8 /* libPods-SimBlogUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE94D79A1D7A85C8EBB836E /* libPods-SimBlogUITests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		326A73E91CCFC4830015DE7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 326A73CC1CCFC4830015DE7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 326A73D31CCFC4830015DE7D;
+			remoteInfo = SimBlog;
+		};
+		326A73F41CCFC4830015DE7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 326A73CC1CCFC4830015DE7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 326A73D31CCFC4830015DE7D;
+			remoteInfo = SimBlog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		238FF6483A4EB707AEC0BD92 /* Pods-SimBlogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		326A73D41CCFC4830015DE7D /* SimBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		326A73D71CCFC4830015DE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		326A73D91CCFC4830015DE7D /* NewBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBlogViewController.swift; sourceTree = "<group>"; };
+		326A73DC1CCFC4830015DE7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		326A73DE1CCFC4830015DE7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		326A73E11CCFC4830015DE7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		326A73E31CCFC4830015DE7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		326A73E81CCFC4830015DE7D /* SimBlogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimBlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		326A73EC1CCFC4830015DE7D /* SimBlogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimBlogTests.swift; sourceTree = "<group>"; };
+		326A73EE1CCFC4830015DE7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		326A73F31CCFC4830015DE7D /* SimBlogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimBlogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		326A73F71CCFC4830015DE7D /* SimBlogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimBlogUITests.swift; sourceTree = "<group>"; };
+		326A73F91CCFC4830015DE7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		326A74061CCFC7540015DE7D /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		326A74071CCFC7540015DE7D /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
+		326A740C1CCFC7BA0015DE7D /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		326A740F1CCFC8690015DE7D /* NewBlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBlogViewModel.swift; sourceTree = "<group>"; };
+		326A74121CCFC8D20015DE7D /* Blog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
+		326A74151CCFC92D0015DE7D /* BlogText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogText.swift; sourceTree = "<group>"; };
+		326A74181CCFC95B0015DE7D /* BlogImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogImage.swift; sourceTree = "<group>"; };
+		326A741A1CCFD0BD0015DE7D /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		326A741B1CCFD0BD0015DE7D /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		326A741F1CCFD3400015DE7D /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		326A74221CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotificationCenter+Extenstion.swift"; sourceTree = "<group>"; };
+		326A74241CD0613F0015DE7D /* IndexBlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexBlogViewController.swift; sourceTree = "<group>"; };
+		641294EDC7C819DEAF0255C6 /* Pods-SimBlogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6D99681E132D6A3423EAD820 /* Pods-SimBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog.debug.xcconfig"; sourceTree = "<group>"; };
+		6EE94D79A1D7A85C8EBB836E /* libPods-SimBlogUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimBlogUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FFA0999155334C53C1857FD /* Pods-SimBlogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogTests/Pods-SimBlogTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA00816D32E7765B94ACD328 /* libPods-SimBlog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimBlog.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFDF7C8DF7F890E8A0AFED32 /* libPods-SimBlogTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimBlogTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D3A9DF373B9C0E03BEEC19 /* Pods-SimBlogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogTests/Pods-SimBlogTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE3650FFB1A7E92A475D6CCC /* Pods-SimBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlog.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		326A73D11CCFC4830015DE7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B65C2A8BB64795B17A6A5132 /* libPods-SimBlog.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		326A73E51CCFC4830015DE7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDA4AB6842A91DB45AD95F7C /* libPods-SimBlogTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		326A73F01CCFC4830015DE7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAE4C2A9BEB18220178AE6D8 /* libPods-SimBlogUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		326A73CB1CCFC4830015DE7D = {
+			isa = PBXGroup;
+			children = (
+				326A73D61CCFC4830015DE7D /* SimBlog */,
+				326A73EB1CCFC4830015DE7D /* SimBlogTests */,
+				326A73F61CCFC4830015DE7D /* SimBlogUITests */,
+				326A73D51CCFC4830015DE7D /* Products */,
+				532CE7F561207CA72A82A29A /* Pods */,
+				75269BCFBF80D9DAE17340C8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		326A73D51CCFC4830015DE7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				326A73D41CCFC4830015DE7D /* SimBlog.app */,
+				326A73E81CCFC4830015DE7D /* SimBlogTests.xctest */,
+				326A73F31CCFC4830015DE7D /* SimBlogUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		326A73D61CCFC4830015DE7D /* SimBlog */ = {
+			isa = PBXGroup;
+			children = (
+				326A73D71CCFC4830015DE7D /* AppDelegate.swift */,
+				326A73DB1CCFC4830015DE7D /* Main.storyboard */,
+				326A74141CCFC9210015DE7D /* Models */,
+				326A740A1CCFC7580015DE7D /* Views */,
+				326A74111CCFC86D0015DE7D /* View Models */,
+				326A74051CCFC73B0015DE7D /* Controllers */,
+				326A740E1CCFC7BD0015DE7D /* Extensions */,
+				326A74211CCFD3440015DE7D /* Images */,
+				326A73DE1CCFC4830015DE7D /* Assets.xcassets */,
+				326A73E01CCFC4830015DE7D /* LaunchScreen.storyboard */,
+				326A73E31CCFC4830015DE7D /* Info.plist */,
+			);
+			path = SimBlog;
+			sourceTree = "<group>";
+		};
+		326A73EB1CCFC4830015DE7D /* SimBlogTests */ = {
+			isa = PBXGroup;
+			children = (
+				326A73EC1CCFC4830015DE7D /* SimBlogTests.swift */,
+				326A73EE1CCFC4830015DE7D /* Info.plist */,
+			);
+			path = SimBlogTests;
+			sourceTree = "<group>";
+		};
+		326A73F61CCFC4830015DE7D /* SimBlogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				326A73F71CCFC4830015DE7D /* SimBlogUITests.swift */,
+				326A73F91CCFC4830015DE7D /* Info.plist */,
+			);
+			path = SimBlogUITests;
+			sourceTree = "<group>";
+		};
+		326A74051CCFC73B0015DE7D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				326A74261CD062F50015DE7D /* Blogs */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		326A740A1CCFC7580015DE7D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				326A740B1CCFC7610015DE7D /* TextCell */,
+				326A741E1CCFD0C00015DE7D /* ImageCell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		326A740B1CCFC7610015DE7D /* TextCell */ = {
+			isa = PBXGroup;
+			children = (
+				326A74061CCFC7540015DE7D /* TextCell.swift */,
+				326A74071CCFC7540015DE7D /* TextCell.xib */,
+			);
+			name = TextCell;
+			sourceTree = "<group>";
+		};
+		326A740E1CCFC7BD0015DE7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				326A740C1CCFC7BA0015DE7D /* UITableView+Extension.swift */,
+				326A74221CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		326A74111CCFC86D0015DE7D /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				326A740F1CCFC8690015DE7D /* NewBlogViewModel.swift */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		326A74141CCFC9210015DE7D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				326A74121CCFC8D20015DE7D /* Blog.swift */,
+				326A74151CCFC92D0015DE7D /* BlogText.swift */,
+				326A74181CCFC95B0015DE7D /* BlogImage.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		326A741E1CCFD0C00015DE7D /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				326A741A1CCFD0BD0015DE7D /* ImageCell.swift */,
+				326A741B1CCFD0BD0015DE7D /* ImageCell.xib */,
+			);
+			name = ImageCell;
+			sourceTree = "<group>";
+		};
+		326A74211CCFD3440015DE7D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				326A741F1CCFD3400015DE7D /* image.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		326A74261CD062F50015DE7D /* Blogs */ = {
+			isa = PBXGroup;
+			children = (
+				326A74241CD0613F0015DE7D /* IndexBlogViewController.swift */,
+				326A73D91CCFC4830015DE7D /* NewBlogViewController.swift */,
+			);
+			name = Blogs;
+			sourceTree = "<group>";
+		};
+		532CE7F561207CA72A82A29A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D99681E132D6A3423EAD820 /* Pods-SimBlog.debug.xcconfig */,
+				FE3650FFB1A7E92A475D6CCC /* Pods-SimBlog.release.xcconfig */,
+				8FFA0999155334C53C1857FD /* Pods-SimBlogTests.debug.xcconfig */,
+				F4D3A9DF373B9C0E03BEEC19 /* Pods-SimBlogTests.release.xcconfig */,
+				238FF6483A4EB707AEC0BD92 /* Pods-SimBlogUITests.debug.xcconfig */,
+				641294EDC7C819DEAF0255C6 /* Pods-SimBlogUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		75269BCFBF80D9DAE17340C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA00816D32E7765B94ACD328 /* libPods-SimBlog.a */,
+				EFDF7C8DF7F890E8A0AFED32 /* libPods-SimBlogTests.a */,
+				6EE94D79A1D7A85C8EBB836E /* libPods-SimBlogUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		326A73D31CCFC4830015DE7D /* SimBlog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 326A73FC1CCFC4830015DE7D /* Build configuration list for PBXNativeTarget "SimBlog" */;
+			buildPhases = (
+				B66F1EEAEDFF2022F627C933 /* 📦 Check Pods Manifest.lock */,
+				326A73D01CCFC4830015DE7D /* Sources */,
+				326A73D11CCFC4830015DE7D /* Frameworks */,
+				326A73D21CCFC4830015DE7D /* Resources */,
+				D06AC2B3AA664527D80BC26A /* 📦 Embed Pods Frameworks */,
+				DAC2909E906AB830ACCF43C5 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimBlog;
+			productName = SimBlog;
+			productReference = 326A73D41CCFC4830015DE7D /* SimBlog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		326A73E71CCFC4830015DE7D /* SimBlogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 326A73FF1CCFC4830015DE7D /* Build configuration list for PBXNativeTarget "SimBlogTests" */;
+			buildPhases = (
+				04007BE42CF290AFC3F98C23 /* 📦 Check Pods Manifest.lock */,
+				326A73E41CCFC4830015DE7D /* Sources */,
+				326A73E51CCFC4830015DE7D /* Frameworks */,
+				326A73E61CCFC4830015DE7D /* Resources */,
+				0FAA975B2DB1757034EA80AF /* 📦 Embed Pods Frameworks */,
+				C5135039732E719DD34A6C88 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				326A73EA1CCFC4830015DE7D /* PBXTargetDependency */,
+			);
+			name = SimBlogTests;
+			productName = SimBlogTests;
+			productReference = 326A73E81CCFC4830015DE7D /* SimBlogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		326A73F21CCFC4830015DE7D /* SimBlogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 326A74021CCFC4830015DE7D /* Build configuration list for PBXNativeTarget "SimBlogUITests" */;
+			buildPhases = (
+				F1972D87A4431B921EA211B0 /* 📦 Check Pods Manifest.lock */,
+				326A73EF1CCFC4830015DE7D /* Sources */,
+				326A73F01CCFC4830015DE7D /* Frameworks */,
+				326A73F11CCFC4830015DE7D /* Resources */,
+				BF20200EAD8B6D9D87FEE18A /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				326A73F51CCFC4830015DE7D /* PBXTargetDependency */,
+			);
+			name = SimBlogUITests;
+			productName = SimBlogUITests;
+			productReference = 326A73F31CCFC4830015DE7D /* SimBlogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		326A73CC1CCFC4830015DE7D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "matsushita keita";
+				TargetAttributes = {
+					326A73D31CCFC4830015DE7D = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					326A73E71CCFC4830015DE7D = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 326A73D31CCFC4830015DE7D;
+					};
+					326A73F21CCFC4830015DE7D = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 326A73D31CCFC4830015DE7D;
+					};
+				};
+			};
+			buildConfigurationList = 326A73CF1CCFC4830015DE7D /* Build configuration list for PBXProject "SimBlog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 326A73CB1CCFC4830015DE7D;
+			productRefGroup = 326A73D51CCFC4830015DE7D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				326A73D31CCFC4830015DE7D /* SimBlog */,
+				326A73E71CCFC4830015DE7D /* SimBlogTests */,
+				326A73F21CCFC4830015DE7D /* SimBlogUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		326A73D21CCFC4830015DE7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				326A73E21CCFC4830015DE7D /* LaunchScreen.storyboard in Resources */,
+				326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */,
+				326A74091CCFC7540015DE7D /* TextCell.xib in Resources */,
+				326A741D1CCFD0BD0015DE7D /* ImageCell.xib in Resources */,
+				326A73DD1CCFC4830015DE7D /* Main.storyboard in Resources */,
+				326A74201CCFD3400015DE7D /* image.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		326A73E61CCFC4830015DE7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		326A73F11CCFC4830015DE7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04007BE42CF290AFC3F98C23 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0FAA975B2DB1757034EA80AF /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimBlogTests/Pods-SimBlogTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B66F1EEAEDFF2022F627C933 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BF20200EAD8B6D9D87FEE18A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5135039732E719DD34A6C88 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimBlogTests/Pods-SimBlogTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D06AC2B3AA664527D80BC26A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAC2909E906AB830ACCF43C5 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1972D87A4431B921EA211B0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		326A73D01CCFC4830015DE7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				326A73DA1CCFC4830015DE7D /* NewBlogViewController.swift in Sources */,
+				326A74231CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift in Sources */,
+				326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */,
+				326A741C1CCFD0BD0015DE7D /* ImageCell.swift in Sources */,
+				326A74101CCFC8690015DE7D /* NewBlogViewModel.swift in Sources */,
+				326A74081CCFC7540015DE7D /* TextCell.swift in Sources */,
+				326A74131CCFC8D20015DE7D /* Blog.swift in Sources */,
+				326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */,
+				326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */,
+				326A74251CD0613F0015DE7D /* IndexBlogViewController.swift in Sources */,
+				326A74161CCFC92D0015DE7D /* BlogText.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		326A73E41CCFC4830015DE7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				326A73ED1CCFC4830015DE7D /* SimBlogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		326A73EF1CCFC4830015DE7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				326A73F81CCFC4830015DE7D /* SimBlogUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		326A73EA1CCFC4830015DE7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 326A73D31CCFC4830015DE7D /* SimBlog */;
+			targetProxy = 326A73E91CCFC4830015DE7D /* PBXContainerItemProxy */;
+		};
+		326A73F51CCFC4830015DE7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 326A73D31CCFC4830015DE7D /* SimBlog */;
+			targetProxy = 326A73F41CCFC4830015DE7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		326A73DB1CCFC4830015DE7D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				326A73DC1CCFC4830015DE7D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		326A73E01CCFC4830015DE7D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				326A73E11CCFC4830015DE7D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		326A73FA1CCFC4830015DE7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		326A73FB1CCFC4830015DE7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		326A73FD1CCFC4830015DE7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D99681E132D6A3423EAD820 /* Pods-SimBlog.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimBlog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		326A73FE1CCFC4830015DE7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE3650FFB1A7E92A475D6CCC /* Pods-SimBlog.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimBlog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		326A74001CCFC4830015DE7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FFA0999155334C53C1857FD /* Pods-SimBlogTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SimBlogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimBlog.app/SimBlog";
+			};
+			name = Debug;
+		};
+		326A74011CCFC4830015DE7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4D3A9DF373B9C0E03BEEC19 /* Pods-SimBlogTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SimBlogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimBlog.app/SimBlog";
+			};
+			name = Release;
+		};
+		326A74031CCFC4830015DE7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 238FF6483A4EB707AEC0BD92 /* Pods-SimBlogUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = SimBlogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SimBlog;
+			};
+			name = Debug;
+		};
+		326A74041CCFC4830015DE7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 641294EDC7C819DEAF0255C6 /* Pods-SimBlogUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = SimBlogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SimBlog;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		326A73CF1CCFC4830015DE7D /* Build configuration list for PBXProject "SimBlog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				326A73FA1CCFC4830015DE7D /* Debug */,
+				326A73FB1CCFC4830015DE7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		326A73FC1CCFC4830015DE7D /* Build configuration list for PBXNativeTarget "SimBlog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				326A73FD1CCFC4830015DE7D /* Debug */,
+				326A73FE1CCFC4830015DE7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		326A73FF1CCFC4830015DE7D /* Build configuration list for PBXNativeTarget "SimBlogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				326A74001CCFC4830015DE7D /* Debug */,
+				326A74011CCFC4830015DE7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		326A74021CCFC4830015DE7D /* Build configuration list for PBXNativeTarget "SimBlogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				326A74031CCFC4830015DE7D /* Debug */,
+				326A74041CCFC4830015DE7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 326A73CC1CCFC4830015DE7D /* Project object */;
+}
