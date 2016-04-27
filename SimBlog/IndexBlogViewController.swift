@@ -8,12 +8,17 @@
 
 import UIKit
 
-class IndexBlogViewController: UIViewController {
+class IndexBlogViewController: UIViewController, UITableViewDelegate {
+    @IBOutlet weak var tableView: UITableView!
+    let indexBlogViewModel = IndexBlogViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Blog"
+        indexBlogViewModel.didLoad(tableView)
+        tableView.delegate = self
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -29,6 +34,13 @@ class IndexBlogViewController: UIViewController {
     func modalNewBlog(sender: UIBarButtonItem) {
         performSegueWithIdentifier("ModalNewBlog", sender: nil)
     }
+    
+    //MARK - TableView Delagate
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 165
+    }
+    
+    
 
     /*
     // MARK: - Navigation

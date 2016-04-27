@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="KGk-i7-Jjw" customClass="BlogCell" customModule="SimBlog" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="164.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="AOu-qB-B02">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="164.5"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAn-mY-pAy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="164.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ffv-ls-C5t">
+                                <rect key="frame" x="8" y="97" width="304" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日も１日頑張りました。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRU-hb-23f">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="w1r-Js-EDr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ほげほげほげほげほげほげほえげほげほげほげほげほげほげほげほげほげほえげほげほげほげ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDJ-wa-LR5">
+                                        <rect key="frame" x="0.0" y="34" width="304" height="26"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="wK5-Zu-3NU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18736790986820973" green="0.22581311260342352" blue="0.47287441821808507" alpha="0.11779860046012269" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ffv-ls-C5t" firstAttribute="leading" secondItem="oAn-mY-pAy" secondAttribute="leading" constant="8" id="Cxd-mL-U6t"/>
+                            <constraint firstAttribute="bottom" secondItem="ffv-ls-C5t" secondAttribute="bottom" constant="8" id="Qvk-T0-ZSZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ffv-ls-C5t" secondAttribute="trailing" constant="8" id="dSO-3S-KsB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oAn-mY-pAy" secondAttribute="bottom" id="2cy-gR-eWn"/>
+                    <constraint firstItem="oAn-mY-pAy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6Co-lH-vc9"/>
+                    <constraint firstAttribute="bottom" secondItem="AOu-qB-B02" secondAttribute="bottom" id="CGU-2W-qSm"/>
+                    <constraint firstAttribute="trailing" secondItem="oAn-mY-pAy" secondAttribute="trailing" id="Cf0-v6-ILF"/>
+                    <constraint firstItem="AOu-qB-B02" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Mpz-43-41h"/>
+                    <constraint firstAttribute="trailing" secondItem="AOu-qB-B02" secondAttribute="trailing" id="Nxu-QU-s0E"/>
+                    <constraint firstItem="oAn-mY-pAy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="u4Q-k8-wnu"/>
+                    <constraint firstItem="AOu-qB-B02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xCB-1Z-MCU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="309" y="338.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="image.jpg" width="1600" height="740"/>
+    </resources>
+</document>
