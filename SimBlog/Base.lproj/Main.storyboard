@@ -56,7 +56,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="npn-nC-puP" firstAttribute="leading" secondItem="0gA-TS-Lti" secondAttribute="leading" constant="8" id="8SQ-wI-iBB"/>
                                     <constraint firstAttribute="bottom" secondItem="npn-nC-puP" secondAttribute="bottom" constant="8" id="Vqr-Sx-lG5"/>

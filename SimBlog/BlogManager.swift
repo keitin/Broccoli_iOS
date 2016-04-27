@@ -17,9 +17,6 @@ class BlogManager: NSObject {
     
     override init() {
         super.init()
-        addBlogAtPosition(Blog(), index: 0)
-        addBlogAtPosition(Blog(), index: 0)
-        addBlogAtPosition(Blog(), index: 0)
     }
     
     func addBlogAtPosition(blog: Blog, index: Int) {

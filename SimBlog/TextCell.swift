@@ -29,7 +29,7 @@ class TextCell: UITableViewCell, UITextViewDelegate {
     }
     
     // MARK - Set Up Sub Views
-    func setupTextView() {
+    private func setupTextView() {
         textView.scrollEnabled = false
         textView.delegate = self
     }

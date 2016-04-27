@@ -11,19 +11,19 @@ import UIKit
 class IndexBlogViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     let indexBlogViewModel = IndexBlogViewModel()
-
+    let blogManager = BlogManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         title = "Blog"
         indexBlogViewModel.didLoad(tableView)
         tableView.delegate = self
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .Done, target: self, action: #selector(IndexBlogViewController.modalNewBlog(_:)))
+        indexBlogViewModel.willAppear()
+        navigationItem.rightBarButtonItem("New", target: self, action: #selector(IndexBlogViewController.modalNewBlog(_:)))        
     }
 
     override func didReceiveMemoryWarning() {

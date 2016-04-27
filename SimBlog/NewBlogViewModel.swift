@@ -8,53 +8,71 @@
 
 import UIKit
 
-class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate {
+class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, TitleCellDelegate {
     
     let blog = Blog()
+    let blogManeger = BlogManager.sharedInstance
     var tableView: UITableView!
+    var viewController: NewBlogViewController!
     var activeTextView: UITextView?
     
     override init() {
         super.init()
     }
     
-    func didLoad(tableView: UITableView) {
+    func didLoad(viewController: NewBlogViewController, tableView: UITableView) {
+        self.viewController = viewController
         self.tableView = tableView
         self.tableView.registerCell("TextCell")
         self.tableView.registerCell("ImageCell")
+        self.tableView.registerCell("TitleCell")
         self.tableView.dataSource = self
         self.tableView.estimatedRowHeight = 100000
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
     
     //MARK Table View Data Source
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return blog.numberOfMaterials
-        return blog.numberOfMaterials
+        if section == 0 {
+            return 1
+        } else {
+            return blog.numberOfMaterials
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let _ = blog.materialAtPosition(indexPath.row) as? BlogImage {
-            let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) as! ImageCell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("TitleCell", forIndexPath: indexPath) as! TitleCell
+            cell.delegate = self
+            cell.fillWith(blog)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("TextCell", forIndexPath: indexPath) as! TextCell
-            let blogText = blog.materialAtPosition(indexPath.row) as? BlogText
-            cell.textView.tag = indexPath.row
-            cell.textView.text = blogText?.text
-            cell.delegate = self
-            return cell
+            if let _ = blog.materialAtPosition(indexPath.row) as? BlogImage {
+                let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) as! ImageCell
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCellWithIdentifier("TextCell", forIndexPath: indexPath) as! TextCell
+                let blogText = blog.materialAtPosition(indexPath.row) as? BlogText
+                cell.textView.tag = indexPath.row
+                cell.textView.text = blogText?.text
+                cell.delegate = self
+                return cell
+            }
         }
     }
     
     //MARK - TextView Delegate
     func textViewDidChange(textView: UITextView) {
-        
+        if textView.tag == 0 {
+            blog.sentence = textView.text
+        }
         if let blogText = blog.materialAtPosition(textView.tag) as? BlogText {
             blogText.text = textView.text
         }
-        
         tableView.beginUpdates()
         tableView.endUpdates()
     }
@@ -63,18 +81,32 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate {
         self.activeTextView = textView
     }
     
+    func titleTextViewDidChange(textView: UITextView) {
+        blog.title = textView.text
+        print("hoge")
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    func titleTextViewDidBeginEditing(textView: UITextView) {
+        
+    }
+    
+    
+    
+    
     //MARK - Tool Button Action
     func addText() {
         blog.addTextAtPosition("", index: blog.numberOfMaterials)
         insertBottomRow(tableView)
-        let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 0)
+        let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
         tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
     }
     
     func addImage() {
         blog.addImageAtPostion(UIImage(named: "image.jpg")!, index: blog.numberOfMaterials)
         insertBottomRow(tableView)
-        let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 0)
+        let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
         tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
     }
     
@@ -84,8 +116,13 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate {
         }
     }
     
-    // MARK Table View Provate
+    func postBlog(sender: UIBarButtonItem) {
+        blogManeger.addBlogAtPosition(blog, index: 0)
+        viewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK Table View Private
     private func insertBottomRow(tableView: UITableView) {
-        tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 0)], withRowAnimation: .None)
+        tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)], withRowAnimation: .Fade)
     }
 }

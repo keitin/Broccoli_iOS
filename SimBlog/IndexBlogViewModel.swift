@@ -19,13 +19,28 @@ class IndexBlogViewModel: NSObject, UITableViewDataSource {
         tableView.registerCell("BlogCell")
     }
     
+    func willAppear() {
+        insertTopRow(tableView)
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return blogManager.numberOfBlogs
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BlogCell", forIndexPath: indexPath) as! BlogCell
+        cell.fillWith(blogManager.blogAtPosition(indexPath.row))
         return cell
+    }
+    
+    // MARK Table View Private
+    private func insertTopRow(tableView: UITableView) {
+        let differenceIndex = blogManager.numberOfBlogs - tableView.numberOfRowsInSection(0)
+        if differenceIndex > 0 {
+            for _ in 1...differenceIndex {
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Fade)
+            }
+        }
     }
     
 }

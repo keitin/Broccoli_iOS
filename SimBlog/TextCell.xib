@@ -27,11 +27,11 @@
                             <constraint firstAttribute="height" constant="21" id="kDT-Qm-6a8"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="FI9-kq-Hsi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="1V8-xD-i0h"/>
                     <constraint firstAttribute="trailingMargin" secondItem="FI9-kq-Hsi" secondAttribute="trailing" constant="8" id="2m0-4t-jj2"/>

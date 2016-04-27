@@ -63,6 +63,11 @@
                     <constraint firstItem="AOu-qB-B02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xCB-1Z-MCU"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="sentenceLabel" destination="BDJ-wa-LR5" id="tUk-Tv-Zt1"/>
+                <outlet property="titleLabel" destination="JRU-hb-23f" id="RbU-F5-bM9"/>
+                <outlet property="topImageView" destination="AOu-qB-B02" id="8D3-9n-lQi"/>
+            </connections>
             <point key="canvasLocation" x="309" y="338.5"/>
         </tableViewCell>
     </objects>

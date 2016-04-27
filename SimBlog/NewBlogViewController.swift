@@ -18,7 +18,7 @@ class NewBlogViewController: UIViewController {
         
         title = "New Blog"
         
-        newBlogViewModel.didLoad(tableView)
+        newBlogViewModel.didLoad(self, tableView: tableView)
         
         //Keyboard Notification
         let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -29,8 +29,8 @@ class NewBlogViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .Done, target: self, action: #selector(NewBlogViewController.closeNewBlog(_:)))
-        
+        navigationItem.leftBarButtonItem("Close", target: self, action: #selector(NewBlogViewController.closeNewBlog(_:)))
+        navigationItem.rightBarButtonItem("Post", target: newBlogViewModel, action: #selector(NewBlogViewModel.postBlog(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,7 +38,7 @@ class NewBlogViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK - Action
+    // MARK - Action    
     @IBAction func tapAddImageButton(sender: UIButton) {
         newBlogViewModel.addImage()
     }
