@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21E196F5EAEF6A82DF97CF47 /* Pods_SimBlogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C42D534460D2FB75787744 /* Pods_SimBlogUITests.framework */; };
+		3237B8831CD2F22B00ABD9F9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237B8821CD2F22B00ABD9F9 /* CurrentUser.swift */; };
+		3237B8C11CD39F1400ABD9F9 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237B8C01CD39F1400ABD9F9 /* UIApplication+Extension.swift */; };
+		324E470D1CD108AC003EC6AC /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 324E47091CD108AC003EC6AC /* image1.png */; };
+		324E47111CD1D43B003EC6AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E47101CD1D43B003EC6AC /* LoginViewController.swift */; };
+		324E47141CD1E09C003EC6AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E47131CD1E09C003EC6AC /* User.swift */; };
+		324E47171CD1E200003EC6AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E47161CD1E200003EC6AC /* LoginView.swift */; };
+		324E47191CD1E213003EC6AC /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324E47181CD1E213003EC6AC /* LoginView.xib */; };
+		324E471B1CD1E318003EC6AC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E471A1CD1E318003EC6AC /* LoginViewModel.swift */; };
 		326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A73D71CCFC4830015DE7D /* AppDelegate.swift */; };
 		326A73DA1CCFC4830015DE7D /* NewBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A73D91CCFC4830015DE7D /* NewBlogViewController.swift */; };
 		326A73DD1CCFC4830015DE7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326A73DB1CCFC4830015DE7D /* Main.storyboard */; };
@@ -23,7 +32,6 @@
 		326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74181CCFC95B0015DE7D /* BlogImage.swift */; };
 		326A741C1CCFD0BD0015DE7D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A741A1CCFD0BD0015DE7D /* ImageCell.swift */; };
 		326A741D1CCFD0BD0015DE7D /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 326A741B1CCFD0BD0015DE7D /* ImageCell.xib */; };
-		326A74201CCFD3400015DE7D /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 326A741F1CCFD3400015DE7D /* image.jpg */; };
 		326A74231CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74221CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift */; };
 		326A74251CD0613F0015DE7D /* IndexBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74241CD0613F0015DE7D /* IndexBlogViewController.swift */; };
 		326A742D1CD066F30015DE7D /* IndexBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A742C1CD066F30015DE7D /* IndexBlogViewModel.swift */; };
@@ -41,9 +49,8 @@
 		3284AF211CD0EE3B005AB294 /* DisplayTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF1F1CD0EE3B005AB294 /* DisplayTextCell.xib */; };
 		3284AF251CD0EF18005AB294 /* DisplayImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */; };
 		3284AF261CD0EF18005AB294 /* DisplayImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */; };
-		B65C2A8BB64795B17A6A5132 /* libPods-SimBlog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA00816D32E7765B94ACD328 /* libPods-SimBlog.a */; };
-		BDA4AB6842A91DB45AD95F7C /* libPods-SimBlogTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDF7C8DF7F890E8A0AFED32 /* libPods-SimBlogTests.a */; };
-		CAE4C2A9BEB18220178AE6D8 /* libPods-SimBlogUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE94D79A1D7A85C8EBB836E /* libPods-SimBlogUITests.a */; };
+		8CB9392937AC7BA0E0536964 /* Pods_SimBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D43FC246B86AD09E3086FD0 /* Pods_SimBlog.framework */; };
+		97A22A91DD20F45FE56E0363 /* Pods_SimBlogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,14 @@
 
 /* Begin PBXFileReference section */
 		238FF6483A4EB707AEC0BD92 /* Pods-SimBlogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3237B8821CD2F22B00ABD9F9 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		3237B8C01CD39F1400ABD9F9 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		324E47091CD108AC003EC6AC /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		324E47101CD1D43B003EC6AC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		324E47131CD1E09C003EC6AC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		324E47161CD1E200003EC6AC /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		324E47181CD1E213003EC6AC /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		324E471A1CD1E318003EC6AC /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		326A73D41CCFC4830015DE7D /* SimBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326A73D71CCFC4830015DE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		326A73D91CCFC4830015DE7D /* NewBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBlogViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +102,6 @@
 		326A74181CCFC95B0015DE7D /* BlogImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogImage.swift; sourceTree = "<group>"; };
 		326A741A1CCFD0BD0015DE7D /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		326A741B1CCFD0BD0015DE7D /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
-		326A741F1CCFD3400015DE7D /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		326A74221CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotificationCenter+Extenstion.swift"; sourceTree = "<group>"; };
 		326A74241CD0613F0015DE7D /* IndexBlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexBlogViewController.swift; sourceTree = "<group>"; };
 		326A742C1CD066F30015DE7D /* IndexBlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexBlogViewModel.swift; sourceTree = "<group>"; };
@@ -105,12 +119,12 @@
 		3284AF1F1CD0EE3B005AB294 /* DisplayTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayTextCell.xib; sourceTree = "<group>"; };
 		3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayImageCell.swift; sourceTree = "<group>"; };
 		3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayImageCell.xib; sourceTree = "<group>"; };
+		6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimBlogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		641294EDC7C819DEAF0255C6 /* Pods-SimBlogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D99681E132D6A3423EAD820 /* Pods-SimBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog.debug.xcconfig"; sourceTree = "<group>"; };
-		6EE94D79A1D7A85C8EBB836E /* libPods-SimBlogUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimBlogUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D43FC246B86AD09E3086FD0 /* Pods_SimBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFA0999155334C53C1857FD /* Pods-SimBlogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogTests/Pods-SimBlogTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DA00816D32E7765B94ACD328 /* libPods-SimBlog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimBlog.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFDF7C8DF7F890E8A0AFED32 /* libPods-SimBlogTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimBlogTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1C42D534460D2FB75787744 /* Pods_SimBlogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimBlogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D3A9DF373B9C0E03BEEC19 /* Pods-SimBlogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogTests/Pods-SimBlogTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE3650FFB1A7E92A475D6CCC /* Pods-SimBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlog.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B65C2A8BB64795B17A6A5132 /* libPods-SimBlog.a in Frameworks */,
+				8CB9392937AC7BA0E0536964 /* Pods_SimBlog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDA4AB6842A91DB45AD95F7C /* libPods-SimBlogTests.a in Frameworks */,
+				97A22A91DD20F45FE56E0363 /* Pods_SimBlogTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,13 +150,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAE4C2A9BEB18220178AE6D8 /* libPods-SimBlogUITests.a in Frameworks */,
+				21E196F5EAEF6A82DF97CF47 /* Pods_SimBlogUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		324E47121CD1D43F003EC6AC /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				324E47101CD1D43B003EC6AC /* LoginViewController.swift */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
+		324E47151CD1E1CF003EC6AC /* Blogs */ = {
+			isa = PBXGroup;
+			children = (
+				326A74331CD0682F0015DE7D /* BlogCell */,
+				326A740B1CCFC7610015DE7D /* TextCell */,
+				326A741E1CCFD0C00015DE7D /* ImageCell */,
+				3284AF141CD09AD8005AB294 /* TitleCell */,
+				3284AF1D1CD0E74C005AB294 /* DisplayTitleCell */,
+				3284AF221CD0EE3F005AB294 /* DisplayTextCell */,
+				3284AF271CD0EF1C005AB294 /* DisplayImageCell */,
+			);
+			name = Blogs;
+			sourceTree = "<group>";
+		};
+		324E471C1CD1E31B003EC6AC /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				324E471A1CD1E318003EC6AC /* LoginViewModel.swift */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
+		324E471D1CD1E9DB003EC6AC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				324E47131CD1E09C003EC6AC /* User.swift */,
+				3237B8821CD2F22B00ABD9F9 /* CurrentUser.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		324E471E1CD1E9E6003EC6AC /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				324E47161CD1E200003EC6AC /* LoginView.swift */,
+				324E47181CD1E213003EC6AC /* LoginView.xib */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
 		326A73CB1CCFC4830015DE7D = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				326A74261CD062F50015DE7D /* Blogs */,
+				324E47121CD1D43F003EC6AC /* Users */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -212,13 +275,8 @@
 		326A740A1CCFC7580015DE7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				326A74331CD0682F0015DE7D /* BlogCell */,
-				326A740B1CCFC7610015DE7D /* TextCell */,
-				326A741E1CCFD0C00015DE7D /* ImageCell */,
-				3284AF141CD09AD8005AB294 /* TitleCell */,
-				3284AF1D1CD0E74C005AB294 /* DisplayTitleCell */,
-				3284AF221CD0EE3F005AB294 /* DisplayTextCell */,
-				3284AF271CD0EF1C005AB294 /* DisplayImageCell */,
+				324E47151CD1E1CF003EC6AC /* Blogs */,
+				324E471E1CD1E9E6003EC6AC /* Users */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -238,6 +296,7 @@
 				326A740C1CCFC7BA0015DE7D /* UITableView+Extension.swift */,
 				3284AF0A1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift */,
 				326A74221CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift */,
+				3237B8C01CD39F1400ABD9F9 /* UIApplication+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -246,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				326A742E1CD067030015DE7D /* Blogs */,
+				324E471C1CD1E31B003EC6AC /* Users */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -254,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				3284AF091CD06E3D005AB294 /* Blog */,
+				324E471D1CD1E9DB003EC6AC /* User */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -270,7 +331,7 @@
 		326A74211CCFD3440015DE7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				326A741F1CCFD3400015DE7D /* image.jpg */,
+				324E47091CD108AC003EC6AC /* image1.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -367,9 +428,9 @@
 		75269BCFBF80D9DAE17340C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DA00816D32E7765B94ACD328 /* libPods-SimBlog.a */,
-				EFDF7C8DF7F890E8A0AFED32 /* libPods-SimBlogTests.a */,
-				6EE94D79A1D7A85C8EBB836E /* libPods-SimBlogUITests.a */,
+				7D43FC246B86AD09E3086FD0 /* Pods_SimBlog.framework */,
+				6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */,
+				B1C42D534460D2FB75787744 /* Pods_SimBlogUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -491,12 +552,13 @@
 				3284AF131CD09AD5005AB294 /* TitleCell.xib in Resources */,
 				326A73E21CCFC4830015DE7D /* LaunchScreen.storyboard in Resources */,
 				3284AF261CD0EF18005AB294 /* DisplayImageCell.xib in Resources */,
+				324E47191CD1E213003EC6AC /* LoginView.xib in Resources */,
 				326A74321CD068270015DE7D /* BlogCell.xib in Resources */,
 				326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */,
 				326A74091CCFC7540015DE7D /* TextCell.xib in Resources */,
+				324E470D1CD108AC003EC6AC /* image1.png in Resources */,
 				326A741D1CCFD0BD0015DE7D /* ImageCell.xib in Resources */,
 				326A73DD1CCFC4830015DE7D /* Main.storyboard in Resources */,
-				326A74201CCFD3400015DE7D /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,13 +710,18 @@
 				326A74231CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift in Sources */,
 				3284AF1B1CD0E745005AB294 /* DisplayTitleCell.swift in Sources */,
 				3284AF251CD0EF18005AB294 /* DisplayImageCell.swift in Sources */,
+				3237B8C11CD39F1400ABD9F9 /* UIApplication+Extension.swift in Sources */,
 				326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */,
 				326A741C1CCFD0BD0015DE7D /* ImageCell.swift in Sources */,
+				324E47171CD1E200003EC6AC /* LoginView.swift in Sources */,
 				326A74101CCFC8690015DE7D /* NewBlogViewModel.swift in Sources */,
 				326A74081CCFC7540015DE7D /* TextCell.swift in Sources */,
 				3284AF161CD0B73F005AB294 /* ShowBlogViewController.swift in Sources */,
 				326A74131CCFC8D20015DE7D /* Blog.swift in Sources */,
+				324E47111CD1D43B003EC6AC /* LoginViewController.swift in Sources */,
+				3237B8831CD2F22B00ABD9F9 /* CurrentUser.swift in Sources */,
 				3284AF081CD06E24005AB294 /* BlogManager.swift in Sources */,
+				324E471B1CD1E318003EC6AC /* LoginViewModel.swift in Sources */,
 				326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */,
 				326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */,
 				3284AF0B1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift in Sources */,
@@ -665,6 +732,7 @@
 				326A74311CD068270015DE7D /* BlogCell.swift in Sources */,
 				3284AF181CD0B85D005AB294 /* ShowBlogViewModel.swift in Sources */,
 				3284AF201CD0EE3B005AB294 /* DisplayTextCell.swift in Sources */,
+				324E47141CD1E09C003EC6AC /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

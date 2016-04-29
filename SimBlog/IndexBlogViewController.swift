@@ -24,7 +24,9 @@ class IndexBlogViewController: UIViewController, UITableViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         indexBlogViewModel.willAppear()
-        navigationItem.rightBarButtonItem("New", target: self, action: #selector(IndexBlogViewController.modalNewBlog(_:)))        
+        navigationItem.rightBarButtonItem("New", target: self, action: #selector
+            (IndexBlogViewController.modalNewBlog(_:)))
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
