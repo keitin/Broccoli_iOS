@@ -24,7 +24,7 @@
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1YC-g2-Mmo">
                         <rect key="frame" x="0.0" y="0.5" width="320" height="213"/>
-                        <color key="backgroundColor" red="0.058186060952501478" green="0.1075179341293496" blue="0.60713098404255317" alpha="0.34149731595092025" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.73333333329999995" blue="0.039215686270000001" alpha="0.34034700920245398" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-l7-cqM">
                         <rect key="frame" x="16" y="102" width="288" height="103.5"/>

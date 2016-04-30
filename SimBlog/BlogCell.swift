@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BlogCell: UITableViewCell {
     @IBOutlet weak var topImageView: UIImageView!
@@ -26,6 +27,9 @@ class BlogCell: UITableViewCell {
     
     func fillWith(blog: Blog) {
         topImageView.image = blog.topImage
+        if let topImageURL = blog.topImageURL {
+            topImageView.sd_setImageWithURL(NSURL(string: topImageURL))
+        }
         titleLabel.text = blog.title
         sentenceLabel.text = blog.sentence
     }

@@ -56,7 +56,7 @@ class User: NSObject {
             "email": self.email,
             "token": self.token
         ]
-        Alamofire.request(.POST, "http://localhost:3000/api/users/", parameters: params)
+        Alamofire.request(.POST, String.rootPath() + "/api/users/", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return

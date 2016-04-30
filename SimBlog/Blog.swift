@@ -16,6 +16,7 @@ class Blog: NSObject {
     var sentence: String! = ""
     var topImage: UIImage?
     var id: Int!
+    var topImageURL: String?
     var numberOfMaterials: Int {
         return materials.count
     }
@@ -48,7 +49,11 @@ class Blog: NSObject {
             "sentence": self.sentence,
         ]
         
-        Alamofire.request(.POST, "http://localhost:3000/api/blogs/", parameters: params)
+        let pass = String.rootPath() + "/api/blogs/"
+        let httpMethod = Alamofire.Method.POST.rawValue
+        
+        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: (blogImages.first?.image)!)
+        Alamofire.upload(urlRequest.0, data: urlRequest.1)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
@@ -67,7 +72,7 @@ class Blog: NSObject {
             "blog_id": self.id,
             "order"  : blogText.order
         ]
-        Alamofire.request(.POST, "http://localhost:3000/api/texts/", parameters: params)
+        Alamofire.request(.POST, String.rootPath() + "/api/texts/", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
@@ -81,7 +86,7 @@ class Blog: NSObject {
             "blog_id": self.id,
             "order"  : blogImage.order
         ]
-        let pass = "http://localhost:3000/api/images/"
+        let pass = String.rootPath() + "/api/images/"
         let httpMethod = Alamofire.Method.POST.rawValue
 
         let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: blogImage.image)

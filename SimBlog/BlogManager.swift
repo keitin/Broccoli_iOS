@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class BlogManager: NSObject {
     static let sharedInstance = BlogManager()
@@ -26,5 +28,26 @@ class BlogManager: NSObject {
     
     func blogAtPosition(index: Int) -> Blog {
         return blogs[index]
+    }
+    
+    //API
+    func getBlogsInbackgroundWithBlock(callback: () -> Void) {
+        Alamofire.request(.GET, String.rootPath() + "/api/blogs/", parameters: nil)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    print("えらー")
+                    return
+                }
+                let json = JSON(object)
+                for object in json["blogs"].array! {
+                    let blog = Blog()
+                    blog.title = object["title"].string
+                    blog.sentence = object["sentence"].string
+                    blog.topImageURL = object["image"].string
+                    self.blogs.insert(blog, atIndex: 0)
+                    callback()
+                }
+                
+        }
     }
 }

@@ -17,4 +17,8 @@ class BlogImage: NSObject {
         self.image = image
         self.order = order
     }
+    
+    func fillWith() {
+        
+    }
 }

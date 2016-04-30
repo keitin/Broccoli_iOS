@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DisplayTitleCell: UITableViewCell {
     @IBOutlet weak var topImageView: UIImageView!
@@ -25,6 +26,9 @@ class DisplayTitleCell: UITableViewCell {
     
     func fillWith(blog: Blog) {
         topImageView.image = blog.topImage
+        if let topImageURL = blog.topImageURL {
+            topImageView.sd_setImageWithURL(NSURL(string: topImageURL))
+        }
         titleLabel.text = blog.title
     }
     
