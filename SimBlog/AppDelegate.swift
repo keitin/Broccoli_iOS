@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if User.userSignedIn() {
             let currentUser = CurrentUser.sharedInstance
             currentUser.getCurrentUserInLocal()
+            print(currentUser.name)
+            print(currentUser.email)
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InitialNavigationController")
             self.window?.rootViewController = initialViewController
         } else {

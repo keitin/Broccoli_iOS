@@ -10,8 +10,10 @@ import UIKit
 
 class BlogText: NSObject {
     var text: String
+    var order: Int
     
-    init(text: String) {
+    init(text: String, order: Int) {
         self.text = text
+        self.order = order
     }
 }
