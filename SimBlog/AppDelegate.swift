@@ -23,15 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //認証
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if User.userSignedIn() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let currentUser = CurrentUser.sharedInstance
             currentUser.getCurrentUserInLocal()
             print(currentUser.name)
             print(currentUser.email)
-            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InitialNavigationController")
+            print(currentUser.id)
+            print(currentUser.facebook_id)
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InitialTabBarController")
             self.window?.rootViewController = initialViewController
         } else {
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
             self.window?.rootViewController = initialViewController
         }

@@ -17,7 +17,7 @@ extension UIApplication {
     }
     
     class func redirectToLoginViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
         UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
     }

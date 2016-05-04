@@ -28,7 +28,6 @@ class BlogCell: UITableViewCell {
     func fillWith(blog: Blog) {
         topImageView.image = blog.topImage
         if let topImageURL = blog.topImageURL {
-            print(topImageURL)
             topImageView.sd_setImageWithURL(NSURL(string: topImageURL))
         }
         titleLabel.text = blog.title

@@ -13,7 +13,8 @@ import Alamofire
 class User: NSObject {
     var name: String!
     var imageURL: String!
-    var id: String!
+    var id: Int!
+    var facebook_id: String!
     var email: String?
     var token: String!
     
@@ -24,7 +25,7 @@ class User: NSObject {
     init(attributes: JSON) {
         self.name = attributes["name"].string!
         self.imageURL = attributes["picture"]["data"]["url"].string!
-        self.id = attributes["id"].string!
+        self.facebook_id = attributes["id"].string!
         self.email = attributes["email"].string
     }
     
@@ -48,11 +49,11 @@ class User: NSObject {
     }
     
     //API
-    func saveInbackground() {
+    func saveInbackground(callback: () -> Void) {
         let params = [
             "name": self.name,
             "image_url": self.imageURL,
-            "facebook_id": self.id,
+            "facebook_id": self.facebook_id,
             "email": self.email,
             "token": self.token
         ]
@@ -61,7 +62,9 @@ class User: NSObject {
                 guard let object = response.result.value else {
                     return
                 }
-                print(object)
+                let json = JSON(object)
+                self.id = json["user"]["id"].int
+                callback()
         }
     }
     
@@ -72,7 +75,8 @@ class User: NSObject {
         defaults.setObject(self.name, forKey: "user_name")
         defaults.setObject(self.email, forKey: "user_email")
         defaults.setObject(self.imageURL, forKey: "user_image_url")
-        defaults.setObject(self.id, forKey: "user_id")
+        defaults.setObject(self.id, forKey: "id")
+        defaults.setObject(self.facebook_id, forKey: "facebook_id")
         defaults.setObject(self.token, forKey: "user_token")
         defaults.synchronize()
     }

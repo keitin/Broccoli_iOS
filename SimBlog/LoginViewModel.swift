@@ -47,10 +47,10 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
             let json = JSON(result)
             let user = User(attributes: json)
             user.issueToken()
-            user.saveCurrentUserInLocal()
-            UIApplication.redirectToInitialViewController()
-            user.saveInbackground()
-            
+            user.saveInbackground({ 
+                user.saveCurrentUserInLocal()
+                UIApplication.redirectToInitialViewController()
+            })
         })
     }
 }
