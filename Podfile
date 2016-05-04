@@ -10,6 +10,7 @@ target 'SimBlog' do
  pod 'SwiftyJSON'
  pod 'SDWebImage'
  pod 'Alamofire'
+ pod 'SVProgressHUD'
 end
 
 target 'SimBlogTests' do

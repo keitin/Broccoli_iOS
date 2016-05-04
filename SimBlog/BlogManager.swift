@@ -22,7 +22,6 @@ class BlogManager: NSObject {
     }
     
     func addBlogAtPosition(blog: Blog, index: Int) {
-        blog.saveInbackground()
         blogs.insert(blog, atIndex: index)
     }
     
@@ -36,18 +35,20 @@ class BlogManager: NSObject {
             .responseJSON { response in
                 guard let object = response.result.value else {
                     print("えらー")
+                    print(response)
                     return
                 }
                 let json = JSON(object)
                 for object in json["blogs"].array! {
                     let blog = Blog()
-                    blog.title = object["title"].string
-                    blog.sentence = object["sentence"].string
-                    blog.topImageURL = object["image"].string
+                    blog.title = object["blog"]["title"].string
+                    blog.sentence = object["blog"]["sentence"].string
+                    blog.topImageURL = object["blog"]["image"]["url"].string
+                    blog.id = object["blog"]["id"].int
                     self.blogs.insert(blog, atIndex: 0)
                     callback()
                 }
-                
         }
     }
+    
 }

@@ -30,8 +30,13 @@ class Blog: NSObject {
         materials.insert(BlogText(text: text, order: numberOfMaterials), atIndex: index)
     }
     
-    func addImageAtPostion(image: UIImage, index: Int) {
+    func addImageAtPosition(image: UIImage, index: Int) {
         materials.insert(BlogImage(image: image, order: numberOfMaterials), atIndex: index)
+    }
+    
+    func addMaterialAtPosition(material: AnyObject, index: Int) {
+        
+        materials.insert(material, atIndex: index)
     }
     
     func materialAtPosition(index: Int) -> AnyObject {
@@ -39,20 +44,24 @@ class Blog: NSObject {
     }
     
     //API
-    func saveInbackground() {
+    func saveInbackground(callback: () -> Void) {
         
         let blogTexts = divideToBlogText()
         let blogImages = divideToBlogImage()
         
-        let params: [String: AnyObject] = [
+        var params: [String: AnyObject] = [
             "title": self.title,
-            "sentence": self.sentence,
+            "sentence": self.sentence
         ]
+        
+        for blogText in blogTexts {
+            params["\(blogText.order)-text"] = blogText.text
+        }
         
         let pass = String.rootPath() + "/api/blogs/"
         let httpMethod = Alamofire.Method.POST.rawValue
         
-        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: (blogImages.first?.image)!)
+        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, images: blogImages)
         Alamofire.upload(urlRequest.0, data: urlRequest.1)
             .responseJSON { response in
                 guard let object = response.result.value else {
@@ -60,42 +69,37 @@ class Blog: NSObject {
                 }
                 let json = JSON(object)
                 self.id = json["blog"]["id"].int
+                callback()
+        }
+    }
+    
+    //MARK blog show
+    func findMaterialsInBackground(callback: () -> Void) {
+        Alamofire.request(.GET, String.rootPath() + "/api/blogs/\(self.id)", parameters: nil)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                let json = JSON(object)
+                self.materials = []
+                for material in json["materials"].array! {
+                    let type = material["material_type"].string!
+                    if type == "Text" {
+                        let sentence = material["material"]["sentence"].string!
+                        let order = material["material"]["order"].int!
+                        let blogText = BlogText(text: sentence, order: order)
+                        self.addMaterialAtPosition(blogText, index: 0)
+                    } else {
+                        
+                        let order = material["material"]["order"].int!
+                        let blogImage = BlogImage(image: nil, order: order)
+                        blogImage.imageURL = material["material"]["image"]["url"].string!
+                        self.addMaterialAtPosition(blogImage, index: 0)
+                    }
+                }
                 
-                for blogText in blogTexts { self.saveTextInBackground(blogText) }
-                for blogImage in blogImages { self.saveImageInBackground(blogImage) }
-        }
-    }
-    
-    private func saveTextInBackground(blogText: BlogText) {
-        let params: [String: AnyObject] = [
-            "sentence"   : blogText.text,
-            "blog_id": self.id,
-            "order"  : blogText.order
-        ]
-        Alamofire.request(.POST, String.rootPath() + "/api/texts/", parameters: params)
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
-                }
-                print(object)
-        }
-    }
-    
-    private func saveImageInBackground(blogImage: BlogImage) {
-        let params: [String: AnyObject] = [
-            "blog_id": self.id,
-            "order"  : blogImage.order
-        ]
-        let pass = String.rootPath() + "/api/images/"
-        let httpMethod = Alamofire.Method.POST.rawValue
-
-        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: blogImage.image)
-        Alamofire.upload(urlRequest.0, data: urlRequest.1)
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
-                }
-                print(object)
+                self.materials = self.sortMaterials()
+                callback()
         }
     }
     
@@ -117,6 +121,24 @@ class Blog: NSObject {
             }
         }
         return blogImages
+    }
+    
+    private func sortMaterials() -> [AnyObject] {
+        let mterialsCount = self.materials.count
+        var tmpArray: [AnyObject] = Array(count: mterialsCount, repeatedValue: "aaa")
+        for material in materials {
+            if let blogText = material as? BlogText {
+                tmpArray.insert(blogText, atIndex: blogText.order)
+                tmpArray.removeAtIndex(blogText.order + 1)
+                
+            } else {
+                let blogImage = material as! BlogImage
+                
+                tmpArray.insert(blogImage, atIndex: blogImage.order)
+                tmpArray.removeAtIndex(blogImage.order + 1)
+            }
+        }
+        return tmpArray
     }
     
     

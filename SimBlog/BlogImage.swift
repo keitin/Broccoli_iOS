@@ -9,11 +9,11 @@
 import UIKit
 
 class BlogImage: NSObject {
-    var image: UIImage
+    var image: UIImage?
     var imageURL: String!
     var order: Int
     
-    init(image: UIImage, order: Int) {
+    init(image: UIImage?, order: Int) {
         self.image = image
         self.order = order
     }

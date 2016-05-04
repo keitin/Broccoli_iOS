@@ -11,26 +11,31 @@ import Alamofire
 
 extension NSData {
     
-    class func urlRequestWithComponents(httpMethod: String, urlString: String, parameters: Dictionary<String, AnyObject>, image: UIImage) -> (URLRequestConvertible, NSData) {
-        
-        let imageData = UIImagePNGRepresentation(image)
-        
+    class func urlRequestWithComponents(httpMethod: String, urlString: String, parameters: Dictionary<String, AnyObject>, images: [BlogImage]) -> (URLRequestConvertible, NSData) {
+
+        // create upload data to send
+        let uploadData = NSMutableData()
+
         // create url request to send
         let mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         mutableURLRequest.HTTPMethod = httpMethod
         let boundaryConstant = "myRandomBoundary12345"
         let contentType = "multipart/form-data;boundary=" + boundaryConstant
         mutableURLRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
+    
         
-        // create upload data to send
-        let uploadData = NSMutableData()
+        for blogImage in images {
         
-        // add image
-        uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData("Content-Disposition: form-data; name=\"image\"; filename=\"file.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData("Content-Type: image/png\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData(imageData!)
-        
+            let imageData = UIImagePNGRepresentation(blogImage.image!)
+            
+            // add image
+            uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            uploadData.appendData("Content-Disposition: form-data; name=\"\(blogImage.order)-image\"; filename=\"file.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            uploadData.appendData("Content-Type: image/png\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            uploadData.appendData(imageData!)
+    
+        }
+            
         // add parameters
         for (key, value) in parameters {
             uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)

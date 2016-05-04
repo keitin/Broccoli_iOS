@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DisplayImageCell: UITableViewCell {
     @IBOutlet weak var blogImageView: UIImageView!
@@ -20,6 +21,14 @@ class DisplayImageCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func fillWith(blogImage: BlogImage) {
+        if let image = blogImage.image {
+            blogImageView.image = image
+        } else {
+            blogImageView.sd_setImageWithURL(NSURL(string: blogImage.imageURL))
+        }
     }
     
 }

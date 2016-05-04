@@ -23,6 +23,9 @@ class ShowBlogViewModel: NSObject, UITableViewDataSource {
         self.tableView.dataSource = self
         self.tableView.estimatedRowHeight = 100000
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.blog.findMaterialsInBackground {
+            tableView.reloadData()
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -45,7 +48,7 @@ class ShowBlogViewModel: NSObject, UITableViewDataSource {
         } else {
             if let blogImage = blog.materialAtPosition(indexPath.row) as? BlogImage {
                 let cell = tableView.dequeueReusableCellWithIdentifier("DisplayImageCell", forIndexPath: indexPath) as! DisplayImageCell
-                cell.blogImageView.image = blogImage.image
+                cell.fillWith(blogImage)
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("DisplayTextCell", forIndexPath: indexPath) as! DisplayTextCell

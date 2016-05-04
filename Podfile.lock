@@ -15,6 +15,7 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - SVProgressHUD (2.0.2)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - SDWebImage
+  - SVProgressHUD
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -32,8 +34,9 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
   FBSDKShareKit: 2fd887cce0056bdda91f99b2021d724a4fed8e88
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SVProgressHUD: e4020e23badbd7cc61bc4a80d3c1da57f166a978
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 31c7107e8de019f2dde576bdac98aec977a648cc
+PODFILE CHECKSUM: 5806356739d486cd5b91f8e75bb4b858a3fdc58f
 
 COCOAPODS: 1.0.0.beta.6

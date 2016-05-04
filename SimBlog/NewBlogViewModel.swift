@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, TitleCellDelegate {
     
@@ -102,7 +103,7 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
     }
     
     func addImage(image: UIImage) {
-        blog.addImageAtPostion(image, index: blog.numberOfMaterials)
+        blog.addImageAtPosition(image, index: blog.numberOfMaterials)
         insertBottomRow(tableView)
         let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
         tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
@@ -117,8 +118,12 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
     }
     
     func postBlog(sender: UIBarButtonItem) {
-        blogManeger.addBlogAtPosition(blog, index: 0)
-        viewController.dismissViewControllerAnimated(true, completion: nil)
+        SVProgressHUD.show()
+        blog.saveInbackground {
+            SVProgressHUD.dismiss()
+            self.blogManeger.addBlogAtPosition(self.blog, index: 0)
+            self.viewController.dismissViewControllerAnimated(true, completion: nil)
+        }        
     }
     
     // MARK Table View Private

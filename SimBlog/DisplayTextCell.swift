@@ -36,9 +36,7 @@ class DisplayTextCell: UITableViewCell {
         
         attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
         attributedText.addAttribute(NSKernAttributeName, value: letterSpacing, range: NSMakeRange(0, attributedText.length))
-        print("1111111111")
         sentenceLabel.attributedText = attributedText
-        print("22222222222")
     }
     
 }
