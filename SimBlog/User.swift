@@ -17,6 +17,10 @@ class User: NSObject {
     var facebook_id: String!
     var email: String?
     var token: String!
+    var blogs: [Blog] = []
+    var numberOfBlogs: Int {
+        return blogs.count
+    }
     
     override init() {
         super.init()
@@ -27,6 +31,14 @@ class User: NSObject {
         self.imageURL = attributes["picture"]["data"]["url"].string!
         self.facebook_id = attributes["id"].string!
         self.email = attributes["email"].string
+    }
+    
+    func blogAtPosition(index: Int) -> Blog {
+        return blogs[index]
+    }
+    
+    func addBlogAtPosition(blog: Blog, index: Int) {
+        blogs.insert(blog, atIndex: index)
     }
     
     func issueToken() {
@@ -65,6 +77,27 @@ class User: NSObject {
                 let json = JSON(object)
                 self.id = json["user"]["id"].int
                 callback()
+        }
+    }
+    
+    func getBlogsInBackground(callback: () -> Void) {
+        Alamofire.request(.GET, String.rootPath() + "/api/blogs/?user_id=\(self.id)", parameters: nil)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    print("えらー")
+                    print(response)
+                    return
+                }
+                let json = JSON(object)
+                for object in json["blogs"].array! {
+                    let blog = Blog()
+                    blog.title = object["blog"]["title"].string
+                    blog.sentence = object["blog"]["sentence"].string
+                    blog.topImageURL = object["blog"]["image"]["url"].string
+                    blog.id = object["blog"]["id"].int
+                    self.blogs.insert(blog, atIndex: 0)
+                    callback()
+                }
         }
     }
     

@@ -41,22 +41,14 @@ class IndexBlogViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedBlog = blogManager.blogAtPosition(indexPath.row)
-        performSegueWithIdentifier("showBlog", sender: nil)
+        let showBlogVC = UIStoryboard.viewControllerWith("Main", identifier: "ShowBlogViewController") as! ShowBlogViewController
+        showBlogVC.blog = blogManager.blogAtPosition(indexPath.row)
+        self.navigationController?.pushViewController(showBlogVC, animated: true)
     }
     
     func modalNewBlog(sender: UIBarButtonItem) {
         performSegueWithIdentifier("ModalNewBlog", sender: nil)
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showBlog" {
-            let showBlogVC = segue.destinationViewController as! ShowBlogViewController
-            showBlogVC.blog = selectedBlog
-        }
-    }
-    
-    
 
     /*
     // MARK: - Navigation

@@ -13,12 +13,17 @@ class ShowUserViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     let showUserViewModel = ShowUserViewModel()
     let currentUser = CurrentUser.sharedInstance
+    var selectedBlog: Blog!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "MY PAGE"
         showUserViewModel.didLoad(tableView, user: currentUser)
         tableView.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        showUserViewModel.willAppear()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,5 +38,11 @@ class ShowUserViewController: UIViewController, UITableViewDelegate {
         } else {
             return 165
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let showBlogVC = UIStoryboard.viewControllerWith("Main", identifier: "ShowBlogViewController") as! ShowBlogViewController
+        showBlogVC.blog = currentUser.blogAtPosition(indexPath.row)
+        self.navigationController?.pushViewController(showBlogVC, animated: true)
     }
 }

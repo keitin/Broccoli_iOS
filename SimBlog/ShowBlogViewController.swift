@@ -10,6 +10,7 @@ import UIKit
 
 class ShowBlogViewController: UIViewController {
     
+
     @IBOutlet weak var tableView: UITableView!
     var blog: Blog!
     let showBlogViewModel = ShowBlogViewModel()

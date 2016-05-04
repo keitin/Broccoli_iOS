@@ -14,7 +14,7 @@ class IndexBlogViewModel: NSObject, UITableViewDataSource {
     let blogManager = BlogManager.sharedInstance
     
     func didLoad(tableView: UITableView) {
-        blogManager.getBlogsInbackgroundWithBlock { 
+        blogManager.getBlogsInbackgroundWithBlock(user: nil) { 
             self.insertTopRow(tableView)
         }
         self.tableView = tableView

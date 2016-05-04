@@ -51,7 +51,8 @@ class Blog: NSObject {
         
         var params: [String: AnyObject] = [
             "title": self.title,
-            "sentence": self.sentence
+            "sentence": self.sentence,
+            "user_id": CurrentUser.sharedInstance.id
         ]
         
         for blogText in blogTexts {

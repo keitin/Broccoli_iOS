@@ -16,6 +16,7 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
     var tableView: UITableView!
     var viewController: NewBlogViewController!
     var activeTextView: UITextView?
+    let currentUser = CurrentUser.sharedInstance
     
     override init() {
         super.init()
@@ -122,6 +123,7 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         blog.saveInbackground {
             SVProgressHUD.dismiss()
             self.blogManeger.addBlogAtPosition(self.blog, index: 0)
+            self.currentUser.addBlogAtPosition(self.blog, index: 0)
             self.viewController.dismissViewControllerAnimated(true, completion: nil)
         }        
     }

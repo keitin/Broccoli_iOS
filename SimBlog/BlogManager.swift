@@ -30,8 +30,8 @@ class BlogManager: NSObject {
     }
     
     //API
-    func getBlogsInbackgroundWithBlock(callback: () -> Void) {
-        Alamofire.request(.GET, String.rootPath() + "/api/blogs/", parameters: nil)
+    func getBlogsInbackgroundWithBlock(user user: User?, callback: () -> Void) {
+        Alamofire.request(.GET, String.rootPath() + "/api/blogs/?user_id=\(user?.id)", parameters: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     print("えらー")

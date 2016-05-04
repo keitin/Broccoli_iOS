@@ -8,17 +8,17 @@
         <!--Show Blog View Controller-->
         <scene sceneID="Dm3-fF-3bd">
             <objects>
-                <viewController id="dCc-0w-WQ3" customClass="ShowBlogViewController" customModule="SimBlog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowBlogViewController" id="dCc-0w-WQ3" customClass="ShowBlogViewController" customModule="SimBlog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dWR-Ep-29e"/>
                         <viewControllerLayoutGuide type="bottom" id="Ypn-72-cYu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Ns-qd-hX4">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PXD-Qr-yGi">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -31,12 +31,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="PXD-Qr-yGi" id="XI5-3c-Ma9"/>
+                        <outlet property="tableView" destination="PXD-Qr-yGi" id="sl8-TK-D2D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucr-WH-9RJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="-246"/>
+            <point key="canvasLocation" x="1934" y="-954"/>
         </scene>
         <!--New Blog View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -158,7 +158,6 @@
                     <connections>
                         <outlet property="tableView" destination="20m-Hr-iFt" id="mVY-HD-WKJ"/>
                         <segue destination="gid-JU-HIP" kind="presentation" identifier="ModalNewBlog" id="cQs-xU-5nV"/>
-                        <segue destination="dCc-0w-WQ3" kind="show" identifier="showBlog" id="cTg-Ka-zon"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3q-0T-nhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="az5-Um-4RG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331" y="-1237"/>
+            <point key="canvasLocation" x="1099" y="-987"/>
         </scene>
         <!--Item-->
         <scene sceneID="0IU-ha-aia">
