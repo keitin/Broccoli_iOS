@@ -71,6 +71,7 @@ class Blog: NSObject {
                 }
                 let json = JSON(object)
                 self.id = json["blog"]["id"].int
+                self.user = User(apiAttributes: json["user"])
                 callback()
         }
     }

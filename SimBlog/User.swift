@@ -42,6 +42,7 @@ class User: NSObject {
     }
     
     func blogAtPosition(index: Int) -> Blog {
+        
         return blogs[index]
     }
     

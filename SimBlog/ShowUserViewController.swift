@@ -43,7 +43,8 @@ class ShowUserViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let showBlogVC = UIStoryboard.viewControllerWith("Main", identifier: "ShowBlogViewController") as! ShowBlogViewController
-        showBlogVC.blog = currentUser.blogAtPosition(indexPath.row)
+        let user = selectedUser ?? currentUser
+        showBlogVC.blog = user.blogAtPosition(indexPath.row)
         self.navigationController?.pushViewController(showBlogVC, animated: true)
     }
 }

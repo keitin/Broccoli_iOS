@@ -49,8 +49,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xGg-Zm-Nbh">
                                         <rect key="frame" x="0.0" y="60" width="192" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSCF5417.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="GMe-gp-YoD" customClass="ProfileImageView" customModule="SimBlog" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GMe-gp-YoD" customClass="ProfileImageView" customModule="SimBlog" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="BUH-dO-2lf"/>
                                                     <constraint firstAttribute="width" constant="60" id="gLc-Xm-FtP"/>
@@ -97,7 +98,4 @@
             <point key="canvasLocation" x="523" y="338.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="DSCF5417.JPG" width="3264" height="2176"/>
-    </resources>
 </document>
