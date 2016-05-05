@@ -42,7 +42,6 @@ class User: NSObject {
     }
     
     func blogAtPosition(index: Int) -> Blog {
-        
         return blogs[index]
     }
     
@@ -89,8 +88,11 @@ class User: NSObject {
         }
     }
     
-    func getBlogsInBackground(callback: () -> Void) {
-        Alamofire.request(.GET, String.rootPath() + "/api/blogs/?user_id=\(self.id)", parameters: nil)
+    func getBlogsInBackground(page: Int, callback: () -> Void) {
+        let params = [
+            "page": page
+        ]
+        Alamofire.request(.GET, String.rootPath() + "/api/blogs/?user_id=\(self.id)", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     print("えらー")
@@ -99,13 +101,9 @@ class User: NSObject {
                 }
                 let json = JSON(object)
                 for object in json["blogs"].array! {
-                    let blog = Blog()
-                    blog.title = object["blog"]["title"].string
-                    blog.sentence = object["blog"]["sentence"].string
-                    blog.topImageURL = object["blog"]["image"]["url"].string
-                    blog.id = object["blog"]["id"].int
+                    let blog = Blog(apiAttributes: object["blog"])
                     blog.user = User(apiAttributes: object["user"])
-                    self.blogs.insert(blog, atIndex: 0)
+                    self.blogs.insert(blog, atIndex: self.numberOfBlogs)
                     callback()
                 }
         }

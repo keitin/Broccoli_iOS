@@ -22,6 +22,13 @@ class Blog: NSObject {
         return materials.count
     }
     
+    init(apiAttributes: JSON) {
+        self.title = apiAttributes["title"].string
+        self.sentence = apiAttributes["sentence"].string
+        self.topImageURL = apiAttributes["image"]["url"].string
+        self.id = apiAttributes["id"].int
+    }
+    
     override init() {
         super.init()
         addTextAtPosition("", index: 0)

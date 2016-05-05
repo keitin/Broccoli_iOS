@@ -37,13 +37,22 @@ class IndexBlogViewController: UIViewController, UITableViewDelegate, BlogCellDe
     
     //MARK - TableView Delagate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 165
+        if indexPath.section == 0 {
+            return 165
+        } else {
+            return 50
+        }
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let showBlogVC = UIStoryboard.viewControllerWith("Main", identifier: "ShowBlogViewController") as! ShowBlogViewController
-        showBlogVC.blog = blogManager.blogAtPosition(indexPath.row)
-        self.navigationController?.pushViewController(showBlogVC, animated: true)
+        if indexPath.section == 0 {
+            let showBlogVC = UIStoryboard.viewControllerWith("Main", identifier: "ShowBlogViewController") as! ShowBlogViewController
+            showBlogVC.blog = blogManager.blogAtPosition(indexPath.row)
+            self.navigationController?.pushViewController(showBlogVC, animated: true)
+        } else if indexPath.section == 1 {
+            indexBlogViewModel.loadMoreItems()
+        }
     }
     
     func modalNewBlog(sender: UIBarButtonItem) {
