@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IndexBlogViewController: UIViewController, UITableViewDelegate {
+class IndexBlogViewController: UIViewController, UITableViewDelegate, BlogCellDelegate {
     @IBOutlet weak var tableView: UITableView!
     let indexBlogViewModel = IndexBlogViewModel()
     let blogManager = BlogManager.sharedInstance
@@ -17,7 +17,7 @@ class IndexBlogViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Blog"
-        indexBlogViewModel.didLoad(tableView)
+        indexBlogViewModel.didLoad(tableView, viewController: self)
         tableView.delegate = self
     }
     
@@ -48,6 +48,12 @@ class IndexBlogViewController: UIViewController, UITableViewDelegate {
     
     func modalNewBlog(sender: UIBarButtonItem) {
         performSegueWithIdentifier("ModalNewBlog", sender: nil)
+    }
+    
+    func didTapProfileImageView(blog: Blog) {
+        let showUserVC = UIStoryboard.viewControllerWith("Main", identifier: "ShowUserViewController") as! ShowUserViewController
+        showUserVC.selectedUser = blog.user
+        navigationController?.pushViewController(showUserVC, animated: true)
     }
 
     /*

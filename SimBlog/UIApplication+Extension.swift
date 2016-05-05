@@ -12,7 +12,7 @@ extension UIApplication {
     
     class func redirectToInitialViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InitialNavigationController")
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InitialTabBarController")
         UIApplication.sharedApplication().keyWindow?.rootViewController = initialViewController
     }
     

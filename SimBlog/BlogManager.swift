@@ -45,6 +45,7 @@ class BlogManager: NSObject {
                     blog.sentence = object["blog"]["sentence"].string
                     blog.topImageURL = object["blog"]["image"]["url"].string
                     blog.id = object["blog"]["id"].int
+                    blog.user = User(apiAttributes: object["user"])
                     self.blogs.insert(blog, atIndex: 0)
                     callback()
                 }

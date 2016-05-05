@@ -17,6 +17,7 @@ class Blog: NSObject {
     var topImage: UIImage?
     var id: Int!
     var topImageURL: String?
+    var user: User!
     var numberOfMaterials: Int {
         return materials.count
     }

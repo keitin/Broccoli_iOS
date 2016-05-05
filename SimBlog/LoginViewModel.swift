@@ -45,7 +45,7 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
                 return
             }
             let json = JSON(result)
-            let user = User(attributes: json)
+            let user = User(facebookAttributes: json)
             user.issueToken()
             user.saveInbackground({ 
                 user.saveCurrentUserInLocal()

@@ -26,11 +26,19 @@ class User: NSObject {
         super.init()
     }
     
-    init(attributes: JSON) {
-        self.name = attributes["name"].string!
-        self.imageURL = attributes["picture"]["data"]["url"].string!
-        self.facebook_id = attributes["id"].string!
-        self.email = attributes["email"].string
+    init(facebookAttributes: JSON) {
+        self.name = facebookAttributes["name"].string!
+        self.imageURL = facebookAttributes["picture"]["data"]["url"].string!
+        self.facebook_id = facebookAttributes["id"].string!
+        self.email = facebookAttributes["email"].string
+    }
+    
+    init(apiAttributes: JSON) {
+        self.name = apiAttributes["name"].string
+        self.imageURL = apiAttributes["image_url"].string
+        self.email = apiAttributes["email"].string
+        self.facebook_id = apiAttributes["facebook_id"].string
+        self.id = apiAttributes["id"].int
     }
     
     func blogAtPosition(index: Int) -> Blog {
@@ -95,6 +103,7 @@ class User: NSObject {
                     blog.sentence = object["blog"]["sentence"].string
                     blog.topImageURL = object["blog"]["image"]["url"].string
                     blog.id = object["blog"]["id"].int
+                    blog.user = User(apiAttributes: object["user"])
                     self.blogs.insert(blog, atIndex: 0)
                     callback()
                 }

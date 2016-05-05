@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowBlogViewController: UIViewController {
+class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate {
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -17,7 +17,7 @@ class ShowBlogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showBlogViewModel.didLoad(blog, tableView: tableView)
+        showBlogViewModel.didLoad(blog, tableView: tableView, viewController: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +25,11 @@ class ShowBlogViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func didTapProfileImageView(blog: Blog) {
+        let showUserVC = UIStoryboard.viewControllerWith("Main", identifier: "ShowUserViewController") as! ShowUserViewController
+        showUserVC.selectedUser = blog.user
+        navigationController?.pushViewController(showUserVC, animated: true)
+    }
 
     /*
     // MARK: - Navigation

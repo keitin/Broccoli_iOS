@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,32 +15,59 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mdj-nQ-XYb">
-                        <rect key="frame" x="0.0" y="0.5" width="320" height="213"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
                         <color key="backgroundColor" red="0.35438579070123061" green="0.73311769280275207" blue="0.98857849836349487" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="213" id="Xq5-dh-bVo"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1YC-g2-Mmo">
-                        <rect key="frame" x="0.0" y="0.5" width="320" height="213"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WkF-Mn-cCJ">
+                                <rect key="frame" x="16" y="50" width="288" height="147"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-l7-cqM">
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="87"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Od-Ss-hcM">
+                                        <rect key="frame" x="0.0" y="87" width="206" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSCF5417.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="YDx-dN-u6r" customClass="ProfileImageView" customModule="SimBlog" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="6xX-ha-OJ5"/>
+                                                    <constraint firstAttribute="height" constant="60" id="DWB-PM-kYZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="matsushita keita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-oV-Ct1">
+                                                <rect key="frame" x="68" y="0.0" width="138" height="60"/>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.73333333329999995" blue="0.039215686270000001" alpha="0.34034700920245398" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WkF-Mn-cCJ" firstAttribute="leading" secondItem="1YC-g2-Mmo" secondAttribute="leading" constant="16" id="2A2-pF-BqK"/>
+                            <constraint firstAttribute="bottom" secondItem="WkF-Mn-cCJ" secondAttribute="bottom" constant="16" id="Kj1-RU-RdI"/>
+                            <constraint firstItem="WkF-Mn-cCJ" firstAttribute="top" secondItem="1YC-g2-Mmo" secondAttribute="top" constant="50" id="Tis-Kz-iXq"/>
+                            <constraint firstAttribute="trailing" secondItem="WkF-Mn-cCJ" secondAttribute="trailing" constant="16" id="ekN-CH-M2v"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-l7-cqM">
-                        <rect key="frame" x="16" y="102" width="288" height="103.5"/>
-                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="1YC-g2-Mmo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BwC-dU-LnO"/>
                     <constraint firstAttribute="trailing" secondItem="Mdj-nQ-XYb" secondAttribute="trailing" id="E9Z-at-6X5"/>
                     <constraint firstItem="1YC-g2-Mmo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IN1-Or-oxh"/>
-                    <constraint firstItem="mqn-l7-cqM" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="O8T-X5-MeE"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="mqn-l7-cqM" secondAttribute="trailing" constant="8" id="Ofe-FR-fLd"/>
-                    <constraint firstItem="mqn-l7-cqM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="XAQ-XG-gQR"/>
                     <constraint firstAttribute="bottom" secondItem="Mdj-nQ-XYb" secondAttribute="bottom" id="a9K-Iw-7EE"/>
-                    <constraint firstItem="mqn-l7-cqM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="94" id="bw1-VP-FxP"/>
                     <constraint firstItem="Mdj-nQ-XYb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lVa-6R-ibT"/>
                     <constraint firstAttribute="bottom" secondItem="1YC-g2-Mmo" secondAttribute="bottom" id="oio-48-DGu"/>
                     <constraint firstAttribute="trailing" secondItem="1YC-g2-Mmo" secondAttribute="trailing" id="vCh-e4-7eN"/>
@@ -49,10 +75,15 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="nameLabel" destination="zVJ-oV-Ct1" id="k9n-Cm-c5g"/>
+                <outlet property="profileImageView" destination="YDx-dN-u6r" id="z8F-Fa-jhW"/>
                 <outlet property="titleLabel" destination="mqn-l7-cqM" id="KZd-EB-lLK"/>
                 <outlet property="topImageView" destination="Mdj-nQ-XYb" id="0Zs-Qw-8mY"/>
             </connections>
             <point key="canvasLocation" x="147" y="405"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="DSCF5417.JPG" width="3264" height="2176"/>
+    </resources>
 </document>

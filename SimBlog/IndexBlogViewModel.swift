@@ -11,12 +11,14 @@ import UIKit
 class IndexBlogViewModel: NSObject, UITableViewDataSource {
     
     var tableView: UITableView!
+    var viewController: IndexBlogViewController!
     let blogManager = BlogManager.sharedInstance
     
-    func didLoad(tableView: UITableView) {
+    func didLoad(tableView: UITableView, viewController: IndexBlogViewController) {
         blogManager.getBlogsInbackgroundWithBlock(user: nil) { 
             self.insertTopRow(tableView)
         }
+        self.viewController = viewController
         self.tableView = tableView
         tableView.dataSource = self
         tableView.registerCell("BlogCell")
@@ -33,8 +35,10 @@ class IndexBlogViewModel: NSObject, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BlogCell", forIndexPath: indexPath) as! BlogCell
         cell.fillWith(blogManager.blogAtPosition(indexPath.row))
+        cell.delegate = viewController
         return cell
     }
+    
     
     // MARK Table View Private
     private func insertTopRow(tableView: UITableView) {

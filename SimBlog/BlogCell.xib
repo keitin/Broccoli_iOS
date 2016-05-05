@@ -20,35 +20,59 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAn-mY-pAy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="164.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ffv-ls-C5t">
-                                <rect key="frame" x="8" y="97" width="304" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PNp-Ff-SKZ">
+                                <rect key="frame" x="16" y="29" width="288" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日も１日頑張りました。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRU-hb-23f">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ffv-ls-C5t">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日も１日頑張りました。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRU-hb-23f">
+                                                <rect key="frame" x="0.0" y="0.0" width="286" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="w1r-Js-EDr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ほげほげほげほげほげほげほえげほげほげほげほげほげほげほげほげほげほえげほげほげほげ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDJ-wa-LR5">
+                                                <rect key="frame" x="0.0" y="34" width="286" height="26"/>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="w1r-Js-EDr"/>
+                                            <constraint firstAttribute="height" constant="60" id="wK5-Zu-3NU"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ほげほげほげほげほげほげほえげほげほげほげほげほげほげほげほげほげほえげほげほげほげ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDJ-wa-LR5">
-                                        <rect key="frame" x="0.0" y="34" width="304" height="26"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xGg-Zm-Nbh">
+                                        <rect key="frame" x="0.0" y="60" width="192" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSCF5417.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="GMe-gp-YoD" customClass="ProfileImageView" customModule="SimBlog" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="BUH-dO-2lf"/>
+                                                    <constraint firstAttribute="width" constant="60" id="gLc-Xm-FtP"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="keita matsushita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aa-3X-k3c">
+                                                <rect key="frame" x="67" y="20" width="125" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="wK5-Zu-3NU"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.18736790986820973" green="0.22581311260342352" blue="0.47287441821808507" alpha="0.11779860046012269" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ffv-ls-C5t" firstAttribute="leading" secondItem="oAn-mY-pAy" secondAttribute="leading" constant="8" id="Cxd-mL-U6t"/>
-                            <constraint firstAttribute="bottom" secondItem="ffv-ls-C5t" secondAttribute="bottom" constant="8" id="Qvk-T0-ZSZ"/>
-                            <constraint firstAttribute="trailing" secondItem="ffv-ls-C5t" secondAttribute="trailing" constant="8" id="dSO-3S-KsB"/>
+                            <constraint firstItem="PNp-Ff-SKZ" firstAttribute="leading" secondItem="oAn-mY-pAy" secondAttribute="leading" constant="16" id="0hn-Ju-Lqb"/>
+                            <constraint firstItem="PNp-Ff-SKZ" firstAttribute="top" secondItem="oAn-mY-pAy" secondAttribute="top" constant="29" id="WbJ-i9-nqY"/>
+                            <constraint firstAttribute="bottom" secondItem="PNp-Ff-SKZ" secondAttribute="bottom" constant="16" id="Zw0-9H-dza"/>
+                            <constraint firstAttribute="trailing" secondItem="PNp-Ff-SKZ" secondAttribute="trailing" constant="16" id="b11-fE-GaD"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -64,6 +88,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="nameLabel" destination="5aa-3X-k3c" id="6WM-n4-h0k"/>
+                <outlet property="profileImageView" destination="GMe-gp-YoD" id="9hY-xy-4Pl"/>
                 <outlet property="sentenceLabel" destination="BDJ-wa-LR5" id="tUk-Tv-Zt1"/>
                 <outlet property="titleLabel" destination="JRU-hb-23f" id="RbU-F5-bM9"/>
                 <outlet property="topImageView" destination="AOu-qB-B02" id="8D3-9n-lQi"/>
@@ -71,4 +97,7 @@
             <point key="canvasLocation" x="523" y="338.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="DSCF5417.JPG" width="3264" height="2176"/>
+    </resources>
 </document>

@@ -18,6 +18,7 @@
 		32492C3C1CD9F1D100B420B0 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32492C3A1CD9F1D100B420B0 /* ProfileCell.swift */; };
 		32492C3D1CD9F1D100B420B0 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32492C3B1CD9F1D100B420B0 /* ProfileCell.xib */; };
 		32492C401CDA430D00B420B0 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32492C3F1CDA430D00B420B0 /* UIStoryboard+Extension.swift */; };
+		32492C421CDAEA5300B420B0 /* DSCF5417.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 32492C411CDAEA5300B420B0 /* DSCF5417.JPG */; };
 		324E47111CD1D43B003EC6AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E47101CD1D43B003EC6AC /* LoginViewController.swift */; };
 		324E47141CD1E09C003EC6AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E47131CD1E09C003EC6AC /* User.swift */; };
 		324E47171CD1E200003EC6AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E47161CD1E200003EC6AC /* LoginView.swift */; };
@@ -56,6 +57,7 @@
 		3284AF211CD0EE3B005AB294 /* DisplayTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF1F1CD0EE3B005AB294 /* DisplayTextCell.xib */; };
 		3284AF251CD0EF18005AB294 /* DisplayImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */; };
 		3284AF261CD0EF18005AB294 /* DisplayImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */; };
+		32B42AEA1CDB6F18009EC63C /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B42AE91CDB6F18009EC63C /* ProfileImageView.swift */; };
 		8CB9392937AC7BA0E0536964 /* Pods_SimBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D43FC246B86AD09E3086FD0 /* Pods_SimBlog.framework */; };
 		97A22A91DD20F45FE56E0363 /* Pods_SimBlogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,7 @@
 		32492C3A1CD9F1D100B420B0 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		32492C3B1CD9F1D100B420B0 /* ProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 		32492C3F1CDA430D00B420B0 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		32492C411CDAEA5300B420B0 /* DSCF5417.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSCF5417.JPG; sourceTree = "<group>"; };
 		324E47101CD1D43B003EC6AC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		324E47131CD1E09C003EC6AC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		324E47161CD1E200003EC6AC /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 		3284AF1F1CD0EE3B005AB294 /* DisplayTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayTextCell.xib; sourceTree = "<group>"; };
 		3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayImageCell.swift; sourceTree = "<group>"; };
 		3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayImageCell.xib; sourceTree = "<group>"; };
+		32B42AE91CDB6F18009EC63C /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimBlogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		641294EDC7C819DEAF0255C6 /* Pods-SimBlogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D99681E132D6A3423EAD820 /* Pods-SimBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 			children = (
 				32492C391CD9F1B700B420B0 /* Login */,
 				32492C3E1CD9F1D600B420B0 /* Profile Cell */,
+				32B42AE91CDB6F18009EC63C /* ProfileImageView.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 		326A74211CCFD3440015DE7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				32492C411CDAEA5300B420B0 /* DSCF5417.JPG */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 				32492C3D1CD9F1D100B420B0 /* ProfileCell.xib in Resources */,
 				326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */,
 				32492C331CD9ED1E00B420B0 /* Login.storyboard in Resources */,
+				32492C421CDAEA5300B420B0 /* DSCF5417.JPG in Resources */,
 				326A74091CCFC7540015DE7D /* TextCell.xib in Resources */,
 				326A741D1CCFD0BD0015DE7D /* ImageCell.xib in Resources */,
 				326A73DD1CCFC4830015DE7D /* Main.storyboard in Resources */,
@@ -770,6 +777,7 @@
 				32492C381CD9F0C800B420B0 /* ShowUserViewModel.swift in Sources */,
 				3237B8831CD2F22B00ABD9F9 /* CurrentUser.swift in Sources */,
 				3284AF081CD06E24005AB294 /* BlogManager.swift in Sources */,
+				32B42AEA1CDB6F18009EC63C /* ProfileImageView.swift in Sources */,
 				324E471B1CD1E318003EC6AC /* LoginViewModel.swift in Sources */,
 				326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */,
 				326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */,

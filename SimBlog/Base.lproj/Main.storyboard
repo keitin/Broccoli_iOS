@@ -234,7 +234,7 @@
         <!--Show User View Controller-->
         <scene sceneID="TYc-uO-cro">
             <objects>
-                <viewController id="C7v-bq-CNe" customClass="ShowUserViewController" customModule="SimBlog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowUserViewController" id="C7v-bq-CNe" customClass="ShowUserViewController" customModule="SimBlog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C2z-XM-IDS"/>
                         <viewControllerLayoutGuide type="bottom" id="Lv9-zI-ikh"/>

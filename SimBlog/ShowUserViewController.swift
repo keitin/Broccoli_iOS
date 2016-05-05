@@ -13,12 +13,13 @@ class ShowUserViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     let showUserViewModel = ShowUserViewModel()
     let currentUser = CurrentUser.sharedInstance
-    var selectedBlog: Blog!
+    var selectedUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "MY PAGE"
-        showUserViewModel.didLoad(tableView, user: currentUser)
+        let user = selectedUser ?? currentUser
+        showUserViewModel.didLoad(tableView, user: user)
         tableView.delegate = self
     }
     

@@ -17,7 +17,7 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
     func didLoad(tableView: UITableView, user: User) {
         self.tableView = tableView
         self.selectedUser = user
-        self.currentUser.getBlogsInBackground { 
+        self.selectedUser.getBlogsInBackground { 
             self.insertTopRow(tableView)
         }
         tableView.dataSource = self
