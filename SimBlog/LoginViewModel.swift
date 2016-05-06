@@ -49,6 +49,8 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
             user.issueToken()
             user.saveInbackground({ 
                 user.saveCurrentUserInLocal()
+                let currentUser = CurrentUser.sharedInstance
+                currentUser.getCurrentUserInLocal()
                 UIApplication.redirectToInitialViewController()
             })
         })
