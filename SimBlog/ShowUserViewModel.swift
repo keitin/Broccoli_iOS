@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ShowUserViewModel: NSObject, UITableViewDataSource {
+class ShowUserViewModel: NSObject, UITableViewDataSource, ProfileCellDelegate {
     
     var tableView: UITableView!
     let currentUser = CurrentUser.sharedInstance
     var selectedUser: User!
     var page = 1
+    var isFollow = false
     
     func didLoad(tableView: UITableView, user: User) {
         self.tableView = tableView
@@ -48,6 +49,7 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell", forIndexPath: indexPath) as! ProfileCell
+            cell.delegate = self
             cell.fillWith(selectedUser)
             return cell
         } else if indexPath.section == 1 {
@@ -65,6 +67,20 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
         self.selectedUser.getBlogsInBackground(page) {
             self.insertTopRow(self.tableView)
         }
+    }
+    
+    //MARK - Profile Cell Delegate
+    func didTappedFollowButton(button: UIButton) {
+        if button.selected == false {
+            currentUser.follow(selectedUser) {
+                button.selected = true
+            }
+        } else {
+            currentUser.unfollow(selectedUser) {
+                button.selected = false
+            }
+        }
+        
     }
     
     // MARK Table View Private

@@ -27,10 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let currentUser = CurrentUser.sharedInstance
             currentUser.getCurrentUserInLocal()
-            print(currentUser.name)
-            print(currentUser.email)
-            print(currentUser.id)
-            print(currentUser.facebook_id)
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InitialTabBarController")
             self.window?.rootViewController = initialViewController
         } else {

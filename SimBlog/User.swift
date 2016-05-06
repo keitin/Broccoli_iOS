@@ -18,6 +18,7 @@ class User: NSObject {
     var email: String?
     var token: String!
     var blogs: [Blog] = []
+    var follows: [User] = []
     var numberOfBlogs: Int {
         return blogs.count
     }
