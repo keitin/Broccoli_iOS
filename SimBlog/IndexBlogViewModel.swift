@@ -27,7 +27,7 @@ class IndexBlogViewModel: NSObject, UITableViewDataSource {
     }
     
     func willAppear() {
-        insertTopRow(tableView)
+        insertNewBlogToRow(tableView)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -70,6 +70,15 @@ class IndexBlogViewModel: NSObject, UITableViewDataSource {
         if differenceIndex > 0 {
             for _ in 1...differenceIndex {
                 tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: blogManager.numberOfBlogs - 1, inSection: 0)], withRowAnimation: .Fade)
+            }
+        }
+    }
+    
+    private func insertNewBlogToRow(tableView: UITableView) {
+        let differenceIndex = blogManager.numberOfBlogs - tableView.numberOfRowsInSection(0)
+        if differenceIndex > 0 {
+            for _ in 1...differenceIndex {
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Fade)
             }
         }
     }

@@ -28,7 +28,7 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
     }
     
     func willAppear() {
-        insertTopRow(tableView)
+        insertNewBlogToRow(tableView)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -76,4 +76,14 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
             }
         }
     }
+    
+    private func insertNewBlogToRow(tableView: UITableView) {
+        let differenceIndex = selectedUser.numberOfBlogs - tableView.numberOfRowsInSection(1)
+        if differenceIndex > 0 {
+            for _ in 1...differenceIndex {
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 1)], withRowAnimation: .Fade)
+            }
+        }
+    }
+
 }
