@@ -164,6 +164,39 @@
             </objects>
             <point key="canvasLocation" x="1099" y="-246"/>
         </scene>
+        <!--Index User View Controller-->
+        <scene sceneID="Tpj-m6-cBk">
+            <objects>
+                <viewController storyboardIdentifier="IndexUserViewController" id="nUz-Br-tGa" customClass="IndexUserViewController" customModule="SimBlog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v5k-2F-c6o"/>
+                        <viewControllerLayoutGuide type="bottom" id="RUE-es-FB4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xtR-1q-FTe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ufg-Du-Xim">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ufg-Du-Xim" firstAttribute="top" secondItem="v5k-2F-c6o" secondAttribute="bottom" id="3ms-ic-Oue"/>
+                            <constraint firstItem="RUE-es-FB4" firstAttribute="top" secondItem="Ufg-Du-Xim" secondAttribute="bottom" id="8Id-h2-yYA"/>
+                            <constraint firstAttribute="trailing" secondItem="Ufg-Du-Xim" secondAttribute="trailing" id="d5k-gK-0Tx"/>
+                            <constraint firstItem="Ufg-Du-Xim" firstAttribute="leading" secondItem="xtR-1q-FTe" secondAttribute="leading" id="dFL-yl-2Jj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Ufg-Du-Xim" id="ZID-5t-Sxb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDg-7x-dDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2017" y="58"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dXA-7S-rvP">
             <objects>

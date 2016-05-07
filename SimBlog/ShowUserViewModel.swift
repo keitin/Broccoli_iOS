@@ -8,15 +8,17 @@
 
 import UIKit
 
-class ShowUserViewModel: NSObject, UITableViewDataSource, ProfileCellDelegate {
+class ShowUserViewModel: NSObject, UITableViewDataSource {
     
     var tableView: UITableView!
+    var viewController: ShowUserViewController!
     let currentUser = CurrentUser.sharedInstance
     var selectedUser: User!
     var page = 1
     var isFollow = false
     
-    func didLoad(tableView: UITableView, user: User) {
+    func didLoad(viewController: ShowUserViewController, tableView: UITableView, user: User) {
+        self.viewController = viewController
         self.tableView = tableView
         self.selectedUser = user
         self.selectedUser.getBlogsInBackground(page) {
@@ -49,7 +51,7 @@ class ShowUserViewModel: NSObject, UITableViewDataSource, ProfileCellDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell", forIndexPath: indexPath) as! ProfileCell
-            cell.delegate = self
+            cell.delegate = viewController
             cell.fillWith(selectedUser)
             return cell
         } else if indexPath.section == 1 {
@@ -67,20 +69,6 @@ class ShowUserViewModel: NSObject, UITableViewDataSource, ProfileCellDelegate {
         self.selectedUser.getBlogsInBackground(page) {
             self.insertTopRow(self.tableView)
         }
-    }
-    
-    //MARK - Profile Cell Delegate
-    func didTappedFollowButton(button: UIButton) {
-        if button.selected == false {
-            currentUser.follow(selectedUser) {
-                button.selected = true
-            }
-        } else {
-            currentUser.unfollow(selectedUser) {
-                button.selected = false
-            }
-        }
-        
     }
     
     // MARK Table View Private

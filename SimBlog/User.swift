@@ -19,9 +19,11 @@ class User: NSObject {
     var token: String!
     var blogs: [Blog] = []
     var follows: [User] = []
-    var numberOfBlogs: Int {
-        return blogs.count
-    }
+    var followers: [User] = []
+    var numberOfBlogs: Int { return blogs.count }
+    var numberOfFollows: Int { return follows.count }
+    var numberOfFollowers: Int { return followers.count }
+    
     
     override init() {
         super.init()
@@ -109,6 +111,40 @@ class User: NSObject {
                 }
         }
     }
+    
+    //MARK User Follow etc
+    func getFollowsInBackground(callback: () -> Void) {
+        self.follows = []
+        Alamofire.request(.GET, String.rootPath() + "/api/users/\(self.id)/following", parameters: nil)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                let json = JSON(object)
+                for followUser in json["follows"].array! {
+                    let user = User(apiAttributes: followUser["follow_user"])
+                    self.follows.insert(user, atIndex: 0)
+                    callback()
+                }
+        }
+    }
+    
+    func getFollowersInBackground(callback: () -> Void) {
+        self.followers = []
+        Alamofire.request(.GET, String.rootPath() + "/api/users/\(self.id)/followers", parameters: nil)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                let json = JSON(object)
+                for followerUser in json["followers"].array! {
+                    let user = User(apiAttributes: followerUser["follower_user"])
+                    self.followers.insert(user, atIndex: 0)
+                    callback()
+                }
+        }
+    }
+
     
     
     //MAEK - User Defaults

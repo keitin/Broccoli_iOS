@@ -11,9 +11,13 @@ import SDWebImage
 
 @objc protocol ProfileCellDelegate {
     func didTappedFollowButton(button: UIButton)
+    func didTappedFollowerButton(button: UIButton)
+    func didTappedFollowingButton(button: UIButton)
 }
 
 class ProfileCell: UITableViewCell {
+    @IBOutlet weak var followingButton: UIButton!
+    @IBOutlet weak var followerButton: UIButton!
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -24,6 +28,8 @@ class ProfileCell: UITableViewCell {
         // Initialization code
         layoutProfileImage()
         layoutFollowButton()
+        layoutFollowingButton()
+        layoutFollowerButton()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -43,9 +49,17 @@ class ProfileCell: UITableViewCell {
         }
     }
     
-    //MARK - Action
+    //MARK - Button Action
     func tapFollowButton(sender: UIButton) {
         delegate?.didTappedFollowButton(sender)
+    }
+    
+    func tapFollowingButton(sender: UIButton) {
+        delegate?.didTappedFollowingButton(sender)
+    }
+    
+    func tapFollowerButton(sender: UIButton) {
+        delegate?.didTappedFollowerButton(sender)
     }
     
     //MARK - Layout Sub Views
@@ -58,8 +72,16 @@ class ProfileCell: UITableViewCell {
     func layoutFollowButton() {
         followButton.addTarget(self, action: #selector(ProfileCell.tapFollowButton(_:)), forControlEvents: .TouchUpInside)
         followButton.userInteractionEnabled = true
-        followButton.setTitle("Follow", forState: UIControlState.Normal)
-        followButton.setTitle("UnFollow", forState: UIControlState.Selected)
+        followButton.setTitle("フォローする", forState: UIControlState.Normal)
+        followButton.setTitle("フォロー中", forState: UIControlState.Selected)
+    }
+    
+    func layoutFollowingButton() {
+        followingButton.addTarget(self, action: #selector(ProfileCell.tapFollowingButton(_:)), forControlEvents: .TouchUpInside)
+    }
+    
+    func layoutFollowerButton() {
+        followerButton.addTarget(self, action: #selector(ProfileCell.tapFollowerButton(_:)), forControlEvents: .TouchUpInside)
     }
     
 }

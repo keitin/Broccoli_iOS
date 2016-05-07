@@ -74,17 +74,4 @@ class CurrentUser: User {
                 callback(isFollow: json["is_follow"].bool!)
         }
     }
-    
-    func getFollowsInBackground(callback: () -> Void) {
-        Alamofire.request(.GET, String.rootPath() + "/api/users/\(self.id)/following", parameters: nil)
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
-                }
-                let json = JSON(object)
-                print(json)
-                callback()
-        }
-    }
-
 }

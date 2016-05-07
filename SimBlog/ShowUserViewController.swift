@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowUserViewController: UIViewController, UITableViewDelegate {
+class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     let showUserViewModel = ShowUserViewModel()
@@ -19,7 +19,7 @@ class ShowUserViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         title = "MY PAGE"
         let user = selectedUser ?? currentUser
-        showUserViewModel.didLoad(tableView, user: user)
+        showUserViewModel.didLoad(self, tableView: tableView, user: user)
         tableView.delegate = self
     }
     
@@ -52,6 +52,34 @@ class ShowUserViewController: UIViewController, UITableViewDelegate {
         } else if indexPath.section == 2 {
             showUserViewModel.loadMoreItems()
         }
+    }
+    
+    //MARK - Profile Cell Delegate
+    func didTappedFollowButton(button: UIButton) {
+        let user = selectedUser ?? currentUser
+        if button.selected == false {
+            currentUser.follow(user) {
+                button.selected = true
+            }
+        } else {
+            currentUser.unfollow(user) {
+                button.selected = false
+            }
+        }
+    }
+    
+    func didTappedFollowerButton(button: UIButton) {
+        let indexUserVC = UIStoryboard.viewControllerWith("Main", identifier: "IndexUserViewController") as! IndexUserViewController
+        indexUserVC.displayType = DisplayType.Followers
+        indexUserVC.user = selectedUser ?? currentUser
+        navigationController?.pushViewController(indexUserVC, animated: true)
         
+    }
+    
+    func didTappedFollowingButton(button: UIButton) {
+        let indexUserVC = UIStoryboard.viewControllerWith("Main", identifier: "IndexUserViewController") as! IndexUserViewController
+        indexUserVC.displayType = DisplayType.Follows
+        indexUserVC.user = selectedUser ?? currentUser
+        navigationController?.pushViewController(indexUserVC, animated: true)
     }
 }
