@@ -18,11 +18,13 @@ class User: NSObject {
     var email: String?
     var token: String!
     var blogs: [Blog] = []
+    var followingBlogs: [Blog] = []
     var follows: [User] = []
     var followers: [User] = []
     var numberOfBlogs: Int { return blogs.count }
     var numberOfFollows: Int { return follows.count }
     var numberOfFollowers: Int { return followers.count }
+    var numberOfFollowingBlogs: Int { return followingBlogs.count }
     
     
     override init() {
@@ -42,6 +44,10 @@ class User: NSObject {
         self.email = apiAttributes["email"].string
         self.facebook_id = apiAttributes["facebook_id"].string
         self.id = apiAttributes["id"].int
+    }
+    
+    func followingBlogAtPosition(index: Int) -> Blog {
+        return followingBlogs[index]
     }
     
     func blogAtPosition(index: Int) -> Blog {

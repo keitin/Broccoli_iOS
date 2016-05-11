@@ -14,10 +14,9 @@ import SVProgressHUD
 class BlogManager: NSObject {
     static let sharedInstance = BlogManager()
     var blogs: [Blog] = []
-    var numberOfBlogs: Int {
-        return blogs.count
-    }
-    
+    var searchBlogs: [Blog] = []
+    var numberOfBlogs: Int { return blogs.count }
+    var numberOfSearchBlogs: Int { return searchBlogs.count }
     override init() {
         super.init()
     }
@@ -49,6 +48,29 @@ class BlogManager: NSObject {
                     let blog = Blog(apiAttributes: object["blog"])
                     blog.user = User(apiAttributes: object["user"])
                     self.blogs.insert(blog, atIndex: self.numberOfBlogs)
+                    callback()
+                }
+        }
+    }
+    
+    func searchBlogsInBackground(page: Int, callback: () -> Void) {
+        SVProgressHUD.show()
+        let params = [
+            "page": page
+        ]
+        Alamofire.request(.GET, String.rootPath() + "/api/blogs/search", parameters: params)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    print("えらー")
+                    print(response)
+                    return
+                }
+                let json = JSON(object)
+                SVProgressHUD.dismiss()
+                for object in json["blogs"].array! {
+                    let blog = Blog(apiAttributes: object["blog"])
+                    blog.user = User(apiAttributes: object["user"])
+                    self.searchBlogs.insert(blog, atIndex: self.numberOfSearchBlogs)
                     callback()
                 }
         }

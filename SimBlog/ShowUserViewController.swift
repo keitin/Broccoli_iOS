@@ -45,7 +45,7 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 {
-            let showBlogVC = UIStoryboard.viewControllerWith("Main", identifier: "ShowBlogViewController") as! ShowBlogViewController
+            let showBlogVC = UIStoryboard.viewControllerWith("Blog", identifier: "ShowBlogViewController") as! ShowBlogViewController
             let user = selectedUser ?? currentUser
             showBlogVC.blog = user.blogAtPosition(indexPath.row)
             self.navigationController?.pushViewController(showBlogVC, animated: true)
@@ -69,7 +69,7 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     }
     
     func didTappedFollowerButton(button: UIButton) {
-        let indexUserVC = UIStoryboard.viewControllerWith("Main", identifier: "IndexUserViewController") as! IndexUserViewController
+        let indexUserVC = UIStoryboard.viewControllerWith("User", identifier: "IndexUserViewController") as! IndexUserViewController
         indexUserVC.displayType = DisplayType.Followers
         indexUserVC.user = selectedUser ?? currentUser
         navigationController?.pushViewController(indexUserVC, animated: true)
@@ -77,7 +77,7 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     }
     
     func didTappedFollowingButton(button: UIButton) {
-        let indexUserVC = UIStoryboard.viewControllerWith("Main", identifier: "IndexUserViewController") as! IndexUserViewController
+        let indexUserVC = UIStoryboard.viewControllerWith("User", identifier: "IndexUserViewController") as! IndexUserViewController
         indexUserVC.displayType = DisplayType.Follows
         indexUserVC.user = selectedUser ?? currentUser
         navigationController?.pushViewController(indexUserVC, animated: true)

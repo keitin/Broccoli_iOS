@@ -1,23 +1,20 @@
 //
-//  ShowBlogViewController.swift
+//  BlogNavigationController.swift
 //  SimBlog
 //
-//  Created by 松下慶大 on 2016/04/27.
+//  Created by 松下慶大 on 2016/05/09.
 //  Copyright © 2016年 matsushita keita. All rights reserved.
 //
 
 import UIKit
 
-class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate {
-    
-
-    @IBOutlet weak var tableView: UITableView!
-    var blog: Blog!
-    let showBlogViewModel = ShowBlogViewModel()
+class BlogNavigationController: UINavigationController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showBlogViewModel.didLoad(blog, tableView: tableView, viewController: self)
+
+//        let searchTextFiled = SearchTextFiled(navigationBar: self.navigationBar)
+//        navigationBar.addSubview(searchTextFiled)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,11 +22,6 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func didTapProfileImageView(blog: Blog) {
-        let showUserVC = UIStoryboard.viewControllerWith("User", identifier: "ShowUserViewController") as! ShowUserViewController
-        showUserVC.selectedUser = blog.user
-        navigationController?.pushViewController(showUserVC, animated: true)
-    }
 
     /*
     // MARK: - Navigation
@@ -40,5 +32,6 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    //MARK: TextField Delegate
 
 }

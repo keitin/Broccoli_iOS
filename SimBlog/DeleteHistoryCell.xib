@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="DeleteHistoryCell" customModule="SimBlog" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JC-Q6-eeo">
+                        <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                        <state key="normal" title="Delete Hisotry"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="4JC-Q6-eeo" secondAttribute="bottom" id="YMd-0s-kZa"/>
+                    <constraint firstItem="4JC-Q6-eeo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ZOU-0j-9zT"/>
+                    <constraint firstItem="4JC-Q6-eeo" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="cWa-Ma-BtI"/>
+                    <constraint firstItem="4JC-Q6-eeo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="lA6-hU-Vi3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="deleteHistoryButton" destination="4JC-Q6-eeo" id="dVC-Rp-70n"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

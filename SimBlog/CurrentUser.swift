@@ -74,4 +74,28 @@ class CurrentUser: User {
                 callback(isFollow: json["is_follow"].bool!)
         }
     }
+    
+    func getFollowingBlogsInBackground(page: Int, callback: () -> Void) {
+        SVProgressHUD.show()
+        let params = [
+            "id": self.id,
+            "page": page
+        ]
+        Alamofire.request(.GET, String.rootPath() + "/api/blogs/following", parameters: params)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    print("えらー")
+                    print(response)
+                    return
+                }
+                let json = JSON(object)
+                SVProgressHUD.dismiss()
+                for object in json["blogs"].array! {
+                    let blog = Blog(apiAttributes: object["blog"])
+                    blog.user = User(apiAttributes: object["user"])
+                    self.followingBlogs.insert(blog, atIndex: self.numberOfFollowingBlogs)
+                    callback()
+                }
+        }
+    }
 }

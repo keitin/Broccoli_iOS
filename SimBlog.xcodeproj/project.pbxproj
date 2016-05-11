@@ -61,6 +61,20 @@
 		32992EFA1CDCEB5F006C604B /* IndexUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992EF91CDCEB5F006C604B /* IndexUserViewModel.swift */; };
 		32992F021CDCEE24006C604B /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F001CDCEE24006C604B /* UserCell.swift */; };
 		32992F031CDCEE24006C604B /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32992F011CDCEE24006C604B /* UserCell.xib */; };
+		32992F1A1CE0516B006C604B /* Blog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32992F181CE0516B006C604B /* Blog.storyboard */; };
+		32992F1C1CE051C4006C604B /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32992F1B1CE051C4006C604B /* User.storyboard */; };
+		32992F1E1CE0525E006C604B /* InitialTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F1D1CE0525E006C604B /* InitialTabBarController.swift */; };
+		32992F211CE053C4006C604B /* FollowingBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F201CE053C4006C604B /* FollowingBlogViewController.swift */; };
+		32992F231CE054F3006C604B /* FollowingBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F221CE054F3006C604B /* FollowingBlogViewModel.swift */; };
+		32992F261CE06480006C604B /* SearchTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F251CE06480006C604B /* SearchTextFiled.swift */; };
+		32992F291CE0A9B7006C604B /* BlogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F281CE0A9B7006C604B /* BlogNavigationController.swift */; };
+		32A6B93E1CE0AFBB0026053E /* SearchBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6B93D1CE0AFBB0026053E /* SearchBlogViewController.swift */; };
+		32A6B9461CE0B54B0026053E /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6B9441CE0B54B0026053E /* SearchHistoryCell.swift */; };
+		32A6B9471CE0B54B0026053E /* SearchHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A6B9451CE0B54B0026053E /* SearchHistoryCell.xib */; };
+		32A6B9491CE0B6800026053E /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6B9481CE0B6800026053E /* SearchHistory.swift */; };
+		32A6B94C1CE0B8A70026053E /* SearchBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6B94B1CE0B8A70026053E /* SearchBlogViewModel.swift */; };
+		32A6B9501CE0BD670026053E /* DeleteHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6B94E1CE0BD670026053E /* DeleteHistoryCell.swift */; };
+		32A6B9511CE0BD670026053E /* DeleteHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A6B94F1CE0BD670026053E /* DeleteHistoryCell.xib */; };
 		32B42AEA1CDB6F18009EC63C /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B42AE91CDB6F18009EC63C /* ProfileImageView.swift */; };
 		32B42AED1CDB9029009EC63C /* MoreItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B42AEB1CDB9029009EC63C /* MoreItemsCell.swift */; };
 		32B42AEE1CDB9029009EC63C /* MoreItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */; };
@@ -146,6 +160,20 @@
 		32992EF91CDCEB5F006C604B /* IndexUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexUserViewModel.swift; sourceTree = "<group>"; };
 		32992F001CDCEE24006C604B /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		32992F011CDCEE24006C604B /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		32992F191CE0516B006C604B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Blog.storyboard; sourceTree = "<group>"; };
+		32992F1B1CE051C4006C604B /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		32992F1D1CE0525E006C604B /* InitialTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTabBarController.swift; sourceTree = "<group>"; };
+		32992F201CE053C4006C604B /* FollowingBlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingBlogViewController.swift; sourceTree = "<group>"; };
+		32992F221CE054F3006C604B /* FollowingBlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingBlogViewModel.swift; sourceTree = "<group>"; };
+		32992F251CE06480006C604B /* SearchTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextFiled.swift; sourceTree = "<group>"; };
+		32992F281CE0A9B7006C604B /* BlogNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogNavigationController.swift; sourceTree = "<group>"; };
+		32A6B93D1CE0AFBB0026053E /* SearchBlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBlogViewController.swift; sourceTree = "<group>"; };
+		32A6B9441CE0B54B0026053E /* SearchHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
+		32A6B9451CE0B54B0026053E /* SearchHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchHistoryCell.xib; sourceTree = "<group>"; };
+		32A6B9481CE0B6800026053E /* SearchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
+		32A6B94B1CE0B8A70026053E /* SearchBlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBlogViewModel.swift; sourceTree = "<group>"; };
+		32A6B94E1CE0BD670026053E /* DeleteHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteHistoryCell.swift; sourceTree = "<group>"; };
+		32A6B94F1CE0BD670026053E /* DeleteHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteHistoryCell.xib; sourceTree = "<group>"; };
 		32B42AE91CDB6F18009EC63C /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		32B42AEB1CDB9029009EC63C /* MoreItemsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreItemsCell.swift; sourceTree = "<group>"; };
 		32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreItemsCell.xib; sourceTree = "<group>"; };
@@ -191,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				326A73DB1CCFC4830015DE7D /* Main.storyboard */,
+				32992F1B1CE051C4006C604B /* User.storyboard */,
+				32992F181CE0516B006C604B /* Blog.storyboard */,
 				32492C311CD9ED1E00B420B0 /* Login.storyboard */,
 			);
 			name = Storyboards;
@@ -329,7 +359,9 @@
 		326A74051CCFC73B0015DE7D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				32992F1F1CE0533B006C604B /* Common */,
 				326A74261CD062F50015DE7D /* Blogs */,
+				32A6B94A1CE0B8930026053E /* Seach Blog */,
 				324E47121CD1D43F003EC6AC /* Users */,
 			);
 			name = Controllers;
@@ -341,6 +373,7 @@
 				324E47151CD1E1CF003EC6AC /* Blogs */,
 				324E471E1CD1E9E6003EC6AC /* Users */,
 				32B42AEF1CDB903B009EC63C /* Common */,
+				32A6B9431CE0B4B20026053E /* Search */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -373,6 +406,7 @@
 			children = (
 				326A742E1CD067030015DE7D /* Blogs */,
 				324E471C1CD1E31B003EC6AC /* Users */,
+				32A6B94B1CE0B8A70026053E /* SearchBlogViewModel.swift */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -382,6 +416,7 @@
 			children = (
 				3284AF091CD06E3D005AB294 /* Blog */,
 				324E471D1CD1E9DB003EC6AC /* User */,
+				32A6B9481CE0B6800026053E /* SearchHistory.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -409,6 +444,8 @@
 				326A74241CD0613F0015DE7D /* IndexBlogViewController.swift */,
 				326A73D91CCFC4830015DE7D /* NewBlogViewController.swift */,
 				3284AF151CD0B73F005AB294 /* ShowBlogViewController.swift */,
+				32992F201CE053C4006C604B /* FollowingBlogViewController.swift */,
+				32992F281CE0A9B7006C604B /* BlogNavigationController.swift */,
 			);
 			name = Blogs;
 			sourceTree = "<group>";
@@ -419,6 +456,7 @@
 				326A742C1CD066F30015DE7D /* IndexBlogViewModel.swift */,
 				326A740F1CCFC8690015DE7D /* NewBlogViewModel.swift */,
 				3284AF171CD0B85D005AB294 /* ShowBlogViewModel.swift */,
+				32992F221CE054F3006C604B /* FollowingBlogViewModel.swift */,
 			);
 			name = Blogs;
 			sourceTree = "<group>";
@@ -488,11 +526,63 @@
 			name = "User Cell";
 			sourceTree = "<group>";
 		};
-		32B42AEF1CDB903B009EC63C /* Common */ = {
+		32992F1F1CE0533B006C604B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				32992F1D1CE0525E006C604B /* InitialTabBarController.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		32992F241CE06434006C604B /* More Items Cell */ = {
 			isa = PBXGroup;
 			children = (
 				32B42AEB1CDB9029009EC63C /* MoreItemsCell.swift */,
 				32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */,
+			);
+			name = "More Items Cell";
+			sourceTree = "<group>";
+		};
+		32A6B9431CE0B4B20026053E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				32A6B94D1CE0BD3A0026053E /* History */,
+				32A6B9521CE0BD6B0026053E /* Delete History */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		32A6B94A1CE0B8930026053E /* Seach Blog */ = {
+			isa = PBXGroup;
+			children = (
+				32A6B93D1CE0AFBB0026053E /* SearchBlogViewController.swift */,
+			);
+			name = "Seach Blog";
+			sourceTree = "<group>";
+		};
+		32A6B94D1CE0BD3A0026053E /* History */ = {
+			isa = PBXGroup;
+			children = (
+				32A6B9441CE0B54B0026053E /* SearchHistoryCell.swift */,
+				32A6B9451CE0B54B0026053E /* SearchHistoryCell.xib */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		32A6B9521CE0BD6B0026053E /* Delete History */ = {
+			isa = PBXGroup;
+			children = (
+				32A6B94E1CE0BD670026053E /* DeleteHistoryCell.swift */,
+				32A6B94F1CE0BD670026053E /* DeleteHistoryCell.xib */,
+			);
+			name = "Delete History";
+			sourceTree = "<group>";
+		};
+		32B42AEF1CDB903B009EC63C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				32992F241CE06434006C604B /* More Items Cell */,
+				32992F251CE06480006C604B /* SearchTextFiled.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -638,6 +728,7 @@
 				326A73E21CCFC4830015DE7D /* LaunchScreen.storyboard in Resources */,
 				3284AF261CD0EF18005AB294 /* DisplayImageCell.xib in Resources */,
 				324E47191CD1E213003EC6AC /* LoginView.xib in Resources */,
+				32A6B9471CE0B54B0026053E /* SearchHistoryCell.xib in Resources */,
 				326A74321CD068270015DE7D /* BlogCell.xib in Resources */,
 				32492C3D1CD9F1D100B420B0 /* ProfileCell.xib in Resources */,
 				326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */,
@@ -646,8 +737,11 @@
 				32492C421CDAEA5300B420B0 /* DSCF5417.JPG in Resources */,
 				32992F031CDCEE24006C604B /* UserCell.xib in Resources */,
 				326A74091CCFC7540015DE7D /* TextCell.xib in Resources */,
+				32992F1A1CE0516B006C604B /* Blog.storyboard in Resources */,
 				326A741D1CCFD0BD0015DE7D /* ImageCell.xib in Resources */,
 				326A73DD1CCFC4830015DE7D /* Main.storyboard in Resources */,
+				32992F1C1CE051C4006C604B /* User.storyboard in Resources */,
+				32A6B9511CE0BD670026053E /* DeleteHistoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,36 +896,46 @@
 				3284AF251CD0EF18005AB294 /* DisplayImageCell.swift in Sources */,
 				3237B8C11CD39F1400ABD9F9 /* UIApplication+Extension.swift in Sources */,
 				32992F021CDCEE24006C604B /* UserCell.swift in Sources */,
+				32A6B9501CE0BD670026053E /* DeleteHistoryCell.swift in Sources */,
+				32992F231CE054F3006C604B /* FollowingBlogViewModel.swift in Sources */,
 				32992EFA1CDCEB5F006C604B /* IndexUserViewModel.swift in Sources */,
 				326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */,
 				326A741C1CCFD0BD0015DE7D /* ImageCell.swift in Sources */,
 				324E47171CD1E200003EC6AC /* LoginView.swift in Sources */,
 				32492C361CD9F03B00B420B0 /* ShowUserViewController.swift in Sources */,
 				3237B8C31CD3A6C500ABD9F9 /* NSData+Extension.swift in Sources */,
+				32A6B93E1CE0AFBB0026053E /* SearchBlogViewController.swift in Sources */,
 				326A74101CCFC8690015DE7D /* NewBlogViewModel.swift in Sources */,
 				32B42AED1CDB9029009EC63C /* MoreItemsCell.swift in Sources */,
 				326A74081CCFC7540015DE7D /* TextCell.swift in Sources */,
 				3284AF161CD0B73F005AB294 /* ShowBlogViewController.swift in Sources */,
 				326A74131CCFC8D20015DE7D /* Blog.swift in Sources */,
 				324E47111CD1D43B003EC6AC /* LoginViewController.swift in Sources */,
+				32992F291CE0A9B7006C604B /* BlogNavigationController.swift in Sources */,
 				32492C381CD9F0C800B420B0 /* ShowUserViewModel.swift in Sources */,
+				32992F261CE06480006C604B /* SearchTextFiled.swift in Sources */,
 				3237B8831CD2F22B00ABD9F9 /* CurrentUser.swift in Sources */,
 				3284AF081CD06E24005AB294 /* BlogManager.swift in Sources */,
+				32992F1E1CE0525E006C604B /* InitialTabBarController.swift in Sources */,
 				32B42AEA1CDB6F18009EC63C /* ProfileImageView.swift in Sources */,
 				324E471B1CD1E318003EC6AC /* LoginViewModel.swift in Sources */,
 				326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */,
 				326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */,
+				32A6B94C1CE0B8A70026053E /* SearchBlogViewModel.swift in Sources */,
 				3284AF0B1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift in Sources */,
+				32A6B9461CE0B54B0026053E /* SearchHistoryCell.swift in Sources */,
 				326A74251CD0613F0015DE7D /* IndexBlogViewController.swift in Sources */,
 				32492C401CDA430D00B420B0 /* UIStoryboard+Extension.swift in Sources */,
 				3284AF121CD09AD5005AB294 /* TitleCell.swift in Sources */,
 				326A74161CCFC92D0015DE7D /* BlogText.swift in Sources */,
+				32992F211CE053C4006C604B /* FollowingBlogViewController.swift in Sources */,
 				326A742D1CD066F30015DE7D /* IndexBlogViewModel.swift in Sources */,
 				326A74311CD068270015DE7D /* BlogCell.swift in Sources */,
 				3284AF181CD0B85D005AB294 /* ShowBlogViewModel.swift in Sources */,
 				3284AF201CD0EE3B005AB294 /* DisplayTextCell.swift in Sources */,
 				32492C3C1CD9F1D100B420B0 /* ProfileCell.swift in Sources */,
 				3237B8C51CD48D0100ABD9F9 /* String+Extension.swift in Sources */,
+				32A6B9491CE0B6800026053E /* SearchHistory.swift in Sources */,
 				324E47141CD1E09C003EC6AC /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -890,6 +994,14 @@
 				326A73E11CCFC4830015DE7D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		32992F181CE0516B006C604B /* Blog.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32992F191CE0516B006C604B /* Base */,
+			);
+			name = Blog.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
