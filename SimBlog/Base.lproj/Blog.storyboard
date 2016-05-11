@@ -108,6 +108,10 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Bg-Wf-aOB" userLabel="Blogs Table View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lwS-6b-K3i">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,7 +122,11 @@
                             <constraint firstItem="jPv-0p-D8e" firstAttribute="top" secondItem="lwS-6b-K3i" secondAttribute="bottom" id="8qA-V6-W5V"/>
                             <constraint firstItem="lwS-6b-K3i" firstAttribute="top" secondItem="eOh-1M-XUY" secondAttribute="bottom" id="NeG-ID-IHi"/>
                             <constraint firstAttribute="trailing" secondItem="lwS-6b-K3i" secondAttribute="trailing" id="QMB-8X-Tq5"/>
+                            <constraint firstAttribute="trailing" secondItem="5Bg-Wf-aOB" secondAttribute="trailing" id="Tug-C1-FOT"/>
+                            <constraint firstItem="5Bg-Wf-aOB" firstAttribute="top" secondItem="eOh-1M-XUY" secondAttribute="bottom" id="U5R-x2-FAf"/>
+                            <constraint firstItem="jPv-0p-D8e" firstAttribute="top" secondItem="5Bg-Wf-aOB" secondAttribute="bottom" id="XTk-SK-mgF"/>
                             <constraint firstItem="lwS-6b-K3i" firstAttribute="leading" secondItem="UiE-ex-2jy" secondAttribute="leading" id="fGg-8W-6OL"/>
+                            <constraint firstItem="5Bg-Wf-aOB" firstAttribute="leading" secondItem="UiE-ex-2jy" secondAttribute="leading" id="nxP-Ur-aJu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hqz-r9-fuf">
@@ -131,8 +139,9 @@
                         </textField>
                     </navigationItem>
                     <connections>
+                        <outlet property="blogsTableView" destination="5Bg-Wf-aOB" id="jZD-Su-2UP"/>
+                        <outlet property="historyTableView" destination="lwS-6b-K3i" id="WRK-Oz-s3Z"/>
                         <outlet property="searchTextField" destination="BEc-ka-wlI" id="O8h-2q-eQF"/>
-                        <outlet property="tableView" destination="lwS-6b-K3i" id="49p-yI-gXI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDV-hS-Pcb" userLabel="First Responder" sceneMemberID="firstResponder"/>

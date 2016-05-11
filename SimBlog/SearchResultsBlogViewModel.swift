@@ -1,24 +1,22 @@
 //
-//  IndexBlogViewModel.swift
+//  SearchResultsBlogViewModel.swift
 //  SimBlog
 //
-//  Created by 松下慶大 on 2016/04/27.
+//  Created by 松下慶大 on 2016/05/11.
 //  Copyright © 2016年 matsushita keita. All rights reserved.
 //
 
 import UIKit
 
-class IndexBlogViewModel: NSObject, UITableViewDataSource {
+class SearchResultsBlogViewModel: NSObject, UITableViewDataSource {
     
     var tableView: UITableView!
-    var viewController: IndexBlogViewController!
+    var viewController: SearchBlogViewController!
     let blogManager = BlogManager.sharedInstance
     var page = 1
+    var currentKeyword: String!
     
-    func didLoad(tableView: UITableView, viewController: IndexBlogViewController) {
-        blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
-            self.insertTopRow(tableView)
-        }
+    func didLoad(tableView: UITableView, viewController: SearchBlogViewController) {
         self.viewController = viewController
         self.tableView = tableView
         tableView.dataSource = self
@@ -36,7 +34,7 @@ class IndexBlogViewModel: NSObject, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return blogManager.numberOfBlogs
+            return blogManager.numberOfSearchBlogs
         } else {
             return 1
         }
@@ -46,7 +44,7 @@ class IndexBlogViewModel: NSObject, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("BlogCell", forIndexPath: indexPath) as! BlogCell
-            cell.fillWith(blogManager.blogAtPosition(indexPath.row))
+            cell.fillWith(blogManager.searchBlogs[indexPath.row])
             cell.delegate = viewController
             return cell
         } else {
@@ -55,10 +53,18 @@ class IndexBlogViewModel: NSObject, UITableViewDataSource {
         }
     }
     
+    func searchBlogs(keyword: String, callback: () -> Void) {
+        self.currentKeyword = keyword
+        blogManager.searchBlogsInBackground(currentKeyword, page: page) {
+            self.tableView.reloadData()
+            callback()
+        }
+    }
+    
     func loadMoreItems() {
         page = page + 1
-        blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) { 
-            self.insertTopRow(self.tableView)
+        blogManager.searchBlogsInBackground(currentKeyword, page: page) {
+            self.tableView.reloadData()
         }
     }
     
@@ -81,5 +87,5 @@ class IndexBlogViewModel: NSObject, UITableViewDataSource {
             }
         }
     }
-    
+
 }

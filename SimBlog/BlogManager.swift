@@ -38,7 +38,7 @@ class BlogManager: NSObject {
         Alamofire.request(.GET, String.rootPath() + "/api/blogs/?user_id=\(user?.id)", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
-                    print("えらー")
+                    print("えらー!!")
                     print(response)
                     return
                 }
@@ -53,10 +53,11 @@ class BlogManager: NSObject {
         }
     }
     
-    func searchBlogsInBackground(page: Int, callback: () -> Void) {
+    func searchBlogsInBackground(keyword: String, page: Int, callback: () -> Void) {
         SVProgressHUD.show()
-        let params = [
-            "page": page
+        let params: [String: AnyObject] = [
+            "page": page,
+            "keyword": keyword
         ]
         Alamofire.request(.GET, String.rootPath() + "/api/blogs/search", parameters: params)
             .responseJSON { response in
@@ -66,7 +67,9 @@ class BlogManager: NSObject {
                     return
                 }
                 let json = JSON(object)
+                print(json)
                 SVProgressHUD.dismiss()
+                if page == 1 { self.searchBlogs = [] }
                 for object in json["blogs"].array! {
                     let blog = Blog(apiAttributes: object["blog"])
                     blog.user = User(apiAttributes: object["user"])

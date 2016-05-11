@@ -84,7 +84,7 @@ class CurrentUser: User {
         Alamofire.request(.GET, String.rootPath() + "/api/blogs/following", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
-                    print("えらー")
+                    print("えらーんご")
                     print(response)
                     return
                 }
