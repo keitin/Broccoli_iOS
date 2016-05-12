@@ -80,6 +80,7 @@
 		32B42AED1CDB9029009EC63C /* MoreItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B42AEB1CDB9029009EC63C /* MoreItemsCell.swift */; };
 		32B42AEE1CDB9029009EC63C /* MoreItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */; };
 		32BFE1E01CE4BC5100FC26FF /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE1DF1CE4BC5100FC26FF /* Like.swift */; };
+		32BFE1E31CE4E31000FC26FF /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE1E21CE4E31000FC26FF /* Follow.swift */; };
 		8CB9392937AC7BA0E0536964 /* Pods_SimBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D43FC246B86AD09E3086FD0 /* Pods_SimBlog.framework */; };
 		97A22A91DD20F45FE56E0363 /* Pods_SimBlogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */; };
 /* End PBXBuildFile section */
@@ -181,6 +182,7 @@
 		32B42AEB1CDB9029009EC63C /* MoreItemsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreItemsCell.swift; sourceTree = "<group>"; };
 		32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreItemsCell.xib; sourceTree = "<group>"; };
 		32BFE1DF1CE4BC5100FC26FF /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		32BFE1E21CE4E31000FC26FF /* Follow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
 		6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimBlogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		641294EDC7C819DEAF0255C6 /* Pods-SimBlogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D99681E132D6A3423EAD820 /* Pods-SimBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -597,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				32BFE1DF1CE4BC5100FC26FF /* Like.swift */,
+				32BFE1E21CE4E31000FC26FF /* Follow.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -927,6 +930,7 @@
 				32A6B9CC1CE36BBC0026053E /* SearchResultsBlogViewModel.swift in Sources */,
 				326A74131CCFC8D20015DE7D /* Blog.swift in Sources */,
 				324E47111CD1D43B003EC6AC /* LoginViewController.swift in Sources */,
+				32BFE1E31CE4E31000FC26FF /* Follow.swift in Sources */,
 				32992F291CE0A9B7006C604B /* BlogNavigationController.swift in Sources */,
 				32492C381CD9F0C800B420B0 /* ShowUserViewModel.swift in Sources */,
 				32992F261CE06480006C604B /* SearchTextFiled.swift in Sources */,

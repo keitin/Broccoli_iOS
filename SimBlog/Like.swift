@@ -17,6 +17,7 @@ protocol Like {
 }
 
 extension Like {
+    
     func likeInBackground(blog: Blog, callback: () -> Void) {
         let params = ["user_id": CurrentUser.sharedInstance.id]
         Alamofire.request(.POST, String.rootPath() + "/api/blogs/\(blog.id)/likes", parameters: params)
@@ -28,7 +29,6 @@ extension Like {
                 print(json)
                 callback()
         }
-        
     }
     
     func deleteLikeInBackground(blog: Blog, callback: () -> Void) {

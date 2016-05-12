@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCellDelegate {
+class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCellDelegate, Follow {
     
     @IBOutlet weak var tableView: UITableView!
     let showUserViewModel = ShowUserViewModel()
@@ -58,11 +58,11 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     func didTappedFollowButton(button: UIButton) {
         let user = selectedUser ?? currentUser
         if button.selected == false {
-            currentUser.follow(user) {
+            follow(currentUser, toUser: user) {
                 button.selected = true
             }
         } else {
-            currentUser.unfollow(user) {
+            unfollow(currentUser, toUser: user) {
                 button.selected = false
             }
         }

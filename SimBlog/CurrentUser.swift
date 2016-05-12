@@ -24,57 +24,6 @@ class CurrentUser: User {
         self.token = defaults.objectForKey("user_token") as! String
     }
     
-    //MARK - Follow etc
-    func follow(user: User, callback: () -> Void) {
-        SVProgressHUD.show()
-        let params = [
-            "target_user_id": user.id
-        ]
-        Alamofire.request(.POST, String.rootPath() + "/api/users/\(self.id)/follow", parameters: params)
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
-                }
-                SVProgressHUD.dismiss()
-                let json = JSON(object)
-                print(json)
-                callback()
-        }
-    }
-    
-    func unfollow(user: User, callback: () -> Void) {
-        SVProgressHUD.show()
-        let params = [
-            "target_user_id": user.id
-        ]
-        Alamofire.request(.DELETE, String.rootPath() + "/api/users/\(self.id)/unfollow", parameters: params)
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
-                }
-                SVProgressHUD.dismiss()
-                let json = JSON(object)
-                print(json)
-                callback()
-        }
-    }
-    
-    func isFollow(user: User, callback: (isFollow: Bool) -> Void) {
-        SVProgressHUD.show()
-        let params = [
-            "target_user_id": user.id
-        ]
-        Alamofire.request(.GET, String.rootPath() + "/api/users/\(self.id)/is_follow", parameters: params)
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
-                }
-                SVProgressHUD.dismiss()
-                let json = JSON(object)
-                callback(isFollow: json["is_follow"].bool!)
-        }
-    }
-    
     func getFollowingBlogsInBackground(page: Int, callback: () -> Void) {
         SVProgressHUD.show()
         let params = [

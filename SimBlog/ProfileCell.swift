@@ -15,7 +15,7 @@ import SDWebImage
     func didTappedFollowingButton(button: UIButton)
 }
 
-class ProfileCell: UITableViewCell {
+class ProfileCell: UITableViewCell, Follow {
     @IBOutlet weak var followingButton: UIButton!
     @IBOutlet weak var followerButton: UIButton!
     @IBOutlet weak var followButton: UIButton!
@@ -44,7 +44,7 @@ class ProfileCell: UITableViewCell {
         }
         nameLabel.text = user.name
         profileImageView.sd_setImageWithURL(NSURL(string: user.imageURL))
-        currentUser.isFollow(user) { (isFollow) in
+        isFollow(currentUser, toUser: user) { (isFollow) in
             self.followButton.selected = isFollow
         }
     }
