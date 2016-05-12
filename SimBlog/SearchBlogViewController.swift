@@ -64,7 +64,6 @@ class SearchBlogViewController: UIViewController, UITableViewDelegate ,UITextFie
         } else {
             let text = searchHistory.textAtPosition(indexPath.row)
             searchTextField.text = text
-            print(text)
             showSearehdBlogs(text)
         }
     }

@@ -11,18 +11,23 @@ import SDWebImage
 
 @objc protocol DisplayTitleCellDelegate {
     func didTapProfileImageView(blog: Blog)
+    func didTapLikeButton(button: UIButton, blog: Blog)
+    func didTapUnLikeButton(button: UIButton, blog: Blog)
 }
 
-class DisplayTitleCell: UITableViewCell {
+class DisplayTitleCell: UITableViewCell, Like {
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: ProfileImageView!
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     var delegate: DisplayTitleCellDelegate?
+    var selectedBlog: Blog!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         layoutImageView()
+        layoutLikeButton()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -32,11 +37,15 @@ class DisplayTitleCell: UITableViewCell {
     }
     
     func fillWith(blog: Blog) {
+        isLike(blog) { (isLike) in
+            self.likeButton.selected = isLike
+        }
         topImageView.image = blog.topImage
         if let topImageURL = blog.topImageURL {
             topImageView.sd_setImageWithURL(NSURL(string: topImageURL))
         }
         profileImageView.blog = blog
+        self.selectedBlog = blog
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))
         nameLabel.text = blog.user.name
         titleLabel.text = blog.title
@@ -52,8 +61,24 @@ class DisplayTitleCell: UITableViewCell {
         profileImageView.addGestureRecognizer(tap)
     }
     
+    func layoutLikeButton() {
+        likeButton.setTitle("イイネ！", forState: .Normal)
+        likeButton.setTitle("取り消す！", forState: .Selected)
+        likeButton.addTarget(self, action: #selector(DisplayTitleCell.tapLikeButton(_:)), forControlEvents: .TouchUpInside)
+    }
+    
+    //MARK: - Action
     func tapProfileImageView(sender: UITapGestureRecognizer) {
         let profileImageView = sender.view as! ProfileImageView
         delegate?.didTapProfileImageView(profileImageView.blog)
     }
+    
+    func tapLikeButton(sender: UIButton) {
+        if likeButton.selected {
+            delegate?.didTapUnLikeButton(sender, blog: self.selectedBlog)
+        } else {
+            delegate?.didTapLikeButton(sender, blog: self.selectedBlog)
+        } 
+    }
+    
 }

@@ -34,7 +34,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Od-Ss-hcM">
-                                        <rect key="frame" x="0.0" y="87" width="206" height="60"/>
+                                        <rect key="frame" x="0.0" y="87" width="247" height="60"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YDx-dN-u6r" customClass="ProfileImageView" customModule="SimBlog" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -50,6 +50,12 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIe-4I-cFO">
+                                                <rect key="frame" x="214" y="0.0" width="33" height="60"/>
+                                                <state key="normal" title="Like!">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -76,6 +82,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="likeButton" destination="WIe-4I-cFO" id="nXI-L1-BU9"/>
                 <outlet property="nameLabel" destination="zVJ-oV-Ct1" id="k9n-Cm-c5g"/>
                 <outlet property="profileImageView" destination="YDx-dN-u6r" id="z8F-Fa-jhW"/>
                 <outlet property="titleLabel" destination="mqn-l7-cqM" id="KZd-EB-lLK"/>

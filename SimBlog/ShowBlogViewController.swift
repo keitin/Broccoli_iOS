@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate {
+class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like {
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -29,6 +29,19 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate {
         let showUserVC = UIStoryboard.viewControllerWith("User", identifier: "ShowUserViewController") as! ShowUserViewController
         showUserVC.selectedUser = blog.user
         navigationController?.pushViewController(showUserVC, animated: true)
+    }
+    
+    //MARK: Like Action
+    func didTapLikeButton(button: UIButton, blog: Blog) {
+        likeInBackground(blog) { 
+            button.selected = true
+        }
+    }
+    
+    func didTapUnLikeButton(button: UIButton, blog: Blog) {
+        deleteLikeInBackground(blog) {
+            button.selected = false
+        }
     }
 
     /*

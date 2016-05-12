@@ -151,8 +151,6 @@ class User: NSObject {
         }
     }
 
-    
-    
     //MAEK - User Defaults
     func saveCurrentUserInLocal() {
         let defaults = NSUserDefaults.standardUserDefaults()
