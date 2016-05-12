@@ -22,7 +22,7 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
         self.tableView = tableView
         self.selectedUser = user
         self.selectedUser.getBlogsInBackground(page) {
-            self.insertTopRow(tableView)
+            tableView.reloadData()
         }
         tableView.dataSource = self
         tableView.registerCell("ProfileCell")

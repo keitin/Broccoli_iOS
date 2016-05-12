@@ -16,7 +16,7 @@ class FollowingBlogViewModel: NSObject, UITableViewDataSource {
     
     func didLoad(tableView: UITableView, viewController: FollowingBlogViewController) {
         currentUser.getFollowingBlogsInBackground(page) { 
-            self.insertTopRow(tableView)
+            tableView.reloadData()
         }
         self.viewController = viewController
         self.tableView = tableView
@@ -68,7 +68,7 @@ class FollowingBlogViewModel: NSObject, UITableViewDataSource {
         let differenceIndex = currentUser.numberOfFollowingBlogs - tableView.numberOfRowsInSection(0)
         if differenceIndex > 0 {
             for _ in 1...differenceIndex {
-                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: currentUser.numberOfFollowingBlogs - 1, inSection: 0)], withRowAnimation: .Fade)
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: currentUser.numberOfFollowingBlogs - 1, inSection: 0)], withRowAnimation: .None)
             }
         }
     }
@@ -77,7 +77,7 @@ class FollowingBlogViewModel: NSObject, UITableViewDataSource {
         let differenceIndex = currentUser.numberOfFollowingBlogs - tableView.numberOfRowsInSection(0)
         if differenceIndex > 0 {
             for _ in 1...differenceIndex {
-                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Fade)
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Automatic)
             }
         }
     }

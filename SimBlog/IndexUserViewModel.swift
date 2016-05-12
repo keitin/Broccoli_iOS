@@ -21,9 +21,9 @@ class IndexUserViewModel: NSObject, UITableViewDataSource {
         tableView.dataSource = self
         tableView.registerCell("UserCell")
         if displayType == .Follows {
-            user.getFollowsInBackground { self.insertTopRow(self.tableView) }
+            user.getFollowsInBackground { tableView.reloadData() }
         } else {
-            user.getFollowersInBackground { self.insertTopRow(self.tableView) }
+            user.getFollowersInBackground { tableView.reloadData() }
         }
         
     }
