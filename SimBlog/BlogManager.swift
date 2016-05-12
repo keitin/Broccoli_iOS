@@ -67,7 +67,6 @@ class BlogManager: NSObject {
                     return
                 }
                 let json = JSON(object)
-                print(json)
                 SVProgressHUD.dismiss()
                 if page == 1 { self.searchBlogs = [] }
                 for object in json["blogs"].array! {

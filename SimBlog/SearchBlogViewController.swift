@@ -53,12 +53,19 @@ class SearchBlogViewController: UIViewController, UITableViewDelegate ,UITextFie
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 {
-            let showBlogVC = UIStoryboard.viewControllerWith("Blog", identifier: "ShowBlogViewController") as! ShowBlogViewController
-            showBlogVC.blog = blogManager.searchBlogs[indexPath.row]
-            self.navigationController?.pushViewController(showBlogVC, animated: true)
-        } else if indexPath.section == 1 {
-            searchResultsBlogViewModel.loadMoreItems()
+        if didSearched {
+            if indexPath.section == 0 {
+                let showBlogVC = UIStoryboard.viewControllerWith("Blog", identifier: "ShowBlogViewController") as! ShowBlogViewController
+                showBlogVC.blog = blogManager.searchBlogs[indexPath.row]
+                self.navigationController?.pushViewController(showBlogVC, animated: true)
+            } else if indexPath.section == 1 {
+                searchResultsBlogViewModel.loadMoreItems()
+            }
+        } else {
+            let text = searchHistory.textAtPosition(indexPath.row)
+            searchTextField.text = text
+            print(text)
+            showSearehdBlogs(text)
         }
     }
     
@@ -66,22 +73,38 @@ class SearchBlogViewController: UIViewController, UITableViewDelegate ,UITextFie
         dismissViewControllerAnimated(false, completion: nil)
     }
     
+    //MARK: Text Field Delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField.text == "" { return true }
         searchHistory.addText(textField.text!)
         searchHistory.saveInLocal()
-        
-        historyTableView.hidden = true
-        didSearched = true
-        searchResultsBlogViewModel.searchBlogs(textField.text!) {
-            self.blogsTableView.reloadData()
+        showSearehdBlogs(textField.text!)
+        return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if range.location == 0 && range.length == 1 {
+            hideSearchBlogs()
         }
-        
         return true
     }
     
     func didTapProfileImageView(blog: Blog) {
     
+    }
+    
+    private func showSearehdBlogs(text: String) {
+        historyTableView.hidden = true
+        didSearched = true
+        searchResultsBlogViewModel.searchBlogs(text) {
+            self.blogsTableView.reloadData()
+        }
+    }
+    private func hideSearchBlogs() {
+        blogManager.searchBlogs = []
+        historyTableView.hidden = false
+        didSearched = false
+        self.historyTableView.reloadData()
     }
 
 }
