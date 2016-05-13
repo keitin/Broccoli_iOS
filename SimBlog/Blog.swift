@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Bond
 
 class Blog: NSObject {
     var materials: [AnyObject] = []
@@ -18,7 +19,9 @@ class Blog: NSObject {
     var id: Int!
     var topImageURL: String?
     var user: User!
-    var likesCount: Int!
+    
+    var likesCount = Observable<Int>(0)
+    
     var numberOfMaterials: Int {
         return materials.count
     }
@@ -28,7 +31,7 @@ class Blog: NSObject {
         self.sentence = apiAttributes["sentence"].string
         self.topImageURL = apiAttributes["image"]["url"].string
         self.id = apiAttributes["id"].int
-        self.likesCount = apiAttributes["likes_count"].int
+        self.likesCount.value = apiAttributes["likes_count"].int!
     }
     
     override init() {

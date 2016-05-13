@@ -413,8 +413,7 @@
 			children = (
 				326A742E1CD067030015DE7D /* Blogs */,
 				324E471C1CD1E31B003EC6AC /* Users */,
-				32A6B94B1CE0B8A70026053E /* SearchBlogViewModel.swift */,
-				32A6B9CB1CE36BBC0026053E /* SearchResultsBlogViewModel.swift */,
+				32BFE2271CE605EF00FC26FF /* Search Blog */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -602,6 +601,15 @@
 				32BFE1E21CE4E31000FC26FF /* Follow.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		32BFE2271CE605EF00FC26FF /* Search Blog */ = {
+			isa = PBXGroup;
+			children = (
+				32A6B94B1CE0B8A70026053E /* SearchBlogViewModel.swift */,
+				32A6B9CB1CE36BBC0026053E /* SearchResultsBlogViewModel.swift */,
+			);
+			name = "Search Blog";
 			sourceTree = "<group>";
 		};
 		532CE7F561207CA72A82A29A /* Pods */ = {

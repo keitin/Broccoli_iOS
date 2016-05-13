@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bond
 
 class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like {
     
@@ -35,14 +36,14 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like {
     func didTapLikeButton(button: UIButton, blog: Blog) {
         likeInBackground(blog) { 
             button.selected = true
-            blog.likesCount = blog.likesCount + 1
+            blog.likesCount.value = Int(blog.likesCount.value) + 1
         }
     }
     
     func didTapUnLikeButton(button: UIButton, blog: Blog) {
         deleteLikeInBackground(blog) {
             button.selected = false
-            blog.likesCount = blog.likesCount - 1
+            blog.likesCount.value = blog.likesCount.value - 1
         }
     }
 

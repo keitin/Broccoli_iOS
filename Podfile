@@ -11,6 +11,7 @@ target 'SimBlog' do
  pod 'SDWebImage'
  pod 'Alamofire'
  pod 'SVProgressHUD'
+ pod "Bond"
 end
 
 target 'SimBlogTests' do

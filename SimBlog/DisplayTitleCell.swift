@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Bond
 
 @objc protocol DisplayTitleCellDelegate {
     func didTapProfileImageView(blog: Blog)
@@ -45,7 +46,15 @@ class DisplayTitleCell: UITableViewCell, Like {
         if let topImageURL = blog.topImageURL {
             topImageView.sd_setImageWithURL(NSURL(string: topImageURL))
         }
-        likeCountLabel.text = String(blog.likesCount)
+        
+        
+        
+        blog.likesCount.observe { [weak self] (currentLikes) in
+            self!.likeCountLabel.text = String(currentLikes)
+        }
+        
+        
+        
         profileImageView.blog = blog
         self.selectedBlog = blog
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))
