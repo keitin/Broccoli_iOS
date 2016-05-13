@@ -16,6 +16,7 @@ import SDWebImage
 }
 
 class DisplayTitleCell: UITableViewCell, Like {
+    @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: ProfileImageView!
@@ -44,6 +45,7 @@ class DisplayTitleCell: UITableViewCell, Like {
         if let topImageURL = blog.topImageURL {
             topImageView.sd_setImageWithURL(NSURL(string: topImageURL))
         }
+        likeCountLabel.text = String(blog.likesCount)
         profileImageView.blog = blog
         self.selectedBlog = blog
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))

@@ -18,6 +18,7 @@ class Blog: NSObject {
     var id: Int!
     var topImageURL: String?
     var user: User!
+    var likesCount: Int!
     var numberOfMaterials: Int {
         return materials.count
     }
@@ -27,6 +28,7 @@ class Blog: NSObject {
         self.sentence = apiAttributes["sentence"].string
         self.topImageURL = apiAttributes["image"]["url"].string
         self.id = apiAttributes["id"].int
+        self.likesCount = apiAttributes["likes_count"].int
     }
     
     override init() {
