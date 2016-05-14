@@ -1,17 +1,16 @@
 //
-//  ProfileImageView.swift
+//  BlogImageView.swift
 //  SimBlog
 //
-//  Created by 松下慶大 on 2016/05/05.
+//  Created by 松下慶大 on 2016/05/14.
 //  Copyright © 2016年 matsushita keita. All rights reserved.
 //
 
 import UIKit
 
-class ProfileImageView: UIImageView {
+class BlogImageView: UIImageView {
 
     var blog: Blog!
-    var user: User!
     
     /*
     // Only override drawRect: if you perform custom drawing.

@@ -46,15 +46,9 @@ class DisplayTitleCell: UITableViewCell, Like {
         if let topImageURL = blog.topImageURL {
             topImageView.sd_setImageWithURL(NSURL(string: topImageURL))
         }
-        
-        
-        
         blog.likesCount.observe { [weak self] (currentLikes) in
             self!.likeCountLabel.text = String(currentLikes)
         }
-        
-        
-        
         profileImageView.blog = blog
         self.selectedBlog = blog
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))

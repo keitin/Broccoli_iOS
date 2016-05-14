@@ -16,8 +16,12 @@ class InitialTabBarController: UITabBarController {
         let followingBlogNC = UIStoryboard.viewControllerWith("Blog", identifier: "FollowingBlogNavigationController")
         let blogNC = UIStoryboard.viewControllerWith("Blog", identifier: "BlogNavigationController")
         let userNC = UIStoryboard.viewControllerWith("User", identifier: "UserNavigationController")
+        let noticeNC = UIStoryboard.viewControllerWith("Notice", identifier: "NoticeNavigationController")
+        blogNC.title = "Search"
+        userNC.title = "My Page"
+        noticeNC.title = "Notice"
         
-        setViewControllers([followingBlogNC, blogNC, userNC], animated: true)
+        setViewControllers([followingBlogNC, blogNC, noticeNC, userNC], animated: true)
         
         
     }

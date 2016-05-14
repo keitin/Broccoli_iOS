@@ -13,6 +13,10 @@ import SVProgressHUD
 
 class CurrentUser: User {
     static let sharedInstance = CurrentUser()
+    var notices: [Notice] = []
+    var numberOfNotices: Int {
+        return notices.count
+    }
     
     func getCurrentUserInLocal() {
         let defaults = NSUserDefaults.standardUserDefaults()
