@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
+import JDStatusBarNotification
 
 class BlogManager: NSObject {
     static let sharedInstance = BlogManager()

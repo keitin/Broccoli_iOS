@@ -12,6 +12,7 @@ target 'SimBlog' do
  pod 'Alamofire'
  pod 'SVProgressHUD'
  pod "Bond"
+ pod 'JDStatusBarNotification'
 end
 
 target 'SimBlogTests' do
