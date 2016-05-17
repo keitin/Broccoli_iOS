@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReachabilitySwift
+import JDStatusBarNotification
 
 class InitialTabBarController: UITabBarController {
 
@@ -24,6 +26,25 @@ class InitialTabBarController: UITabBarController {
         setViewControllers([followingBlogNC, blogNC, noticeNC, userNC], animated: true)
         
         
+        var reachability: Reachability?
+        
+        //declare this inside of viewWillAppear
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+            return
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(InitialTabBarController.reachabilityChanged(_:)) ,name: ReachabilityChangedNotification,object: reachability)
+        do{
+            try reachability?.startNotifier()
+        }catch{
+            print("could not start reachability notifier")
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +53,22 @@ class InitialTabBarController: UITabBarController {
     }
     
 
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as! Reachability
+        
+        if reachability.isReachable() {
+            JDStatusBarNotification.dismiss()
+            if reachability.isReachableViaWiFi() {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        } else {
+            JDStatusBarNotification.showWithStatus("Error", styleName: JDStatusBarStyleError)
+            print("Network not reachable")
+        }
+    }
     /*
     // MARK: - Navigation
 

@@ -79,8 +79,10 @@ class Blog: NSObject {
         Alamofire.upload(urlRequest.0, data: urlRequest.1)
             .responseJSON { response in
                 guard let object = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 let json = JSON(object)
                 self.id = json["blog"]["id"].int
                 self.user = User(apiAttributes: json["user"])
@@ -105,14 +107,12 @@ class Blog: NSObject {
                         let blogText = BlogText(text: sentence, order: order)
                         self.addMaterialAtPosition(blogText, index: 0)
                     } else {
-                        
                         let order = material["material"]["order"].int!
                         let blogImage = BlogImage(image: nil, order: order)
                         blogImage.imageURL = material["material"]["image"]["url"].string!
                         self.addMaterialAtPosition(blogImage, index: 0)
                     }
                 }
-                
                 self.materials = self.sortMaterials()
                 callback()
         }

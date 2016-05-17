@@ -13,6 +13,7 @@ target 'SimBlog' do
  pod 'SVProgressHUD'
  pod "Bond"
  pod 'JDStatusBarNotification'
+ pod 'ReachabilitySwift'
 end
 
 target 'SimBlogTests' do

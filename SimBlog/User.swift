@@ -89,8 +89,10 @@ class User: NSObject {
         Alamofire.request(.POST, String.rootPath() + "/api/users/", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 let json = JSON(object)
                 self.id = json["user"]["id"].int
                 callback()
@@ -104,10 +106,10 @@ class User: NSObject {
         Alamofire.request(.GET, String.rootPath() + "/api/blogs/?user_id=\(self.id)", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
-                    print("えらー")
-                    print(response)
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 let json = JSON(object)
                 for object in json["blogs"].array! {
                     let blog = Blog(apiAttributes: object["blog"])
@@ -124,8 +126,10 @@ class User: NSObject {
         Alamofire.request(.GET, String.rootPath() + "/api/users/\(self.id)/following", parameters: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 let json = JSON(object)
                 for followUser in json["follows"].array! {
                     let user = User(apiAttributes: followUser["follow_user"])
@@ -140,8 +144,10 @@ class User: NSObject {
         Alamofire.request(.GET, String.rootPath() + "/api/users/\(self.id)/followers", parameters: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 let json = JSON(object)
                 for followerUser in json["followers"].array! {
                     let user = User(apiAttributes: followerUser["follower_user"])

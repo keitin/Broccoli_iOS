@@ -26,12 +26,12 @@ extension Follow {
         ]
         Alamofire.request(.POST, String.rootPath() + "/api/users/\(fromUser.id)/follow", parameters: params)
             .responseJSON { response in
-                guard let object = response.result.value else {
+                guard let _ = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 SVProgressHUD.dismiss()
-                let json = JSON(object)
-                print(json)
                 callback()
         }
     }
@@ -43,12 +43,12 @@ extension Follow {
         ]
         Alamofire.request(.DELETE, String.rootPath() + "/api/users/\(fromUser.id)/unfollow", parameters: params)
             .responseJSON { response in
-                guard let object = response.result.value else {
+                guard let _ = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 SVProgressHUD.dismiss()
-                let json = JSON(object)
-                print(json)
                 callback()
         }
     }
@@ -61,8 +61,10 @@ extension Follow {
         Alamofire.request(.GET, String.rootPath() + "/api/users/\(fromUser.id)/is_follow", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 SVProgressHUD.dismiss()
                 let json = JSON(object)
                 callback(isFollow: json["is_follow"].bool!)

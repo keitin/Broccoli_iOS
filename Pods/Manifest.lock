@@ -14,6 +14,7 @@ PODS:
   - FBSDKShareKit (4.10.1):
     - FBSDKCoreKit
   - JDStatusBarNotification (1.5.3)
+  - ReachabilitySwift (2.3.3)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - JDStatusBarNotification
+  - ReachabilitySwift
   - SDWebImage
   - SVProgressHUD
   - SwiftyJSON
@@ -39,10 +41,11 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
   FBSDKShareKit: 2fd887cce0056bdda91f99b2021d724a4fed8e88
   JDStatusBarNotification: 29413865af11c862c17180610b0f46a21118b412
+  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SVProgressHUD: e4020e23badbd7cc61bc4a80d3c1da57f166a978
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 4c77427f168639ac6545a903f609c06fca738a5c
+PODFILE CHECKSUM: 695bad9a6328945e85fd71c190b85fd745d4541f
 
 COCOAPODS: 1.0.0.beta.6

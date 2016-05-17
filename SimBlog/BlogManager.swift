@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
-import JDStatusBarNotification
 
 class BlogManager: NSObject {
     static let sharedInstance = BlogManager()
@@ -39,12 +38,12 @@ class BlogManager: NSObject {
         Alamofire.request(.GET, String.rootPath() + "/api/blogs/?user_id=\(user?.id)", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
-                    print("えらー!!")
-                    print(response)
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
                 let json = JSON(object)
                 SVProgressHUD.dismiss()
+                StatusBarNotification.hideMessage()
                 for object in json["blogs"].array! {
                     let blog = Blog(apiAttributes: object["blog"])
                     blog.user = User(apiAttributes: object["user"])
@@ -63,12 +62,12 @@ class BlogManager: NSObject {
         Alamofire.request(.GET, String.rootPath() + "/api/blogs/search", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
-                    print("えらー")
-                    print(response)
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
                 let json = JSON(object)
                 SVProgressHUD.dismiss()
+                StatusBarNotification.hideMessage()
                 if page == 1 { self.searchBlogs = [] }
                 for object in json["blogs"].array! {
                     let blog = Blog(apiAttributes: object["blog"])

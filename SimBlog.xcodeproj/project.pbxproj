@@ -66,6 +66,8 @@
 		328F00681CE6D82D00AB5E57 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F00671CE6D82D00AB5E57 /* Notice.swift */; };
 		328F006C1CE6F80200AB5E57 /* NoticeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F006B1CE6F80200AB5E57 /* NoticeType.swift */; };
 		328F006E1CE7114E00AB5E57 /* BlogImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F006D1CE7114E00AB5E57 /* BlogImageView.swift */; };
+		328F011E1CEB4F1A00AB5E57 /* RequestListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F011D1CEB4F1A00AB5E57 /* RequestListState.swift */; };
+		328F01231CEB549100AB5E57 /* StatusBarNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F01221CEB549100AB5E57 /* StatusBarNotification.swift */; };
 		32992EF81CDCEB39006C604B /* IndexUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992EF71CDCEB39006C604B /* IndexUserViewController.swift */; };
 		32992EFA1CDCEB5F006C604B /* IndexUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992EF91CDCEB5F006C604B /* IndexUserViewModel.swift */; };
 		32992F021CDCEE24006C604B /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F001CDCEE24006C604B /* UserCell.swift */; };
@@ -177,6 +179,8 @@
 		328F00671CE6D82D00AB5E57 /* Notice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		328F006B1CE6F80200AB5E57 /* NoticeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeType.swift; sourceTree = "<group>"; };
 		328F006D1CE7114E00AB5E57 /* BlogImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogImageView.swift; sourceTree = "<group>"; };
+		328F011D1CEB4F1A00AB5E57 /* RequestListState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListState.swift; sourceTree = "<group>"; };
+		328F01221CEB549100AB5E57 /* StatusBarNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarNotification.swift; sourceTree = "<group>"; };
 		32992EF71CDCEB39006C604B /* IndexUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexUserViewController.swift; sourceTree = "<group>"; };
 		32992EF91CDCEB5F006C604B /* IndexUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexUserViewModel.swift; sourceTree = "<group>"; };
 		32992F001CDCEE24006C604B /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 				326A73D71CCFC4830015DE7D /* AppDelegate.swift */,
 				32492C341CD9ED6E00B420B0 /* Storyboards */,
 				32BFE1E11CE4BC5500FC26FF /* Protocols */,
+				328F011F1CEB4F2700AB5E57 /* Enumerations */,
 				326A74141CCFC9210015DE7D /* Models */,
 				326A740A1CCFC7580015DE7D /* Views */,
 				326A74111CCFC86D0015DE7D /* View Models */,
@@ -445,6 +450,7 @@
 		326A74141CCFC9210015DE7D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				328F01241CEB54A200AB5E57 /* StatusBarNotification */,
 				3284AF091CD06E3D005AB294 /* Blog */,
 				324E471D1CD1E9DB003EC6AC /* User */,
 				328F00661CE6D81A00AB5E57 /* Search */,
@@ -588,6 +594,22 @@
 				328F00611CE6D4D400AB5E57 /* NoticeCell.xib */,
 			);
 			name = Notice;
+			sourceTree = "<group>";
+		};
+		328F011F1CEB4F2700AB5E57 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				328F011D1CEB4F1A00AB5E57 /* RequestListState.swift */,
+			);
+			name = Enumerations;
+			sourceTree = "<group>";
+		};
+		328F01241CEB54A200AB5E57 /* StatusBarNotification */ = {
+			isa = PBXGroup;
+			children = (
+				328F01221CEB549100AB5E57 /* StatusBarNotification.swift */,
+			);
+			name = StatusBarNotification;
 			sourceTree = "<group>";
 		};
 		32992EFF1CDCEDA4006C604B /* User Cell */ = {
@@ -985,6 +1007,7 @@
 			files = (
 				326A73DA1CCFC4830015DE7D /* NewBlogViewController.swift in Sources */,
 				326A74231CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift in Sources */,
+				328F01231CEB549100AB5E57 /* StatusBarNotification.swift in Sources */,
 				3284AF1B1CD0E745005AB294 /* DisplayTitleCell.swift in Sources */,
 				32992EF81CDCEB39006C604B /* IndexUserViewController.swift in Sources */,
 				32BFE1E01CE4BC5100FC26FF /* Like.swift in Sources */,
@@ -1020,6 +1043,7 @@
 				324E471B1CD1E318003EC6AC /* LoginViewModel.swift in Sources */,
 				326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */,
 				326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */,
+				328F011E1CEB4F1A00AB5E57 /* RequestListState.swift in Sources */,
 				32A6B94C1CE0B8A70026053E /* SearchBlogViewModel.swift in Sources */,
 				328F005E1CE6CFB900AB5E57 /* NoticeViewModel.swift in Sources */,
 				328F00651CE6D67E00AB5E57 /* UIImageView+Extenstion.swift in Sources */,

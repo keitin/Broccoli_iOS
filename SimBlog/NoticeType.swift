@@ -21,13 +21,14 @@ extension NoticeType {
         Alamofire.request(.GET, String.rootPath() + "/api/users/\(currentUser.id)/notices", parameters: nil)
             .responseJSON { response in
                 guard let object = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 SVProgressHUD.dismiss()
                 let json = JSON(object)
                 currentUser.notices = []
                 for notice in json["notices"].array! {
-                    print(notice)
                     let blog = Blog(apiAttributes: notice["blog"])
                     let user = User(apiAttributes: notice["user"])
                     let blogUser = User(apiAttributes: notice["blog_user"])

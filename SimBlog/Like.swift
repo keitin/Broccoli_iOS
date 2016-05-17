@@ -22,11 +22,11 @@ extension Like {
         let params = ["user_id": CurrentUser.sharedInstance.id]
         Alamofire.request(.POST, String.rootPath() + "/api/blogs/\(blog.id)/likes", parameters: params)
             .responseJSON { response in
-                guard let object = response.result.value else {
+                guard let _ = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
-                let json = JSON(object)
-                print(json)
+                StatusBarNotification.hideMessage()
                 callback()
         }
     }
@@ -35,11 +35,11 @@ extension Like {
         let params = ["user_id": CurrentUser.sharedInstance.id]
         Alamofire.request(.DELETE, String.rootPath() + "/api/blogs/\(blog.id)/likes/0", parameters: params)
             .responseJSON { response in
-                guard let object = response.result.value else {
+                guard let _ = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
-                let json = JSON(object)
-                print(json)
+                StatusBarNotification.hideMessage()
                 callback()
         }
     }
@@ -49,8 +49,10 @@ extension Like {
         Alamofire.request(.GET, String.rootPath() + "/api/blogs/\(blog.id)/likes/is_like", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 let json = JSON(object)
                 callback(isLike: json["is_like"].bool!)
         }

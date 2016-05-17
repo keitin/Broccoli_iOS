@@ -37,10 +37,10 @@ class CurrentUser: User {
         Alamofire.request(.GET, String.rootPath() + "/api/blogs/following", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
-                    print("えらーんご")
-                    print(response)
+                    StatusBarNotification.showErrorMessage()
                     return
                 }
+                StatusBarNotification.hideMessage()
                 let json = JSON(object)
                 SVProgressHUD.dismiss()
                 for object in json["blogs"].array! {
