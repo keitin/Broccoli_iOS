@@ -8,57 +8,52 @@
 
 import UIKit
 
-class IndexBlogViewModel: NSObject, UITableViewDataSource {
+class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
     
-    var tableView: UITableView!
-    var viewController: IndexBlogViewController!
+    var collectionView: UICollectionView!
     let blogManager = BlogManager.sharedInstance
     var page = 1
     
-    func didLoad(tableView: UITableView, viewController: IndexBlogViewController) {
+    func didLoad(collectionView: UICollectionView) {
         blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
-            tableView.reloadData()
+            collectionView.reloadData()
         }
-        self.viewController = viewController
-        self.tableView = tableView
-        tableView.dataSource = self
-        tableView.registerCell("BlogCell")
-        tableView.registerCell("MoreItemsCell")
+        self.collectionView = collectionView
+        collectionView.dataSource = self
+        collectionView.registerCell("BlogImageCell")
+        collectionView.backgroundColor = UIColor.whiteColor()
     }
     
     func willAppear() {
-        insertNewBlogToRow(tableView)
+//        blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
+//            self.collectionView.reloadData()
+//        }
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return blogManager.numberOfBlogs
         } else {
             return 1
         }
-        
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("BlogCell", forIndexPath: indexPath) as! BlogCell
-            cell.fillWith(blogManager.blogAtPosition(indexPath.row))
-            cell.delegate = viewController
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("MoreItemsCell", forIndexPath: indexPath) as! MoreItemsCell
-            return cell
-        }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("BlogImageCell", forIndexPath: indexPath) as! BlogImageCell
+        cell.fillWith(blogManager.blogAtPosition(indexPath.row))
+        return cell
     }
+    
     
     func loadMoreItems() {
         page = page + 1
         blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) { 
-            self.insertTopRow(self.tableView)
+//            self.insertTopRow(self.collectionView)
         }
     }
     

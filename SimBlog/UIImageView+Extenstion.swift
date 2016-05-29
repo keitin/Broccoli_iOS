@@ -14,4 +14,14 @@ extension UIImageView {
         self.contentMode = UIViewContentMode.ScaleAspectFill
         self.layer.masksToBounds = true
     }
+    
+    func makeCircle() {
+        self.layer.cornerRadius = self.frame.width / 2
+        self.layer.masksToBounds = true
+    }
+    
+    func lineBorderWhite() {
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.whiteColor().CGColor
+    }
 }

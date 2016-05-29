@@ -11,7 +11,7 @@ import UIKit
 class NoticeViewModel: NSObject, UITableViewDataSource, NoticeType {
 
     var tableView: UITableView!
-    var viewController: NoticeViewController!
+    weak var viewController: NoticeViewController!
     let currentUser = CurrentUser.sharedInstance
     
     func didLoad(tableView: UITableView, viewController: NoticeViewController) {

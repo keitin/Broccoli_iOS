@@ -14,7 +14,6 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
     let blog = Blog()
     let blogManeger = BlogManager.sharedInstance
     var tableView: UITableView!
-    var viewController: NewBlogViewController!
     var activeTextView: UITextView?
     let currentUser = CurrentUser.sharedInstance
     
@@ -22,8 +21,7 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         super.init()
     }
     
-    func didLoad(viewController: NewBlogViewController, tableView: UITableView) {
-        self.viewController = viewController
+    func didLoad(tableView: UITableView) {
         self.tableView = tableView
         self.tableView.registerCell("TextCell")
         self.tableView.registerCell("ImageCell")
@@ -118,13 +116,13 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         }
     }
     
-    func postBlog(sender: UIBarButtonItem) {
+    func postBlog(callback: () -> Void) {
         SVProgressHUD.show()
         blog.saveInbackground {
             SVProgressHUD.dismiss()
             self.blogManeger.addBlogAtPosition(self.blog, index: 0)
             self.currentUser.addBlogAtPosition(self.blog, index: 0)
-            self.viewController.dismissViewControllerAnimated(true, completion: nil)
+            callback()
         }        
     }
     

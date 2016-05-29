@@ -8,16 +8,26 @@
 
 import UIKit
 
-class IndexBlogViewController: UIViewController, UITableViewDelegate, BlogCellDelegate {
-    @IBOutlet weak var tableView: UITableView!
+class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLayout, BlogCellDelegate {
+    var collectionView: UICollectionView!
     let indexBlogViewModel = IndexBlogViewModel()
     let blogManager = BlogManager.sharedInstance
     var selectedBlog: Blog!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        indexBlogViewModel.didLoad(tableView, viewController: self)
-        tableView.delegate = self
+        
+        let layout = UICollectionViewFlowLayout()
+        //アイテム同士のマージン
+        layout.minimumInteritemSpacing = 1.0
+        layout.minimumLineSpacing = 1.0
+        
+        //インスタンス変数を定義していきましょう
+        self.collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        self.view.addSubview(self.collectionView)
+        
+        indexBlogViewModel.didLoad(collectionView)
+        collectionView.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -30,12 +40,18 @@ class IndexBlogViewController: UIViewController, UITableViewDelegate, BlogCellDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK - Collection View Delegate Flow Layout
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let cellSize = self.view.frame.size.width/3 - 1
+        return CGSizeMake(cellSize, cellSize)
+    }
 
     
     //MARK - TableView Delagate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 165
+            return 191
         } else {
             return 50
         }

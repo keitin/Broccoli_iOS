@@ -13,6 +13,7 @@ class FollowingBlogViewModel: NSObject, UITableViewDataSource {
     var viewController: FollowingBlogViewController!
     var page = 1
     let currentUser = CurrentUser.sharedInstance
+    var blogCell: BlogCell!
     
     func didLoad(tableView: UITableView, viewController: FollowingBlogViewController) {
         currentUser.getFollowingBlogsInBackground(page) { 
@@ -46,7 +47,8 @@ class FollowingBlogViewModel: NSObject, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("BlogCell", forIndexPath: indexPath) as! BlogCell
             cell.fillWith(currentUser.followingBlogAtPosition(indexPath.row))
-            cell.delegate = viewController
+//            cell.delegate = viewController
+            self.blogCell = cell
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("MoreItemsCell", forIndexPath: indexPath) as! MoreItemsCell

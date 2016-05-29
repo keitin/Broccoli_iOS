@@ -18,7 +18,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         
         title = "New Blog"
         
-        newBlogViewModel.didLoad(self, tableView: tableView)
+        newBlogViewModel.didLoad(tableView)
         
         //Keyboard Notification
         let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -30,7 +30,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         super.viewWillAppear(animated)
         
         navigationItem.leftBarButtonItem("Close", target: self, action: #selector(NewBlogViewController.closeNewBlog(_:)))
-        navigationItem.rightBarButtonItem("Post", target: newBlogViewModel, action: #selector(NewBlogViewModel.postBlog(_:)))
+        navigationItem.rightBarButtonItem("Post", target: self, action: #selector(NewBlogViewController.postBlog(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +56,12 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     
     @IBAction func tapDoneButton(sender: UIButton) {
         newBlogViewModel.didFinishedEdit()
+    }
+    
+    func postBlog(sender: UIBarButtonItem) {
+        newBlogViewModel.postBlog {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     //MARK - Camera Roll

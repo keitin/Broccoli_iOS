@@ -11,14 +11,18 @@ import Bond
 
 class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like {
     
-
     @IBOutlet weak var tableView: UITableView!
     var blog: Blog!
     let showBlogViewModel = ShowBlogViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showBlogViewModel.didLoad(blog, tableView: tableView, viewController: self)
+        showBlogViewModel.didLoad(blog, tableView: tableView)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        showBlogViewModel.displayTitleCell.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

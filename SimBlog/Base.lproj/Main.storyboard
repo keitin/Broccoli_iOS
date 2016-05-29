@@ -10,7 +10,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="InitialTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Ur3-RD-s51" customClass="InitialTabBarController" customModule="SimBlog" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="YM1-GW-gqA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="YM1-GW-gqA">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>

@@ -37,7 +37,7 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
         if indexPath.section == 0 {
             return 250
         } else if indexPath.section == 1 {
-            return 165
+            return 191
         } else {
             return 50
         }

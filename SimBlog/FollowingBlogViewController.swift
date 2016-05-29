@@ -30,6 +30,10 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
         followingBlogViewModel.willAppear()
     }
     
+    override func viewDidAppear(animated: Bool) {
+//        su
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,7 +43,7 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
     //MARK - TableView Delagate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 165
+            return 191
         } else {
             return 50
         }

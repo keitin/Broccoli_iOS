@@ -68,6 +68,10 @@
 		328F006E1CE7114E00AB5E57 /* BlogImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F006D1CE7114E00AB5E57 /* BlogImageView.swift */; };
 		328F011E1CEB4F1A00AB5E57 /* RequestListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F011D1CEB4F1A00AB5E57 /* RequestListState.swift */; };
 		328F01231CEB549100AB5E57 /* StatusBarNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F01221CEB549100AB5E57 /* StatusBarNotification.swift */; };
+		328F01321CED853C00AB5E57 /* Like-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F01311CED853C00AB5E57 /* Like-50.png */; };
+		329319071CED958500B393D7 /* BlogImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329319051CED958500B393D7 /* BlogImageCell.swift */; };
+		329319081CED958500B393D7 /* BlogImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 329319061CED958500B393D7 /* BlogImageCell.xib */; };
+		3293190A1CED96F700B393D7 /* UICollectionView+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329319091CED96F700B393D7 /* UICollectionView+Extenstion.swift */; };
 		32992EF81CDCEB39006C604B /* IndexUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992EF71CDCEB39006C604B /* IndexUserViewController.swift */; };
 		32992EFA1CDCEB5F006C604B /* IndexUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992EF91CDCEB5F006C604B /* IndexUserViewModel.swift */; };
 		32992F021CDCEE24006C604B /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F001CDCEE24006C604B /* UserCell.swift */; };
@@ -181,6 +185,10 @@
 		328F006D1CE7114E00AB5E57 /* BlogImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogImageView.swift; sourceTree = "<group>"; };
 		328F011D1CEB4F1A00AB5E57 /* RequestListState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestListState.swift; sourceTree = "<group>"; };
 		328F01221CEB549100AB5E57 /* StatusBarNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarNotification.swift; sourceTree = "<group>"; };
+		328F01311CED853C00AB5E57 /* Like-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Like-50.png"; sourceTree = "<group>"; };
+		329319051CED958500B393D7 /* BlogImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogImageCell.swift; sourceTree = "<group>"; };
+		329319061CED958500B393D7 /* BlogImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogImageCell.xib; sourceTree = "<group>"; };
+		329319091CED96F700B393D7 /* UICollectionView+Extenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extenstion.swift"; sourceTree = "<group>"; };
 		32992EF71CDCEB39006C604B /* IndexUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexUserViewController.swift; sourceTree = "<group>"; };
 		32992EF91CDCEB5F006C604B /* IndexUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexUserViewModel.swift; sourceTree = "<group>"; };
 		32992F001CDCEE24006C604B /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -432,6 +440,7 @@
 				3237B8C41CD48D0100ABD9F9 /* String+Extension.swift */,
 				32492C3F1CDA430D00B420B0 /* UIStoryboard+Extension.swift */,
 				328F00641CE6D67E00AB5E57 /* UIImageView+Extenstion.swift */,
+				329319091CED96F700B393D7 /* UICollectionView+Extenstion.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -472,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				32492C411CDAEA5300B420B0 /* DSCF5417.JPG */,
+				328F01311CED853C00AB5E57 /* Like-50.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -504,6 +514,8 @@
 			children = (
 				326A742F1CD068270015DE7D /* BlogCell.swift */,
 				326A74301CD068270015DE7D /* BlogCell.xib */,
+				329319051CED958500B393D7 /* BlogImageCell.swift */,
+				329319061CED958500B393D7 /* BlogImageCell.xib */,
 			);
 			name = BlogCell;
 			sourceTree = "<group>";
@@ -843,7 +855,9 @@
 				326A73E21CCFC4830015DE7D /* LaunchScreen.storyboard in Resources */,
 				3284AF261CD0EF18005AB294 /* DisplayImageCell.xib in Resources */,
 				324E47191CD1E213003EC6AC /* LoginView.xib in Resources */,
+				328F01321CED853C00AB5E57 /* Like-50.png in Resources */,
 				32A6B9471CE0B54B0026053E /* SearchHistoryCell.xib in Resources */,
+				329319081CED958500B393D7 /* BlogImageCell.xib in Resources */,
 				326A74321CD068270015DE7D /* BlogCell.xib in Resources */,
 				32492C3D1CD9F1D100B420B0 /* ProfileCell.xib in Resources */,
 				326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */,
@@ -1031,6 +1045,7 @@
 				3284AF161CD0B73F005AB294 /* ShowBlogViewController.swift in Sources */,
 				32A6B9CC1CE36BBC0026053E /* SearchResultsBlogViewModel.swift in Sources */,
 				326A74131CCFC8D20015DE7D /* Blog.swift in Sources */,
+				329319071CED958500B393D7 /* BlogImageCell.swift in Sources */,
 				324E47111CD1D43B003EC6AC /* LoginViewController.swift in Sources */,
 				32BFE1E31CE4E31000FC26FF /* Follow.swift in Sources */,
 				32992F291CE0A9B7006C604B /* BlogNavigationController.swift in Sources */,
@@ -1041,6 +1056,7 @@
 				32992F1E1CE0525E006C604B /* InitialTabBarController.swift in Sources */,
 				32B42AEA1CDB6F18009EC63C /* ProfileImageView.swift in Sources */,
 				324E471B1CD1E318003EC6AC /* LoginViewModel.swift in Sources */,
+				3293190A1CED96F700B393D7 /* UICollectionView+Extenstion.swift in Sources */,
 				326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */,
 				326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */,
 				328F011E1CEB4F1A00AB5E57 /* RequestListState.swift in Sources */,

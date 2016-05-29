@@ -11,13 +11,12 @@ import UIKit
 class ShowBlogViewModel: NSObject, UITableViewDataSource {
     
     var tableView: UITableView!
-    var viewController: ShowBlogViewController!
     var blog: Blog!
+    var displayTitleCell: DisplayTitleCell!
     
-    func didLoad(blog: Blog, tableView: UITableView, viewController: ShowBlogViewController) {
+    func didLoad(blog: Blog, tableView: UITableView) {
         self.blog = blog
         self.tableView = tableView
-        self.viewController = viewController
         self.tableView.registerCell("DisplayTextCell")
         self.tableView.registerCell("DisplayImageCell")
         self.tableView.registerCell("DisplayTitleCell")
@@ -45,7 +44,7 @@ class ShowBlogViewModel: NSObject, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("DisplayTitleCell", forIndexPath: indexPath) as! DisplayTitleCell
             cell.fillWith(blog)
-            cell.delegate = self.viewController
+            self.displayTitleCell = cell
             return cell
         } else {
             if let blogImage = blog.materialAtPosition(indexPath.row) as? BlogImage {

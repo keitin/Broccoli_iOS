@@ -18,7 +18,6 @@ class BlogCell: UITableViewCell {
 
     @IBOutlet weak var profileImageView: ProfileImageView!
     @IBOutlet weak var topImageView: UIImageView!
-    @IBOutlet weak var sentenceLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     var delegate: BlogCellDelegate?
 
@@ -40,7 +39,6 @@ class BlogCell: UITableViewCell {
             topImageView.sd_setImageWithURL(NSURL(string: topImageURL))
         }
         titleLabel.text = blog.title
-        sentenceLabel.text = blog.sentence
         nameLabel.text = blog.user.name
         profileImageView.blog = blog
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))
@@ -49,6 +47,8 @@ class BlogCell: UITableViewCell {
     func layoutImageView() {
         profileImageView.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(BlogCell.tapProfileImageView(_:)))
+        profileImageView.makeCircle()
+        profileImageView.lineBorderWhite()
         profileImageView.addGestureRecognizer(tap)
     }
     
