@@ -24,12 +24,6 @@ class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
         collectionView.backgroundColor = UIColor.whiteColor()
     }
     
-    func willAppear() {
-//        blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
-//            self.collectionView.reloadData()
-//        }
-    }
-    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -42,7 +36,6 @@ class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
         }
     }
     
-    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("BlogImageCell", forIndexPath: indexPath) as! BlogImageCell
         cell.fillWith(blogManager.blogAtPosition(indexPath.row))
@@ -52,29 +45,8 @@ class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
     
     func loadMoreItems() {
         page = page + 1
-        blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) { 
-//            self.insertTopRow(self.collectionView)
+        blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
+            self.collectionView.reloadData()
         }
     }
-    
-    
-    // MARK Table View Private
-    private func insertTopRow(tableView: UITableView) {
-        let differenceIndex = blogManager.numberOfBlogs - tableView.numberOfRowsInSection(0)
-        if differenceIndex > 0 {
-            for _ in 1...differenceIndex {
-                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: blogManager.numberOfBlogs - 1, inSection: 0)], withRowAnimation: .Fade)
-            }
-        }
-    }
-    
-    private func insertNewBlogToRow(tableView: UITableView) {
-        let differenceIndex = blogManager.numberOfBlogs - tableView.numberOfRowsInSection(0)
-        if differenceIndex > 0 {
-            for _ in 1...differenceIndex {
-                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Fade)
-            }
-        }
-    }
-    
 }

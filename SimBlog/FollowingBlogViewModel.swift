@@ -47,7 +47,6 @@ class FollowingBlogViewModel: NSObject, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("BlogCell", forIndexPath: indexPath) as! BlogCell
             cell.fillWith(currentUser.followingBlogAtPosition(indexPath.row))
-//            cell.delegate = viewController
             self.blogCell = cell
             return cell
         } else {

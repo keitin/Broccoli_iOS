@@ -8,11 +8,10 @@
 
 import UIKit
 
-class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLayout, BlogCellDelegate {
+class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, BlogCellDelegate {
     var collectionView: UICollectionView!
     let indexBlogViewModel = IndexBlogViewModel()
     let blogManager = BlogManager.sharedInstance
-    var selectedBlog: Blog!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +31,19 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        indexBlogViewModel.willAppear()
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Collection View Delegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let showBlogVC = UIStoryboard.viewControllerWith("Blog", identifier: "ShowBlogViewController") as! ShowBlogViewController
+        showBlogVC.blog = blogManager.blogAtPosition(indexPath.row)
+        self.navigationController?.pushViewController(showBlogVC, animated: true)
     }
     
     //MARK - Collection View Delegate Flow Layout
@@ -78,14 +83,5 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
         let searchBlogNC = UIStoryboard.viewControllerWith("Blog", identifier: "SearchBlogNavigationController")
         presentViewController(searchBlogNC, animated: false, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
