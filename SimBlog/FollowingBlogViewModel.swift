@@ -75,10 +75,13 @@ class FollowingBlogViewModel: NSObject, UITableViewDataSource {
     }
     
     private func insertNewBlogToRow(tableView: UITableView) {
+        print("====")
+        print(currentUser.numberOfFollowingBlogs)
+        print(tableView.numberOfRowsInSection(0))
         let differenceIndex = currentUser.numberOfFollowingBlogs - tableView.numberOfRowsInSection(0)
         if differenceIndex > 0 {
             for _ in 1...differenceIndex {
-                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Automatic)
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Fade)
             }
         }
     }

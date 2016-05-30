@@ -58,6 +58,13 @@ class User: NSObject {
         blogs.insert(blog, atIndex: index)
     }
     
+    func addFollowingBlogAtPostion(blog: Blog, index: Int) {
+        for followBlog in followingBlogs {
+            if followBlog.id == blog.id { return }
+        }
+        followingBlogs.insert(blog, atIndex: index)
+    }
+    
     func issueToken() {
         let now = NSDate()
         let dateFormatter = NSDateFormatter()

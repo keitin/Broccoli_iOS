@@ -124,7 +124,8 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         SVProgressHUD.show()
         blog.saveInbackground {
             SVProgressHUD.dismiss()
-            self.blogManeger.addBlogAtPosition(self.blog, index: 0)
+//            self.blogManeger.addBlogAtPosition(self.blog, index: 0)
+            self.currentUser.addFollowingBlogAtPostion(self.blog, index: 0)
             self.currentUser.addBlogAtPosition(self.blog, index: 0)
             callback(message: nil)
         }        

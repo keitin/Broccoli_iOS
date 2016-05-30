@@ -46,7 +46,7 @@ class CurrentUser: User {
                 for object in json["blogs"].array! {
                     let blog = Blog(apiAttributes: object["blog"])
                     blog.user = User(apiAttributes: object["user"])
-                    self.followingBlogs.insert(blog, atIndex: self.numberOfFollowingBlogs)
+                    self.addFollowingBlogAtPostion(blog, index: self.numberOfFollowingBlogs)
                     callback()
                 }
         }
