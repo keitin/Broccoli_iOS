@@ -116,13 +116,17 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         }
     }
     
-    func postBlog(callback: () -> Void) {
+    func postBlog(callback: (message: String?) -> Void) {
+        if blog.title == "" || blog.topImage == nil {
+            callback(message: ErrorMessage.emptyTitleOrImage())
+            return
+        }
         SVProgressHUD.show()
         blog.saveInbackground {
             SVProgressHUD.dismiss()
             self.blogManeger.addBlogAtPosition(self.blog, index: 0)
             self.currentUser.addBlogAtPosition(self.blog, index: 0)
-            callback()
+            callback(message: nil)
         }        
     }
     

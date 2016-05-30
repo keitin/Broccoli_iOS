@@ -18,15 +18,19 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Following"
         followingBlogViewModel.didLoad(tableView, viewController: self)
         tableView.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.rightBarButtonItem("New", target: self, action: #selector
+//        navigationItem.rightBarButtonItem("New", target: self, action: #selector
+//            (FollowingBlogViewController.modalNewBlog(_:)))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add-blog"), style: .Plain, target: self, action:  #selector
             (FollowingBlogViewController.modalNewBlog(_:)))
+
+        
         followingBlogViewModel.willAppear()
     }
     

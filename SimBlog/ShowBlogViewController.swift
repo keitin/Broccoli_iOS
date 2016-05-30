@@ -12,12 +12,18 @@ import Bond
 class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like {
     
     @IBOutlet weak var tableView: UITableView!
-    var blog: Blog!
     let showBlogViewModel = ShowBlogViewModel()
-    
+    var blog: Blog!
+    var loveButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         showBlogViewModel.didLoad(blog, tableView: tableView)
+        
+        isLike(self.blog) { (isLike) in
+            self.loveButton = self.navigationItem.loveButtonItem(self, action: #selector(ShowBlogViewController.didTapLoveButton(_:)), selected: isLike)
+            self.navigationItem.rightBarButtonItem = self.loveButton
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -37,17 +43,25 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like {
     }
     
     //MARK: Like Action
-    func didTapLikeButton(button: UIButton, blog: Blog) {
-        likeInBackground(blog) { 
-            button.selected = true
-            blog.likesCount.value = Int(blog.likesCount.value) + 1
+    func didTapLoveButton(sender: UIButton) {
+        if sender.selected {
+            unLikeBlog(sender)
+        } else {
+            likeBlog(sender)
         }
     }
     
-    func didTapUnLikeButton(button: UIButton, blog: Blog) {
+    private func likeBlog(button: UIButton) {
+        likeInBackground(blog) {
+            button.selected = true
+            self.blog.likesCount.value = Int(self.blog.likesCount.value) + 1
+        }
+    }
+    
+    private func unLikeBlog(button: UIButton) {
         deleteLikeInBackground(blog) {
             button.selected = false
-            blog.likesCount.value = blog.likesCount.value - 1
+            self.blog.likesCount.value = self.blog.likesCount.value - 1
         }
     }
 

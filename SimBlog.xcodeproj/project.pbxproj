@@ -91,6 +91,22 @@
 		32A6B9501CE0BD670026053E /* DeleteHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6B94E1CE0BD670026053E /* DeleteHistoryCell.swift */; };
 		32A6B9511CE0BD670026053E /* DeleteHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A6B94F1CE0BD670026053E /* DeleteHistoryCell.xib */; };
 		32A6B9CC1CE36BBC0026053E /* SearchResultsBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6B9CB1CE36BBC0026053E /* SearchResultsBlogViewModel.swift */; };
+		32AA3B681CFAE67000668DDE /* Home-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B661CFAE67000668DDE /* Home-50@2x.png */; };
+		32AA3B6B1CFAE8DD00668DDE /* Search-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B6A1CFAE8DD00668DDE /* Search-50@2x.png */; };
+		32AA3B6D1CFAEAC400668DDE /* Search-selected-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B6C1CFAEAC400668DDE /* Search-selected-50@2x.png */; };
+		32AA3B701CFAEB6000668DDE /* Hearts-selected-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B6E1CFAEB6000668DDE /* Hearts-selected-50@2x.png */; };
+		32AA3B711CFAEB6000668DDE /* Hearts-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B6F1CFAEB6000668DDE /* Hearts-50@2x.png */; };
+		32AA3B731CFAEC9300668DDE /* Contacts-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B721CFAEC9300668DDE /* Contacts-50@2x.png */; };
+		32AA3B751CFAEC9C00668DDE /* Contacts-selected-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B741CFAEC9C00668DDE /* Contacts-selected-50@2x.png */; };
+		32AA3B791CFAEDAE00668DDE /* Home-selected-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B781CFAEDAE00668DDE /* Home-selected-50@2x.png */; };
+		32AA3B7B1CFBE94100668DDE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA3B7A1CFBE94100668DDE /* UIColor+Extension.swift */; };
+		32AA3B7D1CFC035100668DDE /* add-blog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B7C1CFC035100668DDE /* add-blog@2x.png */; };
+		32AA3B7F1CFC158300668DDE /* Delete-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B7E1CFC158300668DDE /* Delete-50@2x.png */; };
+		32AA3B811CFC183900668DDE /* send-52@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B801CFC183900668DDE /* send-52@2x.png */; };
+		32AA3B831CFC1A4200668DDE /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA3B821CFC1A4200668DDE /* ErrorMessage.swift */; };
+		32AA3B861CFC1BDB00668DDE /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AA3B851CFC1BDB00668DDE /* UIAlertController+Extension.swift */; };
+		32AA3B881CFC3D7200668DDE /* Love-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B871CFC3D7200668DDE /* Love-50@2x.png */; };
+		32AA3B8A1CFC3D7E00668DDE /* Love-Filled-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32AA3B891CFC3D7E00668DDE /* Love-Filled-50@2x.png */; };
 		32B42AEA1CDB6F18009EC63C /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B42AE91CDB6F18009EC63C /* ProfileImageView.swift */; };
 		32B42AED1CDB9029009EC63C /* MoreItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B42AEB1CDB9029009EC63C /* MoreItemsCell.swift */; };
 		32B42AEE1CDB9029009EC63C /* MoreItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */; };
@@ -208,6 +224,22 @@
 		32A6B94E1CE0BD670026053E /* DeleteHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteHistoryCell.swift; sourceTree = "<group>"; };
 		32A6B94F1CE0BD670026053E /* DeleteHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteHistoryCell.xib; sourceTree = "<group>"; };
 		32A6B9CB1CE36BBC0026053E /* SearchResultsBlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsBlogViewModel.swift; sourceTree = "<group>"; };
+		32AA3B661CFAE67000668DDE /* Home-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B6A1CFAE8DD00668DDE /* Search-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B6C1CFAEAC400668DDE /* Search-selected-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-selected-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B6E1CFAEB6000668DDE /* Hearts-selected-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hearts-selected-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B6F1CFAEB6000668DDE /* Hearts-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hearts-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B721CFAEC9300668DDE /* Contacts-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Contacts-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B741CFAEC9C00668DDE /* Contacts-selected-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Contacts-selected-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B781CFAEDAE00668DDE /* Home-selected-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-selected-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B7A1CFBE94100668DDE /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		32AA3B7C1CFC035100668DDE /* add-blog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-blog@2x.png"; sourceTree = "<group>"; };
+		32AA3B7E1CFC158300668DDE /* Delete-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B801CFC183900668DDE /* send-52@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send-52@2x.png"; sourceTree = "<group>"; };
+		32AA3B821CFC1A4200668DDE /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		32AA3B851CFC1BDB00668DDE /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		32AA3B871CFC3D7200668DDE /* Love-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Love-50@2x.png"; sourceTree = "<group>"; };
+		32AA3B891CFC3D7E00668DDE /* Love-Filled-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Love-Filled-50@2x.png"; sourceTree = "<group>"; };
 		32B42AE91CDB6F18009EC63C /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		32B42AEB1CDB9029009EC63C /* MoreItemsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreItemsCell.swift; sourceTree = "<group>"; };
 		32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreItemsCell.xib; sourceTree = "<group>"; };
@@ -441,6 +473,8 @@
 				32492C3F1CDA430D00B420B0 /* UIStoryboard+Extension.swift */,
 				328F00641CE6D67E00AB5E57 /* UIImageView+Extenstion.swift */,
 				329319091CED96F700B393D7 /* UICollectionView+Extenstion.swift */,
+				32AA3B7A1CFBE94100668DDE /* UIColor+Extension.swift */,
+				32AA3B851CFC1BDB00668DDE /* UIAlertController+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -464,6 +498,7 @@
 				324E471D1CD1E9DB003EC6AC /* User */,
 				328F00661CE6D81A00AB5E57 /* Search */,
 				328F00691CE6D82F00AB5E57 /* Notice */,
+				32AA3B841CFC1A8500668DDE /* ErrorMessage */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -480,8 +515,21 @@
 		326A74211CCFD3440015DE7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				32AA3B801CFC183900668DDE /* send-52@2x.png */,
+				32AA3B7E1CFC158300668DDE /* Delete-50@2x.png */,
+				32AA3B7C1CFC035100668DDE /* add-blog@2x.png */,
+				32AA3B661CFAE67000668DDE /* Home-50@2x.png */,
 				32492C411CDAEA5300B420B0 /* DSCF5417.JPG */,
 				328F01311CED853C00AB5E57 /* Like-50.png */,
+				32AA3B6E1CFAEB6000668DDE /* Hearts-selected-50@2x.png */,
+				32AA3B6F1CFAEB6000668DDE /* Hearts-50@2x.png */,
+				32AA3B871CFC3D7200668DDE /* Love-50@2x.png */,
+				32AA3B891CFC3D7E00668DDE /* Love-Filled-50@2x.png */,
+				32AA3B6C1CFAEAC400668DDE /* Search-selected-50@2x.png */,
+				32AA3B741CFAEC9C00668DDE /* Contacts-selected-50@2x.png */,
+				32AA3B721CFAEC9300668DDE /* Contacts-50@2x.png */,
+				32AA3B781CFAEDAE00668DDE /* Home-selected-50@2x.png */,
+				32AA3B6A1CFAE8DD00668DDE /* Search-50@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -489,11 +537,10 @@
 		326A74261CD062F50015DE7D /* Blogs */ = {
 			isa = PBXGroup;
 			children = (
+				32992F201CE053C4006C604B /* FollowingBlogViewController.swift */,
 				326A74241CD0613F0015DE7D /* IndexBlogViewController.swift */,
 				326A73D91CCFC4830015DE7D /* NewBlogViewController.swift */,
 				3284AF151CD0B73F005AB294 /* ShowBlogViewController.swift */,
-				32992F201CE053C4006C604B /* FollowingBlogViewController.swift */,
-				32992F281CE0A9B7006C604B /* BlogNavigationController.swift */,
 			);
 			name = Blogs;
 			sourceTree = "<group>";
@@ -637,6 +684,7 @@
 			isa = PBXGroup;
 			children = (
 				32992F1D1CE0525E006C604B /* InitialTabBarController.swift */,
+				32992F281CE0A9B7006C604B /* BlogNavigationController.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -683,6 +731,14 @@
 				32A6B94F1CE0BD670026053E /* DeleteHistoryCell.xib */,
 			);
 			name = "Delete History";
+			sourceTree = "<group>";
+		};
+		32AA3B841CFC1A8500668DDE /* ErrorMessage */ = {
+			isa = PBXGroup;
+			children = (
+				32AA3B821CFC1A4200668DDE /* ErrorMessage.swift */,
+			);
+			name = ErrorMessage;
 			sourceTree = "<group>";
 		};
 		32B42AEF1CDB903B009EC63C /* Common */ = {
@@ -812,6 +868,7 @@
 				TargetAttributes = {
 					326A73D31CCFC4830015DE7D = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 4B7TU5JDK8;
 					};
 					326A73E71CCFC4830015DE7D = {
 						CreatedOnToolsVersion = 7.3;
@@ -849,6 +906,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3284AF1C1CD0E745005AB294 /* DisplayTitleCell.xib in Resources */,
+				32AA3B7D1CFC035100668DDE /* add-blog@2x.png in Resources */,
+				32AA3B711CFAEB6000668DDE /* Hearts-50@2x.png in Resources */,
 				3284AF211CD0EE3B005AB294 /* DisplayTextCell.xib in Resources */,
 				328F005C1CE6CBE200AB5E57 /* Notice.storyboard in Resources */,
 				3284AF131CD09AD5005AB294 /* TitleCell.xib in Resources */,
@@ -857,21 +916,32 @@
 				324E47191CD1E213003EC6AC /* LoginView.xib in Resources */,
 				328F01321CED853C00AB5E57 /* Like-50.png in Resources */,
 				32A6B9471CE0B54B0026053E /* SearchHistoryCell.xib in Resources */,
+				32AA3B681CFAE67000668DDE /* Home-50@2x.png in Resources */,
 				329319081CED958500B393D7 /* BlogImageCell.xib in Resources */,
+				32AA3B811CFC183900668DDE /* send-52@2x.png in Resources */,
 				326A74321CD068270015DE7D /* BlogCell.xib in Resources */,
 				32492C3D1CD9F1D100B420B0 /* ProfileCell.xib in Resources */,
 				326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */,
+				32AA3B6D1CFAEAC400668DDE /* Search-selected-50@2x.png in Resources */,
+				32AA3B8A1CFC3D7E00668DDE /* Love-Filled-50@2x.png in Resources */,
+				32AA3B7F1CFC158300668DDE /* Delete-50@2x.png in Resources */,
 				32B42AEE1CDB9029009EC63C /* MoreItemsCell.xib in Resources */,
+				32AA3B731CFAEC9300668DDE /* Contacts-50@2x.png in Resources */,
+				32AA3B751CFAEC9C00668DDE /* Contacts-selected-50@2x.png in Resources */,
 				32492C331CD9ED1E00B420B0 /* Login.storyboard in Resources */,
 				32492C421CDAEA5300B420B0 /* DSCF5417.JPG in Resources */,
 				32992F031CDCEE24006C604B /* UserCell.xib in Resources */,
 				326A74091CCFC7540015DE7D /* TextCell.xib in Resources */,
 				32992F1A1CE0516B006C604B /* Blog.storyboard in Resources */,
 				326A741D1CCFD0BD0015DE7D /* ImageCell.xib in Resources */,
+				32AA3B701CFAEB6000668DDE /* Hearts-selected-50@2x.png in Resources */,
 				326A73DD1CCFC4830015DE7D /* Main.storyboard in Resources */,
+				32AA3B6B1CFAE8DD00668DDE /* Search-50@2x.png in Resources */,
 				32992F1C1CE051C4006C604B /* User.storyboard in Resources */,
 				32A6B9511CE0BD670026053E /* DeleteHistoryCell.xib in Resources */,
 				328F00631CE6D4D400AB5E57 /* NoticeCell.xib in Resources */,
+				32AA3B881CFC3D7200668DDE /* Love-50@2x.png in Resources */,
+				32AA3B791CFAEDAE00668DDE /* Home-selected-50@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1040,6 +1110,7 @@
 				32A6B93E1CE0AFBB0026053E /* SearchBlogViewController.swift in Sources */,
 				328F00681CE6D82D00AB5E57 /* Notice.swift in Sources */,
 				326A74101CCFC8690015DE7D /* NewBlogViewModel.swift in Sources */,
+				32AA3B7B1CFBE94100668DDE /* UIColor+Extension.swift in Sources */,
 				32B42AED1CDB9029009EC63C /* MoreItemsCell.swift in Sources */,
 				326A74081CCFC7540015DE7D /* TextCell.swift in Sources */,
 				3284AF161CD0B73F005AB294 /* ShowBlogViewController.swift in Sources */,
@@ -1078,9 +1149,11 @@
 				3284AF201CD0EE3B005AB294 /* DisplayTextCell.swift in Sources */,
 				32492C3C1CD9F1D100B420B0 /* ProfileCell.swift in Sources */,
 				3237B8C51CD48D0100ABD9F9 /* String+Extension.swift in Sources */,
+				32AA3B831CFC1A4200668DDE /* ErrorMessage.swift in Sources */,
 				328F00621CE6D4D400AB5E57 /* NoticeCell.swift in Sources */,
 				32A6B9491CE0B6800026053E /* SearchHistory.swift in Sources */,
 				324E47141CD1E09C003EC6AC /* User.swift in Sources */,
+				32AA3B861CFC1BDB00668DDE /* UIAlertController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1239,10 +1312,13 @@
 			baseConfigurationReference = 6D99681E132D6A3423EAD820 /* Pods-SimBlog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SimBlog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1251,10 +1327,13 @@
 			baseConfigurationReference = FE3650FFB1A7E92A475D6CCC /* Pods-SimBlog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SimBlog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

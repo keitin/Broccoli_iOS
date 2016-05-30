@@ -29,8 +29,8 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.leftBarButtonItem("Close", target: self, action: #selector(NewBlogViewController.closeNewBlog(_:)))
-        navigationItem.rightBarButtonItem("Post", target: self, action: #selector(NewBlogViewController.postBlog(_:)))
+        navigationItem.leftImageButtonItem("Delete-50@2x", target: self, action:  #selector(NewBlogViewController.closeNewBlog(_:)))
+        navigationItem.rightImageButtonItem("send-52@2x", target: self, action: #selector(NewBlogViewController.postBlog(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,8 +59,13 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
     
     func postBlog(sender: UIBarButtonItem) {
-        newBlogViewModel.postBlog {
-            self.dismissViewControllerAnimated(true, completion: nil)
+        newBlogViewModel.postBlog { (message) in
+            guard let error = message else {
+                self.dismissViewControllerAnimated(true, completion: nil)
+                return
+            }
+            let alert = UIAlertController.okAlert(error)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     

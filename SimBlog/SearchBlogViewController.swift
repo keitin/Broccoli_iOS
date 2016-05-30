@@ -57,6 +57,7 @@ class SearchBlogViewController: UIViewController, UITableViewDelegate ,UITextFie
             if indexPath.section == 0 {
                 let showBlogVC = UIStoryboard.viewControllerWith("Blog", identifier: "ShowBlogViewController") as! ShowBlogViewController
                 showBlogVC.blog = blogManager.searchBlogs[indexPath.row]
+                searchTextField.resignFirstResponder()
                 self.navigationController?.pushViewController(showBlogVC, animated: true)
             } else if indexPath.section == 1 {
                 searchResultsBlogViewModel.loadMoreItems()
@@ -64,6 +65,7 @@ class SearchBlogViewController: UIViewController, UITableViewDelegate ,UITextFie
         } else {
             let text = searchHistory.textAtPosition(indexPath.row)
             searchTextField.text = text
+            searchTextField.resignFirstResponder()
             showSearehdBlogs(text)
         }
     }
@@ -77,6 +79,7 @@ class SearchBlogViewController: UIViewController, UITableViewDelegate ,UITextFie
         if textField.text == "" { return true }
         searchHistory.addText(textField.text!)
         searchHistory.saveInLocal()
+        textField.resignFirstResponder()
         showSearehdBlogs(textField.text!)
         return true
     }

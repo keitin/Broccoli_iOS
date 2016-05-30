@@ -21,6 +21,13 @@ class IndexUserViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if displayType == DisplayType.Follows {
+            title = "Follows"
+        } else {
+            title = "Followers"
+        }
+        
         tableView.delegate = self
         indexUserViewModel.didLoad(tableView, user: user, displayType: displayType)
     }

@@ -22,16 +22,12 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
         layout.minimumLineSpacing = 1.0
         
         //インスタンス変数を定義していきましょう
-        self.collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        self.collectionView.frame.size = CGSize(width: self.view.frame.width, height: self.view.frame.height - (self.navigationController?.navigationBar.frame.height)! - (self.tabBarController?.tabBar.frame.height)! - 20)
         self.view.addSubview(self.collectionView)
         
         indexBlogViewModel.didLoad(collectionView)
         collectionView.delegate = self
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +39,7 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let showBlogVC = UIStoryboard.viewControllerWith("Blog", identifier: "ShowBlogViewController") as! ShowBlogViewController
         showBlogVC.blog = blogManager.blogAtPosition(indexPath.row)
+    
         self.navigationController?.pushViewController(showBlogVC, animated: true)
     }
     

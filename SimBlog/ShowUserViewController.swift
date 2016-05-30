@@ -17,7 +17,6 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "MY PAGE"
         let user = selectedUser ?? currentUser
         showUserViewModel.didLoad(self, tableView: tableView, user: user)
         tableView.delegate = self

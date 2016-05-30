@@ -71,16 +71,19 @@ class ProfileCell: UITableViewCell, Follow {
     
     func layoutFollowButton() {
         followButton.addTarget(self, action: #selector(ProfileCell.tapFollowButton(_:)), forControlEvents: .TouchUpInside)
+        followButton.tintColor = UIColor.mainColor()
         followButton.userInteractionEnabled = true
         followButton.setTitle("フォローする", forState: UIControlState.Normal)
         followButton.setTitle("フォロー中", forState: UIControlState.Selected)
     }
     
     func layoutFollowingButton() {
+        followingButton.setTitleColor(UIColor.maingGray(), forState: .Normal)
         followingButton.addTarget(self, action: #selector(ProfileCell.tapFollowingButton(_:)), forControlEvents: .TouchUpInside)
     }
     
     func layoutFollowerButton() {
+        followerButton.setTitleColor(UIColor.maingGray(), forState: .Normal)
         followerButton.addTarget(self, action: #selector(ProfileCell.tapFollowerButton(_:)), forControlEvents: .TouchUpInside)
     }
     
