@@ -23,33 +23,30 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="npn-nC-puP">
                                         <rect key="frame" x="8" y="8" width="584" height="34"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l59-Ij-5hf">
-                                                <rect key="frame" x="0.0" y="0.0" width="189" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l59-Ij-5hf">
+                                                <rect key="frame" x="0.0" y="0.0" width="190" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
-                                                <state key="normal" title="Image">
+                                                <state key="normal" image="Images-50.png">
                                                     <color key="titleColor" red="0.29646070079999998" green="0.29646070079999998" blue="0.29646070079999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="tapAddImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zb2-yI-tES"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr2-DW-e9V">
-                                                <rect key="frame" x="197" y="0.0" width="190" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr2-DW-e9V">
+                                                <rect key="frame" x="198" y="0.0" width="189" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
-                                                <state key="normal" title="Text">
+                                                <state key="normal" image="Text-Box-50.png">
                                                     <color key="titleColor" red="0.29646070079999998" green="0.29646070079999998" blue="0.29646070079999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="tapAddTextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9t-Nm-Gie"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9J-Iz-2wY">
-                                                <rect key="frame" x="395" y="0.0" width="189" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9J-Iz-2wY">
+                                                <rect key="frame" x="395" y="0.0" width="190" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
-                                                <state key="normal" title="Done">
+                                                <state key="normal" image="Expand-Arrow-50.png">
                                                     <color key="titleColor" red="0.29646070079999998" green="0.29646070079999998" blue="0.29646070079999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -189,7 +186,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="np5-ad-7qi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="np5-ad-7qi">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -322,4 +319,9 @@
             <point key="canvasLocation" x="1085" y="-933"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Expand-Arrow-50.png" width="25" height="25"/>
+        <image name="Images-50.png" width="25" height="25"/>
+        <image name="Text-Box-50.png" width="25" height="25"/>
+    </resources>
 </document>
