@@ -32,6 +32,8 @@ class TitleCell: UITableViewCell, UITextViewDelegate {
     // MARK - Set Up Sub Views
     private func setupTextView() {
         titleTextView.scrollEnabled = false
+        titleTextView.font = UIFont(name: "HiraKakuProN-W6", size: 20)
+        titleTextView.textContainerInset = UIEdgeInsetsMake(12, 5, 5, 5)
         titleTextView.delegate = self
     }
     

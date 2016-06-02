@@ -83,7 +83,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
             if let keyboard = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue{
                 let keyBoardRect = keyboard.CGRectValue()
                 UIView.animateWithDuration(1.0, animations: {
-                    self.toolViewBottomMargin.constant = keyBoardRect.height
+                    self.toolViewBottomMargin.constant = keyBoardRect.height + 20
                 })
             }
         }

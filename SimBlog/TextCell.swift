@@ -32,6 +32,8 @@ class TextCell: UITableViewCell, UITextViewDelegate {
     private func setupTextView() {
         textView.scrollEnabled = false
         textView.delegate = self
+        textView.font = UIFont(name: "HiraKakuProN-W3", size: 50)
+        textView.textContainerInset = UIEdgeInsetsMake(12, 5, 5, 5)
     }
     
     // MARK - TextView Delegate

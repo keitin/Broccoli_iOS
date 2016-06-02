@@ -27,7 +27,7 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         self.tableView.registerCell("ImageCell")
         self.tableView.registerCell("TitleCell")
         self.tableView.dataSource = self
-        self.tableView.estimatedRowHeight = 100000
+        self.tableView.estimatedRowHeight = 1000000000
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -75,8 +75,10 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         if let blogText = blog.materialAtPosition(textView.tag) as? BlogText {
             blogText.text = textView.text
         }
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        updateTextViewHeight(textView)
+//        textView.frame.size.height = textView.frame.height + 100
+//        tableView.beginUpdates()
+//        tableView.endUpdates()
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
@@ -87,6 +89,34 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         blog.title = textView.text
         tableView.beginUpdates()
         tableView.endUpdates()
+        
+    }
+    
+    //高さの調整
+    private func updateTextViewHeight(textView: UITextView) {
+        let currentHeight = textView.frame.size.height
+        let newHeight = textViewHeightWithText(textView.text, width: textView.frame.size.width)
+        
+        if textView.frame.size.height != newHeight {
+            let newFrame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y, textView.frame.size.width, newHeight + 200)
+            print("~~~~~~~~")
+            textView.frame = newFrame
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+        
+        
+        
+        
+    }
+    
+    private func textViewHeightWithText(text: String, width: CGFloat) -> CGFloat {
+        let textView = UITextView()
+        textView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        textView.text = text
+        textView.frame = CGRectMake(0, 0, width, 0)
+        textView.sizeToFit()
+        return max(textView.frame.size.height, CGFloat(80))
     }
     
     func titleTextViewDidBeginEditing(textView: UITextView) {
@@ -98,14 +128,14 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         blog.addTextAtPosition("", index: blog.numberOfMaterials)
         insertBottomRow(tableView)
         let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
-        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
     }
     
     func addImage(image: UIImage) {
         blog.addImageAtPosition(image, index: blog.numberOfMaterials)
         insertBottomRow(tableView)
         let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
-        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         if let _ = blog.topImage { return }
         blog.topImage = image
     }
