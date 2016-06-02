@@ -126,9 +126,9 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
     //MARK - Tool Button Action
     func addText() {
         blog.addTextAtPosition("", index: blog.numberOfMaterials)
-        insertBottomRow(tableView)
-        let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
-        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+//        insertBottomRow(tableView)
+//        let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
+//        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
     }
     
     func addImage(image: UIImage) {

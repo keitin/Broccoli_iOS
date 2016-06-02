@@ -24,7 +24,7 @@
                                         <rect key="frame" x="8" y="8" width="584" height="34"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l59-Ij-5hf">
-                                                <rect key="frame" x="0.0" y="0.0" width="190" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" image="Images-50.png">
                                                     <color key="titleColor" red="0.29646070079999998" green="0.29646070079999998" blue="0.29646070079999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,7 +34,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr2-DW-e9V">
-                                                <rect key="frame" x="198" y="0.0" width="189" height="34"/>
+                                                <rect key="frame" x="197" y="0.0" width="190" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" image="Text-Box-50.png">
                                                     <color key="titleColor" red="0.29646070079999998" green="0.29646070079999998" blue="0.29646070079999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,8 +43,8 @@
                                                     <action selector="tapAddTextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9t-Nm-Gie"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9J-Iz-2wY">
-                                                <rect key="frame" x="395" y="0.0" width="190" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9J-Iz-2wY">
+                                                <rect key="frame" x="395" y="0.0" width="189" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" image="Expand-Arrow-50.png">
                                                     <color key="titleColor" red="0.29646070079999998" green="0.29646070079999998" blue="0.29646070079999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,27 +65,24 @@
                                     <constraint firstAttribute="trailing" secondItem="npn-nC-puP" secondAttribute="trailing" constant="8" id="xq7-oB-MNW"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MT8-zV-Fk4">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofy-Z6-0Te">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="486"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" red="0.32206605112018027" green="0.98857849836349487" blue="0.60456652792488352" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="MT8-zV-Fk4" secondAttribute="trailing" id="Adl-Vh-Hfv"/>
-                            <constraint firstItem="0gA-TS-Lti" firstAttribute="top" secondItem="MT8-zV-Fk4" secondAttribute="bottom" id="F6F-qv-Ewt"/>
+                            <constraint firstItem="ofy-Z6-0Te" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4DY-Hn-sgQ"/>
                             <constraint firstAttribute="trailing" secondItem="0gA-TS-Lti" secondAttribute="trailing" id="Lp1-Ci-5ih"/>
-                            <constraint firstItem="0gA-TS-Lti" firstAttribute="top" secondItem="MT8-zV-Fk4" secondAttribute="bottom" id="MWC-7M-iMI"/>
+                            <constraint firstItem="0gA-TS-Lti" firstAttribute="top" secondItem="ofy-Z6-0Te" secondAttribute="bottom" id="OQS-2m-Vgu"/>
                             <constraint firstItem="0gA-TS-Lti" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="THi-Ms-LBw"/>
-                            <constraint firstItem="MT8-zV-Fk4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZkX-lf-tOa"/>
+                            <constraint firstAttribute="trailing" secondItem="ofy-Z6-0Te" secondAttribute="trailing" id="UeA-nV-SJq"/>
+                            <constraint firstItem="ofy-Z6-0Te" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cEj-4h-JPB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0gA-TS-Lti" secondAttribute="bottom" id="mze-EL-2JH"/>
-                            <constraint firstItem="MT8-zV-Fk4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qC9-gA-WJo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YBP-gX-au5"/>
                     <connections>
-                        <outlet property="tableView" destination="MT8-zV-Fk4" id="hGb-x7-Ipg"/>
+                        <outlet property="scrollView" destination="ofy-Z6-0Te" id="Jcv-pn-NRW"/>
                         <outlet property="toolViewBottomMargin" destination="mze-EL-2JH" id="9Rj-iv-xfu"/>
                     </connections>
                 </viewController>

@@ -8,17 +8,41 @@
 
 import UIKit
 
-class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
+class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,UINavigationControllerDelegate, UITextViewDelegate {
     @IBOutlet weak var toolViewBottomMargin: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
-    let newBlogViewModel = NewBlogViewModel()
+//    let newBlogViewModel = NewBlogViewModel()
+    
+    var barHeight: CGFloat!
+    var statusBarHeight: CGFloat!
+    
+    let blogEditorViewModel = BlogEditorViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "New Blog"
         
-        newBlogViewModel.didLoad(tableView)
+        self.barHeight = self.navigationController?.navigationBar.frame.height
+        self.statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
+        
+        // Scroll View Set
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.size.height - self.barHeight  - self.statusBarHeight)
+        
+        // first TextView set
+        
+        let titleTextView = BlogTextView(y: 0, view: self.view, isTitle: true)
+        blogEditorViewModel.titleTextView = titleTextView
+        titleTextView.delegate = self
+        self.scrollView.addSubview(titleTextView)
+        
+        let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view), view: self.view, isTitle: false)
+        textView.delegate = self
+        blogEditorViewModel.textViews.append(textView)
+        self.scrollView.addSubview(textView)
+
+        
         
         //Keyboard Notification
         let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -37,6 +61,19 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // TextView Delegate
+    func textViewDidChange(textView: UITextView) {
+        print("編集中")
+        blogEditorViewModel.updateTextViewHeight(textView as! BlogTextView, viewController: self)
+    }
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        blogEditorViewModel.updateTextViewHeight(textView as! BlogTextView, viewController: self)
+        blogEditorViewModel.updateScrooViewContentSize(self.scrollView, view: self.view)
+        return true
+    }
+
 
     // MARK - Action    
     @IBAction func tapAddImageButton(sender: UIButton) {
@@ -51,28 +88,43 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
 
     @IBAction func tapAddTextButton(sender: UIButton) {
-        newBlogViewModel.addText()
+        let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view), view: self.view, isTitle: false)
+        textView.delegate = self
+        textView.becomeFirstResponder()
+        blogEditorViewModel.addTextViewToArray(textView)
+        blogEditorViewModel.updateScrooViewContentSize(self.scrollView, view: self.view)
+        self.scrollView.addSubview(textView)
+        self.scrollView.contentSize.height = self.scrollView.contentSize.height
+        blogEditorViewModel.scrollToEnd(self.scrollView)
     }
     
     @IBAction func tapDoneButton(sender: UIButton) {
-        newBlogViewModel.didFinishedEdit()
+        for textView in blogEditorViewModel.textViews {
+            textView.resignFirstResponder()
+        }
     }
     
     func postBlog(sender: UIBarButtonItem) {
-        newBlogViewModel.postBlog { (message) in
-            guard let error = message else {
-                self.dismissViewControllerAnimated(true, completion: nil)
-                return
-            }
-            let alert = UIAlertController.okAlert(error)
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
+        blogEditorViewModel.postBlog()
+//        newBlogViewModel.postBlog { (message) in
+//            guard let error = message else {
+//                self.dismissViewControllerAnimated(true, completion: nil)
+//                return
+//            }
+//            let alert = UIAlertController.okAlert(error)
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
     }
     
     //MARK - Camera Roll
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let selectImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            newBlogViewModel.addImage(selectImage)
+            let imageView = BlogImageView(y: blogEditorViewModel.heightOfAllMaterials(self.view), view: self.view)
+            imageView.image = selectImage
+            blogEditorViewModel.addImageViewToArray(imageView)
+            blogEditorViewModel.updateScrooViewContentSize(self.scrollView, view: self.view)
+            self.scrollView.addSubview(imageView)
+            blogEditorViewModel.scrollToEnd(self.scrollView)
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -81,10 +133,9 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     func showWillKeyboard(notification: NSNotification) {
         if let userInfo = notification.userInfo{
             if let keyboard = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue{
-                let keyBoardRect = keyboard.CGRectValue()
-                UIView.animateWithDuration(1.0, animations: {
-                    self.toolViewBottomMargin.constant = keyBoardRect.height + 20
-                })
+                let keyboardRect = keyboard.CGRectValue()
+                self.toolViewBottomMargin.constant = keyboardRect.height
+                self.scrollView.frame.size.height = self.scrollView.frame.height - keyboardRect.height
             }
         }
     }
