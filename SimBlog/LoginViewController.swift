@@ -12,13 +12,15 @@ import FBSDKLoginKit
 import FBSDKShareKit
 import SwiftyJSON
 import SDWebImage
+import VideoSplashKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: VideoSplashViewController {
 
     let loginViewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupVideo()
         let loginView = LoginView.instance()
         self.view = loginView
         loginViewModel.didLoad(loginView)
@@ -27,6 +29,23 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func setupVideo() {
+        print(self.view.frame)
+        if let path = NSBundle.mainBundle().pathForResource("askyfullofstarsmp4", ofType: "mp4") {
+            let url = NSURL.fileURLWithPath(path)
+            videoFrame = view.frame
+            fillMode = .ResizeAspectFill
+            alwaysRepeat = true
+            restartForeground = true
+            sound = false
+            startTime = 0.0
+            duration = 0.0
+            alpha = 1.0
+            backgroundColor = UIColor.blackColor()
+            contentURL = url
+        }
     }
        
 }

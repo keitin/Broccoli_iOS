@@ -74,15 +74,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>VideoSplashKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>1A54A167C32DFCCEA6CDB5334A0DB6AC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>20D2609288D096F4E26D2AEC0ABF043E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>796BF97D10E4543FA1B56E3B8B5D5065</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C99BBF9EE710833203BE46AC465CFFC</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,17 +132,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5CDA6B6EC0EF0E81EE08AAED9C3FFC7</key>
+		<key>BF1125EC08E649E4CCE4345392A5D5A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D9357348AFE04FF45BA41FAD564E4823</key>
+		<key>CE5B55F13EE88DF12A6669D00D84E5C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F42ED932C24049F2523F01F195F9DE10</key>
+		<key>D29F7FED267E29A0DC6AE8D4235DF66C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D80BA28D009E40B87272B376C5463D1C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6497A29054277AFE0F9FCB786061160</key>
 		<dict>
 			<key>primary</key>
 			<true/>

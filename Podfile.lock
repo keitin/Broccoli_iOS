@@ -20,6 +20,7 @@ PODS:
   - SDWebImage/Core (3.7.5)
   - SVProgressHUD (2.0.2)
   - SwiftyJSON (2.3.2)
+  - VideoSplashKit (1.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - SwiftyJSON
+  - VideoSplashKit
 
 SPEC CHECKSUMS:
   Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
@@ -45,7 +47,8 @@ SPEC CHECKSUMS:
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SVProgressHUD: e4020e23badbd7cc61bc4a80d3c1da57f166a978
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  VideoSplashKit: 0aa63d0bb37c5bd357de3e6a2a13dea5acad4d66
 
-PODFILE CHECKSUM: 695bad9a6328945e85fd71c190b85fd745d4541f
+PODFILE CHECKSUM: 7b1c5fa482e3444cc6992eabb43a34328e702134
 
 COCOAPODS: 1.0.0.beta.6

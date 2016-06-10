@@ -14,6 +14,7 @@ target 'SimBlog' do
  pod "Bond"
  pod 'JDStatusBarNotification'
  pod 'ReachabilitySwift'
+ pod 'VideoSplashKit', :inhibit_warnings => true
 end
 
 target 'SimBlogTests' do
