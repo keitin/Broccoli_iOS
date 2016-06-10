@@ -36,15 +36,15 @@ class Blog: NSObject {
     
     override init() {
         super.init()
-        addTextAtPosition("", index: 0)
+        addTextAtPosition("")
     }
     
-    func addTextAtPosition(text: String, index: Int) {
-        materials.insert(BlogText(text: text, order: numberOfMaterials), atIndex: index)
+    func addTextAtPosition(text: String) {
+        materials.insert(BlogText(text: text, order: numberOfMaterials), atIndex: numberOfMaterials)
     }
     
-    func addImageAtPosition(image: UIImage, index: Int) {
-        materials.insert(BlogImage(image: image, order: numberOfMaterials), atIndex: index)
+    func addImageAtPosition(image: UIImage) {
+        materials.insert(BlogImage(image: image, order: numberOfMaterials), atIndex: numberOfMaterials)
     }
     
     func addMaterialAtPosition(material: AnyObject, index: Int) {
@@ -74,7 +74,7 @@ class Blog: NSObject {
         
         let pass = String.rootPath() + "/api/blogs/"
         let httpMethod = Alamofire.Method.POST.rawValue
-        
+
         let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, images: blogImages)
         Alamofire.upload(urlRequest.0, data: urlRequest.1)
             .responseJSON { response in

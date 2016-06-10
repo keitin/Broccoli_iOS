@@ -7,16 +7,43 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class BlogEditorViewModel: NSObject {
+    
+    let blog = Blog()
+    let currentUser = CurrentUser.sharedInstance
     
     var titleTextView: BlogTextView!
     var textViews: [BlogTextView] = []
     var imageViews: [BlogImageView] = []
-    var numberOfMaterials = 0
+    var count: Int = 0
+    var numberOfMaterials: Int  {
+        set(number) {
+            self.count = 0
+        }
+        get {
+            return self.count + 1
+        }
+    }
     
-    func postBlog() {
-        
+    override init () {
+        super.init()
+        self.numberOfMaterials = 0
+    }
+    
+    func postBlog(callback: (message: String?) -> Void) {
+        if blog.title == "" || blog.topImage == nil {
+            callback(message: ErrorMessage.emptyTitleOrImage())
+            return
+        }
+        SVProgressHUD.show()
+        blog.saveInbackground {
+            SVProgressHUD.dismiss()
+            self.currentUser.addFollowingBlogAtPostion(self.blog, index: 0)
+            self.currentUser.addBlogAtPosition(self.blog, index: 0)
+            callback(message: nil)
+        }
     }
     
     func heightOfAllMaterials(view: UIView) -> CGFloat {
@@ -31,20 +58,20 @@ class BlogEditorViewModel: NSObject {
         for imageView in self.imageViews {
             sumHeight = sumHeight + imageView.height
         }
-        
         return sumHeight
     }
     
     func addTextViewToArray(textView: BlogTextView) {
-        self.numberOfMaterials = self.numberOfMaterials + 1
-        textView.tag = self.numberOfMaterials
         self.textViews.append(textView)
+        self.blog.addTextAtPosition(textView.text)
     }
     
     func addImageViewToArray(imageView: BlogImageView) {
-        self.numberOfMaterials = self.numberOfMaterials + 1
-        imageView.tag = self.numberOfMaterials
         self.imageViews.append(imageView)
+        if blog.topImage == nil {
+            blog.topImage = imageView.image
+        }
+        self.blog.addImageAtPosition(imageView.image!)
     }
     
     func textOfAllTextViews() {
@@ -57,6 +84,17 @@ class BlogEditorViewModel: NSObject {
     
     func updateScrooViewContentSize(scrollView: UIScrollView, view: UIView) {
         scrollView.contentSize.height = self.heightOfAllMaterials(view)
+    }
+    
+    func updateTextViewText(textView: BlogTextView) {
+        if textView.isTitle  {
+            blog.title = textView.text
+            return
+        } else {
+            if let blogText = blog.materialAtPosition(blog.numberOfMaterials - 1) as? BlogText {
+                blogText.text = textView.text
+            }
+        }
     }
     
     func updateTextViewHeight(textView: BlogTextView, viewController: NewBlogViewController) {
@@ -121,7 +159,6 @@ class BlogEditorViewModel: NSObject {
         }
         return sholdMoveImageViews
     }
-    
-    
+
 
 }

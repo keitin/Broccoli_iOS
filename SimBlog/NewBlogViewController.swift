@@ -23,6 +23,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         super.viewDidLoad()
         
         title = "New Blog"
+        blogEditorViewModel.numberOfMaterials = 0
         
         self.barHeight = self.navigationController?.navigationBar.frame.height
         self.statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
@@ -31,13 +32,16 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         self.scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.size.height - self.barHeight  - self.statusBarHeight)
         
         // first TextView set
-        
-        let titleTextView = BlogTextView(y: 0, view: self.view, isTitle: true)
+        let titleTextView = BlogTextView(y: 0, view: self.view, isTitle: true,
+                                         tag: blogEditorViewModel.numberOfMaterials)
         blogEditorViewModel.titleTextView = titleTextView
         titleTextView.delegate = self
         self.scrollView.addSubview(titleTextView)
         
-        let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view), view: self.view, isTitle: false)
+        let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view),
+                                    view: self.view,
+                                    isTitle: false,
+                                    tag: blogEditorViewModel.numberOfMaterials)
         textView.delegate = self
         blogEditorViewModel.textViews.append(textView)
         self.scrollView.addSubview(textView)
@@ -65,6 +69,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     // TextView Delegate
     func textViewDidChange(textView: UITextView) {
         print("編集中")
+        blogEditorViewModel.updateTextViewText(textView as! BlogTextView)
         blogEditorViewModel.updateTextViewHeight(textView as! BlogTextView, viewController: self)
     }
     
@@ -88,7 +93,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
 
     @IBAction func tapAddTextButton(sender: UIButton) {
-        let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view), view: self.view, isTitle: false)
+        let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view), view: self.view, isTitle: false, tag: blogEditorViewModel.numberOfMaterials)
         textView.delegate = self
         textView.becomeFirstResponder()
         blogEditorViewModel.addTextViewToArray(textView)
@@ -105,15 +110,14 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
     
     func postBlog(sender: UIBarButtonItem) {
-        blogEditorViewModel.postBlog()
-//        newBlogViewModel.postBlog { (message) in
-//            guard let error = message else {
-//                self.dismissViewControllerAnimated(true, completion: nil)
-//                return
-//            }
-//            let alert = UIAlertController.okAlert(error)
-//            self.presentViewController(alert, animated: true, completion: nil)
-//        }
+        blogEditorViewModel.postBlog { (message) in
+            guard let error = message else {
+                self.dismissViewControllerAnimated(true, completion: nil)
+                return
+            }
+            let alert = UIAlertController.okAlert(error)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     //MARK - Camera Roll

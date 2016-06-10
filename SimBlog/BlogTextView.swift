@@ -27,12 +27,13 @@ class BlogTextView: UITextView {
         }
     }
     
-    init(y: CGFloat, view: UIView, isTitle: Bool) {
+    init(y: CGFloat, view: UIView, isTitle: Bool, tag: Int) {
         super.init(frame: CGRectZero, textContainer: .None)
         self.isTitle = isTitle
         self.frame = CGRectMake(0, y, view.frame.width, self.textViewDefaultHeight)
         self.font = UIFont.systemFontOfSize(self.fontSize)
         self.scrollEnabled = false
+        self.tag = tag
         self.layer.borderColor = UIColor.lightGrayColor().CGColor
         self.layer.borderWidth = 5
     }

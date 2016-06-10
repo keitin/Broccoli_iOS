@@ -42,7 +42,15 @@ class IndexUserViewController: UIViewController, UITableViewDelegate {
         return 65
     }
     
-
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let showUserVC = UIStoryboard.viewControllerWith("User", identifier: "ShowUserViewController") as! ShowUserViewController
+        if displayType == DisplayType.Follows {
+            showUserVC.selectedUser = user.follows[indexPath.row]
+        } else {
+            showUserVC.selectedUser = user.followers[indexPath.row]
+        }
+        navigationController?.pushViewController(showUserVC, animated: true)
+    }
     /*
     // MARK: - Navigation
 

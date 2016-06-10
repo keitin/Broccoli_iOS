@@ -73,6 +73,7 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
             blog.sentence = textView.text
         }
         if let blogText = blog.materialAtPosition(textView.tag) as? BlogText {
+            print(blogText.text)
             blogText.text = textView.text
         }
         updateTextViewHeight(textView)
@@ -94,7 +95,7 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
     
     //高さの調整
     private func updateTextViewHeight(textView: UITextView) {
-        let currentHeight = textView.frame.size.height
+//        let currentHeight = textView.frame.size.height
         let newHeight = textViewHeightWithText(textView.text, width: textView.frame.size.width)
         
         if textView.frame.size.height != newHeight {
@@ -123,22 +124,22 @@ class NewBlogViewModel: NSObject, UITableViewDataSource, TextCellDelegate, Title
         
     }
     
-    //MARK - Tool Button Action
-    func addText() {
-        blog.addTextAtPosition("", index: blog.numberOfMaterials)
+//    //MARK - Tool Button Action
+//    func addText() {
+//        blog.addTextAtPosition("", index: blog.numberOfMaterials)
+////        insertBottomRow(tableView)
+////        let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
+////        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+//    }
+//    
+//    func addImage(image: UIImage) {
+//        blog.addImageAtPosition(image, index: blog.numberOfMaterials)
 //        insertBottomRow(tableView)
 //        let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
 //        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-    }
-    
-    func addImage(image: UIImage) {
-        blog.addImageAtPosition(image, index: blog.numberOfMaterials)
-        insertBottomRow(tableView)
-        let indexPath = NSIndexPath(forRow: blog.numberOfMaterials - 1, inSection: 1)
-        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-        if let _ = blog.topImage { return }
-        blog.topImage = image
-    }
+//        if let _ = blog.topImage { return }
+//        blog.topImage = image
+//    }
     
     func didFinishedEdit() {
         if let textView = self.activeTextView {
