@@ -27,15 +27,17 @@ class LoginView: UIView {
      }
     
     private func makeFacebookButton() {
-        loginButton.center = self.center
+        loginButton.frame.size = CGSizeMake(280, 50)
+        loginButton.center = CGPointMake(self.center.x, self.center.y + 150)
         self.addSubview(loginButton)
     }
     
     private func makeLogoLabel() {
         let logoLabel = UILabel()
-        logoLabel.text = "Simple Blog"
+        logoLabel.text = "Broccoli"
 //        logoLabel.font = UIFont(name: "Baskerville-BoldItalic", size: 50)
-        logoLabel.font = UIFont(name: "Helvetica-Light", size: 50)
+        logoLabel.font = UIFont(name: "SavoyeLetPlain", size: 50)
+//        logoLabel.font = UIFont(name: "SnellRoundhand-Black", size: 50)
         logoLabel.sizeToFit()
         logoLabel.center = CGPoint(x: self.center.x, y: self.center.y - 100)
         logoLabel.textColor = UIColor.white()

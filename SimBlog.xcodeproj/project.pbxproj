@@ -11,6 +11,7 @@
 		320DFDAD1CFD115D001E5201 /* Images-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 320DFDAC1CFD115D001E5201 /* Images-50@2x.png */; };
 		320DFDAF1CFD127F001E5201 /* Text-Box-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 320DFDAE1CFD127F001E5201 /* Text-Box-50@2x.png */; };
 		320DFDB11CFD1453001E5201 /* Expand-Arrow-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 320DFDB01CFD1453001E5201 /* Expand-Arrow-50@2x.png */; };
+		32178B871D0AC6F300F6C6D0 /* launchScreenNight.png in Resources */ = {isa = PBXBuildFile; fileRef = 32178B861D0AC6F300F6C6D0 /* launchScreenNight.png */; };
 		3237B8831CD2F22B00ABD9F9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237B8821CD2F22B00ABD9F9 /* CurrentUser.swift */; };
 		3237B8C11CD39F1400ABD9F9 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237B8C01CD39F1400ABD9F9 /* UIApplication+Extension.swift */; };
 		3237B8C31CD3A6C500ABD9F9 /* NSData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237B8C21CD3A6C500ABD9F9 /* NSData+Extension.swift */; };
@@ -21,7 +22,6 @@
 		32492C3C1CD9F1D100B420B0 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32492C3A1CD9F1D100B420B0 /* ProfileCell.swift */; };
 		32492C3D1CD9F1D100B420B0 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32492C3B1CD9F1D100B420B0 /* ProfileCell.xib */; };
 		32492C401CDA430D00B420B0 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32492C3F1CDA430D00B420B0 /* UIStoryboard+Extension.swift */; };
-		32492C421CDAEA5300B420B0 /* DSCF5417.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 32492C411CDAEA5300B420B0 /* DSCF5417.JPG */; };
 		324E47111CD1D43B003EC6AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E47101CD1D43B003EC6AC /* LoginViewController.swift */; };
 		324E47141CD1E09C003EC6AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E47131CD1E09C003EC6AC /* User.swift */; };
 		324E47171CD1E200003EC6AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E47161CD1E200003EC6AC /* LoginView.swift */; };
@@ -144,6 +144,7 @@
 		320DFDAC1CFD115D001E5201 /* Images-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Images-50@2x.png"; sourceTree = "<group>"; };
 		320DFDAE1CFD127F001E5201 /* Text-Box-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Text-Box-50@2x.png"; sourceTree = "<group>"; };
 		320DFDB01CFD1453001E5201 /* Expand-Arrow-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Expand-Arrow-50@2x.png"; sourceTree = "<group>"; };
+		32178B861D0AC6F300F6C6D0 /* launchScreenNight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreenNight.png; sourceTree = "<group>"; };
 		3237B8821CD2F22B00ABD9F9 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		3237B8C01CD39F1400ABD9F9 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		3237B8C21CD3A6C500ABD9F9 /* NSData+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Extension.swift"; sourceTree = "<group>"; };
@@ -154,7 +155,6 @@
 		32492C3A1CD9F1D100B420B0 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		32492C3B1CD9F1D100B420B0 /* ProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 		32492C3F1CDA430D00B420B0 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
-		32492C411CDAEA5300B420B0 /* DSCF5417.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSCF5417.JPG; sourceTree = "<group>"; };
 		324E47101CD1D43B003EC6AC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		324E47131CD1E09C003EC6AC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		324E47161CD1E200003EC6AC /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -528,6 +528,7 @@
 		326A74211CCFD3440015DE7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				32178B861D0AC6F300F6C6D0 /* launchScreenNight.png */,
 				320DFDB01CFD1453001E5201 /* Expand-Arrow-50@2x.png */,
 				320DFDAC1CFD115D001E5201 /* Images-50@2x.png */,
 				320DFDAE1CFD127F001E5201 /* Text-Box-50@2x.png */,
@@ -535,7 +536,6 @@
 				32AA3B7E1CFC158300668DDE /* Delete-50@2x.png */,
 				32AA3B7C1CFC035100668DDE /* add-blog@2x.png */,
 				32AA3B661CFAE67000668DDE /* Home-50@2x.png */,
-				32492C411CDAEA5300B420B0 /* DSCF5417.JPG */,
 				328F01311CED853C00AB5E57 /* Like-50.png */,
 				32AA3B6E1CFAEB6000668DDE /* Hearts-selected-50@2x.png */,
 				32AA3B6F1CFAEB6000668DDE /* Hearts-50@2x.png */,
@@ -958,6 +958,7 @@
 				32492C3D1CD9F1D100B420B0 /* ProfileCell.xib in Resources */,
 				326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */,
 				32AA3B6D1CFAEAC400668DDE /* Search-selected-50@2x.png in Resources */,
+				32178B871D0AC6F300F6C6D0 /* launchScreenNight.png in Resources */,
 				32AA3B8A1CFC3D7E00668DDE /* Love-Filled-50@2x.png in Resources */,
 				320DFDAD1CFD115D001E5201 /* Images-50@2x.png in Resources */,
 				32AA3B7F1CFC158300668DDE /* Delete-50@2x.png in Resources */,
@@ -965,7 +966,6 @@
 				32AA3B731CFAEC9300668DDE /* Contacts-50@2x.png in Resources */,
 				32AA3B751CFAEC9C00668DDE /* Contacts-selected-50@2x.png in Resources */,
 				32492C331CD9ED1E00B420B0 /* Login.storyboard in Resources */,
-				32492C421CDAEA5300B420B0 /* DSCF5417.JPG in Resources */,
 				32992F031CDCEE24006C604B /* UserCell.xib in Resources */,
 				326A74091CCFC7540015DE7D /* TextCell.xib in Resources */,
 				32992F1A1CE0516B006C604B /* Blog.storyboard in Resources */,
