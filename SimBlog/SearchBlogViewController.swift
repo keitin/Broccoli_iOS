@@ -21,6 +21,7 @@ class SearchBlogViewController: UIViewController, UITableViewDelegate ,UITextFie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchTextField.becomeFirstResponder()
         searchBlogViewModel.didLoad(historyTableView)
         searchResultsBlogViewModel.didLoad(blogsTableView, viewController: self)
         searchTextField.delegate = self
@@ -43,7 +44,7 @@ class SearchBlogViewController: UIViewController, UITableViewDelegate ,UITextFie
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if didSearched {
             if indexPath.section == 0 {
-                return 165
+                return 191
             } else {
                 return 50
             }

@@ -11,7 +11,7 @@ import UIKit
 class SearchResultsBlogViewModel: NSObject, UITableViewDataSource {
     
     var tableView: UITableView!
-    var viewController: SearchBlogViewController!
+    weak var viewController: SearchBlogViewController!
     let blogManager = BlogManager.sharedInstance
     var page = 1
     var currentKeyword: String!

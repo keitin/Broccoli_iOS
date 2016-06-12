@@ -12,6 +12,7 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
     var collectionView: UICollectionView!
     let indexBlogViewModel = IndexBlogViewModel()
     let blogManager = BlogManager.sharedInstance
+    @IBOutlet weak var textFieldButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,8 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         indexBlogViewModel.didLoad(collectionView)
         collectionView.delegate = self
+        
+        layoutTextFieldButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,6 +82,16 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
     @IBAction func tapSearchButton(sender: UIButton) {
         let searchBlogNC = UIStoryboard.viewControllerWith("Blog", identifier: "SearchBlogNavigationController")
         presentViewController(searchBlogNC, animated: false, completion: nil)
+    }
+    
+    private func layoutTextFieldButton() {
+        textFieldButton.frame.size.width = self.view.frame.width - 16
+        textFieldButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        textFieldButton.setTitle("検索", forState: .Normal)
+        textFieldButton.layer.cornerRadius = 5
+//        textFieldButton.layer.borderWidth = 1
+//        textFieldButton.layer.borderColor = UIColor.lightGrayColor().CGColor
+        textFieldButton.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
     }
 
 }
