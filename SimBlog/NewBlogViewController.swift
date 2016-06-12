@@ -69,8 +69,10 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     // TextView Delegate
     func textViewDidChange(textView: UITextView) {
         print("編集中")
-        blogEditorViewModel.updateTextViewText(textView as! BlogTextView)
-        blogEditorViewModel.updateTextViewHeight(textView as! BlogTextView, viewController: self)
+        let blogTextView = textView as! BlogTextView
+        blogTextView.hideOrShowPlaceholderLabel()
+        blogEditorViewModel.updateTextViewText(blogTextView)
+        blogEditorViewModel.updateTextViewHeight(blogTextView, viewController: self)
     }
     
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
