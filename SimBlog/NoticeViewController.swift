@@ -30,7 +30,17 @@ class NoticeViewController: UIViewController, UITableViewDelegate, NoticeCellDel
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 65
+        if indexPath.section == 0 {
+            return 65
+        } else {
+            return 50
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            noticeViewModel.loadMoreItems()
+        }
     }
     
     //MARK: Notice Cell Delegate
@@ -45,15 +55,6 @@ class NoticeViewController: UIViewController, UITableViewDelegate, NoticeCellDel
         showUserVC.selectedUser = user
         navigationController?.pushViewController(showUserVC, animated: true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

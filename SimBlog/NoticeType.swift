@@ -12,13 +12,16 @@ import SwiftyJSON
 import SVProgressHUD
 
 protocol NoticeType {
-    func getNoticesInBackground(currentUser: CurrentUser, callback: () -> Void)
+    func getNoticesInBackground(currentUser: CurrentUser, page: Int, callback: () -> Void)
 }
 
 extension NoticeType {
-    func getNoticesInBackground(currentUser: CurrentUser, callback: () -> Void) {
+    func getNoticesInBackground(currentUser: CurrentUser, page: Int, callback: () -> Void) {
         SVProgressHUD.show()
-        Alamofire.request(.GET, String.rootPath() + "/api/users/\(currentUser.id)/notices", parameters: nil)
+        let params = [
+            "page": page
+        ]
+        Alamofire.request(.GET, String.rootPath() + "/api/users/\(currentUser.id)/notices", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     StatusBarNotification.showErrorMessage()
@@ -27,14 +30,13 @@ extension NoticeType {
                 StatusBarNotification.hideMessage()
                 SVProgressHUD.dismiss()
                 let json = JSON(object)
-                currentUser.notices = []
                 for notice in json["notices"].array! {
                     let blog = Blog(apiAttributes: notice["blog"])
                     let user = User(apiAttributes: notice["user"])
                     let blogUser = User(apiAttributes: notice["blog_user"])
                     blog.user = blogUser
                     let notice = Notice(blog: blog, user: user)
-                    currentUser.notices.insert(notice, atIndex: 0)
+                    currentUser.notices.insert(notice, atIndex: currentUser.numberOfNotices)
                     callback()
                 }
         }
