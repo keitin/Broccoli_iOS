@@ -21,11 +21,12 @@ class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
         self.collectionView = collectionView
         collectionView.dataSource = self
         collectionView.registerCell("BlogImageCell")
+        collectionView.registerCell("MoreItemsCollectionCell")
         collectionView.backgroundColor = UIColor.whiteColor()
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,9 +38,15 @@ class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("BlogImageCell", forIndexPath: indexPath) as! BlogImageCell
-        cell.fillWith(blogManager.blogAtPosition(indexPath.row))
-        return cell
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("BlogImageCell", forIndexPath: indexPath) as! BlogImageCell
+            cell.fillWith(blogManager.blogAtPosition(indexPath.row))
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MoreItemsCollectionCell", forIndexPath: indexPath) as! MoreItemsCollectionCell
+            return cell
+        }
+        
     }
     
     

@@ -40,38 +40,26 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
     
     //MARK: Collection View Delegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let showBlogVC = UIStoryboard.viewControllerWith("Blog", identifier: "ShowBlogViewController") as! ShowBlogViewController
-        showBlogVC.blog = blogManager.blogAtPosition(indexPath.row)
-    
-        self.navigationController?.pushViewController(showBlogVC, animated: true)
-    }
-    
-    //MARK - Collection View Delegate Flow Layout
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let cellSize = self.view.frame.size.width/3 - 1
-        return CGSizeMake(cellSize, cellSize)
-    }
-
-    
-    //MARK - TableView Delagate
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 191
-        } else {
-            return 50
-        }
-        
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 {
             let showBlogVC = UIStoryboard.viewControllerWith("Blog", identifier: "ShowBlogViewController") as! ShowBlogViewController
             showBlogVC.blog = blogManager.blogAtPosition(indexPath.row)
             self.navigationController?.pushViewController(showBlogVC, animated: true)
-        } else if indexPath.section == 1 {
-            indexBlogViewModel.loadMoreItems()
+        } else {
+            
+        }
+        
+    }
+    
+    //MARK - Collection View Delegate Flow Layout
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            let cellSize = self.view.frame.size.width/3 - 1
+            return CGSizeMake(cellSize, cellSize)
+        } else {
+            return CGSizeMake(self.view.frame.width, 50)
         }
     }
+
     
     func didTapProfileImageView(blog: Blog) {
         let showUserVC = UIStoryboard.viewControllerWith("User", identifier: "ShowUserViewController") as! ShowUserViewController
@@ -89,8 +77,6 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
         textFieldButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
         textFieldButton.setTitle("検索", forState: .Normal)
         textFieldButton.layer.cornerRadius = 5
-//        textFieldButton.layer.borderWidth = 1
-//        textFieldButton.layer.borderColor = UIColor.lightGrayColor().CGColor
         textFieldButton.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
     }
 

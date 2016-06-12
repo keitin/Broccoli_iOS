@@ -13,6 +13,8 @@
 		320DFDB11CFD1453001E5201 /* Expand-Arrow-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 320DFDB01CFD1453001E5201 /* Expand-Arrow-50@2x.png */; };
 		32178B871D0AC6F300F6C6D0 /* launchScreenNight.png in Resources */ = {isa = PBXBuildFile; fileRef = 32178B861D0AC6F300F6C6D0 /* launchScreenNight.png */; };
 		32178B8F1D0D680A00F6C6D0 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32178B8E1D0D680A00F6C6D0 /* icon@2x.png */; };
+		32178B921D0D860100F6C6D0 /* MoreItemsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32178B901D0D860100F6C6D0 /* MoreItemsCollectionCell.swift */; };
+		32178B931D0D860100F6C6D0 /* MoreItemsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32178B911D0D860100F6C6D0 /* MoreItemsCollectionCell.xib */; };
 		3237B8831CD2F22B00ABD9F9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237B8821CD2F22B00ABD9F9 /* CurrentUser.swift */; };
 		3237B8C11CD39F1400ABD9F9 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237B8C01CD39F1400ABD9F9 /* UIApplication+Extension.swift */; };
 		3237B8C31CD3A6C500ABD9F9 /* NSData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237B8C21CD3A6C500ABD9F9 /* NSData+Extension.swift */; };
@@ -146,6 +148,8 @@
 		320DFDB01CFD1453001E5201 /* Expand-Arrow-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Expand-Arrow-50@2x.png"; sourceTree = "<group>"; };
 		32178B861D0AC6F300F6C6D0 /* launchScreenNight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreenNight.png; sourceTree = "<group>"; };
 		32178B8E1D0D680A00F6C6D0 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		32178B901D0D860100F6C6D0 /* MoreItemsCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreItemsCollectionCell.swift; sourceTree = "<group>"; };
+		32178B911D0D860100F6C6D0 /* MoreItemsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreItemsCollectionCell.xib; sourceTree = "<group>"; };
 		3237B8821CD2F22B00ABD9F9 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		3237B8C01CD39F1400ABD9F9 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		3237B8C21CD3A6C500ABD9F9 /* NSData+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Extension.swift"; sourceTree = "<group>"; };
@@ -295,6 +299,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32178B941D0D860700F6C6D0 /* MoreItemsCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				32178B901D0D860100F6C6D0 /* MoreItemsCollectionCell.swift */,
+				32178B911D0D860100F6C6D0 /* MoreItemsCollectionCell.xib */,
+			);
+			name = MoreItemsCollectionCell;
+			sourceTree = "<group>";
+		};
 		32492C341CD9ED6E00B420B0 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +360,7 @@
 				3284AF271CD0EF1C005AB294 /* DisplayImageCell */,
 				328F006D1CE7114E00AB5E57 /* BlogImageView.swift */,
 				32A77C431D0053BD003E5FFC /* BlogTextView.swift */,
+				32178B941D0D860700F6C6D0 /* MoreItemsCollectionCell */,
 			);
 			name = Blogs;
 			sourceTree = "<group>";
@@ -969,6 +983,7 @@
 				32992F031CDCEE24006C604B /* UserCell.xib in Resources */,
 				326A74091CCFC7540015DE7D /* TextCell.xib in Resources */,
 				32992F1A1CE0516B006C604B /* Blog.storyboard in Resources */,
+				32178B931D0D860100F6C6D0 /* MoreItemsCollectionCell.xib in Resources */,
 				320DFDB11CFD1453001E5201 /* Expand-Arrow-50@2x.png in Resources */,
 				326A741D1CCFD0BD0015DE7D /* ImageCell.xib in Resources */,
 				32AA3B701CFAEB6000668DDE /* Hearts-selected-50@2x.png in Resources */,
@@ -1173,6 +1188,7 @@
 				32A6B94C1CE0B8A70026053E /* SearchBlogViewModel.swift in Sources */,
 				328F005E1CE6CFB900AB5E57 /* NoticeViewModel.swift in Sources */,
 				328F00651CE6D67E00AB5E57 /* UIImageView+Extenstion.swift in Sources */,
+				32178B921D0D860100F6C6D0 /* MoreItemsCollectionCell.swift in Sources */,
 				3284AF0B1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift in Sources */,
 				328F006C1CE6F80200AB5E57 /* NoticeType.swift in Sources */,
 				32A77C461D005427003E5FFC /* BlogEditorViewModel.swift in Sources */,
