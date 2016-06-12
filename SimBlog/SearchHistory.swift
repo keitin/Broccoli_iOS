@@ -32,7 +32,6 @@ class SearchHistory: NSObject {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let texts = defaults.objectForKey("history_texts") as? [String] {
             self.texts = texts
-            print(self.texts)
         }
     }
     

@@ -32,9 +32,7 @@ class LoginViewController: VideoSplashViewController {
     }
     
     private func setupVideo() {
-        print(self.view.frame)
         if let path = NSBundle.mainBundle().pathForResource("askyfullofstarsmp4", ofType: "mp4") {
-            print("動画！")
             let url = NSURL.fileURLWithPath(path)
             videoFrame = view.frame
             fillMode = .ResizeAspectFill

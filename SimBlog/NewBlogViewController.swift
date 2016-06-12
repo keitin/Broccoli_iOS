@@ -67,7 +67,6 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     
     // TextView Delegate
     func textViewDidChange(textView: UITextView) {
-        print("編集中")
         let blogTextView = textView as! BlogTextView
         blogTextView.hideOrShowPlaceholderLabel()
         blogTextView.updateBorderViewPosition()
