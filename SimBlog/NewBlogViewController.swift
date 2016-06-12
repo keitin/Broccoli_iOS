@@ -12,7 +12,6 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     @IBOutlet weak var toolViewBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
-//    let newBlogViewModel = NewBlogViewModel()
     
     var barHeight: CGFloat!
     var statusBarHeight: CGFloat!

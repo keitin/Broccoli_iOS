@@ -38,7 +38,6 @@
 		326A74081CCFC7540015DE7D /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74061CCFC7540015DE7D /* TextCell.swift */; };
 		326A74091CCFC7540015DE7D /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 326A74071CCFC7540015DE7D /* TextCell.xib */; };
 		326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A740C1CCFC7BA0015DE7D /* UITableView+Extension.swift */; };
-		326A74101CCFC8690015DE7D /* NewBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A740F1CCFC8690015DE7D /* NewBlogViewModel.swift */; };
 		326A74131CCFC8D20015DE7D /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74121CCFC8D20015DE7D /* Blog.swift */; };
 		326A74161CCFC92D0015DE7D /* BlogText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74151CCFC92D0015DE7D /* BlogText.swift */; };
 		326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A74181CCFC95B0015DE7D /* BlogImage.swift */; };
@@ -178,7 +177,6 @@
 		326A74061CCFC7540015DE7D /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		326A74071CCFC7540015DE7D /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		326A740C1CCFC7BA0015DE7D /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
-		326A740F1CCFC8690015DE7D /* NewBlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBlogViewModel.swift; sourceTree = "<group>"; };
 		326A74121CCFC8D20015DE7D /* Blog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
 		326A74151CCFC92D0015DE7D /* BlogText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogText.swift; sourceTree = "<group>"; };
 		326A74181CCFC95B0015DE7D /* BlogImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogImage.swift; sourceTree = "<group>"; };
@@ -568,7 +566,6 @@
 			isa = PBXGroup;
 			children = (
 				326A742C1CD066F30015DE7D /* IndexBlogViewModel.swift */,
-				326A740F1CCFC8690015DE7D /* NewBlogViewModel.swift */,
 				3284AF171CD0B85D005AB294 /* ShowBlogViewModel.swift */,
 				32992F221CE054F3006C604B /* FollowingBlogViewModel.swift */,
 				32A77C451D005427003E5FFC /* BlogEditorViewModel.swift */,
@@ -1151,7 +1148,6 @@
 				328F006E1CE7114E00AB5E57 /* BlogImageView.swift in Sources */,
 				32A6B93E1CE0AFBB0026053E /* SearchBlogViewController.swift in Sources */,
 				328F00681CE6D82D00AB5E57 /* Notice.swift in Sources */,
-				326A74101CCFC8690015DE7D /* NewBlogViewModel.swift in Sources */,
 				32AA3B7B1CFBE94100668DDE /* UIColor+Extension.swift in Sources */,
 				32B42AED1CDB9029009EC63C /* MoreItemsCell.swift in Sources */,
 				326A74081CCFC7540015DE7D /* TextCell.swift in Sources */,
