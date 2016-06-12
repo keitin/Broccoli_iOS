@@ -49,7 +49,6 @@ class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
         
     }
     
-    
     func loadMoreItems() {
         page = page + 1
         blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
