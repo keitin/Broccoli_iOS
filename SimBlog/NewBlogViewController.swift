@@ -71,6 +71,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         print("編集中")
         let blogTextView = textView as! BlogTextView
         blogTextView.hideOrShowPlaceholderLabel()
+        blogTextView.updateBorderViewPosition()
         blogEditorViewModel.updateTextViewText(blogTextView)
         blogEditorViewModel.updateTextViewHeight(blogTextView, viewController: self)
     }

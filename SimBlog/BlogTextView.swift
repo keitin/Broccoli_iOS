@@ -12,6 +12,7 @@ class BlogTextView: UITextView {
     
     var isTitle: Bool = false
     var placeholderlabel: UILabel!
+    var borderView: UIView!
     var textViewDefaultHeight: CGFloat {
         if self.isTitle {
             return 50
@@ -22,9 +23,9 @@ class BlogTextView: UITextView {
     
     var fontSize: CGFloat {
         if self.isTitle {
-            return 15
+            return 17
         } else {
-            return 50
+            return 15
         }
     }
     
@@ -35,9 +36,8 @@ class BlogTextView: UITextView {
         self.font = UIFont.systemFontOfSize(self.fontSize)
         self.scrollEnabled = false
         self.tag = tag
-        self.layer.borderColor = UIColor.mainColor().CGColor
-        self.layer.borderWidth = 3
-        setPlaceholderLabel()
+        self.lineBorderButton(borderWidth: 1)
+        self.setPlaceholderLabel()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -59,6 +59,20 @@ class BlogTextView: UITextView {
         } else {
             self.placeholderlabel.hidden = true
         }
+    }
+    
+    func updateBorderViewPosition() {
+        UIView.animateWithDuration(0.5) { 
+            self.borderView.center.y = self.frame.height
+        }
+    }
+    
+    private func lineBorderButton(borderWidth borderWidth: CGFloat) {
+        self.borderView = UIView()
+        self.borderView.frame.size = CGSizeMake(self.frame.width - 16, borderWidth)
+        self.borderView.center = CGPointMake(self.center.x, self.frame.height)
+        self.borderView.backgroundColor = UIColor.mainColor()
+        self.addSubview(self.borderView)
     }
     
     private func setPlaceholderLabel() {
