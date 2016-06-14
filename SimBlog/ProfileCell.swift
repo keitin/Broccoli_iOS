@@ -23,6 +23,8 @@ class ProfileCell: UITableViewCell, Follow {
     @IBOutlet weak var profileImageView: UIImageView!
     var delegate: ProfileCellDelegate?
     let currentUser = CurrentUser.sharedInstance
+    let gradientLayer = CAGradientLayer()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,6 +32,13 @@ class ProfileCell: UITableViewCell, Follow {
         layoutFollowButton()
         layoutFollowingButton()
         layoutFollowerButton()
+        gradientionView()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = self.bounds
+        lineBorderButton(borderWidth: 5)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -63,28 +72,47 @@ class ProfileCell: UITableViewCell, Follow {
     }
     
     //MARK - Layout Sub Views
-    func layoutProfileImage() {
+    private func layoutProfileImage() {
         profileImageView.contentMode = UIViewContentMode.ScaleAspectFill
         profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
+        profileImageView.layer.borderColor = UIColor.white().CGColor
+        profileImageView.layer.borderWidth = 3
         profileImageView.layer.masksToBounds = true
     }
     
-    func layoutFollowButton() {
+    private func layoutFollowButton() {
         followButton.addTarget(self, action: #selector(ProfileCell.tapFollowButton(_:)), forControlEvents: .TouchUpInside)
-        followButton.tintColor = UIColor.mainColor()
+        followButton.tintColor = UIColor.white()
         followButton.userInteractionEnabled = true
         followButton.setTitle("フォローする", forState: UIControlState.Normal)
         followButton.setTitle("フォロー中", forState: UIControlState.Selected)
     }
     
-    func layoutFollowingButton() {
-        followingButton.setTitleColor(UIColor.maingGray(), forState: .Normal)
+    private func layoutFollowingButton() {
+        followingButton.setTitleColor(UIColor.white(), forState: .Normal)
         followingButton.addTarget(self, action: #selector(ProfileCell.tapFollowingButton(_:)), forControlEvents: .TouchUpInside)
     }
     
-    func layoutFollowerButton() {
-        followerButton.setTitleColor(UIColor.maingGray(), forState: .Normal)
+    private func layoutFollowerButton() {
+        followerButton.setTitleColor(UIColor.white(), forState: .Normal)
         followerButton.addTarget(self, action: #selector(ProfileCell.tapFollowerButton(_:)), forControlEvents: .TouchUpInside)
     }
     
+    private func gradientionView() {
+        UIColor.mainColor()
+        let topColor = UIColor(red: 237/255, green: 77/255, blue: 56/233, alpha:1.0)
+        let bottomColor = UIColor(red: 245/255, green: 147/255, blue: 53/233, alpha:1.0)
+        let gradientColors = [topColor.CGColor, bottomColor.CGColor]
+        gradientLayer.colors = gradientColors
+        gradientLayer.frame = self.bounds
+        self.layer.insertSublayer(gradientLayer, atIndex: 0)
+    }
+    
+    private func lineBorderButton(borderWidth borderWidth: CGFloat) {
+        let borderView = UIView()
+        borderView.frame.size = CGSizeMake(self.frame.width, borderWidth)
+        borderView.center = CGPointMake(self.center.x, self.frame.height)
+        borderView.backgroundColor = UIColor.white()
+        self.addSubview(borderView)
+    }
 }

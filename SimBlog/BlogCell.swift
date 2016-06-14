@@ -20,12 +20,18 @@ class BlogCell: UITableViewCell {
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     var delegate: BlogCellDelegate?
+    let gradientLayer = CAGradientLayer()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         gradientionView()
         layoutImageView()
+        lineBorderButton(borderWidth: 1)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = self.bounds
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -61,24 +67,29 @@ class BlogCell: UITableViewCell {
     
     private func gradientionView() {
         let topColor = UIColor(red:0.07, green:0.13, blue:0.26, alpha:0.0)
-        let bottomColor = UIColor(red:0, green:0, blue:0, alpha:0.6)
+        let bottomColor = UIColor(red:0, green:0, blue:0, alpha:0.4)
         let gradientColors = [topColor.CGColor, bottomColor.CGColor]
-        let gradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
         gradientLayer.frame = self.bounds
         self.topImageView.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
     
     private func setupSentenceLabel(text: String) {
-        
         let attributedText = NSMutableAttributedString(string: text)
         let letterSpacing = 1
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 5
-        
         attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
         attributedText.addAttribute(NSKernAttributeName, value: letterSpacing, range: NSMakeRange(0, attributedText.length))
         titleLabel.attributedText = attributedText
+    }
+    
+    private func lineBorderButton(borderWidth borderWidth: CGFloat) {
+        let borderView = UIView()
+        borderView.frame.size = CGSizeMake(self.frame.width, borderWidth)
+        borderView.center = CGPointMake(self.center.x, self.frame.height)
+        borderView.backgroundColor = UIColor.white()
+        self.addSubview(borderView)
     }
     
 }

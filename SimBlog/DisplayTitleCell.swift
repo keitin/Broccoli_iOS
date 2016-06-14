@@ -23,15 +23,18 @@ class DisplayTitleCell: UITableViewCell, Like {
     @IBOutlet weak var titleLabel: UILabel!
     var delegate: DisplayTitleCellDelegate?
     var selectedBlog: Blog!
+    let gradientLayer = CAGradientLayer()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         layoutImageView()
+        gradientionView()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        gradientionView()
         lineBorderButton(borderWidth: 1)
+        gradientLayer.frame = self.bounds
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -76,7 +79,6 @@ class DisplayTitleCell: UITableViewCell, Like {
         let topColor = UIColor(red: 237/255, green: 77/255, blue: 56/233, alpha:0.2)
         let bottomColor = UIColor(red: 245/255, green: 147/255, blue: 53/233, alpha:0.5)
         let gradientColors = [topColor.CGColor, bottomColor.CGColor]
-        let gradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
         gradientLayer.frame = self.bounds
         self.topImageView.layer.insertSublayer(gradientLayer, atIndex: 0)
