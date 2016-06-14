@@ -579,9 +579,9 @@
 		326A742E1CD067030015DE7D /* Blogs */ = {
 			isa = PBXGroup;
 			children = (
+				32992F221CE054F3006C604B /* FollowingBlogViewModel.swift */,
 				326A742C1CD066F30015DE7D /* IndexBlogViewModel.swift */,
 				3284AF171CD0B85D005AB294 /* ShowBlogViewModel.swift */,
-				32992F221CE054F3006C604B /* FollowingBlogViewModel.swift */,
 				32A77C451D005427003E5FFC /* BlogEditorViewModel.swift */,
 			);
 			name = Blogs;

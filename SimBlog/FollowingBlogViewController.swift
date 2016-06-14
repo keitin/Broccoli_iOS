@@ -47,7 +47,7 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
     //MARK - TableView Delagate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 191
+            return 150
         } else {
             return 50
         }

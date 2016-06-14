@@ -15,6 +15,7 @@ import Bond
 }
 
 class DisplayTitleCell: UITableViewCell, Like {
+    @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: ProfileImageView!
@@ -24,8 +25,13 @@ class DisplayTitleCell: UITableViewCell, Like {
     var selectedBlog: Blog!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         layoutImageView()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientionView()
+        lineBorderButton(borderWidth: 1)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -46,14 +52,14 @@ class DisplayTitleCell: UITableViewCell, Like {
         self.selectedBlog = blog
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))
         nameLabel.text = blog.user.name
-        titleLabel.text = blog.title
+        setupSentenceLabel(blog.title)
     }
     
     //MARK - Layout Sub Views
     func layoutImageView() {
-        profileImageView.layer.cornerRadius = 5
+        profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
         profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
-        profileImageView.layer.borderWidth = 2
+        profileImageView.layer.borderWidth = 1
         profileImageView.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(DisplayTitleCell.tapProfileImageView(_:)))
         profileImageView.addGestureRecognizer(tap)
@@ -65,4 +71,34 @@ class DisplayTitleCell: UITableViewCell, Like {
         delegate?.didTapProfileImageView(profileImageView.blog)
     }
     
+    private func gradientionView() {
+        UIColor.mainColor()
+        let topColor = UIColor(red: 237/255, green: 77/255, blue: 56/233, alpha:0.2)
+        let bottomColor = UIColor(red: 245/255, green: 147/255, blue: 53/233, alpha:0.5)
+        let gradientColors = [topColor.CGColor, bottomColor.CGColor]
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.frame = self.bounds
+        self.topImageView.layer.insertSublayer(gradientLayer, atIndex: 0)
+    }
+    
+    private func lineBorderButton(borderWidth borderWidth: CGFloat) {
+        let borderView = UIView()
+        borderView.frame.size = CGSizeMake(self.frame.width - 16, borderWidth)
+        borderView.center = CGPointMake(self.center.x, self.frame.height)
+        borderView.backgroundColor = UIColor.mainColor()
+        self.addSubview(borderView)
+    }
+    
+    private func setupSentenceLabel(text: String) {
+        
+        let attributedText = NSMutableAttributedString(string: text)
+        let letterSpacing = 1
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        
+        attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
+        attributedText.addAttribute(NSKernAttributeName, value: letterSpacing, range: NSMakeRange(0, attributedText.length))
+        titleLabel.attributedText = attributedText
+    }
 }

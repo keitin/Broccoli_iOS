@@ -44,7 +44,7 @@ class SearchBlogViewController: UIViewController, UITableViewDelegate ,UITextFie
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if didSearched {
             if indexPath.section == 0 {
-                return 191
+                return 150
             } else {
                 return 50
             }
