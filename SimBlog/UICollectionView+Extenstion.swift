@@ -13,4 +13,8 @@ extension UICollectionView {
     func registerCell(cellName: String) {
         self.registerNib(UINib(nibName: cellName, bundle: nil), forCellWithReuseIdentifier: cellName)
     }
+    
+    func scrollToTopWithAnimate(indexPath: NSIndexPath) {
+        self.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+    }
 }

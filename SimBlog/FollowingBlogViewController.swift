@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCellDelegate {
+class FollowingBlogViewController: UIViewController, UITableViewDelegate, UITabBarControllerDelegate, BlogCellDelegate {
     @IBOutlet weak var tableView: UITableView!
 
     let followingBlogViewModel = FollowingBlogViewModel()
@@ -16,18 +16,18 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
     var selectedBlog: Blog!
     let currentUser = CurrentUser.sharedInstance
     var refreshControl: UIRefreshControl!
+    var selfPage = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        followingBlogViewModel.didLoad(tableView, viewController: self)
+        followingBlogViewModel.didLoad(tableView)
         tableView.delegate = self
-        
         //MARK: - 引っ張って更新
         self.refreshControl = UIRefreshControl.loadingItems(self,
                                                             selector: #selector(FollowingBlogViewController.pullAndRefresh))
         self.tableView.addSubview(refreshControl)
         
-        
+        self.tabBarController?.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,6 +53,7 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selfPage = false
         if indexPath.section == 0 {
             let showBlogVC = UIStoryboard.viewControllerWith("Blog", identifier: "ShowBlogViewController") as! ShowBlogViewController
             showBlogVC.blog = currentUser.followingBlogAtPosition(indexPath.row)
@@ -81,4 +82,14 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
         }
     }
     
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        let initialTBC = tabBarController as! InitialTabBarController
+        initialTBC.didTappedItem(viewController)
+    }
+    
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        let initialTBC = tabBarController as! InitialTabBarController
+        initialTBC.shouldTapItem(viewController)
+        return true
+    }
 }

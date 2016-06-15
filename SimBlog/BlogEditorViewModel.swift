@@ -79,7 +79,6 @@ class BlogEditorViewModel: NSObject {
         for textView in self.textViews {
             text = text + "\n" + textView.text
         }
-        print(text)
     }
     
     func updateScrooViewContentSize(scrollView: UIScrollView, view: UIView) {

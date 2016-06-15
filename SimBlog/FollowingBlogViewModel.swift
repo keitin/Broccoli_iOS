@@ -10,16 +10,14 @@ import UIKit
 
 class FollowingBlogViewModel: NSObject, UITableViewDataSource {
     var tableView: UITableView!
-    var viewController: FollowingBlogViewController!
     var page = 1
     let currentUser = CurrentUser.sharedInstance
     var blogCell: BlogCell!
     
-    func didLoad(tableView: UITableView, viewController: FollowingBlogViewController) {
+    func didLoad(tableView: UITableView) {
         currentUser.getFollowingBlogsInBackground(page) { 
             tableView.reloadData()
         }
-        self.viewController = viewController
         self.tableView = tableView
         tableView.dataSource = self
         tableView.registerCell("BlogCell")
@@ -83,9 +81,6 @@ class FollowingBlogViewModel: NSObject, UITableViewDataSource {
     }
     
     private func insertNewBlogToRow(tableView: UITableView) {
-        print("====")
-        print(currentUser.numberOfFollowingBlogs)
-        print(tableView.numberOfRowsInSection(0))
         let differenceIndex = currentUser.numberOfFollowingBlogs - tableView.numberOfRowsInSection(0)
         if differenceIndex > 0 {
             for _ in 1...differenceIndex {

@@ -79,10 +79,8 @@ class User: NSObject {
     class func userSignedIn() -> Bool {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let _ = defaults.objectForKey("user_token") {
-            print("==================")
             return true
         } else {
-            print("KLLLLLLLLLLLLLLLLLLLLL")
             return false
         }
     }

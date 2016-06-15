@@ -88,7 +88,6 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     
     //MARK Refesh Control Data
     func pullAndReload() {
-        print("れロード")
         self.showUserViewModel.reloadItems { 
             self.refreshControl.endRefreshing()
         }

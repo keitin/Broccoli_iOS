@@ -53,6 +53,7 @@
 		326A74321CD068270015DE7D /* BlogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 326A74301CD068270015DE7D /* BlogCell.xib */; };
 		326F96521D11128C00053471 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326F96511D11128C00053471 /* Message.swift */; };
 		326F96541D1112D300053471 /* UIRefreshControl+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326F96531D1112D300053471 /* UIRefreshControl+Extenstion.swift */; };
+		326F96561D11254600053471 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326F96551D11254600053471 /* UIViewController+Extension.swift */; };
 		3284AF081CD06E24005AB294 /* BlogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF071CD06E24005AB294 /* BlogManager.swift */; };
 		3284AF0B1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF0A1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift */; };
 		3284AF121CD09AD5005AB294 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF101CD09AD5005AB294 /* TitleCell.swift */; };
@@ -197,6 +198,7 @@
 		326A74301CD068270015DE7D /* BlogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogCell.xib; sourceTree = "<group>"; };
 		326F96511D11128C00053471 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		326F96531D1112D300053471 /* UIRefreshControl+Extenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Extenstion.swift"; sourceTree = "<group>"; };
+		326F96551D11254600053471 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3284AF071CD06E24005AB294 /* BlogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogManager.swift; sourceTree = "<group>"; };
 		3284AF0A1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Ectenstion.swift"; sourceTree = "<group>"; };
 		3284AF101CD09AD5005AB294 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 				32AA3B7A1CFBE94100668DDE /* UIColor+Extension.swift */,
 				32AA3B851CFC1BDB00668DDE /* UIAlertController+Extension.swift */,
 				326F96531D1112D300053471 /* UIRefreshControl+Extenstion.swift */,
+				326F96551D11254600053471 /* UIViewController+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1171,6 +1174,7 @@
 				32492C361CD9F03B00B420B0 /* ShowUserViewController.swift in Sources */,
 				3237B8C31CD3A6C500ABD9F9 /* NSData+Extension.swift in Sources */,
 				328F006E1CE7114E00AB5E57 /* BlogImageView.swift in Sources */,
+				326F96561D11254600053471 /* UIViewController+Extension.swift in Sources */,
 				32A6B93E1CE0AFBB0026053E /* SearchBlogViewController.swift in Sources */,
 				328F00681CE6D82D00AB5E57 /* Notice.swift in Sources */,
 				32AA3B7B1CFBE94100668DDE /* UIColor+Extension.swift in Sources */,

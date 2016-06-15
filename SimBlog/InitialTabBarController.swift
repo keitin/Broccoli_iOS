@@ -12,6 +12,9 @@ import JDStatusBarNotification
 
 class InitialTabBarController: UITabBarController {
 
+    var twoVCs: [UIViewController] = []
+    var lastVC: UIViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,8 +29,6 @@ class InitialTabBarController: UITabBarController {
         blogNC.childViewControllers.first!.title          = "Search"
         noticeNC.childViewControllers.first!.title        = "Love"
         userNC.childViewControllers.first!.title          = "Profile"
-        
-        
         
         //tab bar icons
         let mainColor = UIColor.mainColor()
@@ -61,8 +62,6 @@ class InitialTabBarController: UITabBarController {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.mainColor(), NSFontAttributeName: UIFont(name: "Helvetica", size: 20)!]
         
         
-        
-        
         //declare this inside of viewWillAppear
         do {
             reachability = try Reachability.reachabilityForInternetConnection()
@@ -77,7 +76,6 @@ class InitialTabBarController: UITabBarController {
         }catch{
             print("could not start reachability notifier")
         }
-    
 
     }
 
@@ -107,5 +105,36 @@ class InitialTabBarController: UITabBarController {
         let originalImage = image.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         return originalImage
     }
-
+    
+    
+    func shouldTapItem(viewController: UIViewController) {
+        self.lastVC = viewController.currentTopViewController
+    }
+    
+    func didTappedItem(viewController: UIViewController) {
+        let vc = viewController.childViewControllers.first!
+        self.twoVCs.append(vc)
+        if self.twoVCs.count == 3 { self.twoVCs.removeFirst() }
+        if self.twoVCs.count < 2 { return }
+        if self.twoVCs.first == self.twoVCs.last && self.twoVCs.last == self.lastVC {
+            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+            
+            if let followBVC = vc as? FollowingBlogViewController {
+                followBVC.tableView.scrollToTopWithAnimate(indexPath)
+            }
+            
+            if let indexBVC = vc as? IndexBlogViewController {
+                indexBVC.collectionView.scrollToTopWithAnimate(indexPath)
+            }
+            
+            if let noticeVC = vc as? NoticeViewController {
+                noticeVC.tableView.scrollToTopWithAnimate(indexPath)
+            }
+            
+            if let userVC = vc as? ShowUserViewController {
+                userVC.tableView.scrollToTopWithAnimate(indexPath)
+            }
+            
+        }
+    }
 }

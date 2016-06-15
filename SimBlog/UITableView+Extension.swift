@@ -11,4 +11,8 @@ extension UITableView {
     func registerCell(cellName: String) {
         self.registerNib(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
     }
+    
+    func scrollToTopWithAnimate(indexPath: NSIndexPath) {
+        self.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+    }
 }
