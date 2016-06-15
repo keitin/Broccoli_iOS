@@ -69,7 +69,7 @@ class BlogTextView: UITextView {
     
     private func lineBorderButton(borderWidth borderWidth: CGFloat) {
         self.borderView = UIView()
-        self.borderView.frame.size = CGSizeMake(self.frame.width - 16, borderWidth)
+        self.borderView.frame.size = CGSizeMake(self.frame.width - 10, borderWidth)
         self.borderView.center = CGPointMake(self.center.x, self.frame.height)
         self.borderView.backgroundColor = UIColor.mainColor()
         self.addSubview(self.borderView)
