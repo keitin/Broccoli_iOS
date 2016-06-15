@@ -12,11 +12,15 @@ class NoticeViewController: UIViewController, UITableViewDelegate, NoticeCellDel
 
     @IBOutlet weak var tableView: UITableView!
     let noticeViewModel = NoticeViewModel()
+    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         noticeViewModel.didLoad(tableView, viewController: self)
         tableView.delegate = self
+        
+        refreshControl = UIRefreshControl.loadingItems(self, selector: #selector(NoticeViewController.pullAndload))
+        self.tableView.addSubview(refreshControl)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -54,6 +58,13 @@ class NoticeViewController: UIViewController, UITableViewDelegate, NoticeCellDel
         let showUserVC = UIStoryboard.viewControllerWith("User", identifier: "ShowUserViewController") as! ShowUserViewController
         showUserVC.selectedUser = user
         navigationController?.pushViewController(showUserVC, animated: true)
+    }
+    
+    //MARK: Refresh Control Data
+    func pullAndload() {
+        self.noticeViewModel.reloadItems { 
+            self.refreshControl.endRefreshing()
+        }
     }
     
 

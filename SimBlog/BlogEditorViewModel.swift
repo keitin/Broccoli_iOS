@@ -34,7 +34,7 @@ class BlogEditorViewModel: NSObject {
     
     func postBlog(callback: (message: String?) -> Void) {
         if blog.title == "" || blog.topImage == nil {
-            callback(message: ErrorMessage.emptyTitleOrImage())
+            callback(message: ErrorMessage.emptyTitleOrImage)
             return
         }
         SVProgressHUD.show()

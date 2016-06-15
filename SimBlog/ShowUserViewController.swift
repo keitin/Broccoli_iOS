@@ -14,12 +14,16 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     let showUserViewModel = ShowUserViewModel()
     let currentUser = CurrentUser.sharedInstance
     var selectedUser: User?
+    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let user = selectedUser ?? currentUser
         showUserViewModel.didLoad(self, tableView: tableView, user: user)
         tableView.delegate = self
+        
+        self.refreshControl = UIRefreshControl.loadingItems(self, selector: #selector(ShowUserViewController.pullAndReload))
+        self.tableView.addSubview(self.refreshControl)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -80,5 +84,13 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
         indexUserVC.displayType = DisplayType.Follows
         indexUserVC.user = selectedUser ?? currentUser
         navigationController?.pushViewController(indexUserVC, animated: true)
+    }
+    
+    //MARK Refesh Control Data
+    func pullAndReload() {
+        print("れロード")
+        self.showUserViewModel.reloadItems { 
+            self.refreshControl.endRefreshing()
+        }
     }
 }

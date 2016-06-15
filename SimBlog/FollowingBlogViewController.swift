@@ -15,27 +15,26 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
     let blogManager = BlogManager.sharedInstance
     var selectedBlog: Blog!
     let currentUser = CurrentUser.sharedInstance
+    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         followingBlogViewModel.didLoad(tableView, viewController: self)
         tableView.delegate = self
+        
+        //MARK: - 引っ張って更新
+        self.refreshControl = UIRefreshControl.loadingItems(self,
+                                                            selector: #selector(FollowingBlogViewController.pullAndRefresh))
+        self.tableView.addSubview(refreshControl)
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        navigationItem.rightBarButtonItem("New", target: self, action: #selector
-//            (FollowingBlogViewController.modalNewBlog(_:)))
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add-blog"), style: .Plain, target: self, action:  #selector
             (FollowingBlogViewController.modalNewBlog(_:)))
-
-        
         followingBlogViewModel.willAppear()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-//        su
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,7 +50,6 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
         } else {
             return 50
         }
-        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -76,14 +74,11 @@ class FollowingBlogViewController: UIViewController, UITableViewDelegate, BlogCe
         navigationController?.pushViewController(showUserVC, animated: true)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-
+    //MARK: - Refresh Control Action
+    func pullAndRefresh() {
+        followingBlogViewModel.refershData { 
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
 }

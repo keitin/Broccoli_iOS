@@ -63,6 +63,14 @@ class FollowingBlogViewModel: NSObject, UITableViewDataSource {
         }
     }
     
+    func refershData(callback: () -> Void) {
+        page = 1
+        currentUser.getFollowingBlogsInBackground(page) {
+            self.tableView.reloadData()
+            callback()
+        }
+    }
+    
     
     // MARK Table View Private
     private func insertTopRow(tableView: UITableView) {

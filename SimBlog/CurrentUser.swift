@@ -40,6 +40,7 @@ class CurrentUser: User {
                     StatusBarNotification.showErrorMessage()
                     return
                 }
+                if page == 1 { self.followingBlogs = [] }
                 StatusBarNotification.hideMessage()
                 let json = JSON(object)
                 SVProgressHUD.dismiss()

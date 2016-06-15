@@ -61,6 +61,14 @@ class NoticeViewModel: NSObject, UITableViewDataSource, NoticeType {
         }
     }
     
+    func reloadItems(callback: () -> Void) {
+        page = 1
+        getNoticesInBackground(currentUser, page: self.page) {
+            self.tableView.reloadData()
+            callback()
+        }
+    }
+    
     private func insertTopRow(tableView: UITableView) {
         let differenceIndex = currentUser.numberOfNotices - tableView.numberOfRowsInSection(0)
         if differenceIndex > 0 {

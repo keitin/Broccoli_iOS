@@ -71,6 +71,14 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
         }
     }
     
+    func reloadItems(callback: () -> Void) {
+        page = 1
+        self.selectedUser.getBlogsInBackground(page) {
+            self.tableView.reloadData()
+            callback()
+        }
+    }
+    
     // MARK Table View Private
     private func insertTopRow(tableView: UITableView) {
         let differenceIndex = selectedUser.numberOfBlogs - tableView.numberOfRowsInSection(1)

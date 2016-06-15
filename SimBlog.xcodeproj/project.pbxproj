@@ -51,6 +51,8 @@
 		326A742D1CD066F30015DE7D /* IndexBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A742C1CD066F30015DE7D /* IndexBlogViewModel.swift */; };
 		326A74311CD068270015DE7D /* BlogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A742F1CD068270015DE7D /* BlogCell.swift */; };
 		326A74321CD068270015DE7D /* BlogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 326A74301CD068270015DE7D /* BlogCell.xib */; };
+		326F96521D11128C00053471 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326F96511D11128C00053471 /* Message.swift */; };
+		326F96541D1112D300053471 /* UIRefreshControl+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326F96531D1112D300053471 /* UIRefreshControl+Extenstion.swift */; };
 		3284AF081CD06E24005AB294 /* BlogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF071CD06E24005AB294 /* BlogManager.swift */; };
 		3284AF0B1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF0A1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift */; };
 		3284AF121CD09AD5005AB294 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF101CD09AD5005AB294 /* TitleCell.swift */; };
@@ -193,6 +195,8 @@
 		326A742C1CD066F30015DE7D /* IndexBlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexBlogViewModel.swift; sourceTree = "<group>"; };
 		326A742F1CD068270015DE7D /* BlogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogCell.swift; sourceTree = "<group>"; };
 		326A74301CD068270015DE7D /* BlogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogCell.xib; sourceTree = "<group>"; };
+		326F96511D11128C00053471 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		326F96531D1112D300053471 /* UIRefreshControl+Extenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Extenstion.swift"; sourceTree = "<group>"; };
 		3284AF071CD06E24005AB294 /* BlogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogManager.swift; sourceTree = "<group>"; };
 		3284AF0A1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Ectenstion.swift"; sourceTree = "<group>"; };
 		3284AF101CD09AD5005AB294 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
@@ -504,6 +508,7 @@
 				329319091CED96F700B393D7 /* UICollectionView+Extenstion.swift */,
 				32AA3B7A1CFBE94100668DDE /* UIColor+Extension.swift */,
 				32AA3B851CFC1BDB00668DDE /* UIAlertController+Extension.swift */,
+				326F96531D1112D300053471 /* UIRefreshControl+Extenstion.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -771,6 +776,7 @@
 			isa = PBXGroup;
 			children = (
 				32AA3B821CFC1A4200668DDE /* ErrorMessage.swift */,
+				326F96511D11128C00053471 /* Message.swift */,
 			);
 			name = ErrorMessage;
 			sourceTree = "<group>";
@@ -1184,7 +1190,9 @@
 				3284AF081CD06E24005AB294 /* BlogManager.swift in Sources */,
 				32992F1E1CE0525E006C604B /* InitialTabBarController.swift in Sources */,
 				32B42AEA1CDB6F18009EC63C /* ProfileImageView.swift in Sources */,
+				326F96521D11128C00053471 /* Message.swift in Sources */,
 				324E471B1CD1E318003EC6AC /* LoginViewModel.swift in Sources */,
+				326F96541D1112D300053471 /* UIRefreshControl+Extenstion.swift in Sources */,
 				3293190A1CED96F700B393D7 /* UICollectionView+Extenstion.swift in Sources */,
 				326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */,
 				326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */,

@@ -9,7 +9,9 @@
 import Foundation
 
 struct ErrorMessage {
-    static func emptyTitleOrImage() -> String {
-        return "タイトル又は画像が設定されていません。"
-    }
+//    static func emptyTitleOrImage() -> String {
+//        return "タイトル又は画像が設定されていません。"
+//    }
+    
+    static let emptyTitleOrImage = "タイトル又は画像が設定されていません。"
 }

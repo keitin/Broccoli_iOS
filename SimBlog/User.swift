@@ -120,6 +120,7 @@ class User: NSObject {
                     StatusBarNotification.showErrorMessage()
                     return
                 }
+                if page == 1 { self.blogs = [] }
                 StatusBarNotification.hideMessage()
                 let json = JSON(object)
                 for object in json["blogs"].array! {

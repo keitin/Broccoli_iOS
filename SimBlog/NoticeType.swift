@@ -29,7 +29,7 @@ extension NoticeType {
                 }
                 StatusBarNotification.hideMessage()
                 SVProgressHUD.dismiss()
-                currentUser.notices = []
+                if page == 1 { currentUser.notices = [] }
                 let json = JSON(object)
                 for notice in json["notices"].array! {
                     let blog = Blog(apiAttributes: notice["blog"])
