@@ -32,10 +32,11 @@ class User: NSObject {
     }
     
     init(facebookAttributes: JSON) {
+        
         self.name = facebookAttributes["name"].string!
         self.imageURL = facebookAttributes["picture"]["data"]["url"].string!
         self.facebook_id = facebookAttributes["id"].string!
-        self.email = facebookAttributes["email"].string
+        self.email = facebookAttributes["email"] ? facebookAttributes["email"].string : ""
     }
     
     init(apiAttributes: JSON) {
@@ -78,8 +79,10 @@ class User: NSObject {
     class func userSignedIn() -> Bool {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let _ = defaults.objectForKey("user_token") {
+            print("==================")
             return true
         } else {
+            print("KLLLLLLLLLLLLLLLLLLLLL")
             return false
         }
     }
@@ -93,6 +96,7 @@ class User: NSObject {
             "email": self.email,
             "token": self.token
         ]
+        
         Alamofire.request(.POST, String.rootPath() + "/api/users/", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
