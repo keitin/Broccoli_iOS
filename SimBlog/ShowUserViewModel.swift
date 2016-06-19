@@ -77,7 +77,7 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
             self.tableView.reloadData()
             callback()
         }
-    }
+    }    
     
     // MARK Table View Private
     private func insertTopRow(tableView: UITableView) {

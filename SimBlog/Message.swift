@@ -11,4 +11,5 @@ import Foundation
 
 struct Message {
     static let loading = "読み込み中"
+    static let report = "通報する"
 }

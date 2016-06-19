@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCellDelegate, Follow {
+class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCellDelegate, Follow, Report {
     
     @IBOutlet weak var tableView: UITableView!
     let showUserViewModel = ShowUserViewModel()
@@ -28,6 +28,9 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     
     override func viewWillAppear(animated: Bool) {
         showUserViewModel.willAppear()
+        if let _ = selectedUser {
+            self.navigationItem.rightBarButtonItem("…", target: self, action: #selector(ShowUserViewController.tapActionSheet(_:)))
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,4 +95,22 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
             self.refreshControl.endRefreshing()
         }
     }
+    
+    //MARK - Navigation Actions
+    func tapActionSheet(sender: UINavigationItem) {
+        let sheet = UIAlertController.actionSheet("", message: "")
+        let reportAction = UIAlertAction(title: Message.report, style: .Default) { (action) in
+            let selectReport = UIAlertController.reportSelectAction({ (reportType) in
+                self.reportUser(self.selectedUser!, blog: nil, reportType: reportType, callback: { (message) in
+                    let okAlert = UIAlertController.okAlertWithMessage(message)
+                    self.presentViewController(okAlert, animated: true, completion: nil)
+                })
+            })
+            self.presentViewController(selectReport, animated: true, completion: nil)
+        }
+        sheet.addAction(reportAction)
+        self.presentViewController(sheet, animated: true, completion: nil)
+    }
+    
+    
 }

@@ -79,6 +79,7 @@
 		3284AF211CD0EE3B005AB294 /* DisplayTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF1F1CD0EE3B005AB294 /* DisplayTextCell.xib */; };
 		3284AF251CD0EF18005AB294 /* DisplayImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */; };
 		3284AF261CD0EF18005AB294 /* DisplayImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */; };
+		328C61771D16DD5300285F7D /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C61761D16DD5300285F7D /* Report.swift */; };
 		328F00591CE6CBBB00AB5E57 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F00581CE6CBBB00AB5E57 /* NoticeViewController.swift */; };
 		328F005C1CE6CBE200AB5E57 /* Notice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328F005B1CE6CBE200AB5E57 /* Notice.storyboard */; };
 		328F005E1CE6CFB900AB5E57 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F005D1CE6CFB900AB5E57 /* NoticeViewModel.swift */; };
@@ -237,6 +238,7 @@
 		3284AF1F1CD0EE3B005AB294 /* DisplayTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayTextCell.xib; sourceTree = "<group>"; };
 		3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayImageCell.swift; sourceTree = "<group>"; };
 		3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayImageCell.xib; sourceTree = "<group>"; };
+		328C61761D16DD5300285F7D /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		328F00581CE6CBBB00AB5E57 /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		328F005B1CE6CBE200AB5E57 /* Notice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notice.storyboard; sourceTree = "<group>"; };
 		328F005D1CE6CFB900AB5E57 /* NoticeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
@@ -863,6 +865,7 @@
 				32BFE1DF1CE4BC5100FC26FF /* Like.swift */,
 				32BFE1E21CE4E31000FC26FF /* Follow.swift */,
 				328F006B1CE6F80200AB5E57 /* NoticeType.swift */,
+				328C61761D16DD5300285F7D /* Report.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -1283,6 +1286,7 @@
 				3237B8C51CD48D0100ABD9F9 /* String+Extension.swift in Sources */,
 				32AA3B831CFC1A4200668DDE /* ErrorMessage.swift in Sources */,
 				328F00621CE6D4D400AB5E57 /* NoticeCell.swift in Sources */,
+				328C61771D16DD5300285F7D /* Report.swift in Sources */,
 				32A6B9491CE0B6800026053E /* SearchHistory.swift in Sources */,
 				324E47141CD1E09C003EC6AC /* User.swift in Sources */,
 				32AA3B861CFC1BDB00668DDE /* UIAlertController+Extension.swift in Sources */,
