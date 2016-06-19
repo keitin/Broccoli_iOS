@@ -15,7 +15,7 @@ class User: NSObject {
     var imageURL: String!
     var id: Int!
     var facebook_id: String!
-    var email: String?
+//    var email: String?
     var token: String!
     var blogs: [Blog] = []
     var followingBlogs: [Blog] = []
@@ -36,13 +36,13 @@ class User: NSObject {
         self.name = facebookAttributes["name"].string!
         self.imageURL = facebookAttributes["picture"]["data"]["url"].string!
         self.facebook_id = facebookAttributes["id"].string!
-        self.email = facebookAttributes["email"] ? facebookAttributes["email"].string : ""
+//        self.email = facebookAttributes["email"] ? facebookAttributes["email"].string : ""
     }
     
     init(apiAttributes: JSON) {
         self.name = apiAttributes["name"].string
         self.imageURL = apiAttributes["image_url"].string
-        self.email = apiAttributes["email"].string
+//        self.email = apiAttributes["email"].string
         self.facebook_id = apiAttributes["facebook_id"].string
         self.id = apiAttributes["id"].int
     }
@@ -91,7 +91,7 @@ class User: NSObject {
             "name": self.name,
             "image_url": self.imageURL,
             "facebook_id": self.facebook_id,
-            "email": self.email,
+//            "email": self.email,
             "token": self.token
         ]
         
@@ -171,7 +171,7 @@ class User: NSObject {
     func saveCurrentUserInLocal() {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(self.name, forKey: "user_name")
-        defaults.setObject(self.email, forKey: "user_email")
+//        defaults.setObject(self.email, forKey: "user_email")
         defaults.setObject(self.imageURL, forKey: "user_image_url")
         defaults.setObject(self.id, forKey: "id")
         defaults.setObject(self.facebook_id, forKey: "facebook_id")

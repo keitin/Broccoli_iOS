@@ -16,7 +16,7 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
     
     func didLoad(loginView: LoginView) {
         loginView.loginButton.delegate = self
-        loginView.loginButton.readPermissions = ["public_profile", "email"]
+        loginView.loginButton.readPermissions = ["public_profile"]
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
@@ -37,7 +37,7 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
     }
     
     private func getUserData(){
-        let params = ["fields": "id, name, picture.type(large), photos, email"]
+        let params = ["fields": "id, name, picture.type(large), photos"]
         let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: params)
         graphRequest.startWithCompletionHandler({ (connection, result, error) in
             guard error == nil && result != nil else{
