@@ -18,17 +18,20 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         let user = selectedUser ?? currentUser
         showUserViewModel.didLoad(self, tableView: tableView, user: user)
         tableView.delegate = self
         
         self.refreshControl = UIRefreshControl.loadingItems(self, selector: #selector(ShowUserViewController.pullAndReload))
         self.tableView.addSubview(self.refreshControl)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         showUserViewModel.willAppear()
-        if let _ = selectedUser {
+        if let selectedUser = selectedUser {
+            if selectedUser.id == self.currentUser.id { return }
             self.navigationItem.rightBarButtonItem("…", target: self, action: #selector(ShowUserViewController.tapActionSheet(_:)))
         }
     }

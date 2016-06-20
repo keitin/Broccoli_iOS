@@ -9,7 +9,7 @@
 import UIKit
 import Bond
 
-class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like {
+class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like, Report {
     
     @IBOutlet weak var tableView: UITableView!
     let showBlogViewModel = ShowBlogViewModel()
@@ -20,9 +20,16 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like {
         super.viewDidLoad()
         showBlogViewModel.didLoad(blog, tableView: tableView)
         
+        var barItems: [UIBarButtonItem] = []
+        
         isLike(self.blog) { (isLike) in
             self.loveButton = self.navigationItem.loveButtonItem(self, action: #selector(ShowBlogViewController.didTapLoveButton(_:)), selected: isLike)
-            self.navigationItem.rightBarButtonItem = self.loveButton
+                barItems.insert(self.loveButton, atIndex: 0)
+            if self.blog.user.id != CurrentUser.sharedInstance.id {
+                let menu = UIBarButtonItem(title: "…", style: .Done, target: self, action: #selector(ShowBlogViewController.tapActionSheet(_:)))
+                barItems.insert(menu, atIndex: 0)
+            }
+            self.navigationItem.rightBarButtonItems = barItems
         }
     }
     
@@ -65,14 +72,18 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tapActionSheet(sender: UIBarButtonItem) {
+        let sheet = UIAlertController.actionSheet("", message: "")
+        let reportAction = UIAlertAction(title: Message.report, style: .Default) { (action) in
+            let selectReport = UIAlertController.reportSelectAction({ (reportType) in
+                self.reportUser(self.blog.user, blog: self.blog, reportType: reportType, callback: { (message) in
+                    let okAlert = UIAlertController.okAlertWithMessage(message)
+                    self.presentViewController(okAlert, animated: true, completion: nil)
+                })
+            })
+            self.presentViewController(selectReport, animated: true, completion: nil)
+        }
+        sheet.addAction(reportAction)
+        self.presentViewController(sheet, animated: true, completion: nil)
     }
-    */
-
 }
