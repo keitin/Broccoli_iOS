@@ -10,10 +10,13 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
+import Bond
 
 class LoginView: UIView {
     
     let loginButton = FBSDKLoginButton()
+    let checkboxButton = UIButton()
+    let termButton = UIButton()
     
     class func instance() -> LoginView {
         return UINib(nibName: "LoginView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! LoginView
@@ -24,9 +27,12 @@ class LoginView: UIView {
         makeFacebookButton()
         makeLogoLabel()
         makeBorderView()
+        makeCheckBoxButtotn()
+        makeTermButton()
      }
     
     private func makeFacebookButton() {
+        loginButton.enabled = false
         loginButton.frame.size = CGSizeMake(280, 50)
         loginButton.center = CGPointMake(self.center.x, self.center.y + 150)
         self.addSubview(loginButton)
@@ -52,5 +58,27 @@ class LoginView: UIView {
         self.addSubview(borderView)
     }
     
+    private func makeCheckBoxButtotn() {
+        self.checkboxButton.frame.size = CGSize(width: 30, height: 30)
+        print(self.checkboxButton.frame)
+        self.checkboxButton.center = CGPoint(x: self.center.x + 50, y: self.center.y + 200)
+        self.checkboxButton.setImage(UIImage(named: "Unchecked-Checkbox-50"), forState: .Normal)
+        self.checkboxButton.setImage(UIImage(named: "Checked-Checkbox 2-50"), forState: .Selected)
+        self.checkboxButton.bnd_controlEvent
+            .filter { $0 == UIControlEvents.TouchUpInside }
+            .observe { e in
+                self.loginButton.enabled = self.checkboxButton.selected ? true : false
+        }
+        self.addSubview(self.checkboxButton)
+    }
+    
+    private func makeTermButton() {
+        self.termButton.setTitle("利用規約", forState: .Normal)
+        self.termButton.titleLabel?.font = UIFont.systemFontOfSize(12)
+        self.termButton.sizeToFit()
+        self.termButton.center = CGPoint(x: self.center.x, y: self.center.y + 200)
+        self.termButton.setTitleColor(UIColor.white(), forState: .Normal)
+        self.addSubview(self.termButton)
+    }
 
 }

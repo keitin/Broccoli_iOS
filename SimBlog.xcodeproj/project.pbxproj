@@ -80,6 +80,9 @@
 		3284AF251CD0EF18005AB294 /* DisplayImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */; };
 		3284AF261CD0EF18005AB294 /* DisplayImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */; };
 		328C61771D16DD5300285F7D /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C61761D16DD5300285F7D /* Report.swift */; };
+		328C617A1D19543A00285F7D /* Checked-Checkbox 2-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 328C61781D19543A00285F7D /* Checked-Checkbox 2-50@2x.png */; };
+		328C617B1D19543A00285F7D /* Unchecked-Checkbox-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 328C61791D19543A00285F7D /* Unchecked-Checkbox-50@2x.png */; };
+		328C617D1D1A41C700285F7D /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C617C1D1A41C700285F7D /* TermsOfServiceViewController.swift */; };
 		328F00591CE6CBBB00AB5E57 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F00581CE6CBBB00AB5E57 /* NoticeViewController.swift */; };
 		328F005C1CE6CBE200AB5E57 /* Notice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328F005B1CE6CBE200AB5E57 /* Notice.storyboard */; };
 		328F005E1CE6CFB900AB5E57 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F005D1CE6CFB900AB5E57 /* NoticeViewModel.swift */; };
@@ -239,6 +242,9 @@
 		3284AF231CD0EF18005AB294 /* DisplayImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayImageCell.swift; sourceTree = "<group>"; };
 		3284AF241CD0EF18005AB294 /* DisplayImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayImageCell.xib; sourceTree = "<group>"; };
 		328C61761D16DD5300285F7D /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		328C61781D19543A00285F7D /* Checked-Checkbox 2-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checked-Checkbox 2-50@2x.png"; sourceTree = "<group>"; };
+		328C61791D19543A00285F7D /* Unchecked-Checkbox-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unchecked-Checkbox-50@2x.png"; sourceTree = "<group>"; };
+		328C617C1D1A41C700285F7D /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		328F00581CE6CBBB00AB5E57 /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		328F005B1CE6CBE200AB5E57 /* Notice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notice.storyboard; sourceTree = "<group>"; };
 		328F005D1CE6CFB900AB5E57 /* NoticeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
@@ -380,6 +386,7 @@
 				324E47101CD1D43B003EC6AC /* LoginViewController.swift */,
 				32492C351CD9F03B00B420B0 /* ShowUserViewController.swift */,
 				32992EF71CDCEB39006C604B /* IndexUserViewController.swift */,
+				328C617C1D1A41C700285F7D /* TermsOfServiceViewController.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -599,6 +606,8 @@
 		326A74211CCFD3440015DE7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				328C61781D19543A00285F7D /* Checked-Checkbox 2-50@2x.png */,
+				328C61791D19543A00285F7D /* Unchecked-Checkbox-50@2x.png */,
 				3222C2C91D10169100716428 /* backTop.png */,
 				3222C2C71D10156400716428 /* launchScreenNight.png */,
 				320DFDB01CFD1453001E5201 /* Expand-Arrow-50@2x.png */,
@@ -1043,6 +1052,8 @@
 				32508EC81D129DE900B049B7 /* Icon-Small.png in Resources */,
 				326A73DF1CCFC4830015DE7D /* Assets.xcassets in Resources */,
 				32508EC11D129DE900B049B7 /* Icon-40@2x.png in Resources */,
+				328C617A1D19543A00285F7D /* Checked-Checkbox 2-50@2x.png in Resources */,
+				328C617B1D19543A00285F7D /* Unchecked-Checkbox-50@2x.png in Resources */,
 				32508EC01D129DE900B049B7 /* Icon-40.png in Resources */,
 				32AA3B6D1CFAEAC400668DDE /* Search-selected-50@2x.png in Resources */,
 				32AA3B8A1CFC3D7E00668DDE /* Love-Filled-50@2x.png in Resources */,
@@ -1244,6 +1255,7 @@
 				32B42AED1CDB9029009EC63C /* MoreItemsCell.swift in Sources */,
 				326A74081CCFC7540015DE7D /* TextCell.swift in Sources */,
 				3284AF161CD0B73F005AB294 /* ShowBlogViewController.swift in Sources */,
+				328C617D1D1A41C700285F7D /* TermsOfServiceViewController.swift in Sources */,
 				32A77C441D0053BD003E5FFC /* BlogTextView.swift in Sources */,
 				32A6B9CC1CE36BBC0026053E /* SearchResultsBlogViewModel.swift in Sources */,
 				326A74131CCFC8D20015DE7D /* Blog.swift in Sources */,

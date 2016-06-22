@@ -24,8 +24,14 @@ class LoginViewController: VideoSplashViewController {
         let loginView = LoginView.instance()
         self.view = loginView
         loginViewModel.didLoad(loginView)
+        loginView.checkboxButton.addTarget(self, action: #selector(LoginViewController.tappCheckBox(_:)), forControlEvents: .TouchUpInside)
+        loginView.termButton.addTarget(self, action: #selector(LoginViewController.modelTerm(_:)), forControlEvents: .TouchUpInside)
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,6 +51,15 @@ class LoginViewController: VideoSplashViewController {
             backgroundColor = UIColor.blackColor()
             contentURL = url
         }
+    }
+
+    func tappCheckBox(sender: UIButton) {
+        sender.selected = sender.selected ? false : true
+    }
+    
+    func modelTerm(sender: UIButton) {
+        let termOfServiceVC = UIStoryboard.viewControllerWith("Login", identifier: "TermNavigationController")
+        self.presentViewController(termOfServiceVC, animated: true, completion: nil)
     }
        
 }

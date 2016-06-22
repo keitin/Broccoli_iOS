@@ -55,4 +55,5 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
             })
         })
     }
+    
 }
