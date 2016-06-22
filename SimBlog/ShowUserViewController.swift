@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCellDelegate, Follow, Report {
+class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCellDelegate, Follow, Report, Block {
     
     @IBOutlet weak var tableView: UITableView!
     let showUserViewModel = ShowUserViewModel()
@@ -18,7 +18,6 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         let user = selectedUser ?? currentUser
         showUserViewModel.didLoad(self, tableView: tableView, user: user)
         tableView.delegate = self
@@ -26,6 +25,16 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
         self.refreshControl = UIRefreshControl.loadingItems(self, selector: #selector(ShowUserViewController.pullAndReload))
         self.tableView.addSubview(self.refreshControl)
         
+        self.isBlock(currentUser, toUser: user) { (isBlocked, isBlocking) in
+            if isBlocked {
+                self.title = "ブロックされ中"
+                self.selectedUser?.blocked = true
+                self.showUserViewModel.makeBlockedState()
+            }
+            if isBlocking {
+                self.title = "ブロック中"
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -111,7 +120,17 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
             })
             self.presentViewController(selectReport, animated: true, completion: nil)
         }
+        let blockAction = UIAlertAction(title: "ブロックする", style: .Default) { (action) in
+            let confirmAlet = UIAlertController.confirmBlock({ 
+                self.block(self.currentUser, toUser: self.selectedUser!, callback: {
+                    let okAlert = UIAlertController.okAlertWithMessage("完了しました")
+                    self.presentViewController(okAlert, animated: true, completion: nil)
+                })
+            })
+            self.presentViewController(confirmAlet, animated: true, completion: nil)
+        }
         sheet.addAction(reportAction)
+        sheet.addAction(blockAction)
         self.presentViewController(sheet, animated: true, completion: nil)
     }
     

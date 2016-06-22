@@ -51,6 +51,13 @@ class ProfileCell: UITableViewCell, Follow {
         if currentUser.id == user.id {
             followButton.hidden = true
         }
+        
+        if user.blocked {
+            followerButton.enabled = false
+            followingButton.enabled = false
+            followButton.enabled = false
+        }
+        
         nameLabel.text = user.name
         profileImageView.sd_setImageWithURL(NSURL(string: user.imageURL))
         isFollow(currentUser, toUser: user) { (isFollow) in

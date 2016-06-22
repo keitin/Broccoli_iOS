@@ -16,6 +16,7 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
     var selectedUser: User!
     var page = 1
     var isFollow = false
+    var sectionNumber = 3
     
     func didLoad(viewController: ShowUserViewController, tableView: UITableView, user: User) {
         self.viewController = viewController
@@ -35,7 +36,7 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return sectionNumber
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,7 +78,12 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
             self.tableView.reloadData()
             callback()
         }
-    }    
+    }
+    
+    func makeBlockedState() {
+        self.sectionNumber = 1
+        self.tableView.reloadData()
+    }
     
     // MARK Table View Private
     private func insertTopRow(tableView: UITableView) {

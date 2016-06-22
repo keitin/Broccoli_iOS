@@ -15,7 +15,6 @@ class User: NSObject {
     var imageURL: String!
     var id: Int!
     var facebook_id: String!
-//    var email: String?
     var token: String!
     var blogs: [Blog] = []
     var followingBlogs: [Blog] = []
@@ -25,7 +24,7 @@ class User: NSObject {
     var numberOfFollows: Int { return follows.count }
     var numberOfFollowers: Int { return followers.count }
     var numberOfFollowingBlogs: Int { return followingBlogs.count }
-    
+    var blocked = false
     
     override init() {
         super.init()

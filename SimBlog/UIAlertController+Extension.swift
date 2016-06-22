@@ -48,4 +48,15 @@ extension UIAlertController {
         sheet.addAction(cancel)
         return sheet
     }
+    
+    class func confirmBlock(callback: () -> Void) -> UIAlertController {
+        let confrimAlert = UIAlertController(title: "本当にブロックしますか？", message: nil, preferredStyle: .Alert)
+        let confrmAction = UIAlertAction(title: "ブロックする", style: .Default) { (action) in
+            callback()
+        }
+        let cancel = UIAlertAction(title: "キャンセル", style: .Default, handler: nil)
+        confrimAlert.addAction(confrmAction)
+        confrimAlert.addAction(cancel)
+        return confrimAlert
+    }
 }
