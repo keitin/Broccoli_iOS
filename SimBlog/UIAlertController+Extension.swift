@@ -49,10 +49,16 @@ extension UIAlertController {
         return sheet
     }
     
-    class func confirmBlock(callback: () -> Void) -> UIAlertController {
-        let confrimAlert = UIAlertController(title: "本当にブロックしますか？", message: nil, preferredStyle: .Alert)
-        let confrmAction = UIAlertAction(title: "ブロックする", style: .Default) { (action) in
-            callback()
+    class func confirmBlock(blocked: Bool, callback: (block: Bool) -> Void) -> UIAlertController {
+        var alertTitle = Message.confirmBlock
+        var actionTitle = Message.block
+        if blocked {
+            alertTitle = Message.confirmRemoveBlock
+            actionTitle = Message.removeBlock
+        }
+        let confrimAlert = UIAlertController(title: alertTitle, message: nil, preferredStyle: .Alert)
+        let confrmAction = UIAlertAction(title: actionTitle, style: .Default) { (action) in
+            callback(block: blocked)
         }
         let cancel = UIAlertAction(title: "キャンセル", style: .Default, handler: nil)
         confrimAlert.addAction(confrmAction)

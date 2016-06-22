@@ -84,6 +84,7 @@
 		328C617B1D19543A00285F7D /* Unchecked-Checkbox-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 328C61791D19543A00285F7D /* Unchecked-Checkbox-50@2x.png */; };
 		328C617D1D1A41C700285F7D /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C617C1D1A41C700285F7D /* TermsOfServiceViewController.swift */; };
 		328C617F1D1A565600285F7D /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C617E1D1A565600285F7D /* Block.swift */; };
+		328C61811D1A749100285F7D /* UIAlertAction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C61801D1A749100285F7D /* UIAlertAction+Extension.swift */; };
 		328F00591CE6CBBB00AB5E57 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F00581CE6CBBB00AB5E57 /* NoticeViewController.swift */; };
 		328F005C1CE6CBE200AB5E57 /* Notice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328F005B1CE6CBE200AB5E57 /* Notice.storyboard */; };
 		328F005E1CE6CFB900AB5E57 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F005D1CE6CFB900AB5E57 /* NoticeViewModel.swift */; };
@@ -247,6 +248,7 @@
 		328C61791D19543A00285F7D /* Unchecked-Checkbox-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unchecked-Checkbox-50@2x.png"; sourceTree = "<group>"; };
 		328C617C1D1A41C700285F7D /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		328C617E1D1A565600285F7D /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		328C61801D1A749100285F7D /* UIAlertAction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extension.swift"; sourceTree = "<group>"; };
 		328F00581CE6CBBB00AB5E57 /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		328F005B1CE6CBE200AB5E57 /* Notice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notice.storyboard; sourceTree = "<group>"; };
 		328F005D1CE6CFB900AB5E57 /* NoticeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				329319091CED96F700B393D7 /* UICollectionView+Extenstion.swift */,
 				32AA3B7A1CFBE94100668DDE /* UIColor+Extension.swift */,
 				32AA3B851CFC1BDB00668DDE /* UIAlertController+Extension.swift */,
+				328C61801D1A749100285F7D /* UIAlertAction+Extension.swift */,
 				326F96531D1112D300053471 /* UIRefreshControl+Extenstion.swift */,
 				326F96551D11254600053471 /* UIViewController+Extension.swift */,
 			);
@@ -1247,6 +1250,7 @@
 				32992EFA1CDCEB5F006C604B /* IndexUserViewModel.swift in Sources */,
 				326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */,
 				326A741C1CCFD0BD0015DE7D /* ImageCell.swift in Sources */,
+				328C61811D1A749100285F7D /* UIAlertAction+Extension.swift in Sources */,
 				324E47171CD1E200003EC6AC /* LoginView.swift in Sources */,
 				32492C361CD9F03B00B420B0 /* ShowUserViewController.swift in Sources */,
 				3237B8C31CD3A6C500ABD9F9 /* NSData+Extension.swift in Sources */,

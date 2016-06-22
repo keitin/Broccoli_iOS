@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import Bond
 
 class User: NSObject {
     var name: String!
@@ -25,6 +26,7 @@ class User: NSObject {
     var numberOfFollowers: Int { return followers.count }
     var numberOfFollowingBlogs: Int { return followingBlogs.count }
     var blocked = false
+    var blocking = Observable<Bool>(false)
     
     override init() {
         super.init()

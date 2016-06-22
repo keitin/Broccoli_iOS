@@ -52,7 +52,13 @@ class ProfileCell: UITableViewCell, Follow {
             followButton.hidden = true
         }
         
-        if user.blocked {
+        user.blocking.observe { (blocking) in
+            self.followerButton.enabled = blocking ? false : true
+            self.followingButton.enabled = blocking ? false : true
+            self.followButton.enabled = blocking ? false : true
+        }
+        
+        if user.blocked || user.blocking.value {
             followerButton.enabled = false
             followingButton.enabled = false
             followButton.enabled = false

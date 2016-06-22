@@ -85,6 +85,17 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
         self.tableView.reloadData()
     }
     
+    func makeBlockingState() {
+        self.sectionNumber = 1
+        self.tableView.reloadData()
+    }
+    
+    func makeRemoveBlockState() {
+        self.selectedUser.blocking.value = false
+        self.sectionNumber = 3
+        self.tableView.reloadData()
+    }
+    
     // MARK Table View Private
     private func insertTopRow(tableView: UITableView) {
         let differenceIndex = selectedUser.numberOfBlogs - tableView.numberOfRowsInSection(1)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bond
 
 class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCellDelegate, Follow, Report, Block {
     
@@ -27,14 +28,24 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
         
         self.isBlock(currentUser, toUser: user) { (isBlocked, isBlocking) in
             if isBlocked {
-                self.title = "ブロックされ中"
                 self.selectedUser?.blocked = true
                 self.showUserViewModel.makeBlockedState()
             }
             if isBlocking {
                 self.title = "ブロック中"
+                self.showUserViewModel.makeBlockingState()
+                self.selectedUser?.blocking.value = true
             }
         }
+        
+        user.blocking.observe { (block) in
+            if block {
+                self.title = "ブロック中"
+            } else {
+                self.title = ""
+            }
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -120,15 +131,32 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
             })
             self.presentViewController(selectReport, animated: true, completion: nil)
         }
-        let blockAction = UIAlertAction(title: "ブロックする", style: .Default) { (action) in
-            let confirmAlet = UIAlertController.confirmBlock({ 
-                self.block(self.currentUser, toUser: self.selectedUser!, callback: {
-                    let okAlert = UIAlertController.okAlertWithMessage("完了しました")
-                    self.presentViewController(okAlert, animated: true, completion: nil)
-                })
+
+        let blockAction = UIAlertAction.blockAction(self.selectedUser!.blocking.value) {
+            let confirmAlet = UIAlertController.confirmBlock(self.selectedUser!.blocking.value, callback: { (block) in
+                
+                
+                if self.selectedUser!.blocking.value {
+                    //ブロック解除
+                    self.removeBlock(self.currentUser, toUser: self.selectedUser!, callback: {
+                        self.selectedUser?.blocking.value = false
+                        let okAlert = UIAlertController.okAlertWithMessage("完了しました")
+                        self.presentViewController(okAlert, animated: true, completion: nil)
+                        self.showUserViewModel.makeRemoveBlockState()
+                    })
+                } else {
+                    //ブロック
+                    self.block(self.currentUser, toUser: self.selectedUser!, callback: {
+                        self.selectedUser?.blocking.value = true
+                        let okAlert = UIAlertController.okAlertWithMessage("完了しました")
+                        self.presentViewController(okAlert, animated: true, completion: nil)
+                        self.showUserViewModel.makeBlockingState()
+                    })
+                }
             })
             self.presentViewController(confirmAlet, animated: true, completion: nil)
         }
+        
         sheet.addAction(reportAction)
         sheet.addAction(blockAction)
         self.presentViewController(sheet, animated: true, completion: nil)
