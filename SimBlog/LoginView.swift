@@ -60,7 +60,6 @@ class LoginView: UIView {
     
     private func makeCheckBoxButtotn() {
         self.checkboxButton.frame.size = CGSize(width: 30, height: 30)
-        print(self.checkboxButton.frame)
         self.checkboxButton.center = CGPoint(x: self.center.x + 50, y: self.center.y + 200)
         self.checkboxButton.setImage(UIImage(named: "Unchecked-Checkbox-50"), forState: .Normal)
         self.checkboxButton.setImage(UIImage(named: "Checked-Checkbox 2-50"), forState: .Selected)

@@ -26,18 +26,6 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
         self.refreshControl = UIRefreshControl.loadingItems(self, selector: #selector(ShowUserViewController.pullAndReload))
         self.tableView.addSubview(self.refreshControl)
         
-        self.isBlock(currentUser, toUser: user) { (isBlocked, isBlocking) in
-            if isBlocked {
-                self.selectedUser?.blocked = true
-                self.showUserViewModel.makeBlockedState()
-            }
-            if isBlocking {
-                self.title = "ブロック中"
-                self.showUserViewModel.makeBlockingState()
-                self.selectedUser?.blocking.value = true
-            }
-        }
-        
         user.blocking.observe { (block) in
             if block {
                 self.title = "ブロック中"
@@ -46,6 +34,9 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
             }
         }
         
+        if user.id == currentUser.id {
+            title = "profile"
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,6 +44,18 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
         if let selectedUser = selectedUser {
             if selectedUser.id == self.currentUser.id { return }
             self.navigationItem.rightBarButtonItem("…", target: self, action: #selector(ShowUserViewController.tapActionSheet(_:)))
+        }
+        let user = selectedUser ?? currentUser
+        self.isBlock(currentUser, toUser: user) { (isBlocked, isBlocking) in
+            if isBlocked {
+                self.selectedUser?.blocked = true
+                self.showUserViewModel.makeBlockedState()
+            }
+            if isBlocking {
+                self.title = "ブロック中"
+                self.selectedUser?.blocking.value = true
+                self.showUserViewModel.makeBlockingState()
+            }
         }
     }
 
