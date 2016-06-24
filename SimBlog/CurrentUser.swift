@@ -52,4 +52,10 @@ class CurrentUser: User {
                 }
         }
     }
+    
+    func deleteUserInLocal() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let appDomain = NSBundle.mainBundle().bundleIdentifier
+        defaults.removePersistentDomainForName(appDomain!)
+    }
 }

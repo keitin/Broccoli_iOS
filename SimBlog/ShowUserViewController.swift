@@ -8,6 +8,9 @@
 
 import UIKit
 import Bond
+import FBSDKCoreKit
+import FBSDKLoginKit
+import FBSDKShareKit
 
 class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCellDelegate, Follow, Report, Block {
     
@@ -44,6 +47,8 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
         if let selectedUser = selectedUser {
             if selectedUser.id == self.currentUser.id { return }
             self.navigationItem.rightBarButtonItem("…", target: self, action: #selector(ShowUserViewController.tapActionSheet(_:)))
+        } else {
+            self.navigationItem.rightBarButtonItem("…", target: self, action: #selector(ShowUserViewController.showCurrentUserActionSheet(_:)))
         }
         let user = selectedUser ?? currentUser
         self.isBlock(currentUser, toUser: user) { (isBlocked, isBlocking) in
@@ -162,6 +167,17 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
         
         sheet.addAction(reportAction)
         sheet.addAction(blockAction)
+        self.presentViewController(sheet, animated: true, completion: nil)
+    }
+    
+    func showCurrentUserActionSheet(sender: UINavigationItem) {
+        let sheet = UIAlertController.actionSheet("", message: "")
+        let logoutAction = UIAlertAction(title: "ログアウト", style: .Default) { (action) in
+            self.currentUser.deleteUserInLocal()
+            FBSDKLoginManager().logOut()
+            UIApplication.redirectToLoginViewController()
+        }
+        sheet.addAction(logoutAction)
         self.presentViewController(sheet, animated: true, completion: nil)
     }
     
