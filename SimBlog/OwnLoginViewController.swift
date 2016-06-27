@@ -37,6 +37,7 @@ class OwnLoginViewController: UIViewController, UITextFieldDelegate, UIImagePick
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let ownLoginView = self.view as! OwnLoginView
         ownLoginView.iconImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        self.iconImage = info[UIImagePickerControllerEditedImage] as? UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -56,8 +57,9 @@ class OwnLoginViewController: UIViewController, UITextFieldDelegate, UIImagePick
         if let message = ownLoginView.validateForm(self.iconImage) {
             let alert = UIAlertController.okAlert(message)
             self.presentViewController(alert, animated: true, completion: nil)
+            return
         }
-        
+        self.ownLoginViewModel.login(ownLoginView)
     }
     
     func tapView(sender: UITapGestureRecognizer) {

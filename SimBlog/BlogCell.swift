@@ -47,7 +47,7 @@ class BlogCell: UITableViewCell {
         }
         setupSentenceLabel(blog.title)
         nameLabel.text = blog.user.name
-        profileImageView.blog = blog
+        profileImageView.blog = blog    
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))
     }
     

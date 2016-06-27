@@ -16,7 +16,7 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
     
     func didLoad(loginView: LoginView) {
         loginView.loginButton.delegate = self
-        loginView.loginButton.readPermissions = ["public_profile"]
+        loginView.loginButton.readPermissions = ["public_profile email"]
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
@@ -37,7 +37,7 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
     }
     
     private func getUserData(){
-        let params = ["fields": "id, name, picture.type(large), photos"]
+        let params = ["fields": "id, name, picture.type(large), photos, email"]
         let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: params)
         graphRequest.startWithCompletionHandler({ (connection, result, error) in
             guard error == nil && result != nil else{
@@ -47,7 +47,7 @@ class LoginViewModel: NSObject, FBSDKLoginButtonDelegate {
             let json = JSON(result)
             let user = User(facebookAttributes: json)
             user.issueToken()
-            user.saveInbackground({ 
+            user.saveInbackground({
                 user.saveCurrentUserInLocal()
                 let currentUser = CurrentUser.sharedInstance
                 currentUser.getCurrentUserInLocal()

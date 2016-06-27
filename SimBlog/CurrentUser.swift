@@ -21,7 +21,7 @@ class CurrentUser: User {
     func getCurrentUserInLocal() {
         let defaults = NSUserDefaults.standardUserDefaults()
         self.name = defaults.objectForKey("user_name") as! String
-//        self.email = defaults.objectForKey("user_email") as? String
+        self.email = defaults.objectForKey("user_email") as? String
         self.imageURL = defaults.objectForKey("user_image_url") as! String
         self.facebook_id = defaults.objectForKey("facebook_id") as! String
         self.id = defaults.objectForKey("id") as! Int
@@ -29,7 +29,7 @@ class CurrentUser: User {
     }
     
     func getFollowingBlogsInBackground(page: Int, callback: () -> Void) {
-        SVProgressHUD.show()
+        SVProgressHUD.show()   
         let params = [
             "id": self.id,
             "page": page

@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 import Bond
+import SVProgressHUD
 
 class User: NSObject {
     var name: String!
@@ -28,24 +29,45 @@ class User: NSObject {
     var blocked = false
     var blocking = Observable<Bool>(false)
     
+    //Own Login Attributes
+    var iconImage: UIImage?
+    var email: String? = ""
+    var password: String? = ""
+    
     override init() {
         super.init()
     }
     
     init(facebookAttributes: JSON) {
-        
         self.name = facebookAttributes["name"].string!
         self.imageURL = facebookAttributes["picture"]["data"]["url"].string!
         self.facebook_id = facebookAttributes["id"].string!
-//        self.email = facebookAttributes["email"] ? facebookAttributes["email"].string : ""
+        
+        if let email = facebookAttributes["email"].string {
+            self.email = email
+        } else {
+            self.email = ""
+        }
+        
     }
     
     init(apiAttributes: JSON) {
         self.name = apiAttributes["name"].string
-        self.imageURL = apiAttributes["image_url"].string
-//        self.email = apiAttributes["email"].string
+        if let image =  apiAttributes["image_url"].string {
+            self.imageURL = image
+        } else {
+            self.imageURL = apiAttributes["avatar"]["url"].string!
+        }
+        self.email = apiAttributes["email"].string
         self.facebook_id = apiAttributes["facebook_id"].string
         self.id = apiAttributes["id"].int
+    }
+    
+    init(ownLoginAttributes: [String: AnyObject]) {
+        self.name = ownLoginAttributes["name"] as! String
+        self.email = ownLoginAttributes["email"] as? String
+        self.password = ownLoginAttributes["password"] as? String
+        self.iconImage = ownLoginAttributes["image"] as? UIImage
     }
     
     func followingBlogAtPosition(index: Int) -> Blog {
@@ -92,7 +114,7 @@ class User: NSObject {
             "name": self.name,
             "image_url": self.imageURL,
             "facebook_id": self.facebook_id,
-//            "email": self.email,
+            "email": self.email,
             "token": self.token
         ]
         
@@ -107,6 +129,38 @@ class User: NSObject {
                 self.id = json["user"]["id"].int
                 callback()
         }
+    }
+    
+    func saveAsOwnLogin(callback: () -> Void) {
+        SVProgressHUD.show()
+        let params = [
+            "name": self.name,
+            "password": self.password,
+            "password_confirmation": self.password,
+            "token": self.token,
+            "email": self.email
+        ]
+        
+        let pass = String.rootPath() + "/api/users/"
+        let httpMethod = Alamofire.Method.POST.rawValue
+        
+        let urlRequest = NSData.urlRequestWithComponents(httpMethod, urlString: pass, parameters: params, image: self.iconImage!)
+        Alamofire.upload(urlRequest.0, data: urlRequest.1)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
+                    SVProgressHUD.dismiss()
+                    return
+                }
+                SVProgressHUD.dismiss()
+                StatusBarNotification.hideMessage()
+                let json = JSON(object)
+                self.imageURL = json["user"]["avatar"]["url"].string!
+                self.id = json["user"]["id"].int!
+                self.facebook_id = ""
+                callback()
+        }
+        
     }
     
     func getBlogsInBackground(page: Int, callback: () -> Void) {
@@ -172,7 +226,7 @@ class User: NSObject {
     func saveCurrentUserInLocal() {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(self.name, forKey: "user_name")
-//        defaults.setObject(self.email, forKey: "user_email")
+        defaults.setObject(self.email!, forKey: "user_email")
         defaults.setObject(self.imageURL, forKey: "user_image_url")
         defaults.setObject(self.id, forKey: "id")
         defaults.setObject(self.facebook_id, forKey: "facebook_id")
