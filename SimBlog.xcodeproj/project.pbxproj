@@ -85,6 +85,13 @@
 		328C617D1D1A41C700285F7D /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C617C1D1A41C700285F7D /* TermsOfServiceViewController.swift */; };
 		328C617F1D1A565600285F7D /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C617E1D1A565600285F7D /* Block.swift */; };
 		328C61811D1A749100285F7D /* UIAlertAction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C61801D1A749100285F7D /* UIAlertAction+Extension.swift */; };
+		328C61851D1D65DF00285F7D /* disable_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 328C61841D1D65DF00285F7D /* disable_gray.png */; };
+		328C61871D1D669B00285F7D /* brocooli_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 328C61861D1D669B00285F7D /* brocooli_color.png */; };
+		328C61891D1D687000285F7D /* OwnLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C61881D1D687000285F7D /* OwnLoginViewController.swift */; };
+		328C618B1D1D6BF200285F7D /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 328C618A1D1D6BF200285F7D /* noimage.png */; };
+		328C618F1D20B32600285F7D /* OwnLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C618E1D20B32600285F7D /* OwnLoginView.swift */; };
+		328C61911D20C71500285F7D /* CALayer+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C61901D20C71500285F7D /* CALayer+Extenstion.swift */; };
+		328C61931D20D5C700285F7D /* OwnLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328C61921D20D5C700285F7D /* OwnLoginViewModel.swift */; };
 		328F00591CE6CBBB00AB5E57 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F00581CE6CBBB00AB5E57 /* NoticeViewController.swift */; };
 		328F005C1CE6CBE200AB5E57 /* Notice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328F005B1CE6CBE200AB5E57 /* Notice.storyboard */; };
 		328F005E1CE6CFB900AB5E57 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F005D1CE6CFB900AB5E57 /* NoticeViewModel.swift */; };
@@ -249,6 +256,13 @@
 		328C617C1D1A41C700285F7D /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		328C617E1D1A565600285F7D /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		328C61801D1A749100285F7D /* UIAlertAction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extension.swift"; sourceTree = "<group>"; };
+		328C61841D1D65DF00285F7D /* disable_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disable_gray.png; sourceTree = "<group>"; };
+		328C61861D1D669B00285F7D /* brocooli_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brocooli_color.png; sourceTree = "<group>"; };
+		328C61881D1D687000285F7D /* OwnLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnLoginViewController.swift; sourceTree = "<group>"; };
+		328C618A1D1D6BF200285F7D /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
+		328C618E1D20B32600285F7D /* OwnLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnLoginView.swift; sourceTree = "<group>"; };
+		328C61901D20C71500285F7D /* CALayer+Extenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extenstion.swift"; sourceTree = "<group>"; };
+		328C61921D20D5C700285F7D /* OwnLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnLoginViewModel.swift; sourceTree = "<group>"; };
 		328F00581CE6CBBB00AB5E57 /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		328F005B1CE6CBE200AB5E57 /* Notice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notice.storyboard; sourceTree = "<group>"; };
 		328F005D1CE6CFB900AB5E57 /* NoticeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
@@ -371,6 +385,7 @@
 			children = (
 				324E47161CD1E200003EC6AC /* LoginView.swift */,
 				324E47181CD1E213003EC6AC /* LoginView.xib */,
+				328C618E1D20B32600285F7D /* OwnLoginView.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -391,6 +406,7 @@
 				32492C351CD9F03B00B420B0 /* ShowUserViewController.swift */,
 				32992EF71CDCEB39006C604B /* IndexUserViewController.swift */,
 				328C617C1D1A41C700285F7D /* TermsOfServiceViewController.swift */,
+				328C61881D1D687000285F7D /* OwnLoginViewController.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -418,6 +434,7 @@
 				324E471A1CD1E318003EC6AC /* LoginViewModel.swift */,
 				32492C371CD9F0C800B420B0 /* ShowUserViewModel.swift */,
 				32992EF91CDCEB5F006C604B /* IndexUserViewModel.swift */,
+				328C61921D20D5C700285F7D /* OwnLoginViewModel.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -571,6 +588,7 @@
 				328C61801D1A749100285F7D /* UIAlertAction+Extension.swift */,
 				326F96531D1112D300053471 /* UIRefreshControl+Extenstion.swift */,
 				326F96551D11254600053471 /* UIViewController+Extension.swift */,
+				328C61901D20C71500285F7D /* CALayer+Extenstion.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -611,8 +629,11 @@
 		326A74211CCFD3440015DE7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				328C618A1D1D6BF200285F7D /* noimage.png */,
 				328C61781D19543A00285F7D /* Checked-Checkbox 2-50@2x.png */,
 				328C61791D19543A00285F7D /* Unchecked-Checkbox-50@2x.png */,
+				328C61841D1D65DF00285F7D /* disable_gray.png */,
+				328C61861D1D669B00285F7D /* brocooli_color.png */,
 				3222C2C91D10169100716428 /* backTop.png */,
 				3222C2C71D10156400716428 /* launchScreenNight.png */,
 				320DFDB01CFD1453001E5201 /* Expand-Arrow-50@2x.png */,
@@ -1071,6 +1092,7 @@
 				32492C331CD9ED1E00B420B0 /* Login.storyboard in Resources */,
 				32508EC31D129DE900B049B7 /* Icon-60@2x.png in Resources */,
 				32992F031CDCEE24006C604B /* UserCell.xib in Resources */,
+				328C61851D1D65DF00285F7D /* disable_gray.png in Resources */,
 				326A74091CCFC7540015DE7D /* TextCell.xib in Resources */,
 				32992F1A1CE0516B006C604B /* Blog.storyboard in Resources */,
 				32178B931D0D860100F6C6D0 /* MoreItemsCollectionCell.xib in Resources */,
@@ -1080,8 +1102,10 @@
 				320DFDAF1CFD127F001E5201 /* Text-Box-50@2x.png in Resources */,
 				326A73DD1CCFC4830015DE7D /* Main.storyboard in Resources */,
 				32178B8F1D0D680A00F6C6D0 /* icon@2x.png in Resources */,
+				328C61871D1D669B00285F7D /* brocooli_color.png in Resources */,
 				32AA3B6B1CFAE8DD00668DDE /* Search-50@2x.png in Resources */,
 				3222C2CA1D10169100716428 /* backTop.png in Resources */,
+				328C618B1D1D6BF200285F7D /* noimage.png in Resources */,
 				32508EC71D129DE900B049B7 /* Icon-83.5@2x.png in Resources */,
 				32992F1C1CE051C4006C604B /* User.storyboard in Resources */,
 				32A6B9511CE0BD670026053E /* DeleteHistoryCell.xib in Resources */,
@@ -1244,11 +1268,13 @@
 				32BFE1E01CE4BC5100FC26FF /* Like.swift in Sources */,
 				3284AF251CD0EF18005AB294 /* DisplayImageCell.swift in Sources */,
 				3237B8C11CD39F1400ABD9F9 /* UIApplication+Extension.swift in Sources */,
+				328C61911D20C71500285F7D /* CALayer+Extenstion.swift in Sources */,
 				32992F021CDCEE24006C604B /* UserCell.swift in Sources */,
 				32A6B9501CE0BD670026053E /* DeleteHistoryCell.swift in Sources */,
 				32992F231CE054F3006C604B /* FollowingBlogViewModel.swift in Sources */,
 				32992EFA1CDCEB5F006C604B /* IndexUserViewModel.swift in Sources */,
 				326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */,
+				328C618F1D20B32600285F7D /* OwnLoginView.swift in Sources */,
 				326A741C1CCFD0BD0015DE7D /* ImageCell.swift in Sources */,
 				328C61811D1A749100285F7D /* UIAlertAction+Extension.swift in Sources */,
 				324E47171CD1E200003EC6AC /* LoginView.swift in Sources */,
@@ -1268,10 +1294,12 @@
 				326A74131CCFC8D20015DE7D /* Blog.swift in Sources */,
 				329319071CED958500B393D7 /* BlogImageCell.swift in Sources */,
 				324E47111CD1D43B003EC6AC /* LoginViewController.swift in Sources */,
+				328C61891D1D687000285F7D /* OwnLoginViewController.swift in Sources */,
 				32BFE1E31CE4E31000FC26FF /* Follow.swift in Sources */,
 				32992F291CE0A9B7006C604B /* BlogNavigationController.swift in Sources */,
 				32492C381CD9F0C800B420B0 /* ShowUserViewModel.swift in Sources */,
 				32992F261CE06480006C604B /* SearchTextFiled.swift in Sources */,
+				328C61931D20D5C700285F7D /* OwnLoginViewModel.swift in Sources */,
 				3237B8831CD2F22B00ABD9F9 /* CurrentUser.swift in Sources */,
 				3284AF081CD06E24005AB294 /* BlogManager.swift in Sources */,
 				32992F1E1CE0525E006C604B /* InitialTabBarController.swift in Sources */,

@@ -25,6 +25,7 @@ class LoginViewController: VideoSplashViewController {
         self.view = loginView
         loginViewModel.didLoad(loginView)
         loginView.checkboxButton.addTarget(self, action: #selector(LoginViewController.tappCheckBox(_:)), forControlEvents: .TouchUpInside)
+        loginView.ownLoginButton.addTarget(self, action: #selector(LoginViewController.modalOwnLoginVC(_:)), forControlEvents: .TouchUpInside)
         loginView.termButton.addTarget(self, action: #selector(LoginViewController.modelTerm(_:)), forControlEvents: .TouchUpInside)
     }
 
@@ -60,6 +61,11 @@ class LoginViewController: VideoSplashViewController {
     func modelTerm(sender: UIButton) {
         let termOfServiceVC = UIStoryboard.viewControllerWith("Login", identifier: "TermNavigationController")
         self.presentViewController(termOfServiceVC, animated: true, completion: nil)
+    }
+    
+    func modalOwnLoginVC(sender: UIButton) {
+        let ownLoginNC = UIStoryboard.viewControllerWith("Login", identifier: "OwnLoginNC")
+        self.presentViewController(ownLoginNC, animated: true, completion: nil)
     }
        
 }

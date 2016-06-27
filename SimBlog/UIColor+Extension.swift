@@ -21,4 +21,12 @@ extension UIColor {
     class func maingGray() -> UIColor {
         return UIColor.darkGrayColor()
     }
+    
+    class func broccoli() -> UIColor {
+        return UIColor(red: 123/255, green: 201/255, blue: 195/255, alpha: 1.0)
+    }
+    
+    class func disableGray() -> UIColor {
+        return UIColor(red: 189/255, green: 193/255, blue: 201/255, alpha: 1.0)
+    }
 }

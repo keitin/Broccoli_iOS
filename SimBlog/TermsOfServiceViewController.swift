@@ -16,7 +16,7 @@ class TermsOfServiceViewController: UIViewController {
         title = "利用規約"
         self.textView.text = Message.term
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "閉じる", style: .Done, target: self, action: #selector(TermsOfServiceViewController.closeVC(_:)))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Delete-50"), style: .Done, target: self, action: #selector(TermsOfServiceViewController.closeVC(_:)))
     }
 
     override func didReceiveMemoryWarning() {

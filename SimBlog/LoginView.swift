@@ -15,6 +15,7 @@ import Bond
 class LoginView: UIView {
     
     let loginButton = FBSDKLoginButton()
+    let ownLoginButton = UIButton()
     let checkboxButton = UIButton()
     let termButton = UIButton()
     
@@ -29,6 +30,7 @@ class LoginView: UIView {
         makeBorderView()
         makeCheckBoxButtotn()
         makeTermButton()
+        makeOwnLoginButton()
      }
     
     private func makeFacebookButton() {
@@ -66,6 +68,7 @@ class LoginView: UIView {
         self.checkboxButton.bnd_controlEvent
             .filter { $0 == UIControlEvents.TouchUpInside }
             .observe { e in
+                self.ownLoginButton.enabled = self.checkboxButton.selected ? true : false
                 self.loginButton.enabled = self.checkboxButton.selected ? true : false
         }
         self.addSubview(self.checkboxButton)
@@ -78,6 +81,19 @@ class LoginView: UIView {
         self.termButton.center = CGPoint(x: self.center.x, y: self.center.y + 200)
         self.termButton.setTitleColor(UIColor.white(), forState: .Normal)
         self.addSubview(self.termButton)
+    }
+    
+    private func makeOwnLoginButton() {
+        self.ownLoginButton.enabled = false
+        self.ownLoginButton.setTitle("Log in", forState: .Normal)
+        self.ownLoginButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+        self.ownLoginButton.layer.cornerRadius = 3
+        self.ownLoginButton.setTitleColor(UIColor.white(), forState: .Normal)
+        self.ownLoginButton.setBackgroundImage(UIImage(named: "disable_gray"), forState: .Disabled)
+        self.ownLoginButton.backgroundColor = UIColor.broccoli()
+        self.ownLoginButton.frame.size = CGSizeMake(280, 50)
+        self.ownLoginButton.center = CGPointMake(self.center.x, self.center.y + 90)
+        self.addSubview(self.ownLoginButton)
     }
 
 }

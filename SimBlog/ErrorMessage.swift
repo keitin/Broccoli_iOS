@@ -11,4 +11,7 @@ import Foundation
 struct ErrorMessage {
     static let emptyTitleOrImage = "タイトル又は画像が設定されていません。"
     static let failToReport = "失敗しました。"
+    static let emptyField = "空のフォームがあります。"
+    static let noMatchField = "パスワードが一致していません。"
+    static let noImage = "画像が選択されていません。"
 }

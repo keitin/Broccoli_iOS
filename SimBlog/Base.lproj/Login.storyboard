@@ -89,5 +89,42 @@
             </objects>
             <point key="canvasLocation" x="-735" y="1461"/>
         </scene>
+        <!--Own Login View Controller-->
+        <scene sceneID="al5-ei-n5R">
+            <objects>
+                <viewController id="Xiq-E6-5Vx" customClass="OwnLoginViewController" customModule="SimBlog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sp0-ah-Hg8"/>
+                        <viewControllerLayoutGuide type="bottom" id="GHM-Z8-4ML"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ptW-ye-vJZ">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vOr-Dc-qzJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUf-4Y-Mcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155" y="2155"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XxG-7g-To0">
+            <objects>
+                <navigationController storyboardIdentifier="OwnLoginNC" automaticallyAdjustsScrollViewInsets="NO" id="JR2-y6-tTP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="DbM-JZ-Rsc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xiq-E6-5Vx" kind="relationship" relationship="rootViewController" id="aGe-Og-Mse"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVv-cf-K4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-657" y="2155"/>
+        </scene>
     </scenes>
 </document>
