@@ -117,9 +117,11 @@ class InitialTabBarController: UITabBarController {
         if self.twoVCs.count == 3 { self.twoVCs.removeFirst() }
         if self.twoVCs.count < 2 { return }
         if self.twoVCs.first == self.twoVCs.last && self.twoVCs.last == self.lastVC {
+            
             let indexPath = NSIndexPath(forRow: 0, inSection: 0)
             
             if let followBVC = vc as? FollowingBlogViewController {
+                if followBVC.currentUser.numberOfFollowingBlogs == 0 { return }
                 followBVC.tableView.scrollToTopWithAnimate(indexPath)
             }
             
@@ -128,6 +130,7 @@ class InitialTabBarController: UITabBarController {
             }
             
             if let noticeVC = vc as? NoticeViewController {
+                if noticeVC.noticeViewModel.currentUser.numberOfNotices == 0 { return }
                 noticeVC.tableView.scrollToTopWithAnimate(indexPath)
             }
             
