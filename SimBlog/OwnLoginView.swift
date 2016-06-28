@@ -18,6 +18,7 @@ class OwnLoginView: UIView {
     let selectImageButton = UIButton()
     let margin: CGFloat = 20
     let tapView = UITapGestureRecognizer()
+    let toLoginButton = UIButton()
     
     required init() {
         super.init(frame: CGRectMake(0, 0, 0, 0))
@@ -36,6 +37,7 @@ class OwnLoginView: UIView {
         self.layoutTextField(self.confirmPassTextField, y: 160, placeholder: "確認用パスワード")
         self.layoutIconImageView()
         self.layoutSelectImageButton()
+        self.layoutToLoginButton()
         self.addGestureRecognizer(self.tapView)
         self.passTextField.secureTextEntry = true
         self.confirmPassTextField.secureTextEntry = true
@@ -99,7 +101,14 @@ class OwnLoginView: UIView {
         self.addSubview(self.selectImageButton)
     }
     
-    
+    private func layoutToLoginButton() {
+        self.toLoginButton.setTitle("ログイン画面へ", forState: .Normal)
+        self.toLoginButton.sizeToFit()
+        self.toLoginButton.frame.origin = CGPoint(x: self.frame.width - self.toLoginButton.frame.width + 10, y: self.selectImageButton.frame.origin.y + 30)
+        self.toLoginButton.titleLabel?.font = UIFont.systemFontOfSize(10)
+        self.toLoginButton.setTitleColor(UIColor.broccoli(), forState: .Normal)
+        self.addSubview(self.toLoginButton)
+    }
 
 
 }

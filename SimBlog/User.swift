@@ -58,6 +58,7 @@ class User: NSObject {
         } else {
             self.imageURL = apiAttributes["avatar"]["url"].string!
         }
+        self.token = apiAttributes["token"].string
         self.email = apiAttributes["email"].string
         self.facebook_id = apiAttributes["facebook_id"].string
         self.id = apiAttributes["id"].int
@@ -68,6 +69,11 @@ class User: NSObject {
         self.email = ownLoginAttributes["email"] as? String
         self.password = ownLoginAttributes["password"] as? String
         self.iconImage = ownLoginAttributes["image"] as? UIImage
+    }
+    
+    init(ownSessionAttributes: JSON) {
+        self.email = ownSessionAttributes["email"].string!
+        self.password = ownSessionAttributes["password"].string!
     }
     
     func followingBlogAtPosition(index: Int) -> Blog {
@@ -160,7 +166,27 @@ class User: NSObject {
                 self.facebook_id = ""
                 callback()
         }
-        
+    }
+    
+    func saveAsSession(callback: (user: User) -> Void) {
+        SVProgressHUD.show()
+        let params = [
+            "email": self.email!,
+            "password": self.password!
+        ]
+        Alamofire.request(.POST, String.rootPath() + "/api/sessions", parameters: params)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    StatusBarNotification.showErrorMessage()
+                    return
+                }
+                SVProgressHUD.dismiss()
+                StatusBarNotification.hideMessage()
+                let json = JSON(object)
+                let user = User(apiAttributes: json["user"])
+                user.facebook_id = ""
+                callback(user: user)
+        }
     }
     
     func getBlogsInBackground(page: Int, callback: () -> Void) {

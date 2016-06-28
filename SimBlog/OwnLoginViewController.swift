@@ -26,6 +26,7 @@ class OwnLoginViewController: UIViewController, UITextFieldDelegate, UIImagePick
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Delete-50"), style: .Done, target: self, action: #selector(OwnLoginViewController.close(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登録", style: .Done, target: self, action: #selector(OwnLoginViewController.tapLoginButton(_:)))
         ownLoginView.tapView.addTarget(self, action: #selector(OwnLoginViewController.tapView(_:)))
+        ownLoginView.toLoginButton.addTarget(self, action: #selector(OwnLoginViewController.toLoginVC(_:)), forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +51,11 @@ class OwnLoginViewController: UIViewController, UITextFieldDelegate, UIImagePick
             album.allowsEditing = true
             self.presentViewController(album, animated: true, completion: nil)
         }
+    }
+    
+    func toLoginVC(sender: UIButton) {
+        let ownSessionNC = UIStoryboard.viewControllerWith("Login", identifier: "OwnSessionNC")
+        self.presentViewController(ownSessionNC, animated: true, completion: nil)
     }
     
     func tapLoginButton(sender: UINavigationItem) {
