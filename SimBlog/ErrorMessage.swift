@@ -14,4 +14,5 @@ struct ErrorMessage {
     static let emptyField = "空のフォームがあります。"
     static let noMatchField = "パスワードが一致していません。"
     static let noImage = "画像が選択されていません。"
+    static let noNetWork = "ネット環境がよくありません。"
 }

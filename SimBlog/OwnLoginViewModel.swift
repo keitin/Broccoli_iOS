@@ -13,7 +13,7 @@ class OwnLoginViewModel: NSObject {
     
     var user: User!
     
-    func login(ownLoginView: OwnLoginView) {
+    func login(ownLoginView: OwnLoginView, completed: (message: String?) -> Void) {
         let attributes: [String: AnyObject] = [
             "name": ownLoginView.nameTextField.text!,
             "email": ownLoginView.emailTextField.text!,
@@ -22,12 +22,19 @@ class OwnLoginViewModel: NSObject {
         ]
         self.user = User(ownLoginAttributes: attributes)
         self.user.issueToken()
-        self.user.saveAsOwnLogin {
+        self.user.saveAsOwnLogin { (message) in
+            
+            if let msg = message {
+                completed(message: msg)
+                return
+            }
+            
             self.user.saveCurrentUserInLocal()
             let currentUser = CurrentUser.sharedInstance
             currentUser.getCurrentUserInLocal()
             UIApplication.redirectToInitialViewController()
         }
+
     }
 
 }

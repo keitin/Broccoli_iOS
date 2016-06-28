@@ -65,7 +65,12 @@ class OwnLoginViewController: UIViewController, UITextFieldDelegate, UIImagePick
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
-        self.ownLoginViewModel.login(ownLoginView)
+        self.ownLoginViewModel.login(ownLoginView) { (message) in
+            if let msg = message {
+                let alert = UIAlertController.okAlert(msg)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     func tapView(sender: UITapGestureRecognizer) {

@@ -137,7 +137,7 @@ class User: NSObject {
         }
     }
     
-    func saveAsOwnLogin(callback: () -> Void) {
+    func saveAsOwnLogin(callback: (message: String?) -> Void) {
         SVProgressHUD.show()
         let params = [
             "name": self.name,
@@ -156,15 +156,24 @@ class User: NSObject {
                 guard let object = response.result.value else {
                     StatusBarNotification.showErrorMessage()
                     SVProgressHUD.dismiss()
+                    callback(message: ErrorMessage.noNetWork)
                     return
                 }
+                
                 SVProgressHUD.dismiss()
                 StatusBarNotification.hideMessage()
+                
                 let json = JSON(object)
+                
+                if let message = json["error_message"].array {
+                    callback(message: message.first?.string)
+                    return
+                }
+                
                 self.imageURL = json["user"]["avatar"]["url"].string!
                 self.id = json["user"]["id"].int!
                 self.facebook_id = ""
-                callback()
+                callback(message: nil)
         }
     }
     
