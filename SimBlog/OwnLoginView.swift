@@ -45,6 +45,7 @@ class OwnLoginView: UIView {
     
     override func drawRect(rect: CGRect) {
         // Drawing code
+        self.iconImageView.image = UIImage(named: "noimage")
     }
     
     func validateForm(iconImage: UIImage?) -> String? {
@@ -82,7 +83,6 @@ class OwnLoginView: UIView {
     private func layoutIconImageView() {
         self.iconImageView.frame.size = CGSize(width: 50, height: 50)
         self.iconImageView.frame.origin = CGPoint(x: 10, y: 205)
-        self.iconImageView.image = UIImage(named: "noimage")
         self.iconImageView.contentMode = UIViewContentMode.ScaleAspectFill
         self.iconImageView.layer.cornerRadius = self.iconImageView.frame.width / 2
         self.iconImageView.layer.masksToBounds = true
@@ -103,7 +103,7 @@ class OwnLoginView: UIView {
     
     private func layoutToLoginButton() {
         self.toLoginButton.setTitle("ログイン画面へ", forState: .Normal)
-        self.toLoginButton.sizeToFit()
+        self.toLoginButton.frame.size = CGSize(width: 126, height: 34)
         self.toLoginButton.frame.origin = CGPoint(x: self.frame.width - self.toLoginButton.frame.width + 10, y: self.selectImageButton.frame.origin.y + 30)
         self.toLoginButton.titleLabel?.font = UIFont.systemFontOfSize(10)
         self.toLoginButton.setTitleColor(UIColor.broccoli(), forState: .Normal)
