@@ -102,7 +102,7 @@ class OwnLoginView: UIView {
     }
     
     private func layoutToLoginButton() {
-        self.toLoginButton.setTitle("ログイン画面へ", forState: .Normal)
+        self.toLoginButton.setTitle("既に登録済みの方", forState: .Normal)
         self.toLoginButton.frame.size = CGSize(width: 126, height: 34)
         self.toLoginButton.frame.origin = CGPoint(x: self.frame.width - self.toLoginButton.frame.width + 10, y: self.selectImageButton.frame.origin.y + 30)
         self.toLoginButton.titleLabel?.font = UIFont.systemFontOfSize(10)

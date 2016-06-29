@@ -26,7 +26,7 @@ class UserCell: UITableViewCell {
     
     func fillWith(user: User) {
         profileImageView.sd_setImageWithURL(NSURL(string: user.imageURL))
-        profileImageView.animateWith(05, fromAlpha: 0.5)
+        profileImageView.animateWith(0.5, fromAlpha: 0.5)
         nameLabel.text = user.name
     }
     

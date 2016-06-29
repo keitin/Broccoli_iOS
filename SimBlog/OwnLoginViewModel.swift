@@ -31,6 +31,7 @@ class OwnLoginViewModel: NSObject {
             
             self.user.saveCurrentUserInLocal()
             let currentUser = CurrentUser.sharedInstance
+            currentUser.initCurrentUser()
             currentUser.getCurrentUserInLocal()
             UIApplication.redirectToInitialViewController()
         }

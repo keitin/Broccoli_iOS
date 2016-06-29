@@ -27,6 +27,7 @@ class OwnSessionViewModel: NSObject {
 
             user!.saveCurrentUserInLocal()
             let currentUser = CurrentUser.sharedInstance
+            currentUser.initCurrentUser()
             currentUser.getCurrentUserInLocal()
             completion(message: nil)            
         }

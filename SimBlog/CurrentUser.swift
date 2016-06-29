@@ -58,4 +58,12 @@ class CurrentUser: User {
         let appDomain = NSBundle.mainBundle().bundleIdentifier
         defaults.removePersistentDomainForName(appDomain!)
     }
+    
+    func initCurrentUser() {
+        self.blogs = []
+        self.notices = []
+        self.follows = []
+        self.followers = []
+        self.followingBlogs = []
+    }
 }
