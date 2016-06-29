@@ -32,7 +32,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         
         // first TextView set
         let titleTextView = BlogTextView(y: 10, view: self.view, isTitle: true,
-                                         tag: blogEditorViewModel.numberOfMaterials)
+                                         tag: blogEditorViewModel.blog.numberOfMaterials)
         blogEditorViewModel.titleTextView = titleTextView
         titleTextView.delegate = self
         self.scrollView.addSubview(titleTextView)
@@ -40,7 +40,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view),
                                     view: self.view,
                                     isTitle: false,
-                                    tag: blogEditorViewModel.numberOfMaterials)
+                                    tag: blogEditorViewModel.blog.numberOfMaterials)
         textView.delegate = self
         blogEditorViewModel.textViews.append(textView)
         self.scrollView.addSubview(textView)
@@ -91,6 +91,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
             album.delegate = self
             self.presentViewController(album, animated: true, completion: nil)
         }
+        
     }
 
     @IBAction func tapAddTextButton(sender: UIButton) {
@@ -99,7 +100,7 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
             return
         }
         
-        let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view), view: self.view, isTitle: false, tag: blogEditorViewModel.numberOfMaterials)
+        let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view), view: self.view, isTitle: false, tag: blogEditorViewModel.blog.numberOfMaterials)
         textView.delegate = self
         textView.becomeFirstResponder()
         blogEditorViewModel.addTextViewToArray(textView)
@@ -160,5 +161,6 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     func closeNewBlog(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(false, completion: nil)
     }
+
 }
 

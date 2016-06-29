@@ -92,6 +92,12 @@ class BlogEditorViewModel: NSObject {
         } else {
             if let blogText = blog.materialAtPosition(blog.numberOfMaterials - 1) as? BlogText {
                 blogText.text = textView.text
+            } else {
+                if textView.tag == 1 {
+                    print(textView.text)
+                    let blogText = blog.materialAtPosition(0) as! BlogText
+                    blogText.text = textView.text
+                }
             }
         }
     }
