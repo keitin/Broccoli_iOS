@@ -40,7 +40,15 @@ class OwnSessionViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
-        self.ownSessionViewModel.loginSession(ownSessionView)
+        
+        self.ownSessionViewModel.loginSession(ownSessionView) { (message) in
+            if let msg = message {
+                let alert = UIAlertController.okAlert(msg)
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+            }
+            UIApplication.redirectToInitialViewController()
+        }
     }
 
     /*

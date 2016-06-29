@@ -177,7 +177,7 @@ class User: NSObject {
         }
     }
     
-    func saveAsSession(callback: (user: User) -> Void) {
+    func saveAsSession(completion: (user: User?, message: String?) -> Void) {
         SVProgressHUD.show()
         let params = [
             "email": self.email!,
@@ -187,14 +187,21 @@ class User: NSObject {
             .responseJSON { response in
                 guard let object = response.result.value else {
                     StatusBarNotification.showErrorMessage()
+                    completion(user: nil, message: ErrorMessage.noNetWork)
                     return
                 }
                 SVProgressHUD.dismiss()
                 StatusBarNotification.hideMessage()
                 let json = JSON(object)
+                
+                if let message = json["error_message"].string {
+                    completion(user: nil, message: message)
+                    return
+                }
+                
                 let user = User(apiAttributes: json["user"])
                 user.facebook_id = ""
-                callback(user: user)
+                completion(user: user, message: nil)
         }
     }
     

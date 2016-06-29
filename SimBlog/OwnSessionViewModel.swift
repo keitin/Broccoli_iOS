@@ -12,17 +12,23 @@ import SwiftyJSON
 class OwnSessionViewModel: NSObject {
     var user: User!
     
-    func loginSession(ownSessionView: OwnSessionView) {
+    func loginSession(ownSessionView: OwnSessionView, completion: (message: String?) -> Void) {
         let json: JSON = [
             "email": ownSessionView.emailTextField.text!,
             "password": ownSessionView.passTextField.text!,
         ]
         self.user = User(ownSessionAttributes: json)
-        self.user.saveAsSession { (user) in
-            user.saveCurrentUserInLocal()
+        self.user.saveAsSession { (user, message) in
+            
+            if let msg = message {
+                completion(message: msg)
+                return
+            }
+
+            user!.saveCurrentUserInLocal()
             let currentUser = CurrentUser.sharedInstance
             currentUser.getCurrentUserInLocal()
-            UIApplication.redirectToInitialViewController()
+            completion(message: nil)            
         }
     }
 
