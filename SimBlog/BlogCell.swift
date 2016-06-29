@@ -49,6 +49,8 @@ class BlogCell: UITableViewCell {
         nameLabel.text = blog.user.name
         profileImageView.blog = blog    
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))
+        topImageView.animateWith(1.0, fromAlpha: 0.5)
+        profileImageView.animateWith(1.0, fromAlpha: 0.5)
     }
     
     func layoutImageView() {

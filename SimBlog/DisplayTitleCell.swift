@@ -56,6 +56,8 @@ class DisplayTitleCell: UITableViewCell, Like {
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))
         nameLabel.text = blog.user.name
         setupSentenceLabel(blog.title)
+        
+        self.topImageView.animateWith(1.0, fromAlpha: 0.0)
     }
     
     //MARK - Layout Sub Views

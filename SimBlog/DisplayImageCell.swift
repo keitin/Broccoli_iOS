@@ -25,9 +25,9 @@ class DisplayImageCell: UITableViewCell {
     
     func fillWith(blogImage: BlogImage) {
         if let image = blogImage.image {
-            blogImageView.image = image
+            self.blogImageView.image = image
         } else {
-            blogImageView.sd_setImageWithURL(NSURL(string: blogImage.imageURL))
+            self.blogImageView.sd_setImageWithURL(NSURL(string: blogImage.imageURL))
         }
     }
     

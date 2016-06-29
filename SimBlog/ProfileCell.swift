@@ -66,6 +66,7 @@ class ProfileCell: UITableViewCell, Follow {
         
         nameLabel.text = user.name
         profileImageView.sd_setImageWithURL(NSURL(string: user.imageURL))
+        profileImageView.animateWith(0.5, fromAlpha: 0.5)
         isFollow(currentUser, toUser: user) { (isFollow) in
             self.followButton.selected = isFollow
         }

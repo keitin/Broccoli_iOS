@@ -20,6 +20,7 @@ class BlogImageCell: UICollectionViewCell {
     
     func fillWith(blog: Blog) {
         imageView.sd_setImageWithURL(NSURL(string: blog.topImageURL!))
+        imageView.animateWith(1.0, fromAlpha: 0.5)
     }
     
     private func layoutImageView() {

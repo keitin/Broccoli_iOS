@@ -24,4 +24,11 @@ extension UIImageView {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.whiteColor().CGColor
     }
+    
+    func animateWith(duration: NSTimeInterval, fromAlpha: CGFloat) {
+        self.alpha = fromAlpha
+        UIView.animateWithDuration(duration) { 
+            self.alpha = 1.0
+        }
+    }
 }
