@@ -121,6 +121,7 @@
 		32992F231CE054F3006C604B /* FollowingBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F221CE054F3006C604B /* FollowingBlogViewModel.swift */; };
 		32992F261CE06480006C604B /* SearchTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F251CE06480006C604B /* SearchTextFiled.swift */; };
 		32992F291CE0A9B7006C604B /* BlogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32992F281CE0A9B7006C604B /* BlogNavigationController.swift */; };
+		32A269291D23AB270091ED15 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A269281D23AB270091ED15 /* UIButton+Extension.swift */; };
 		32A6B93E1CE0AFBB0026053E /* SearchBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6B93D1CE0AFBB0026053E /* SearchBlogViewController.swift */; };
 		32A6B9461CE0B54B0026053E /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6B9441CE0B54B0026053E /* SearchHistoryCell.swift */; };
 		32A6B9471CE0B54B0026053E /* SearchHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A6B9451CE0B54B0026053E /* SearchHistoryCell.xib */; };
@@ -295,6 +296,7 @@
 		32992F221CE054F3006C604B /* FollowingBlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingBlogViewModel.swift; sourceTree = "<group>"; };
 		32992F251CE06480006C604B /* SearchTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextFiled.swift; sourceTree = "<group>"; };
 		32992F281CE0A9B7006C604B /* BlogNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogNavigationController.swift; sourceTree = "<group>"; };
+		32A269281D23AB270091ED15 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		32A6B93D1CE0AFBB0026053E /* SearchBlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBlogViewController.swift; sourceTree = "<group>"; };
 		32A6B9441CE0B54B0026053E /* SearchHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
 		32A6B9451CE0B54B0026053E /* SearchHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchHistoryCell.xib; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 				326F96531D1112D300053471 /* UIRefreshControl+Extenstion.swift */,
 				326F96551D11254600053471 /* UIViewController+Extension.swift */,
 				328C61901D20C71500285F7D /* CALayer+Extenstion.swift */,
+				32A269281D23AB270091ED15 /* UIButton+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1286,6 +1289,7 @@
 				326A74191CCFC95B0015DE7D /* BlogImage.swift in Sources */,
 				328C618F1D20B32600285F7D /* OwnLoginView.swift in Sources */,
 				326A741C1CCFD0BD0015DE7D /* ImageCell.swift in Sources */,
+				32A269291D23AB270091ED15 /* UIButton+Extension.swift in Sources */,
 				328C61811D1A749100285F7D /* UIAlertAction+Extension.swift in Sources */,
 				324E47171CD1E200003EC6AC /* LoginView.swift in Sources */,
 				32492C361CD9F03B00B420B0 /* ShowUserViewController.swift in Sources */,

@@ -54,6 +54,7 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like, 
         if sender.selected {
             unLikeBlog(sender)
         } else {
+            sender.animateWithLove()
             likeBlog(sender)
         }
     }
