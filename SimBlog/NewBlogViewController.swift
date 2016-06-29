@@ -31,12 +31,12 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         self.scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.size.height - self.barHeight  - self.statusBarHeight)
         
         // first TextView set
-        let titleTextView = BlogTextView(y: 0, view: self.view, isTitle: true,
+        let titleTextView = BlogTextView(y: 10, view: self.view, isTitle: true,
                                          tag: blogEditorViewModel.numberOfMaterials)
         blogEditorViewModel.titleTextView = titleTextView
         titleTextView.delegate = self
         self.scrollView.addSubview(titleTextView)
-        
+        blogEditorViewModel.titleTextViewY = titleTextView.frame.origin.y
         let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view),
                                     view: self.view,
                                     isTitle: false,
@@ -94,6 +94,11 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
 
     @IBAction func tapAddTextButton(sender: UIButton) {
+        
+        if blogEditorViewModel.textViews.last!.text.isEmpty {
+            return
+        }
+        
         let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view), view: self.view, isTitle: false, tag: blogEditorViewModel.numberOfMaterials)
         textView.delegate = self
         textView.becomeFirstResponder()

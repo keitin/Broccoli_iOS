@@ -19,7 +19,7 @@ class BlogImageView: UIImageView {
     
     init(y: CGFloat, view: UIView) {
         super.init(frame: CGRectZero)
-        self.frame = CGRectMake(0, y, view.frame.width, self.textViewDefaultHeight)
+        self.frame = CGRectMake(5, y, view.frame.width - 10, self.textViewDefaultHeight)
         self.image = UIImage(named: "bijo")
         self.backgroundColor = UIColor.lightGrayColor()
         self.contentMode = UIViewContentMode.ScaleAspectFill

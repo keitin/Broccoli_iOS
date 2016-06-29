@@ -13,7 +13,7 @@ class BlogEditorViewModel: NSObject {
     
     let blog = Blog()
     let currentUser = CurrentUser.sharedInstance
-    
+    var titleTextViewY: CGFloat!
     var titleTextView: BlogTextView!
     var textViews: [BlogTextView] = []
     var imageViews: [BlogImageView] = []
@@ -47,7 +47,7 @@ class BlogEditorViewModel: NSObject {
     }
     
     func heightOfAllMaterials(view: UIView) -> CGFloat {
-        var sumHeight: CGFloat = 0
+        var sumHeight: CGFloat = self.titleTextViewY
         
         sumHeight = sumHeight + self.titleTextView.heightOfTextViewWithText(view)
         
