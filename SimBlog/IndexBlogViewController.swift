@@ -12,6 +12,7 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
     var collectionView: UICollectionView!
     let indexBlogViewModel = IndexBlogViewModel()
     let blogManager = BlogManager.sharedInstance
+    var refreshControl: UIRefreshControl!
     @IBOutlet weak var textFieldButton: UIButton!
     
     override func viewDidLoad() {
@@ -31,6 +32,11 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
         collectionView.delegate = self
         
         layoutTextFieldButton()
+        
+        //MARK: - 引っ張って更新
+        self.refreshControl = UIRefreshControl.loadingItems(self,
+                                                            selector: #selector(IndexBlogViewController.pullAndRefresh))
+        self.collectionView.addSubview(refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +66,6 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
         }
     }
 
-    
     func didTapProfileImageView(blog: Blog) {
         let showUserVC = UIStoryboard.viewControllerWith("User", identifier: "ShowUserViewController") as! ShowUserViewController
         showUserVC.selectedUser = blog.user
@@ -72,6 +77,12 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
         presentViewController(searchBlogNC, animated: false, completion: nil)
     }
     
+    func pullAndRefresh() {
+        indexBlogViewModel.refershData { 
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
     private func layoutTextFieldButton() {
         textFieldButton.frame.size.width = self.view.frame.width - 16
         textFieldButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
@@ -79,5 +90,6 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
         textFieldButton.layer.cornerRadius = 5
         textFieldButton.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
     }
+    
 
 }

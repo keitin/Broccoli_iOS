@@ -147,8 +147,7 @@ class Blog: NSObject {
                 tmpArray.removeAtIndex(blogText.order + 1)
                 
             } else {
-                let blogImage = material as! BlogImage
-                
+                let blogImage = material as! BlogImage                
                 tmpArray.insert(blogImage, atIndex: blogImage.order)
                 tmpArray.removeAtIndex(blogImage.order + 1)
             }

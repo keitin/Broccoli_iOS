@@ -55,4 +55,12 @@ class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
             self.collectionView.reloadData()
         }
     }
+    
+    func refershData(callback: () -> Void) {
+        page = 1
+        blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
+            self.collectionView.reloadData()
+            callback()
+        }
+    }
 }
