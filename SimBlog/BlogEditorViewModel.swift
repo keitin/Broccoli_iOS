@@ -90,15 +90,8 @@ class BlogEditorViewModel: NSObject {
             blog.title = textView.text
             return
         } else {
-            if let blogText = blog.materialAtPosition(blog.numberOfMaterials - 1) as? BlogText {
-                blogText.text = textView.text
-            } else {
-                if textView.tag == 1 {
-                    print(textView.text)
-                    let blogText = blog.materialAtPosition(0) as! BlogText
-                    blogText.text = textView.text
-                }
-            }
+            let blogText = blog.materials[textView.tag] as! BlogText
+            blogText.text = textView.text
         }
     }
     

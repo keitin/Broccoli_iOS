@@ -37,16 +37,16 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
         titleTextView.delegate = self
         self.scrollView.addSubview(titleTextView)
         blogEditorViewModel.titleTextViewY = titleTextView.frame.origin.y
+        
         let textView = BlogTextView(y: blogEditorViewModel.heightOfAllMaterials(self.view),
                                     view: self.view,
                                     isTitle: false,
-                                    tag: blogEditorViewModel.blog.numberOfMaterials)
+                                    tag: 0)
+
         textView.delegate = self
         blogEditorViewModel.textViews.append(textView)
         self.scrollView.addSubview(textView)
 
-        
-        
         //Keyboard Notification
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.keyboardWillShow(self, selector: #selector(NewBlogViewController.showWillKeyboard(_:)))

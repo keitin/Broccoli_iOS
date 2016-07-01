@@ -11,7 +11,6 @@ import UIKit
 class BlogImageView: UIImageView {
 
     var blog: Blog!
-    
     let textViewDefaultHeight: CGFloat = 200
     var height: CGFloat {
         return self.frame.height
