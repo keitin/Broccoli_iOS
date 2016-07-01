@@ -117,7 +117,9 @@ class NewBlogViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
     
     func postBlog(sender: UIBarButtonItem) {
+        sender.enabled = false
         blogEditorViewModel.postBlog { (message) in
+            sender.enabled = true
             guard let error = message else {
                 self.dismissViewControllerAnimated(true, completion: nil)
                 return
