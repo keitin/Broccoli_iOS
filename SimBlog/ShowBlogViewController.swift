@@ -25,10 +25,8 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like, 
         isLike(self.blog) { (isLike) in
             self.loveButton = self.navigationItem.loveButtonItem(self, action: #selector(ShowBlogViewController.didTapLoveButton(_:)), selected: isLike)
                 barItems.insert(self.loveButton, atIndex: 0)
-            if self.blog.user.id != CurrentUser.sharedInstance.id {
-                let menu = UIBarButtonItem(title: "…", style: .Done, target: self, action: #selector(ShowBlogViewController.tapActionSheet(_:)))
+            let menu = UIBarButtonItem(title: "…", style: .Done, target: self, action: #selector(ShowBlogViewController.tapActionSheet(_:)))
                 barItems.insert(menu, atIndex: 0)
-            }
             self.navigationItem.rightBarButtonItems = barItems
         }
     }
@@ -84,6 +82,26 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like, 
             })
             self.presentViewController(selectReport, animated: true, completion: nil)
         }
+        
+        if CurrentUser.sharedInstance.id == blog.user.id {
+            let deleteAction = UIAlertAction(title: Message.deleteBlog, style: .Default) { (action) in
+                self.blog.deleteBlogInBackground({
+                    
+                    if let followingVC = self.navigationController?.previousViewController() as? FollowingBlogViewController {
+                        followingVC.followingBlogViewModel.refershData({
+                            self.navigationController?.popViewControllerAnimated(true)
+                        })
+                    } else {
+                        let showUserVC = self.navigationController?.previousViewController() as! ShowUserViewController
+                        showUserVC.showUserViewModel.reloadItems {
+                            self.navigationController?.popViewControllerAnimated(true)
+                        }
+                    }
+                })
+            }
+            sheet.addAction(deleteAction)
+        }
+        
         sheet.addAction(reportAction)
         self.presentViewController(sheet, animated: true, completion: nil)
     }

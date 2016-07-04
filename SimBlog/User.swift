@@ -213,6 +213,7 @@ class User: NSObject {
             .responseJSON { response in
                 guard let object = response.result.value else {
                     StatusBarNotification.showErrorMessage()
+                    callback()
                     return
                 }
                 if page == 1 { self.blogs = [] }
@@ -224,6 +225,7 @@ class User: NSObject {
                     self.blogs.insert(blog, atIndex: self.numberOfBlogs)
                     callback()
                 }
+                callback()
         }
     }
     

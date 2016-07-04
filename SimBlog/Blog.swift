@@ -118,6 +118,17 @@ class Blog: NSObject {
         }
     }
     
+    func deleteBlogInBackground(callback: () -> Void) {
+        Alamofire.request(.DELETE, String.rootPath() + "/api/blogs/\(self.id)", parameters: nil)
+            .responseJSON { response in
+                guard let _ = response.result.value else {
+                    callback()
+                    return
+            }
+            callback()
+        }
+    }
+    
     private func divideToBlogText() -> [BlogText]{
         var blogTexts: [BlogText] = []
         for material in self.materials {

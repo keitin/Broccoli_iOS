@@ -154,6 +154,7 @@
 		32B42AEE1CDB9029009EC63C /* MoreItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */; };
 		32BFE1E01CE4BC5100FC26FF /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE1DF1CE4BC5100FC26FF /* Like.swift */; };
 		32BFE1E31CE4E31000FC26FF /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE1E21CE4E31000FC26FF /* Follow.swift */; };
+		32CD8D831D2A0A6F00017560 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD8D821D2A0A6F00017560 /* UINavigationController+Extension.swift */; };
 		8CB9392937AC7BA0E0536964 /* Pods_SimBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D43FC246B86AD09E3086FD0 /* Pods_SimBlog.framework */; };
 		97A22A91DD20F45FE56E0363 /* Pods_SimBlogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */; };
 /* End PBXBuildFile section */
@@ -329,6 +330,7 @@
 		32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreItemsCell.xib; sourceTree = "<group>"; };
 		32BFE1DF1CE4BC5100FC26FF /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		32BFE1E21CE4E31000FC26FF /* Follow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
+		32CD8D821D2A0A6F00017560 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimBlogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		641294EDC7C819DEAF0255C6 /* Pods-SimBlogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D99681E132D6A3423EAD820 /* Pods-SimBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlog/Pods-SimBlog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -601,6 +603,7 @@
 				326F96551D11254600053471 /* UIViewController+Extension.swift */,
 				328C61901D20C71500285F7D /* CALayer+Extenstion.swift */,
 				32A269281D23AB270091ED15 /* UIButton+Extension.swift */,
+				32CD8D821D2A0A6F00017560 /* UINavigationController+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1335,6 +1338,7 @@
 				32A77C461D005427003E5FFC /* BlogEditorViewModel.swift in Sources */,
 				321025161D21550C008D5812 /* OwnSessionViewController.swift in Sources */,
 				32A6B9461CE0B54B0026053E /* SearchHistoryCell.swift in Sources */,
+				32CD8D831D2A0A6F00017560 /* UINavigationController+Extension.swift in Sources */,
 				326A74251CD0613F0015DE7D /* IndexBlogViewController.swift in Sources */,
 				32492C401CDA430D00B420B0 /* UIStoryboard+Extension.swift in Sources */,
 				3284AF121CD09AD5005AB294 /* TitleCell.swift in Sources */,
