@@ -44,6 +44,7 @@ class BlogManager: NSObject {
                 let json = JSON(object)
                 SVProgressHUD.dismiss()
                 StatusBarNotification.hideMessage()
+                if page == 1 { self.blogs = [] }
                 for object in json["blogs"].array! {
                     let blog = Blog(apiAttributes: object["blog"])
                     blog.user = User(apiAttributes: object["user"])
