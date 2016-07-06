@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CommentCell: UITableViewCell {
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
     let minHeight: CGFloat = 80
@@ -22,6 +24,12 @@ class CommentCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func fillWith(comment: Comment) {
+        self.nameLabel.text = comment.user.name
+        self.commentLabel.text = comment.text
+        self.iconImageView.sd_setImageWithURL(NSURL(string: comment.user.imageURL))
     }
     
     //MARK: Layout Sub Views

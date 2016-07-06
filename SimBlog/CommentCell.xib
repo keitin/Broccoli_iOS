@@ -53,6 +53,7 @@
             <connections>
                 <outlet property="commentLabel" destination="OVI-Kr-vGG" id="jH0-v7-KUJ"/>
                 <outlet property="iconImageView" destination="LIS-3G-Hoz" id="6xO-03-mpa"/>
+                <outlet property="nameLabel" destination="Zsh-j5-X71" id="put-hd-Rqr"/>
             </connections>
             <point key="canvasLocation" x="251" y="466"/>
         </tableViewCell>

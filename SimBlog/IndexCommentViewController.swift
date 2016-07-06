@@ -14,16 +14,16 @@ class IndexCommentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextField: UITextField!
     let indexCommentViewModel = IndexCommentViewModel()
+    var blog: Blog!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.indexCommentViewModel.didLoad(self.tableView)
+        self.indexCommentViewModel.didLoad(self.blog, tableView: self.tableView)
         self.keyboardNotification()
         self.setTextFiled()
         self.setPostButton()
         
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +41,9 @@ class IndexCommentViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: TextFiled Delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        self.indexCommentViewModel.postComment(self.blog, text: self.commentTextField.text!)
+        
         self.commentTextField.endEditing(true)
         self.commentTextField.text = ""
         return true
@@ -48,6 +51,9 @@ class IndexCommentViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Actions
     func tappedPostButton(sender: UIButton) {
+        
+        self.indexCommentViewModel.postComment(self.blog, text: self.commentTextField.text!)
+        
         self.commentTextField.endEditing(true)
         self.commentTextField.text = ""
     }

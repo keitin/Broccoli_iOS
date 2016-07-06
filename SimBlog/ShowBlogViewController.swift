@@ -50,7 +50,8 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like, 
     }
     
     func didTappedCommentButton() {
-        let commentIndexVC = UIStoryboard.viewControllerWith("Comment", identifier: "IndexCommentViewController")
+        let commentIndexVC = UIStoryboard.viewControllerWith("Comment", identifier: "IndexCommentViewController") as! IndexCommentViewController
+        commentIndexVC.blog = self.blog
         commentIndexVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(commentIndexVC, animated: true)
     }
