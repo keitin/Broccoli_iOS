@@ -29,6 +29,8 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like, 
                 barItems.insert(menu, atIndex: 0)
             self.navigationItem.rightBarButtonItems = barItems
         }
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -45,6 +47,12 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like, 
         let showUserVC = UIStoryboard.viewControllerWith("User", identifier: "ShowUserViewController") as! ShowUserViewController
         showUserVC.selectedUser = blog.user
         navigationController?.pushViewController(showUserVC, animated: true)
+    }
+    
+    func didTappedCommentButton() {
+        let commentIndexVC = UIStoryboard.viewControllerWith("Comment", identifier: "IndexCommentViewController")
+        commentIndexVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(commentIndexVC, animated: true)
     }
     
     //MARK: Like Action
@@ -70,7 +78,7 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like, 
             self.blog.likesCount.value = self.blog.likesCount.value - 1
         }
     }
-
+    
     func tapActionSheet(sender: UIBarButtonItem) {
         let sheet = UIAlertController.actionSheet("", message: "")
         let reportAction = UIAlertAction(title: Message.report, style: .Default) { (action) in

@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     static func rootPath() -> String {
-//        return "http://localhost:3000"
-        return "http://52.68.152.185"
+        return "http://localhost:3000"
+//        return "http://52.68.152.185"
     }
 }

@@ -12,9 +12,11 @@ import Bond
 
 @objc protocol DisplayTitleCellDelegate {
     func didTapProfileImageView(blog: Blog)
+    func didTappedCommentButton()
 }
 
 class DisplayTitleCell: UITableViewCell, Like {
+    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,6 +30,7 @@ class DisplayTitleCell: UITableViewCell, Like {
     override func awakeFromNib() {
         super.awakeFromNib()
         layoutImageView()
+        layoutCommentButton()
         gradientionView()
     }
     
@@ -70,10 +73,18 @@ class DisplayTitleCell: UITableViewCell, Like {
         profileImageView.addGestureRecognizer(tap)
     }
     
+    func layoutCommentButton() {
+        self.commentButton.addTarget(self, action: #selector(DisplayTitleCell.tapCommentButton(_:)), forControlEvents: .TouchUpInside)
+    }
+    
     //MARK: - Action
     func tapProfileImageView(sender: UITapGestureRecognizer) {
         let profileImageView = sender.view as! ProfileImageView
         delegate?.didTapProfileImageView(profileImageView.blog)
+    }
+    
+    func tapCommentButton(sender: UIButton) {
+            self.delegate?.didTappedCommentButton()
     }
     
     private func gradientionView() {
