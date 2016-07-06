@@ -18,6 +18,9 @@ class CommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.layoutIconImageView()
+        self.layoutCommentLabel()
+        self.layoutNameLabel()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -34,7 +37,17 @@ class CommentCell: UITableViewCell {
     
     //MARK: Layout Sub Views
     private func layoutCommentLabel() {
-        
+        self.commentLabel.textColor = UIColor.maingGray()
+        self.commentLabel.font = UIFont.systemFontOfSize(11)
+    }
+    
+    private func layoutIconImageView() {
+        self.iconImageView.layer.cornerRadius = self.iconImageView.frame.width / 2
+    }
+    
+    private func layoutNameLabel() {
+        self.nameLabel.font = UIFont.systemFontOfSize(11)
+        self.nameLabel.textColor = UIColor.blackColor()
     }
     
     

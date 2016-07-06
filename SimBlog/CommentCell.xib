@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hogehogehogegoehhogehogehogegoehhogehogehogegoehhogehogehogegoehhogehogehogegoehhogehogehogegoehhogehogehogegoeh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVI-Kr-vGG">
-                        <rect key="frame" x="66" y="44" width="246" height="99"/>
+                        <rect key="frame" x="66" y="36" width="246" height="107"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                     <constraint firstItem="Zsh-j5-X71" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="47Q-2J-nSY"/>
                     <constraint firstItem="Zsh-j5-X71" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="7M5-n6-vkm"/>
                     <constraint firstItem="LIS-3G-Hoz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="FkD-5X-QSl"/>
-                    <constraint firstItem="OVI-Kr-vGG" firstAttribute="top" secondItem="Zsh-j5-X71" secondAttribute="bottom" constant="8" id="Kqu-Bu-Efv"/>
+                    <constraint firstItem="OVI-Kr-vGG" firstAttribute="top" secondItem="Zsh-j5-X71" secondAttribute="bottom" id="Kqu-Bu-Efv"/>
                     <constraint firstItem="OVI-Kr-vGG" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Xki-Po-yTt"/>
                     <constraint firstItem="OVI-Kr-vGG" firstAttribute="leading" secondItem="LIS-3G-Hoz" secondAttribute="trailing" constant="8" id="go8-KB-6QH"/>
                     <constraint firstItem="Zsh-j5-X71" firstAttribute="leading" secondItem="LIS-3G-Hoz" secondAttribute="trailing" constant="8" id="nkJ-mb-YTe"/>
