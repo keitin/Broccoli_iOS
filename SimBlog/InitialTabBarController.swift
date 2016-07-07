@@ -77,6 +77,8 @@ class InitialTabBarController: UITabBarController {
             print("could not start reachability notifier")
         }
 
+        self.makeBage()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,5 +141,10 @@ class InitialTabBarController: UITabBarController {
             }
             
         }
+    }
+    
+    private func makeBage() {
+        let item = self.tabBar.items![2]
+        item.badgeValue = "3"
     }
 }

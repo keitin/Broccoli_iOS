@@ -32,11 +32,17 @@ extension NoticeType {
                 if page == 1 { currentUser.notices = [] }
                 let json = JSON(object)
                 for notice in json["notices"].array! {
-                    let blog = Blog(apiAttributes: notice["blog"])
                     let user = User(apiAttributes: notice["user"])
-                    let blogUser = User(apiAttributes: notice["blog_user"])
-                    blog.user = blogUser
-                    let notice = Notice(blog: blog, user: user)
+                    let fromUser = User(apiAttributes: notice["from_user"])
+                    let category = NoticeCategory.createCategory(notice["notice"]["category"].string!)
+                    var blog: Blog? = nil
+                    let blogUser: User?
+                    if let _ = notice["blog"].dictionary {
+                        blog = Blog(apiAttributes: notice["blog"])
+                        blogUser = User(apiAttributes: notice["blog_user"])
+                        blog!.user = blogUser
+                    }
+                    let notice = Notice(blog: blog, user: user, fromUser: fromUser, category: category)
                     currentUser.notices.insert(notice, atIndex: currentUser.numberOfNotices)
                     callback()
                 }
