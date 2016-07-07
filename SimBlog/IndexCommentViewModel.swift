@@ -46,6 +46,7 @@ class IndexCommentViewModel: NSObject, UITableViewDataSource {
         let comment = Comment(text: text, user: currentUser)
         comment.saveInBackground(blog) { 
             self.tableView.reloadData()
+            blog.commentsCount.value = Int(blog.commentsCount.value) + 1
         }
     }
 

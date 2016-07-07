@@ -22,6 +22,7 @@ class Blog: NSObject {
     var comments: [Comment] = []
     
     var likesCount = Observable<Int>(0)
+    var commentsCount = Observable<Int>(0)
     
     var numberOfMaterials: Int {
         return materials.count
@@ -33,6 +34,7 @@ class Blog: NSObject {
         self.topImageURL = apiAttributes["image"]["url"].string
         self.id = apiAttributes["id"].int
         self.likesCount.value = apiAttributes["likes_count"].int!
+        self.commentsCount.value = apiAttributes["comments_count"].int!
     }
     
     override init() {

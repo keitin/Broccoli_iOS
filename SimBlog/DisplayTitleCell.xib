@@ -120,6 +120,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="commentButton" destination="V6x-s7-fDK" id="feH-Iq-zv9"/>
+                <outlet property="commentCountLabel" destination="ssS-6T-fnz" id="hkB-D3-ZnT"/>
                 <outlet property="likeCountLabel" destination="uZM-5b-Xx2" id="REJ-e6-iQX"/>
                 <outlet property="nameLabel" destination="zVJ-oV-Ct1" id="k9n-Cm-c5g"/>
                 <outlet property="profileImageView" destination="YDx-dN-u6r" id="z8F-Fa-jhW"/>
@@ -130,6 +131,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Topic-50.png" width="50" height="50"/>
+        <image name="Topic-50.png" width="25" height="25"/>
     </resources>
 </document>

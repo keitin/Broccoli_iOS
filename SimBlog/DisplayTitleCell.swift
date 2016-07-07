@@ -23,6 +23,7 @@ class DisplayTitleCell: UITableViewCell, Like {
     @IBOutlet weak var profileImageView: ProfileImageView!
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
     var delegate: DisplayTitleCellDelegate?
     var selectedBlog: Blog!
     let gradientLayer = CAGradientLayer()
@@ -53,6 +54,9 @@ class DisplayTitleCell: UITableViewCell, Like {
         }
         blog.likesCount.observe { [weak self] (currentLikes) in
             self!.likeCountLabel.text = String(currentLikes)
+        }
+        blog.commentsCount.observe { (currentComments) in
+            self.commentCountLabel.text = String(currentComments)
         }
         profileImageView.blog = blog
         self.selectedBlog = blog
