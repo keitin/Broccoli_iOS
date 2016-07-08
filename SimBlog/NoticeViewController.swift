@@ -21,6 +21,9 @@ class NoticeViewController: UIViewController, UITableViewDelegate, NoticeCellDel
         
         refreshControl = UIRefreshControl.loadingItems(self, selector: #selector(NoticeViewController.pullAndload))
         self.tableView.addSubview(refreshControl)
+        
+        let tabbarC = self.tabBarController as! InitialTabBarController
+        tabbarC.hideBadge()
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -14,7 +14,7 @@ import SDWebImage
     func didTapUserImageView(user: User)
 }
 
-class NoticeCell: UITableViewCell {
+class NoticeCell: UITableViewCell, NoticeType {
     @IBOutlet weak var blogImageView: BlogImageView!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var userImageView: ProfileImageView!
@@ -33,13 +33,22 @@ class NoticeCell: UITableViewCell {
     }
     
     func fillwith(notice: Notice) {
-        userImageView.sd_setImageWithURL(NSURL(string: notice.user.imageURL))
+        userImageView.sd_setImageWithURL(NSURL(string: notice.fromUser.imageURL))
         userImageView.animateWith(0.5, fromAlpha: 0.5)
-        userImageView.user = notice.user
-        blogImageView.sd_setImageWithURL(NSURL(string: notice.blog.topImageURL!))
+        userImageView.user = notice.fromUser
+        if let blog = notice.blog {
+            blogImageView.sd_setImageWithURL(NSURL(string: blog.topImageURL!))
+        } else {
+            blogImageView.userInteractionEnabled = false
+        }
         blogImageView.animateWith(0.5, fromAlpha: 0.5)
         blogImageView.blog = notice.blog
         descriptLabel.text = notice.text
+        
+        if notice.isUnRead {
+            makeNoticeRead(CurrentUser.sharedInstance, notice: notice)
+        }
+        
     }
     
     private func layoutBlogImageView() {

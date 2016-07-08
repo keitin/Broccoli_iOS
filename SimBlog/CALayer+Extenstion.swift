@@ -19,4 +19,13 @@ extension CALayer {
         self.addSublayer(border)
         self.masksToBounds = true
     }
+    
+    func lineBorderTop(borderWidth borderWidth: CGFloat, color: UIColor) {
+        let border = CALayer()
+        border.borderColor = color.CGColor
+        border.frame = CGRect(x: 0, y: 0, width:  self.frame.size.width, height: borderWidth)
+        border.borderWidth = borderWidth
+        self.addSublayer(border)
+        self.masksToBounds = true
+    }
 }

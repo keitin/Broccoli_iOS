@@ -152,6 +152,13 @@
 		32B42AEA1CDB6F18009EC63C /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B42AE91CDB6F18009EC63C /* ProfileImageView.swift */; };
 		32B42AED1CDB9029009EC63C /* MoreItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B42AEB1CDB9029009EC63C /* MoreItemsCell.swift */; };
 		32B42AEE1CDB9029009EC63C /* MoreItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */; };
+		32B523B41D2CF8C400F29CBA /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B523B31D2CF8C400F29CBA /* Comment.storyboard */; };
+		32B523B61D2CF9F600F29CBA /* IndexCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B523B51D2CF9F600F29CBA /* IndexCommentViewController.swift */; };
+		32B523B91D2D089700F29CBA /* IndexCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B523B81D2D089700F29CBA /* IndexCommentViewModel.swift */; };
+		32B523BD1D2D0A1B00F29CBA /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B523BB1D2D0A1B00F29CBA /* CommentCell.swift */; };
+		32B523BE1D2D0A1B00F29CBA /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B523BC1D2D0A1B00F29CBA /* CommentCell.xib */; };
+		32B523C11D2D11CC00F29CBA /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B523C01D2D11CC00F29CBA /* Comment.swift */; };
+		32B523C91D2D2AF700F29CBA /* Topic-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B523C81D2D2AF700F29CBA /* Topic-50@2x.png */; };
 		32BFE1E01CE4BC5100FC26FF /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE1DF1CE4BC5100FC26FF /* Like.swift */; };
 		32BFE1E31CE4E31000FC26FF /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE1E21CE4E31000FC26FF /* Follow.swift */; };
 		32CD8D831D2A0A6F00017560 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD8D821D2A0A6F00017560 /* UINavigationController+Extension.swift */; };
@@ -328,6 +335,13 @@
 		32B42AE91CDB6F18009EC63C /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		32B42AEB1CDB9029009EC63C /* MoreItemsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreItemsCell.swift; sourceTree = "<group>"; };
 		32B42AEC1CDB9029009EC63C /* MoreItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreItemsCell.xib; sourceTree = "<group>"; };
+		32B523B31D2CF8C400F29CBA /* Comment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comment.storyboard; sourceTree = "<group>"; };
+		32B523B51D2CF9F600F29CBA /* IndexCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexCommentViewController.swift; sourceTree = "<group>"; };
+		32B523B81D2D089700F29CBA /* IndexCommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexCommentViewModel.swift; sourceTree = "<group>"; };
+		32B523BB1D2D0A1B00F29CBA /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		32B523BC1D2D0A1B00F29CBA /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		32B523C01D2D11CC00F29CBA /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		32B523C81D2D2AF700F29CBA /* Topic-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Topic-50@2x.png"; sourceTree = "<group>"; };
 		32BFE1DF1CE4BC5100FC26FF /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		32BFE1E21CE4E31000FC26FF /* Follow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
 		32CD8D821D2A0A6F00017560 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
@@ -386,6 +400,7 @@
 				32992F181CE0516B006C604B /* Blog.storyboard */,
 				32492C311CD9ED1E00B420B0 /* Login.storyboard */,
 				328F005B1CE6CBE200AB5E57 /* Notice.storyboard */,
+				32B523B31D2CF8C400F29CBA /* Comment.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -559,6 +574,7 @@
 				32A6B94A1CE0B8930026053E /* Seach Blog */,
 				324E47121CD1D43F003EC6AC /* Users */,
 				328F005A1CE6CBC100AB5E57 /* Notice */,
+				32B523B71D2CFA0000F29CBA /* Comments */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -571,6 +587,7 @@
 				32B42AEF1CDB903B009EC63C /* Common */,
 				32A6B9431CE0B4B20026053E /* Search */,
 				328F006A1CE6EA3300AB5E57 /* Notice */,
+				32B523BF1D2D0BD100F29CBA /* Comments */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -615,6 +632,7 @@
 				324E471C1CD1E31B003EC6AC /* Users */,
 				32BFE2271CE605EF00FC26FF /* Search Blog */,
 				328F005F1CE6CFBD00AB5E57 /* Notice */,
+				32B523BA1D2D089D00F29CBA /* Comment */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -628,6 +646,7 @@
 				328F00661CE6D81A00AB5E57 /* Search */,
 				328F00691CE6D82F00AB5E57 /* Notice */,
 				32AA3B841CFC1A8500668DDE /* ErrorMessage */,
+				32B523C21D2D12B800F29CBA /* Comment */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -645,6 +664,7 @@
 			isa = PBXGroup;
 			children = (
 				328C618A1D1D6BF200285F7D /* noimage.png */,
+				32B523C81D2D2AF700F29CBA /* Topic-50@2x.png */,
 				328C61781D19543A00285F7D /* Checked-Checkbox 2-50@2x.png */,
 				328C61791D19543A00285F7D /* Unchecked-Checkbox-50@2x.png */,
 				328C61841D1D65DF00285F7D /* disable_gray.png */,
@@ -909,6 +929,39 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		32B523B71D2CFA0000F29CBA /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				32B523B51D2CF9F600F29CBA /* IndexCommentViewController.swift */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
+		32B523BA1D2D089D00F29CBA /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				32B523B81D2D089700F29CBA /* IndexCommentViewModel.swift */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
+		32B523BF1D2D0BD100F29CBA /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				32B523BB1D2D0A1B00F29CBA /* CommentCell.swift */,
+				32B523BC1D2D0A1B00F29CBA /* CommentCell.xib */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
+		32B523C21D2D12B800F29CBA /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				32B523C01D2D11CC00F29CBA /* Comment.swift */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
 		32BFE1E11CE4BC5500FC26FF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -1085,9 +1138,11 @@
 				329319081CED958500B393D7 /* BlogImageCell.xib in Resources */,
 				32508EC41D129DE900B049B7 /* Icon-60@3x.png in Resources */,
 				32AA3B811CFC183900668DDE /* send-52@2x.png in Resources */,
+				32B523BE1D2D0A1B00F29CBA /* CommentCell.xib in Resources */,
 				32508EC61D129DE900B049B7 /* Icon-76@2x.png in Resources */,
 				326A74321CD068270015DE7D /* BlogCell.xib in Resources */,
 				32508ECA1D129DE900B049B7 /* Icon-Small@3x.png in Resources */,
+				32B523B41D2CF8C400F29CBA /* Comment.storyboard in Resources */,
 				32508EBF1D129DE900B049B7 /* Contents.json in Resources */,
 				32492C3D1CD9F1D100B420B0 /* ProfileCell.xib in Resources */,
 				3222C2C81D10156400716428 /* launchScreenNight.png in Resources */,
@@ -1097,6 +1152,7 @@
 				328C617A1D19543A00285F7D /* Checked-Checkbox 2-50@2x.png in Resources */,
 				328C617B1D19543A00285F7D /* Unchecked-Checkbox-50@2x.png in Resources */,
 				32508EC01D129DE900B049B7 /* Icon-40.png in Resources */,
+				32B523C91D2D2AF700F29CBA /* Topic-50@2x.png in Resources */,
 				32AA3B6D1CFAEAC400668DDE /* Search-selected-50@2x.png in Resources */,
 				32AA3B8A1CFC3D7E00668DDE /* Love-Filled-50@2x.png in Resources */,
 				320DFDAD1CFD115D001E5201 /* Images-50@2x.png in Resources */,
@@ -1306,6 +1362,7 @@
 				326A74081CCFC7540015DE7D /* TextCell.swift in Sources */,
 				3284AF161CD0B73F005AB294 /* ShowBlogViewController.swift in Sources */,
 				328C617D1D1A41C700285F7D /* TermsOfServiceViewController.swift in Sources */,
+				32B523BD1D2D0A1B00F29CBA /* CommentCell.swift in Sources */,
 				32A77C441D0053BD003E5FFC /* BlogTextView.swift in Sources */,
 				32A6B9CC1CE36BBC0026053E /* SearchResultsBlogViewModel.swift in Sources */,
 				326A74131CCFC8D20015DE7D /* Blog.swift in Sources */,
@@ -1314,6 +1371,7 @@
 				328C61891D1D687000285F7D /* OwnLoginViewController.swift in Sources */,
 				3210251A1D215A59008D5812 /* OwnSessionViewModel.swift in Sources */,
 				32BFE1E31CE4E31000FC26FF /* Follow.swift in Sources */,
+				32B523C11D2D11CC00F29CBA /* Comment.swift in Sources */,
 				32992F291CE0A9B7006C604B /* BlogNavigationController.swift in Sources */,
 				32492C381CD9F0C800B420B0 /* ShowUserViewModel.swift in Sources */,
 				32992F261CE06480006C604B /* SearchTextFiled.swift in Sources */,
@@ -1324,11 +1382,13 @@
 				32B42AEA1CDB6F18009EC63C /* ProfileImageView.swift in Sources */,
 				326F96521D11128C00053471 /* Message.swift in Sources */,
 				324E471B1CD1E318003EC6AC /* LoginViewModel.swift in Sources */,
+				32B523B91D2D089700F29CBA /* IndexCommentViewModel.swift in Sources */,
 				326F96541D1112D300053471 /* UIRefreshControl+Extenstion.swift in Sources */,
 				3293190A1CED96F700B393D7 /* UICollectionView+Extenstion.swift in Sources */,
 				326A73D81CCFC4830015DE7D /* AppDelegate.swift in Sources */,
 				326A740D1CCFC7BA0015DE7D /* UITableView+Extension.swift in Sources */,
 				328F011E1CEB4F1A00AB5E57 /* RequestListState.swift in Sources */,
+				32B523B61D2CF9F600F29CBA /* IndexCommentViewController.swift in Sources */,
 				32A6B94C1CE0B8A70026053E /* SearchBlogViewModel.swift in Sources */,
 				328F005E1CE6CFB900AB5E57 /* NoticeViewModel.swift in Sources */,
 				328F00651CE6D67E00AB5E57 /* UIImageView+Extenstion.swift in Sources */,
@@ -1521,6 +1581,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SimBlog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1536,6 +1597,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SimBlog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kinoponchan.SimBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";

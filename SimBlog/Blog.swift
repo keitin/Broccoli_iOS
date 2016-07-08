@@ -19,8 +19,10 @@ class Blog: NSObject {
     var id: Int!
     var topImageURL: String?
     var user: User!
+    var comments: [Comment] = []
     
     var likesCount = Observable<Int>(0)
+    var commentsCount = Observable<Int>(0)
     
     var numberOfMaterials: Int {
         return materials.count
@@ -32,6 +34,7 @@ class Blog: NSObject {
         self.topImageURL = apiAttributes["image"]["url"].string
         self.id = apiAttributes["id"].int
         self.likesCount.value = apiAttributes["likes_count"].int!
+        self.commentsCount.value = apiAttributes["comments_count"].int!
     }
     
     override init() {
@@ -126,6 +129,27 @@ class Blog: NSObject {
                     return
             }
             callback()
+        }
+    }
+    
+    //MARK: Comment API
+    func getCommentsInBackground(completion: () -> Void) {
+        let params: [String: AnyObject] = [
+            "blog_id": self.id
+        ]
+        Alamofire.request(.GET, String.rootPath() + "/api/comments", parameters: params)
+            .responseJSON { response in
+                guard let object = response.result.value else {
+                    return
+                }
+                self.comments = []
+                let json = JSON(object)
+                for cmt in json["comments"].array! {
+                    let comment = Comment(json: cmt)
+                    self.comments.append(comment)
+                    completion()
+                }
+                completion()
         }
     }
     

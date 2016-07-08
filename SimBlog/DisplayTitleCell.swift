@@ -12,15 +12,18 @@ import Bond
 
 @objc protocol DisplayTitleCellDelegate {
     func didTapProfileImageView(blog: Blog)
+    func didTappedCommentButton()
 }
 
 class DisplayTitleCell: UITableViewCell, Like {
+    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImageView: ProfileImageView!
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
     var delegate: DisplayTitleCellDelegate?
     var selectedBlog: Blog!
     let gradientLayer = CAGradientLayer()
@@ -28,6 +31,7 @@ class DisplayTitleCell: UITableViewCell, Like {
     override func awakeFromNib() {
         super.awakeFromNib()
         layoutImageView()
+        layoutCommentButton()
         gradientionView()
     }
     
@@ -51,6 +55,9 @@ class DisplayTitleCell: UITableViewCell, Like {
         blog.likesCount.observe { [weak self] (currentLikes) in
             self!.likeCountLabel.text = String(currentLikes)
         }
+        blog.commentsCount.observe { (currentComments) in
+            self.commentCountLabel.text = String(currentComments)
+        }
         profileImageView.blog = blog
         self.selectedBlog = blog
         profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))
@@ -70,10 +77,18 @@ class DisplayTitleCell: UITableViewCell, Like {
         profileImageView.addGestureRecognizer(tap)
     }
     
+    func layoutCommentButton() {
+        self.commentButton.addTarget(self, action: #selector(DisplayTitleCell.tapCommentButton(_:)), forControlEvents: .TouchUpInside)
+    }
+    
     //MARK: - Action
     func tapProfileImageView(sender: UITapGestureRecognizer) {
         let profileImageView = sender.view as! ProfileImageView
         delegate?.didTapProfileImageView(profileImageView.blog)
+    }
+    
+    func tapCommentButton(sender: UIButton) {
+            self.delegate?.didTappedCommentButton()
     }
     
     private func gradientionView() {
