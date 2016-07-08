@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let currentUser = CurrentUser.sharedInstance
             currentUser.getCurrentUserInLocal()
-            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InitialTabBarController")
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InitialTabBarController") as! InitialTabBarController
+            initialViewController.makeBageInNotice(currentUser)
             self.window?.rootViewController = initialViewController
         } else {
             let storyboard = UIStoryboard(name: "Login", bundle: nil)

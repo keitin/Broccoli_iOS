@@ -14,7 +14,7 @@ import SDWebImage
     func didTapUserImageView(user: User)
 }
 
-class NoticeCell: UITableViewCell {
+class NoticeCell: UITableViewCell, NoticeType {
     @IBOutlet weak var blogImageView: BlogImageView!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var userImageView: ProfileImageView!
@@ -44,6 +44,11 @@ class NoticeCell: UITableViewCell {
         blogImageView.animateWith(0.5, fromAlpha: 0.5)
         blogImageView.blog = notice.blog
         descriptLabel.text = notice.text
+        
+        if notice.isUnRead {
+            makeNoticeRead(CurrentUser.sharedInstance, notice: notice)
+        }
+        
     }
     
     private func layoutBlogImageView() {

@@ -9,6 +9,7 @@
 import UIKit
 
 class IndexCommentViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var bottomMargin: NSLayoutConstraint!
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +24,7 @@ class IndexCommentViewController: UIViewController, UITextFieldDelegate {
         self.keyboardNotification()
         self.setTextFiled()
         self.setPostButton()
+        self.setBottomView()
         
     }
 
@@ -62,8 +64,13 @@ class IndexCommentViewController: UIViewController, UITextFieldDelegate {
         self.commentTextField.delegate = self
     }
     
+    private func setBottomView() {
+        self.bottomView.layer.lineBorderTop(borderWidth: 0.5, color: UIColor.lightGrayColor())
+    }
+    
     private func setPostButton() {
         self.postButton.addTarget(self, action: #selector(IndexCommentViewController.tappedPostButton(_:)), forControlEvents: .TouchUpInside)
+        self.postButton.setTitleColor(UIColor.mainColor(), forState: .Normal)
     }
     
     //MARK: Keyborad Notification

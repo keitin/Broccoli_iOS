@@ -10,7 +10,7 @@ import UIKit
 import ReachabilitySwift
 import JDStatusBarNotification
 
-class InitialTabBarController: UITabBarController {
+class InitialTabBarController: UITabBarController, NoticeType {
 
     var twoVCs: [UIViewController] = []
     var lastVC: UIViewController!
@@ -76,8 +76,6 @@ class InitialTabBarController: UITabBarController {
         }catch{
             print("could not start reachability notifier")
         }
-
-        self.makeBage()
         
     }
 
@@ -143,8 +141,17 @@ class InitialTabBarController: UITabBarController {
         }
     }
     
-    private func makeBage() {
-        let item = self.tabBar.items![2]
-        item.badgeValue = "3"
+    func makeBageInNotice(currentUser: CurrentUser) {
+        getUnReadNoitceCount(currentUser) { (count) in
+            if count == 0 { return }
+            let item = self.tabBar.items![2]
+            item.badgeValue = String(count)
+        }
     }
+    
+    func hideBadge() {
+        let item = self.tabBar.items![2]
+        item.badgeValue = nil
+    }
+    
 }

@@ -26,15 +26,32 @@ enum NoticeCategory: Int {
             return .Like
         }
     }
+}
+
+enum NoticeStatus: Int {
+    case UnRead = 0
+    case Read = 1
     
+    static func createNoticeStatus(status: String) -> NoticeStatus {
+        switch status {
+        case "unread":
+            return .UnRead
+        case "read":
+            return .Read
+        default:
+            return .UnRead
+        }
+    }
 }
 
 
 class Notice: NSObject {
+    var id: Int!
     var blog: Blog?
     var user: User!
     var fromUser: User
     var category: NoticeCategory
+    var status: NoticeStatus
     var text: String {
         switch self.category {
         case .Like:
@@ -45,11 +62,20 @@ class Notice: NSObject {
             return "\(fromUser.name)さんがあなたの投稿にコメントしました。"
         }
     }
+    var isUnRead: Bool {
+        if self.status == .UnRead {
+            return true
+        } else {
+            return false
+        }
+    }
     
-    init(blog: Blog?, user: User, fromUser :User, category: NoticeCategory) {
+    init(blog: Blog?, notice: JSON) {
         self.blog = blog
-        self.user = user
-        self.fromUser = fromUser
-        self.category = category
+        self.user = User(apiAttributes: notice["user"])
+        self.fromUser = User(apiAttributes: notice["from_user"])
+        self.category = NoticeCategory.createCategory(notice["notice"]["category"].string!)
+        self.status = NoticeStatus.createNoticeStatus(notice["notice"]["status"].string!)
+        self.id = notice["notice"]["id"].int!
     }
 }
