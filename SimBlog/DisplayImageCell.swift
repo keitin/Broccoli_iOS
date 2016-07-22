@@ -68,7 +68,7 @@ class DisplayImageCell: UITableViewCell {
         let backgroundView = UIView(frame: view.frame)
         let gesture = UITapGestureRecognizer(target: self, action: #selector(DisplayImageCell.tapBackgroundView(_:)))
         backgroundView.addGestureRecognizer(gesture)
-        backgroundView.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
+        backgroundView.backgroundColor = UIColor(white: 0.9, alpha: 0.8)
         return backgroundView
     }
     
