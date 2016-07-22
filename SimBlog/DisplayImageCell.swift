@@ -14,7 +14,8 @@ class DisplayImageCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.setBlogImageView()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -30,5 +31,47 @@ class DisplayImageCell: UITableViewCell {
             self.blogImageView.sd_setImageWithURL(NSURL(string: blogImage.imageURL))
         }
     }
+    
+    private func setBlogImageView() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(DisplayImageCell.tapImageView(_:)))
+        self.blogImageView.userInteractionEnabled = true
+        self.blogImageView.addGestureRecognizer(gesture)
+    }
+    
+    func tapImageView(sender: UITapGestureRecognizer) {
+        
+        let view = self.superview?.superview?.superview?.superview
+        
+        let tmpImageView = sender.view as! UIImageView
+        let backgroundView = self.createBackgroundView(view!)
+        view!.addSubview(backgroundView)
+        
+        let largeImageView = UIImageView(image: tmpImageView.image)
+        largeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        largeImageView.layer.masksToBounds = true
+        backgroundView.addSubview(largeImageView)
+        
+        let frame = backgroundView.convertRect(tmpImageView.frame, fromView: self)
+        largeImageView.frame = frame
+        
+        largeImageView.frame.size = view!.frame.size
+        largeImageView.center = view!.center
+        largeImageView.contentMode = UIViewContentMode.ScaleAspectFit
+
+    }
+    
+    func tapBackgroundView(sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
+    }
+    
+    private func createBackgroundView(view: UIView) -> UIView {
+        let backgroundView = UIView(frame: view.frame)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(DisplayImageCell.tapBackgroundView(_:)))
+        backgroundView.addGestureRecognizer(gesture)
+        backgroundView.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
+        return backgroundView
+    }
+    
+
     
 }
