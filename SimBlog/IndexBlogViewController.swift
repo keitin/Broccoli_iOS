@@ -29,6 +29,7 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
         self.view.addSubview(self.collectionView)
         
         indexBlogViewModel.didLoad(collectionView)
+        collectionView.dataSource = indexBlogViewModel
         collectionView.delegate = self
         
         layoutTextFieldButton()
@@ -51,7 +52,7 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
             showBlogVC.blog = blogManager.blogAtPosition(indexPath.row)
             self.navigationController?.pushViewController(showBlogVC, animated: true)
         } else {
-            indexBlogViewModel.loadMoreItems()
+            indexBlogViewModel.loadMoreItems(collectionView)
         }
         
     }
@@ -78,7 +79,7 @@ class IndexBlogViewController: UIViewController, UICollectionViewDelegateFlowLay
     }
     
     func pullAndRefresh() {
-        indexBlogViewModel.refershData { 
+        indexBlogViewModel.refershData(collectionView) {
             self.refreshControl.endRefreshing()
         }
     }

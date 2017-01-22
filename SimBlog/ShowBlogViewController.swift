@@ -102,7 +102,7 @@ class ShowBlogViewController: UIViewController, DisplayTitleCellDelegate, Like, 
                         })
                     } else {
                         let showUserVC = self.navigationController?.previousViewController() as! ShowUserViewController
-                        showUserVC.showUserViewModel.reloadItems {
+                        showUserVC.showUserViewModel.reloadItems(self.tableView) {
                             self.navigationController?.popViewControllerAnimated(true)
                         }
                     }

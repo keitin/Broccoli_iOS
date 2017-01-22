@@ -87,7 +87,7 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
             showBlogVC.blog = user.blogAtPosition(indexPath.row)
             self.navigationController?.pushViewController(showBlogVC, animated: true)
         } else if indexPath.section == 2 {
-            showUserViewModel.loadMoreItems()
+            showUserViewModel.loadMoreItems(tableView)
         }
     }
     
@@ -122,7 +122,7 @@ class ShowUserViewController: UIViewController, UITableViewDelegate, ProfileCell
     
     //MARK Refesh Control Data
     func pullAndReload() {
-        self.showUserViewModel.reloadItems { 
+        self.showUserViewModel.reloadItems(tableView) {
             self.refreshControl.endRefreshing()
         }
     }

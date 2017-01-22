@@ -161,6 +161,11 @@
 		32B523C91D2D2AF700F29CBA /* Topic-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B523C81D2D2AF700F29CBA /* Topic-50@2x.png */; };
 		32BFE1E01CE4BC5100FC26FF /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE1DF1CE4BC5100FC26FF /* Like.swift */; };
 		32BFE1E31CE4E31000FC26FF /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE1E21CE4E31000FC26FF /* Follow.swift */; };
+		32C388921E28D533008318E2 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C388911E28D533008318E2 /* RequestType.swift */; };
+		32C388951E28DB28008318E2 /* BroccoliRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C388941E28DB28008318E2 /* BroccoliRequestType.swift */; };
+		32C388971E28DEE6008318E2 /* GetFollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C388961E28DEE6008318E2 /* GetFollowersRequest.swift */; };
+		32C3889A1E28EC47008318E2 /* GetFollowsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C388991E28EC47008318E2 /* GetFollowsRequest.swift */; };
+		32C3889C1E28F07D008318E2 /* GetBlogsOfUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C3889B1E28F07D008318E2 /* GetBlogsOfUserRequest.swift */; };
 		32CD8D831D2A0A6F00017560 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD8D821D2A0A6F00017560 /* UINavigationController+Extension.swift */; };
 		8CB9392937AC7BA0E0536964 /* Pods_SimBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D43FC246B86AD09E3086FD0 /* Pods_SimBlog.framework */; };
 		97A22A91DD20F45FE56E0363 /* Pods_SimBlogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */; };
@@ -344,6 +349,11 @@
 		32B523C81D2D2AF700F29CBA /* Topic-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Topic-50@2x.png"; sourceTree = "<group>"; };
 		32BFE1DF1CE4BC5100FC26FF /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		32BFE1E21CE4E31000FC26FF /* Follow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
+		32C388911E28D533008318E2 /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		32C388941E28DB28008318E2 /* BroccoliRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroccoliRequestType.swift; sourceTree = "<group>"; };
+		32C388961E28DEE6008318E2 /* GetFollowersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersRequest.swift; sourceTree = "<group>"; };
+		32C388991E28EC47008318E2 /* GetFollowsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowsRequest.swift; sourceTree = "<group>"; };
+		32C3889B1E28F07D008318E2 /* GetBlogsOfUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBlogsOfUserRequest.swift; sourceTree = "<group>"; };
 		32CD8D821D2A0A6F00017560 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		6310AC327EDDB7B56CD7D4F9 /* Pods_SimBlogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimBlogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		641294EDC7C819DEAF0255C6 /* Pods-SimBlogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimBlogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimBlogUITests/Pods-SimBlogUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -532,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				326A73D71CCFC4830015DE7D /* AppDelegate.swift */,
+				32C388931E28DB17008318E2 /* APIs */,
 				32492C341CD9ED6E00B420B0 /* Storyboards */,
 				32BFE1E11CE4BC5500FC26FF /* Protocols */,
 				328F011F1CEB4F2700AB5E57 /* Enumerations */,
@@ -983,6 +994,26 @@
 			name = "Search Blog";
 			sourceTree = "<group>";
 		};
+		32C388931E28DB17008318E2 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				32C388911E28D533008318E2 /* RequestType.swift */,
+				32C388941E28DB28008318E2 /* BroccoliRequestType.swift */,
+				32C388981E28EB23008318E2 /* Users */,
+			);
+			name = APIs;
+			sourceTree = "<group>";
+		};
+		32C388981E28EB23008318E2 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				32C388961E28DEE6008318E2 /* GetFollowersRequest.swift */,
+				32C388991E28EC47008318E2 /* GetFollowsRequest.swift */,
+				32C3889B1E28F07D008318E2 /* GetBlogsOfUserRequest.swift */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
 		532CE7F561207CA72A82A29A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1331,6 +1362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C388951E28DB28008318E2 /* BroccoliRequestType.swift in Sources */,
 				326A73DA1CCFC4830015DE7D /* NewBlogViewController.swift in Sources */,
 				326A74231CD056C40015DE7D /* NSNotificationCenter+Extenstion.swift in Sources */,
 				321025181D2157C9008D5812 /* OwnSessionView.swift in Sources */,
@@ -1358,6 +1390,7 @@
 				32A6B93E1CE0AFBB0026053E /* SearchBlogViewController.swift in Sources */,
 				328F00681CE6D82D00AB5E57 /* Notice.swift in Sources */,
 				32AA3B7B1CFBE94100668DDE /* UIColor+Extension.swift in Sources */,
+				32C3889A1E28EC47008318E2 /* GetFollowsRequest.swift in Sources */,
 				32B42AED1CDB9029009EC63C /* MoreItemsCell.swift in Sources */,
 				326A74081CCFC7540015DE7D /* TextCell.swift in Sources */,
 				3284AF161CD0B73F005AB294 /* ShowBlogViewController.swift in Sources */,
@@ -1372,8 +1405,10 @@
 				3210251A1D215A59008D5812 /* OwnSessionViewModel.swift in Sources */,
 				32BFE1E31CE4E31000FC26FF /* Follow.swift in Sources */,
 				32B523C11D2D11CC00F29CBA /* Comment.swift in Sources */,
+				32C388971E28DEE6008318E2 /* GetFollowersRequest.swift in Sources */,
 				32992F291CE0A9B7006C604B /* BlogNavigationController.swift in Sources */,
 				32492C381CD9F0C800B420B0 /* ShowUserViewModel.swift in Sources */,
+				32C3889C1E28F07D008318E2 /* GetBlogsOfUserRequest.swift in Sources */,
 				32992F261CE06480006C604B /* SearchTextFiled.swift in Sources */,
 				328C61931D20D5C700285F7D /* OwnLoginViewModel.swift in Sources */,
 				3237B8831CD2F22B00ABD9F9 /* CurrentUser.swift in Sources */,
@@ -1394,6 +1429,7 @@
 				328F00651CE6D67E00AB5E57 /* UIImageView+Extenstion.swift in Sources */,
 				32178B921D0D860100F6C6D0 /* MoreItemsCollectionCell.swift in Sources */,
 				3284AF0B1CD0733D005AB294 /* UINavigationItem+Ectenstion.swift in Sources */,
+				32C388921E28D533008318E2 /* RequestType.swift in Sources */,
 				328F006C1CE6F80200AB5E57 /* NoticeType.swift in Sources */,
 				32A77C461D005427003E5FFC /* BlogEditorViewModel.swift in Sources */,
 				321025161D21550C008D5812 /* OwnSessionViewController.swift in Sources */,

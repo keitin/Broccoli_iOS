@@ -205,6 +205,7 @@ class User: NSObject {
         }
     }
     
+    /*
     func getBlogsInBackground(page: Int, callback: () -> Void) {
         let params = [
             "page": page
@@ -228,6 +229,7 @@ class User: NSObject {
                 callback()
         }
     }
+ 
     
     //MARK User Follow etc
     func getFollowsInBackground(callback: () -> Void) {
@@ -265,6 +267,8 @@ class User: NSObject {
                 }
         }
     }
+     */
+    
 
     //MAEK - User Defaults
     func saveCurrentUserInLocal() {

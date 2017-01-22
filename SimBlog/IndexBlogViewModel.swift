@@ -10,7 +10,6 @@ import UIKit
 
 class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
     
-    var collectionView: UICollectionView!
     let blogManager = BlogManager.sharedInstance
     var page = 1
     
@@ -18,8 +17,6 @@ class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
         blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
             collectionView.reloadData()
         }
-        self.collectionView = collectionView
-        collectionView.dataSource = self
         collectionView.registerCell("BlogImageCell")
         collectionView.registerCell("MoreItemsCollectionCell")
         collectionView.backgroundColor = UIColor.whiteColor()
@@ -46,20 +43,19 @@ class IndexBlogViewModel: NSObject, UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MoreItemsCollectionCell", forIndexPath: indexPath) as! MoreItemsCollectionCell
             return cell
         }
-        
     }
     
-    func loadMoreItems() {
+    func loadMoreItems(collectionView: UICollectionView) {
         page = page + 1
         blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
-            self.collectionView.reloadData()
+            collectionView.reloadData()
         }
     }
     
-    func refershData(callback: () -> Void) {
+    func refershData(collectionView: UICollectionView, callback: () -> Void) {
         page = 1
         blogManager.getBlogsInbackgroundWithBlock(user: nil, page: page) {
-            self.collectionView.reloadData()
+            collectionView.reloadData()
             callback()
         }
     }

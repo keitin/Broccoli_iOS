@@ -7,25 +7,50 @@
 //
 
 import UIKit
+import Alamofire
 
 class IndexUserViewModel: NSObject, UITableViewDataSource {
     
-    var user: User!
-    var tableView: UITableView!
+    weak var user: User!
     var displayType: DisplayType!
     
     func didLoad(tableView: UITableView, user: User, displayType: DisplayType) {
-        self.tableView = tableView
         self.displayType = displayType
         self.user = user
         tableView.dataSource = self
         tableView.registerCell("UserCell")
         if displayType == .Follows {
-            user.getFollowsInBackground { tableView.reloadData() }
+            //user.getFollowsInBackground { tableView.reloadData() }
+            GetFollowsRequest(user: user)
+                .sendRequest({ (response) in
+                    switch response {
+                    case .Success(let follows):
+                        user.follows = []
+                        for followUser in follows {
+                            user.follows.insert(followUser, atIndex: 0)
+                        }
+                        tableView.reloadData()
+                    case .Failure(let error):
+                        print(error)
+                    }
+            })
+            
         } else {
-            user.getFollowersInBackground { tableView.reloadData() }
+            //user.getFollowersInBackground { tableView.reloadData() }
+            GetFollowersRequest(user: user)
+                .sendRequest({ response in
+                    switch response {
+                    case .Success(let followers):
+                        user.followers = []
+                        for follower in followers {
+                            user.followers.insert(follower, atIndex: 0)
+                        }
+                        tableView.reloadData()
+                    case .Failure(let error):
+                        print(error)
+                    }
+            })
         }
-        
     }
     
     //MARK - TableView Data Source

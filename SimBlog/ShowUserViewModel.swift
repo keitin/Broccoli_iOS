@@ -22,9 +22,12 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
         self.viewController = viewController
         self.tableView = tableView
         self.selectedUser = user
-        self.selectedUser.getBlogsInBackground(page) {
-            tableView.reloadData()
-        }
+        
+        getBlogsInBackground(tableView, page: page, completion: nil)
+        
+//        self.selectedUser.getBlogsInBackground(page) {
+//            tableView.reloadData()
+//        }
         tableView.dataSource = self
         tableView.registerCell("ProfileCell")
         tableView.registerCell("BlogCell")
@@ -65,18 +68,39 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
         }
     }
     
-    func loadMoreItems() {
+    func loadMoreItems(tableView: UITableView) {
         page = page + 1
-        self.selectedUser.getBlogsInBackground(page) {
-            self.insertTopRow(self.tableView)
-        }
+//        self.selectedUser.getBlogsInBackground(page) {
+//            self.insertTopRow(self.tableView)
+//        }
+        getBlogsInBackground(tableView, page: page, completion: nil)
     }
     
-    func reloadItems(callback: () -> Void) {
+    func reloadItems(tableView: UITableView, callback: () -> Void) {
         page = 1
-        self.selectedUser.getBlogsInBackground(page) {
-            self.tableView.reloadData()
-            callback()
+//        self.selectedUser.getBlogsInBackground(page) {
+//            self.tableView.reloadData()
+//            callback()
+//        }
+        getBlogsInBackground(tableView, page: page, completion: {callback()})
+    }
+    
+    private func getBlogsInBackground(tableView: UITableView, page: Int, completion: (() -> Void)?) {
+        GetBlogsOfUserRequest(user: selectedUser, page: page)
+            .sendRequest { (response) in
+                switch response {
+                case .Success(let blogs):
+                    if page == 1 { self.selectedUser.blogs = [] }
+                    for blog in blogs {
+                        self.selectedUser.blogs.insert(blog, atIndex: self.selectedUser.numberOfBlogs)
+                    }
+                    tableView.reloadData()
+                case .Failure(let error):
+                    print(error)
+                }
+                if let c = completion {
+                    c()
+                }
         }
     }
     
