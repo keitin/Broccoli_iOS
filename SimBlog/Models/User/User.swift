@@ -207,9 +207,11 @@ class User: NSObject {
     
     /*
     func getBlogsInBackground(page: Int, callback: () -> Void) {
+        
         let params = [
             "page": page
         ]
+        
         Alamofire.request(.GET, String.rootPath() + "/api/blogs/?user_id=\(self.id)", parameters: params)
             .responseJSON { response in
                 guard let object = response.result.value else {
@@ -229,7 +231,6 @@ class User: NSObject {
                 callback()
         }
     }
- 
     
     //MARK User Follow etc
     func getFollowsInBackground(callback: () -> Void) {

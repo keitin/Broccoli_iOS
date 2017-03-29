@@ -68,5 +68,6 @@ class BlogImageCell: UICollectionViewCell {
     func tapBackgroundView(gesture: UITapGestureRecognizer) {
         gesture.view?.removeFromSuperview()
     }
+    
 
 }

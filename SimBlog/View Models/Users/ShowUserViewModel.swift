@@ -86,6 +86,7 @@ class ShowUserViewModel: NSObject, UITableViewDataSource {
     }
     
     private func getBlogsInBackground(tableView: UITableView, page: Int, completion: (() -> Void)?) {
+        
         GetBlogsOfUserRequest(user: selectedUser, page: page)
             .sendRequest { (response) in
                 switch response {

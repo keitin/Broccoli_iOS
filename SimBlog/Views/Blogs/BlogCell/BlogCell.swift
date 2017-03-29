@@ -43,14 +43,19 @@ class BlogCell: UITableViewCell {
     func fillWith(blog: Blog) {
         topImageView.image = blog.topImage
         if let topImageURL = blog.topImageURL {
-            topImageView.sd_setImageWithURL(NSURL(string: topImageURL))
+            // トップ画像を優先して取得
+            topImageView.sd_setImageWithURL(NSURL(string: topImageURL),
+                                            placeholderImage: UIImage(),
+                                            options: .HighPriority)
         }
+        profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL),
+                                            placeholderImage: UIImage(named: "icon"),
+                                            options: .LowPriority)
         setupSentenceLabel(blog.title)
         nameLabel.text = blog.user.name
-        profileImageView.blog = blog    
-        profileImageView.sd_setImageWithURL(NSURL(string: blog.user.imageURL))
-        topImageView.animateWith(1.0, fromAlpha: 0.5)
-        profileImageView.animateWith(1.0, fromAlpha: 0.5)
+        profileImageView.blog = blog
+        topImageView.animateWith(1.0, fromAlpha: 0.8)
+        profileImageView.animateWith(1.0, fromAlpha: 0.8)
     }
     
     func layoutImageView() {
@@ -92,6 +97,12 @@ class BlogCell: UITableViewCell {
         borderView.center = CGPointMake(self.center.x, self.frame.height)
         borderView.backgroundColor = UIColor.white()
         self.addSubview(borderView)
+    }
+    
+    /*画像が画面から消える時にまだ画像をダウンロードしていたらリクエストをキャンセルする*/
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.topImageView.sd_cancelCurrentImageLoad()
     }
     
 }
